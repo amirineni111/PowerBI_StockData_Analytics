@@ -1,0 +1,387 @@
+table ml_nse_predict_summary
+	lineageTag: 17d95185-128b-477c-9763-86c7f16aab44
+
+	column summary_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4835ccd7-f4ff-4eba-a343-78c6367a32bb
+		summarizeBy: sum
+		sourceColumn: summary_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column run_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 45ce8679-967b-4dff-9a57-9276dc755e5f
+		summarizeBy: none
+		sourceColumn: run_timestamp
+
+		variation Variation
+			isDefault
+			relationship: 9be0044a-3634-4739-99a3-26444fb24987
+			defaultHierarchy: LocalDateTable_957b68cf-38d0-468e-8f7d-d9b8994019ad.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column analysis_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3a3bbb63-0f2b-4af1-8c12-da7a8e29a142
+		summarizeBy: none
+		sourceColumn: analysis_date
+
+		variation Variation
+			isDefault
+			relationship: 52a1467c-4114-4c6d-b863-1b50874b455a
+			defaultHierarchy: LocalDateTable_258ba0a6-3116-4110-8ec8-7072a89fa65c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column total_predictions
+		dataType: int64
+		formatString: 0
+		lineageTag: f9ecd30d-95c5-4cdb-97b6-03c820ef6f9d
+		summarizeBy: sum
+		sourceColumn: total_predictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_buy_signals
+		dataType: int64
+		formatString: 0
+		lineageTag: bd0bdee5-4b8d-4ac2-b4e9-7c03c2a53f7e
+		summarizeBy: sum
+		sourceColumn: total_buy_signals
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_sell_signals
+		dataType: int64
+		formatString: 0
+		lineageTag: 336ab6fc-74c7-4f8e-90ee-a53ada4e73f2
+		summarizeBy: sum
+		sourceColumn: total_sell_signals
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_hold_signals
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bd57b10-86e1-4e04-85b9-8443a52a2a09
+		summarizeBy: sum
+		sourceColumn: total_hold_signals
+
+		annotation SummarizationSetBy = Automatic
+
+	column high_confidence_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 481f349c-9829-4cbc-a312-1d49e02261ce
+		summarizeBy: sum
+		sourceColumn: high_confidence_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column medium_confidence_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 01be50bb-90b9-48be-a1d4-3c8de8c27637
+		summarizeBy: sum
+		sourceColumn: medium_confidence_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column low_confidence_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 863105f4-c157-4edf-9b29-851aed111725
+		summarizeBy: sum
+		sourceColumn: low_confidence_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column high_conf_buys
+		dataType: int64
+		formatString: 0
+		lineageTag: 7aa39fa7-8e33-47e4-b56a-1c0fbca80760
+		summarizeBy: sum
+		sourceColumn: high_conf_buys
+
+		annotation SummarizationSetBy = Automatic
+
+	column medium_conf_buys
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c4ee646-be77-4e60-8a4c-a4666e2567cd
+		summarizeBy: sum
+		sourceColumn: medium_conf_buys
+
+		annotation SummarizationSetBy = Automatic
+
+	column low_conf_buys
+		dataType: int64
+		formatString: 0
+		lineageTag: fad1b05d-0a43-4a79-aed0-678dd2432e5c
+		summarizeBy: sum
+		sourceColumn: low_conf_buys
+
+		annotation SummarizationSetBy = Automatic
+
+	column high_conf_sells
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a62e7a4-43fa-4a01-945e-24a1722e3a51
+		summarizeBy: sum
+		sourceColumn: high_conf_sells
+
+		annotation SummarizationSetBy = Automatic
+
+	column medium_conf_sells
+		dataType: int64
+		formatString: 0
+		lineageTag: b16f5558-e520-48dc-a814-50b161340ebd
+		summarizeBy: sum
+		sourceColumn: medium_conf_sells
+
+		annotation SummarizationSetBy = Automatic
+
+	column low_conf_sells
+		dataType: int64
+		formatString: 0
+		lineageTag: 12a5a53f-5ae0-4cdc-8d33-d80530b0a30f
+		summarizeBy: sum
+		sourceColumn: low_conf_sells
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_confidence
+		dataType: double
+		lineageTag: f4ccb11e-be29-4bde-99bf-bc31a55b3dfb
+		summarizeBy: sum
+		sourceColumn: avg_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_rsi
+		dataType: double
+		lineageTag: d8ce70a5-b993-4ce6-a002-03554585aeb3
+		summarizeBy: sum
+		sourceColumn: avg_rsi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_buy_probability
+		dataType: double
+		lineageTag: 3dca2716-f1eb-43e5-bc59-cc8f0582e130
+		summarizeBy: sum
+		sourceColumn: avg_buy_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_sell_probability
+		dataType: double
+		lineageTag: 2c38944c-7c62-407c-868b-efbb223cdf64
+		summarizeBy: sum
+		sourceColumn: avg_sell_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column top_buy_signals
+		dataType: string
+		lineageTag: 198bbed3-6d4c-4bb8-8c2f-7a7628c24a1e
+		summarizeBy: none
+		sourceColumn: top_buy_signals
+
+		annotation SummarizationSetBy = Automatic
+
+	column top_sell_signals
+		dataType: string
+		lineageTag: bfd1a81f-b4cf-465f-bb6a-07b2c84a119f
+		summarizeBy: none
+		sourceColumn: top_sell_signals
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_trend
+		dataType: string
+		lineageTag: 94724662-566d-474e-b493-ec1f8f9d95d4
+		summarizeBy: none
+		sourceColumn: market_trend
+
+		annotation SummarizationSetBy = Automatic
+
+	column bullish_stocks_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 20778fb6-7ffe-4fd6-bc35-d90c6e7d8bd3
+		summarizeBy: sum
+		sourceColumn: bullish_stocks_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column bearish_stocks_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 649511cf-080d-4f4b-869f-694a944654ff
+		summarizeBy: sum
+		sourceColumn: bearish_stocks_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column neutral_stocks_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 51790e3e-b989-4e66-a7ae-7d30e6ea653a
+		summarizeBy: sum
+		sourceColumn: neutral_stocks_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector_analysis
+		dataType: string
+		lineageTag: 4581e6f7-51ac-487d-b939-365799dec796
+		summarizeBy: none
+		sourceColumn: sector_analysis
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_accuracy
+		dataType: double
+		lineageTag: a284c363-ad0f-429f-b658-46baae4cd514
+		summarizeBy: sum
+		sourceColumn: model_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column success_rate_1d
+		dataType: double
+		lineageTag: 5c046b4e-d796-4c38-b57f-93b54b040d43
+		summarizeBy: sum
+		sourceColumn: success_rate_1d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column success_rate_5d
+		dataType: double
+		lineageTag: 8992ddbd-cd71-4044-8b36-00bad014fcce
+		summarizeBy: sum
+		sourceColumn: success_rate_5d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column success_rate_10d
+		dataType: double
+		lineageTag: ca40933a-6d65-477b-8015-82e295210658
+		summarizeBy: sum
+		sourceColumn: success_rate_10d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column high_risk_alerts
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c76d77e-8c03-4104-a93a-ae255ab70b15
+		summarizeBy: sum
+		sourceColumn: high_risk_alerts
+
+		annotation SummarizationSetBy = Automatic
+
+	column volatility_alerts
+		dataType: int64
+		formatString: 0
+		lineageTag: 96f411dc-b330-465d-89f9-3cebab725732
+		summarizeBy: sum
+		sourceColumn: volatility_alerts
+
+		annotation SummarizationSetBy = Automatic
+
+	column processing_time_seconds
+		dataType: double
+		lineageTag: c513dbd6-8409-4b50-a4b6-d722a05f71da
+		summarizeBy: sum
+		sourceColumn: processing_time_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_stocks_processed
+		dataType: int64
+		formatString: 0
+		lineageTag: b1e74866-3d77-4ac1-a41f-49ca5cf2a53b
+		summarizeBy: sum
+		sourceColumn: total_stocks_processed
+
+		annotation SummarizationSetBy = Automatic
+
+	column failed_predictions
+		dataType: int64
+		formatString: 0
+		lineageTag: c31a339d-7c7c-41a2-b146-e9fe822ef6ff
+		summarizeBy: sum
+		sourceColumn: failed_predictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_quality_score
+		dataType: double
+		lineageTag: 1c45d20b-f1b8-48b1-b972-c9638715870c
+		summarizeBy: sum
+		sourceColumn: data_quality_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3303d056-8adc-484f-b63b-24a4ba137629
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 66939027-3d26-45f9-b8f2-d0027d179bad
+			defaultHierarchy: LocalDateTable_74b42f87-015a-4425-9f32-cd9bbb9c7b5b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column notes
+		dataType: string
+		lineageTag: b4caf68e-d77b-4e3c-b64c-0289b50512db
+		summarizeBy: none
+		sourceColumn: notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ml_nse_predict_summary = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_ml_nse_predict_summary = Source{[Schema="dbo",Item="ml_nse_predict_summary"]}[Data]
+				in
+				    dbo_ml_nse_predict_summary
+
+	annotation PBI_ResultType = Table
+

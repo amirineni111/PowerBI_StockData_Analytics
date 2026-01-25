@@ -1,0 +1,379 @@
+table nasdaq_100_fundamentals
+	lineageTag: 82cb8e92-7ef3-4893-8ad2-05ac2f6ee1da
+
+	column ticker
+		dataType: string
+		lineageTag: 1320b4aa-33e3-45e9-9538-bfa0b200c5ba
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: 2c496a69-8d68-471b-9ec8-bb8c506a80f9
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column fetch_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1e98fa52-1469-43d1-8907-623a310e0718
+		summarizeBy: none
+		sourceColumn: fetch_date
+
+		variation Variation
+			isDefault
+			relationship: 97a7c12f-d005-4da8-893f-1a1b627b61af
+			defaultHierarchy: LocalDateTable_e2b02a55-ec8d-4968-bc79-9151e1c4d4d5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column market_cap
+		dataType: int64
+		formatString: 0
+		lineageTag: 4deb4664-1379-4280-b890-95aea16843ac
+		summarizeBy: sum
+		sourceColumn: market_cap
+
+		annotation SummarizationSetBy = Automatic
+
+	column enterprise_value
+		dataType: int64
+		formatString: 0
+		lineageTag: f4cd1b00-a6cd-4800-9665-b906a26f5f24
+		summarizeBy: sum
+		sourceColumn: enterprise_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column trailing_pe
+		dataType: double
+		lineageTag: ca32b440-d341-45b8-87fc-376745e98c80
+		summarizeBy: sum
+		sourceColumn: trailing_pe
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column forward_pe
+		dataType: double
+		lineageTag: 14aa142f-8d39-4bcf-817b-57846d1adae1
+		summarizeBy: sum
+		sourceColumn: forward_pe
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_to_book
+		dataType: double
+		lineageTag: 0f1f1a42-00c2-4b78-a2af-d9d1b11d7435
+		summarizeBy: sum
+		sourceColumn: price_to_book
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_to_sales
+		dataType: double
+		lineageTag: f99fb7a5-3c0f-4312-85fc-219b04c088fe
+		summarizeBy: sum
+		sourceColumn: price_to_sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column peg_ratio
+		dataType: double
+		lineageTag: 7ba815ab-c73c-4a50-ac6d-94481258b2cb
+		summarizeBy: sum
+		sourceColumn: peg_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trailing_eps
+		dataType: double
+		lineageTag: e8a0cbcf-5e08-4dd8-be97-37707bf31381
+		summarizeBy: sum
+		sourceColumn: trailing_eps
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column forward_eps
+		dataType: double
+		lineageTag: 444d2aae-4e41-4754-9e11-eb891d24c7d8
+		summarizeBy: sum
+		sourceColumn: forward_eps
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column book_value
+		dataType: double
+		lineageTag: 6eb34906-10ac-4b81-9941-e9c7d2ec6ed1
+		summarizeBy: sum
+		sourceColumn: book_value
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column profit_margin
+		dataType: double
+		lineageTag: e0edb30e-aee9-45e4-a333-b6759dad441f
+		summarizeBy: sum
+		sourceColumn: profit_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column operating_margin
+		dataType: double
+		lineageTag: 35113dc0-d09e-4e69-97f2-51478b744505
+		summarizeBy: sum
+		sourceColumn: operating_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gross_margin
+		dataType: double
+		lineageTag: 12bad83b-8dd4-4882-8873-95960af15e97
+		summarizeBy: sum
+		sourceColumn: gross_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column return_on_equity
+		dataType: double
+		lineageTag: 73ce061d-2acb-4885-b172-5e850734eefa
+		summarizeBy: sum
+		sourceColumn: return_on_equity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column return_on_assets
+		dataType: double
+		lineageTag: 69641f71-eb8d-46ef-89b7-366c11deacb0
+		summarizeBy: sum
+		sourceColumn: return_on_assets
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_revenue
+		dataType: int64
+		formatString: 0
+		lineageTag: 844ecbe5-cddf-4ac3-b00d-d4a9e3d21f43
+		summarizeBy: sum
+		sourceColumn: total_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue_per_share
+		dataType: double
+		lineageTag: e69d6d36-54de-4f15-b4c0-24e63186fc67
+		summarizeBy: sum
+		sourceColumn: revenue_per_share
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column revenue_growth
+		dataType: double
+		lineageTag: 9e1e4b9f-fa47-4d2c-90bd-0c1a98853f2e
+		summarizeBy: sum
+		sourceColumn: revenue_growth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_growth
+		dataType: double
+		lineageTag: d9a46d28-7f6e-41cb-9f0a-aa4ee5471a7f
+		summarizeBy: sum
+		sourceColumn: earnings_growth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dividend_rate
+		dataType: double
+		lineageTag: 82131bff-48b7-4aae-8f55-5dd2932c7802
+		summarizeBy: sum
+		sourceColumn: dividend_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column dividend_yield
+		dataType: double
+		lineageTag: 5e3bf771-2232-4d23-bcf8-bdaf996cf40d
+		summarizeBy: sum
+		sourceColumn: dividend_yield
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column payout_ratio
+		dataType: double
+		lineageTag: 9ca218bd-f988-4eb2-88c4-4f5d91329316
+		summarizeBy: sum
+		sourceColumn: payout_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_cash
+		dataType: int64
+		formatString: 0
+		lineageTag: 56e453a0-a1a5-4022-881f-043525cdf5b0
+		summarizeBy: sum
+		sourceColumn: total_cash
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_debt
+		dataType: int64
+		formatString: 0
+		lineageTag: 379b8104-38b4-45d7-ab93-9ab614db5a4a
+		summarizeBy: sum
+		sourceColumn: total_debt
+
+		annotation SummarizationSetBy = Automatic
+
+	column debt_to_equity
+		dataType: double
+		lineageTag: 12e51a56-9aa1-4577-8d48-64b5fc84be0b
+		summarizeBy: sum
+		sourceColumn: debt_to_equity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_ratio
+		dataType: double
+		lineageTag: 31515bd3-d17d-404f-9c31-6c03b7966e39
+		summarizeBy: sum
+		sourceColumn: current_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quick_ratio
+		dataType: double
+		lineageTag: d8631fea-ff7c-4b93-a40d-428776d0072f
+		summarizeBy: sum
+		sourceColumn: quick_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column free_cashflow
+		dataType: int64
+		formatString: 0
+		lineageTag: 70550005-a9d1-4243-aa51-6994cb3a2117
+		summarizeBy: sum
+		sourceColumn: free_cashflow
+
+		annotation SummarizationSetBy = Automatic
+
+	column operating_cashflow
+		dataType: int64
+		formatString: 0
+		lineageTag: cb256c0a-0cc7-41c3-9105-f1ab4331fb78
+		summarizeBy: sum
+		sourceColumn: operating_cashflow
+
+		annotation SummarizationSetBy = Automatic
+
+	column beta
+		dataType: double
+		lineageTag: ebb1e1b4-0f62-4a4f-a7de-7bf9582547ad
+		summarizeBy: sum
+		sourceColumn: beta
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fifty_two_week_high
+		dataType: double
+		lineageTag: 7ea90066-e789-4e87-acb4-c875a78c3628
+		summarizeBy: sum
+		sourceColumn: fifty_two_week_high
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fifty_two_week_low
+		dataType: double
+		lineageTag: 4eed5e2c-901f-4390-9ba8-4b5ab9985f9b
+		summarizeBy: sum
+		sourceColumn: fifty_two_week_low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fifty_day_avg
+		dataType: double
+		lineageTag: 623aeb00-af72-4628-a927-a6a920f77145
+		summarizeBy: sum
+		sourceColumn: fifty_day_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column two_hundred_day_avg
+		dataType: double
+		lineageTag: 62b2ec4c-3aad-4dca-a277-49e8e9b24d34
+		summarizeBy: sum
+		sourceColumn: two_hundred_day_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition nasdaq_100_fundamentals = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_fundamentals = Source{[Schema="dbo",Item="nasdaq_100_fundamentals"]}[Data]
+				in
+				    dbo_nasdaq_100_fundamentals
+
+	annotation PBI_ResultType = Table
+

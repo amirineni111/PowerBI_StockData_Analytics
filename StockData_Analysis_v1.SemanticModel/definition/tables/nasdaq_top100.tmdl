@@ -1,0 +1,74 @@
+table nasdaq_top100
+	lineageTag: 72ae2eb6-60c5-4a50-9e76-2d326a708413
+
+	column ticker
+		dataType: string
+		lineageTag: b230ff9d-68c0-4c80-8387-15d4f72fceaa
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: de4c31e8-29ff-441d-b235-241e461eba16
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column monitor_startdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ee45f70e-728e-48e8-94ff-f03d07c3818a
+		summarizeBy: none
+		sourceColumn: monitor_startdate
+
+		variation Variation
+			isDefault
+			relationship: d4863403-ce1e-4cdd-923f-d5ef63d64980
+			defaultHierarchy: LocalDateTable_76c514c0-6132-496b-a41c-d5813ee29a30.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column monitor_enddate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 174402eb-6ed2-48d7-bff9-5918845a5c01
+		summarizeBy: none
+		sourceColumn: monitor_enddate
+
+		variation Variation
+			isDefault
+			relationship: d35856ef-51a7-428d-a105-0bc315e1518f
+			defaultHierarchy: LocalDateTable_35e2224c-f8fb-458f-a63a-f17a526772be.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments
+		dataType: string
+		lineageTag: c822b7b3-57cf-4e0b-b0de-40f66bd869cf
+		summarizeBy: none
+		sourceColumn: comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column process_flag
+		dataType: string
+		lineageTag: 305e98a6-7e4c-4e77-b7cd-0e41a683a719
+		summarizeBy: none
+		sourceColumn: process_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition nasdaq_top100 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_top100 = Source{[Schema="dbo",Item="nasdaq_top100"]}[Data]
+				in
+				    dbo_nasdaq_top100
+
+	annotation PBI_ResultType = Table
+

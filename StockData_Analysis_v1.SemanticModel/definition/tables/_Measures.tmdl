@@ -1,0 +1,430 @@
+table _Measures
+	lineageTag: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+
+	measure 'AI Direction Accuracy %' =
+			VAR CorrectCount = COUNTROWS(FILTER(ai_prediction_history, [direction_correct] = TRUE))
+			VAR TotalCount = COUNTROWS(FILTER(ai_prediction_history, NOT(ISBLANK([direction_correct]))))
+			RETURN DIVIDE(CorrectCount, TotalCount, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AI Predictions
+		lineageTag: m001-ai-direction-accuracy
+
+	measure 'AI MAPE %' = AVERAGE(ai_prediction_history[percentage_error])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AI Predictions
+		lineageTag: m002-ai-mape
+
+	measure 'AI RMSE' = SQRT(AVERAGEX(ai_prediction_history, [squared_error]))
+		formatString: 0.0000
+		displayFolder: AI Predictions
+		lineageTag: m003-ai-rmse
+
+	measure 'AI MAE' = AVERAGE(ai_prediction_history[absolute_error])
+		formatString: 0.0000
+		displayFolder: AI Predictions
+		lineageTag: m004-ai-mae
+
+	measure 'AI Total Predictions' = COUNTROWS(ai_prediction_history)
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m005-ai-total-predictions
+
+	measure 'AI Correct Predictions' = COUNTROWS(FILTER(ai_prediction_history, [direction_correct] = TRUE))
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m006-ai-correct-predictions
+
+	measure 'AI Pending Validation' = COUNTROWS(FILTER(ai_prediction_history, ISBLANK([actual_price]) && [target_date] >= TODAY()))
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m007-ai-pending-validation
+
+	measure 'AI Avg Confidence' = AVERAGE(ai_prediction_history[model_confidence])
+		formatString: 0.00%
+		displayFolder: AI Predictions
+		lineageTag: m008-ai-avg-confidence
+
+	measure 'AI Correct Avg Confidence' = CALCULATE(AVERAGE(ai_prediction_history[model_confidence]), ai_prediction_history[direction_correct] = TRUE)
+		formatString: 0.00%
+		displayFolder: AI Predictions
+		lineageTag: m009-ai-correct-avg-confidence
+
+	measure 'AI Avg Predicted Change %' = AVERAGE(ai_prediction_history[predicted_change_pct])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AI Predictions
+		lineageTag: m010-ai-avg-predicted-change
+
+	measure 'AI Avg Actual Change %' = AVERAGE(ai_prediction_history[actual_change_pct])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AI Predictions
+		lineageTag: m011-ai-avg-actual-change
+
+	measure 'AI Bullish Predictions' = COUNTROWS(FILTER(ai_prediction_history, [predicted_change_pct] > 0))
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m012-ai-bullish-predictions
+
+	measure 'AI Bearish Predictions' = COUNTROWS(FILTER(ai_prediction_history, [predicted_change_pct] < 0))
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m013-ai-bearish-predictions
+
+	measure 'AI Latest Prediction Date' = MAX(ai_prediction_history[prediction_date])
+		formatString: mm/dd/yyyy
+		displayFolder: AI Predictions
+		lineageTag: m014-ai-latest-prediction-date
+
+	measure 'AI Distinct Tickers' = DISTINCTCOUNT(ai_prediction_history[ticker])
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m015-ai-distinct-tickers
+
+	measure 'ML NASDAQ Buy Signals' = COUNTROWS(FILTER(ml_trading_predictions, [predicted_signal] = "BUY"))
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m020-ml-nasdaq-buy
+
+	measure 'ML NASDAQ Sell Signals' = COUNTROWS(FILTER(ml_trading_predictions, [predicted_signal] = "SELL"))
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m021-ml-nasdaq-sell
+
+	measure 'ML NASDAQ Hold Signals' = COUNTROWS(FILTER(ml_trading_predictions, [predicted_signal] = "HOLD"))
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m022-ml-nasdaq-hold
+
+	measure 'ML NASDAQ Total Signals' = COUNTROWS(ml_trading_predictions)
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m023-ml-nasdaq-total
+
+	measure 'ML NASDAQ Avg Confidence' = AVERAGE(ml_trading_predictions[confidence_percentage])
+		formatString: 0.00%
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m024-ml-nasdaq-avg-confidence
+
+	measure 'ML NASDAQ High Confidence Count' = COUNTROWS(FILTER(ml_trading_predictions, [high_confidence] = TRUE))
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m025-ml-nasdaq-high-confidence
+
+	measure 'ML NASDAQ Avg Buy Probability' = AVERAGE(ml_trading_predictions[buy_probability])
+		formatString: 0.00%
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m026-ml-nasdaq-avg-buy-prob
+
+	measure 'ML NASDAQ Avg Sell Probability' = AVERAGE(ml_trading_predictions[sell_probability])
+		formatString: 0.00%
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m027-ml-nasdaq-avg-sell-prob
+
+	measure 'ML NASDAQ Latest Date' = MAX(ml_trading_predictions[trading_date])
+		formatString: mm/dd/yyyy
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m029-ml-nasdaq-latest-date
+
+	measure 'ML NSE Buy Signals' = COUNTROWS(FILTER(ml_nse_trading_predictions, [predicted_signal] = "BUY"))
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m030-ml-nse-buy
+
+	measure 'ML NSE Sell Signals' = COUNTROWS(FILTER(ml_nse_trading_predictions, [predicted_signal] = "SELL"))
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m031-ml-nse-sell
+
+	measure 'ML NSE Hold Signals' = COUNTROWS(FILTER(ml_nse_trading_predictions, [predicted_signal] = "HOLD"))
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m032-ml-nse-hold
+
+	measure 'ML NSE Total Signals' = COUNTROWS(ml_nse_trading_predictions)
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m033-ml-nse-total
+
+	measure 'ML NSE Avg Confidence' = AVERAGE(ml_nse_trading_predictions[confidence_percentage])
+		formatString: 0.00%
+		displayFolder: ML Signals - NSE
+		lineageTag: m034-ml-nse-avg-confidence
+
+	measure 'ML NSE High Confidence Count' = COUNTROWS(FILTER(ml_nse_trading_predictions, [high_confidence] = TRUE))
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m035-ml-nse-high-confidence
+
+	measure 'ML NSE Avg Buy Probability' = AVERAGE(ml_nse_trading_predictions[buy_probability])
+		formatString: 0.00%
+		displayFolder: ML Signals - NSE
+		lineageTag: m036-ml-nse-avg-buy-prob
+
+	measure 'ML NSE Avg Sell Probability' = AVERAGE(ml_nse_trading_predictions[sell_probability])
+		formatString: 0.00%
+		displayFolder: ML Signals - NSE
+		lineageTag: m037-ml-nse-avg-sell-prob
+
+	measure 'ML NSE Latest Date' = MAX(ml_nse_trading_predictions[trading_date])
+		formatString: mm/dd/yyyy
+		displayFolder: ML Signals - NSE
+		lineageTag: m040-ml-nse-latest-date
+
+	measure 'Forex Buy Signals' = COUNTROWS(FILTER(forex_ml_predictions, [predicted_signal] = "BUY"))
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m050-forex-buy
+
+	measure 'Forex Sell Signals' = COUNTROWS(FILTER(forex_ml_predictions, [predicted_signal] = "SELL"))
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m051-forex-sell
+
+	measure 'Forex Hold Signals' = COUNTROWS(FILTER(forex_ml_predictions, [predicted_signal] = "HOLD"))
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m052-forex-hold
+
+	measure 'Forex Total Signals' = COUNTROWS(forex_ml_predictions)
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m053-forex-total
+
+	measure 'Forex Avg Confidence' = AVERAGE(forex_ml_predictions[signal_confidence])
+		formatString: 0.00%
+		displayFolder: ML Signals - Forex
+		lineageTag: m054-forex-avg-confidence
+
+	measure 'Forex Avg Buy Probability' = AVERAGE(forex_ml_predictions[prob_buy])
+		formatString: 0.00%
+		displayFolder: ML Signals - Forex
+		lineageTag: m055-forex-avg-buy-prob
+
+	measure 'Forex Avg Sell Probability' = AVERAGE(forex_ml_predictions[prob_sell])
+		formatString: 0.00%
+		displayFolder: ML Signals - Forex
+		lineageTag: m056-forex-avg-sell-prob
+
+	measure 'Forex Latest Date' = MAX(forex_ml_predictions[prediction_date])
+		formatString: mm/dd/yyyy
+		displayFolder: ML Signals - Forex
+		lineageTag: m058-forex-latest-date
+
+	measure 'Forex Distinct Pairs' = DISTINCTCOUNT(forex_ml_predictions[currency_pair])
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m059-forex-distinct-pairs
+
+	measure 'Forex CV Accuracy' = AVERAGE(forex_model_performance[cv_accuracy_mean])
+		formatString: 0.00%
+		displayFolder: Forex Model Performance
+		lineageTag: m060-forex-model-cv-accuracy
+
+	measure 'Forex Precision' = AVERAGE(forex_model_performance[train_precision])
+		formatString: 0.00%
+		displayFolder: Forex Model Performance
+		lineageTag: m062-forex-model-precision
+
+	measure 'Forex Recall' = AVERAGE(forex_model_performance[train_recall])
+		formatString: 0.00%
+		displayFolder: Forex Model Performance
+		lineageTag: m063-forex-model-recall
+
+	measure 'Forex F1 Score' = AVERAGE(forex_model_performance[train_f1])
+		formatString: 0.00%
+		displayFolder: Forex Model Performance
+		lineageTag: m064-forex-model-f1
+
+	measure 'Signal Success Rate 7D' =
+			VAR SuccessCount = COUNTROWS(FILTER(signal_tracking_history, [result_7d] = "SUCCESS"))
+			VAR TotalCount = COUNTROWS(FILTER(signal_tracking_history, NOT(ISBLANK([result_7d]))))
+			RETURN DIVIDE(SuccessCount, TotalCount, 0)
+		formatString: 0.00%
+		displayFolder: Signal Validation
+		lineageTag: m070-signal-success-7d
+
+	measure 'Signal Success Rate 14D' =
+			VAR SuccessCount = COUNTROWS(FILTER(signal_tracking_history, [result_14d] = "SUCCESS"))
+			VAR TotalCount = COUNTROWS(FILTER(signal_tracking_history, NOT(ISBLANK([result_14d]))))
+			RETURN DIVIDE(SuccessCount, TotalCount, 0)
+		formatString: 0.00%
+		displayFolder: Signal Validation
+		lineageTag: m071-signal-success-14d
+
+	measure 'Signal Success Rate 30D' =
+			VAR SuccessCount = COUNTROWS(FILTER(signal_tracking_history, [result_30d] = "SUCCESS"))
+			VAR TotalCount = COUNTROWS(FILTER(signal_tracking_history, NOT(ISBLANK([result_30d]))))
+			RETURN DIVIDE(SuccessCount, TotalCount, 0)
+		formatString: 0.00%
+		displayFolder: Signal Validation
+		lineageTag: m072-signal-success-30d
+
+	measure 'Total Tracked Signals' = COUNTROWS(signal_tracking_history)
+		formatString: #,##0
+		displayFolder: Signal Validation
+		lineageTag: m073-signal-total-tracked
+
+	measure 'NSE Avg PE' = AVERAGE(nse_500_fundamentals[trailing_pe])
+		formatString: 0.00
+		displayFolder: Fundamentals - NSE
+		lineageTag: m080-nse-avg-pe
+
+	measure 'NSE Avg PB' = AVERAGE(nse_500_fundamentals[price_to_book])
+		formatString: 0.00
+		displayFolder: Fundamentals - NSE
+		lineageTag: m082-nse-avg-pb
+
+	measure 'NSE Avg ROE' = AVERAGE(nse_500_fundamentals[return_on_equity])
+		formatString: 0.00%
+		displayFolder: Fundamentals - NSE
+		lineageTag: m083-nse-avg-roe
+
+	measure 'NSE Avg Dividend Yield' = AVERAGE(nse_500_fundamentals[dividend_yield])
+		formatString: 0.00%
+		displayFolder: Fundamentals - NSE
+		lineageTag: m087-nse-avg-div-yield
+
+	measure 'NASDAQ Avg PE' = AVERAGE(nasdaq_100_fundamentals[trailing_pe])
+		formatString: 0.00
+		displayFolder: Fundamentals - NASDAQ
+		lineageTag: m100-nasdaq-avg-pe
+
+	measure 'NASDAQ Avg PB' = AVERAGE(nasdaq_100_fundamentals[price_to_book])
+		formatString: 0.00
+		displayFolder: Fundamentals - NASDAQ
+		lineageTag: m102-nasdaq-avg-pb
+
+	measure 'NASDAQ Avg ROE' = AVERAGE(nasdaq_100_fundamentals[return_on_equity])
+		formatString: 0.00%
+		displayFolder: Fundamentals - NASDAQ
+		lineageTag: m103-nasdaq-avg-roe
+
+	measure 'NASDAQ Avg Dividend Yield' = AVERAGE(nasdaq_100_fundamentals[dividend_yield])
+		formatString: 0.00%
+		displayFolder: Fundamentals - NASDAQ
+		lineageTag: m107-nasdaq-avg-div-yield
+
+	measure 'Value Score' =
+			VAR AvgPE = [NSE Avg PE]
+			VAR PE_Score = IF(AvgPE < 15, 50, IF(AvgPE < 25, 30, 0))
+			VAR AvgPB = [NSE Avg PB]
+			VAR PB_Score = IF(AvgPB < 1.5, 50, IF(AvgPB < 3, 30, 0))
+			RETURN PE_Score + PB_Score
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m120-nse-value-score
+
+	measure 'Quality Score' =
+			VAR AvgROE = [NSE Avg ROE]
+			VAR ROE_Score = IF(AvgROE > 0.20, 100, IF(AvgROE > 0.10, 60, 0))
+			RETURN ROE_Score
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m121-nse-quality-score
+
+	measure 'Growth Score' = 100
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m122-nse-growth-score
+
+	measure 'Value Score NASDAQ' =
+			VAR AvgPE = [NASDAQ Avg PE]
+			VAR PE_Score = IF(AvgPE < 20, 50, IF(AvgPE < 35, 30, 0))
+			VAR AvgPB = [NASDAQ Avg PB]
+			VAR PB_Score = IF(AvgPB < 3, 50, IF(AvgPB < 6, 30, 0))
+			RETURN PE_Score + PB_Score
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m123-nasdaq-value-score
+
+	measure 'Quality Score NASDAQ' =
+			VAR AvgROE = [NASDAQ Avg ROE]
+			VAR ROE_Score = IF(AvgROE > 0.25, 100, IF(AvgROE > 0.15, 60, 0))
+			RETURN ROE_Score
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m124-nasdaq-quality-score
+
+	measure 'Growth Score NASDAQ' = 100
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m125-nasdaq-growth-score
+
+	measure 'NSE 52W High' =
+			CALCULATE(
+				MAX(nse_500_hist_data[close_price]),
+				FILTER(
+					ALL(nse_500_hist_data[trading_date]),
+					nse_500_hist_data[trading_date] >= TODAY() - 365
+				)
+			)
+		formatString: 0.00
+		displayFolder: NSE Historical
+		lineageTag: m130-nse-52w-high
+
+	measure 'NSE 52W Low' =
+			CALCULATE(
+				MIN(nse_500_hist_data[close_price]),
+				FILTER(
+					ALL(nse_500_hist_data[trading_date]),
+					nse_500_hist_data[trading_date] >= TODAY() - 365
+				)
+			)
+		formatString: #,##0.00
+		displayFolder: NSE Historical
+		lineageTag: m131-nse-52w-low
+
+	measure 'NSE All Time High' = CALCULATE(MAX(nse_500_hist_data[close_price]), ALL(nse_500_hist_data[trading_date]))
+		formatString: #,##0.00
+		displayFolder: NSE Historical
+		lineageTag: m132-nse-all-time-high
+
+	measure 'NSE All Time Low' = CALCULATE(MIN(nse_500_hist_data[close_price]), ALL(nse_500_hist_data[trading_date]))
+		formatString: #,##0.00
+		displayFolder: NSE Historical
+		lineageTag: m133-nse-all-time-low
+
+	measure 'NASDAQ 52W High' =
+			CALCULATE(
+				MAX(nasdaq_100_hist_data[close_price]),
+				FILTER(
+					ALL(nasdaq_100_hist_data[trading_date]),
+					nasdaq_100_hist_data[trading_date] >= TODAY() - 365
+				)
+			)
+		formatString: #,##0.00
+		displayFolder: NASDAQ Historical
+		lineageTag: m134-nasdaq-52w-high
+
+	measure 'NASDAQ 52W Low' =
+			CALCULATE(
+				MIN(nasdaq_100_hist_data[close_price]),
+				FILTER(
+					ALL(nasdaq_100_hist_data[trading_date]),
+					nasdaq_100_hist_data[trading_date] >= TODAY() - 365
+				)
+			)
+		formatString: #,##0.00
+		displayFolder: NASDAQ Historical
+		lineageTag: m135-nasdaq-52w-low
+
+	measure 'NASDAQ All Time High' = CALCULATE(MAX(nasdaq_100_hist_data[close_price]), ALL(nasdaq_100_hist_data[trading_date]))
+		formatString: #,##0.00
+		displayFolder: NASDAQ Historical
+		lineageTag: m136-nasdaq-all-time-high
+
+	measure 'NASDAQ All Time Low' = CALCULATE(MIN(nasdaq_100_hist_data[close_price]), ALL(nasdaq_100_hist_data[trading_date]))
+		formatString: #,##0.00
+		displayFolder: NASDAQ Historical
+		lineageTag: m137-nasdaq-all-time-low
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [tmp = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"tmp"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

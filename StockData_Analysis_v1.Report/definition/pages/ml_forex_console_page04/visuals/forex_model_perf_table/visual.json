@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "forex_model_perf_table",
+  "position": {
+    "x": 1160,
+    "y": 380,
+    "z": 13,
+    "height": 190,
+    "width": 490,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_model_performance"
+                    }
+                  },
+                  "Property": "currency_pair"
+                }
+              },
+              "queryRef": "forex_model_performance.currency_pair",
+              "nativeQueryRef": "currency_pair"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_model_performance"
+                    }
+                  },
+                  "Property": "cv_accuracy_mean"
+                }
+              },
+              "queryRef": "forex_model_performance.cv_accuracy_mean",
+              "nativeQueryRef": "cv_accuracy_mean"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_model_performance"
+                    }
+                  },
+                  "Property": "train_precision"
+                }
+              },
+              "queryRef": "forex_model_performance.train_precision",
+              "nativeQueryRef": "train_precision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_model_performance"
+                    }
+                  },
+                  "Property": "train_recall"
+                }
+              },
+              "queryRef": "forex_model_performance.train_recall",
+              "nativeQueryRef": "train_recall"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_model_performance"
+                    }
+                  },
+                  "Property": "train_f1"
+                }
+              },
+              "queryRef": "forex_model_performance.train_f1",
+              "nativeQueryRef": "train_f1"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

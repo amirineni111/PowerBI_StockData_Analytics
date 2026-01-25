@@ -1,0 +1,365 @@
+table forex_prediction_features
+	lineageTag: 613bde3d-8b9c-4621-ada9-0fe0560d3c22
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a65afdd-d1b0-4e80-be24-88b38cd253d6
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column prediction_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a9cc2d31-369b-422f-86c7-0cf81716b9b3
+		summarizeBy: none
+		sourceColumn: prediction_date
+
+		variation Variation
+			isDefault
+			relationship: 4831eb00-adac-4d43-b000-fb511f6f0af4
+			defaultHierarchy: LocalDateTable_95c9f299-1b01-4821-b68c-b81611280b15.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_pair
+		dataType: string
+		lineageTag: 3202126f-c909-4e2e-bad7-aa53a6b35de1
+		summarizeBy: none
+		sourceColumn: currency_pair
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_price
+		dataType: double
+		lineageTag: e7b2afff-6d3d-4488-97c6-ede24414047e
+		summarizeBy: sum
+		sourceColumn: open_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column high_price
+		dataType: double
+		lineageTag: fd043ebe-915a-40ef-839e-b005946ea0c9
+		summarizeBy: sum
+		sourceColumn: high_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column low_price
+		dataType: double
+		lineageTag: 76b7c651-a1eb-4396-94ea-b3d2baddf76d
+		summarizeBy: sum
+		sourceColumn: low_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column close_price
+		dataType: double
+		lineageTag: 5081e14f-caae-4ae6-9920-2830e5aea8bc
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column volume
+		dataType: double
+		lineageTag: b5049f4c-4296-4e3b-9da2-1628a2a07c83
+		summarizeBy: sum
+		sourceColumn: volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_5
+		dataType: double
+		lineageTag: 0c3724a9-e951-44ee-a435-8e1234efa200
+		summarizeBy: sum
+		sourceColumn: sma_5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_10
+		dataType: double
+		lineageTag: 8a4cb1fd-d14a-482d-851a-d47f0e6305e7
+		summarizeBy: sum
+		sourceColumn: sma_10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_20
+		dataType: double
+		lineageTag: 205719ba-3148-45d8-bbf7-c60a38951221
+		summarizeBy: sum
+		sourceColumn: sma_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_50
+		dataType: double
+		lineageTag: 5de3410f-0897-48df-bba4-5e0386263332
+		summarizeBy: sum
+		sourceColumn: sma_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_200
+		dataType: double
+		lineageTag: 30b9d929-2b3a-4137-92bb-d3b30ae9ded8
+		summarizeBy: sum
+		sourceColumn: sma_200
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_5
+		dataType: double
+		lineageTag: beaee1b5-8f6c-4c7c-9b30-81fd1e84ac0c
+		summarizeBy: sum
+		sourceColumn: ema_5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_10
+		dataType: double
+		lineageTag: 3d1e6ca5-af7c-4372-afff-ccc91e3a90fb
+		summarizeBy: sum
+		sourceColumn: ema_10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_20
+		dataType: double
+		lineageTag: eabf0ab5-36f6-4a41-b5ff-fa5a27f26133
+		summarizeBy: sum
+		sourceColumn: ema_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_50
+		dataType: double
+		lineageTag: a96c4d9e-6cfa-440a-ba29-16ed3121e710
+		summarizeBy: sum
+		sourceColumn: ema_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_200
+		dataType: double
+		lineageTag: d6e4cf01-076d-41f3-9633-2ffcb5cc4c8f
+		summarizeBy: sum
+		sourceColumn: ema_200
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rsi
+		dataType: double
+		lineageTag: 599cdc83-4e0e-41cc-a062-fe1fdd8d8bd9
+		summarizeBy: sum
+		sourceColumn: rsi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column macd
+		dataType: double
+		lineageTag: 6c69a767-5582-4a3e-b228-ef8147e09df1
+		summarizeBy: sum
+		sourceColumn: macd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column macd_signal
+		dataType: double
+		lineageTag: 51eb4f6d-4a13-4a16-969e-3f7b3be0b070
+		summarizeBy: sum
+		sourceColumn: macd_signal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column macd_histogram
+		dataType: double
+		lineageTag: bf2af9f0-c86e-4624-916d-77fab0033bf2
+		summarizeBy: sum
+		sourceColumn: macd_histogram
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column atr
+		dataType: double
+		lineageTag: 8d30591e-b927-4df0-8e1b-eb83017460e0
+		summarizeBy: sum
+		sourceColumn: atr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bb_upper
+		dataType: double
+		lineageTag: 160a790f-5dcc-4126-b0fe-120283d80581
+		summarizeBy: sum
+		sourceColumn: bb_upper
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bb_middle
+		dataType: double
+		lineageTag: 83260154-2da2-4491-83ce-c8f0a89d27f7
+		summarizeBy: sum
+		sourceColumn: bb_middle
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bb_lower
+		dataType: double
+		lineageTag: ac038641-5cdf-4520-82a5-6bbdf9bc602f
+		summarizeBy: sum
+		sourceColumn: bb_lower
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bb_width
+		dataType: double
+		lineageTag: 529d0821-0a4a-463e-bd6b-90c107452d07
+		summarizeBy: sum
+		sourceColumn: bb_width
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bb_percent
+		dataType: double
+		lineageTag: c3fcbb9e-7389-4d67-b019-5c1f01f75e6f
+		summarizeBy: sum
+		sourceColumn: bb_percent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column daily_return
+		dataType: double
+		lineageTag: acd45b6e-b4c1-438e-9100-16aba310d26f
+		summarizeBy: sum
+		sourceColumn: daily_return
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gap
+		dataType: double
+		lineageTag: cc1d9044-19b7-4600-8583-b69629b21a1b
+		summarizeBy: sum
+		sourceColumn: gap
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column volume_ratio
+		dataType: double
+		lineageTag: 8f429f3b-ed4e-4eea-b891-38de305d1433
+		summarizeBy: sum
+		sourceColumn: volume_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column predicted_signal
+		dataType: string
+		lineageTag: d1f90502-adf1-4a0a-96e9-a62e106ba4d1
+		summarizeBy: none
+		sourceColumn: predicted_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_confidence
+		dataType: double
+		lineageTag: e3aabb82-a48a-491d-8ea1-389fdcfe93ce
+		summarizeBy: sum
+		sourceColumn: signal_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column model_name
+		dataType: string
+		lineageTag: 5202d2bf-bd8b-4fcb-aa1b-0414efb89d1f
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5557fcc8-a908-43f5-9987-5465d4c10a94
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: dbf58060-a539-45b8-b4d0-1de1c007160f
+			defaultHierarchy: LocalDateTable_84e6765b-ef52-4288-bbc7-4d00f3bd9897.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition forex_prediction_features = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_forex_prediction_features = Source{[Schema="dbo",Item="forex_prediction_features"]}[Data]
+				in
+				    dbo_forex_prediction_features
+
+	annotation PBI_ResultType = Table
+

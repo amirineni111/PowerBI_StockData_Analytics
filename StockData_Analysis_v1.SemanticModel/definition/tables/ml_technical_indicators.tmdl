@@ -1,0 +1,341 @@
+table ml_technical_indicators
+	lineageTag: ef1da0af-fcfe-42b1-8aa0-11663f41d332
+
+	column indicator_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ea570b9-f94c-4e3f-9abd-05e711b18b18
+		summarizeBy: none
+		sourceColumn: indicator_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column run_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0991d022-3d59-4f72-9610-945436a8c53f
+		summarizeBy: none
+		sourceColumn: run_timestamp
+
+		variation Variation
+			isDefault
+			relationship: 5aa2ae34-5cd2-4430-8bff-34193dca073b
+			defaultHierarchy: LocalDateTable_f6cfb084-047b-4870-a3c7-5c849a2590bd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d042b63f-678f-4414-9603-a4ba78979630
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		variation Variation
+			isDefault
+			relationship: da2974b8-70ac-4503-8b44-a64fbd84c209
+			defaultHierarchy: LocalDateTable_f404cee7-13eb-4be0-baef-adf9f07dc7e5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ticker
+		dataType: string
+		lineageTag: 590eed33-2200-40e0-8859-5225f3c4e2ca
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column sma_5
+		dataType: double
+		lineageTag: 254b4814-b6d4-46de-a590-f33e47f6c46e
+		summarizeBy: sum
+		sourceColumn: sma_5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_10
+		dataType: double
+		lineageTag: ad568f35-a073-4159-8164-cda1dac58801
+		summarizeBy: sum
+		sourceColumn: sma_10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_20
+		dataType: double
+		lineageTag: 04ac583c-fd47-449f-93d8-51407ec14b16
+		summarizeBy: sum
+		sourceColumn: sma_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_50
+		dataType: double
+		lineageTag: de98eabc-7dd1-4558-bbe4-fe8d8c00a1b0
+		summarizeBy: sum
+		sourceColumn: sma_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_5
+		dataType: double
+		lineageTag: e848c2b2-e8b9-4862-98c8-34eaa0aa1d00
+		summarizeBy: sum
+		sourceColumn: ema_5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_10
+		dataType: double
+		lineageTag: ab85b749-345d-4fdd-828e-0b97b8049b17
+		summarizeBy: sum
+		sourceColumn: ema_10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_20
+		dataType: double
+		lineageTag: 105198de-f110-4d15-8f48-7c18016aca17
+		summarizeBy: sum
+		sourceColumn: ema_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema_50
+		dataType: double
+		lineageTag: 9dc05c02-9ae2-4a8f-a61b-e8ba785959e0
+		summarizeBy: sum
+		sourceColumn: ema_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column macd
+		dataType: double
+		lineageTag: 72c21d6f-c555-4b9e-87c5-d1d0f4388ead
+		summarizeBy: sum
+		sourceColumn: macd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column macd_signal
+		dataType: double
+		lineageTag: 8dc073d3-66f7-43f8-b9e9-3b2a27b9cffd
+		summarizeBy: sum
+		sourceColumn: macd_signal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column macd_histogram
+		dataType: double
+		lineageTag: 1c551520-cd05-4ee2-8683-c162e1c2f1bb
+		summarizeBy: sum
+		sourceColumn: macd_histogram
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column macd_trend
+		dataType: string
+		lineageTag: 57fae4c5-6425-4bb2-a63a-1cdac28433b9
+		summarizeBy: none
+		sourceColumn: macd_trend
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_vs_sma20
+		dataType: double
+		lineageTag: aed29b61-f552-43b1-97f1-418520fa1f03
+		summarizeBy: sum
+		sourceColumn: price_vs_sma20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_vs_sma20_pct
+		dataType: double
+		lineageTag: 93f26df8-95e0-45aa-a649-01cafa761f68
+		summarizeBy: sum
+		sourceColumn: price_vs_sma20_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_vs_sma50
+		dataType: double
+		lineageTag: 6e86652a-4153-4825-9424-77a9178dae67
+		summarizeBy: sum
+		sourceColumn: price_vs_sma50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_vs_sma50_pct
+		dataType: double
+		lineageTag: ec906a09-e06a-4c29-9617-946cd0fcbd37
+		summarizeBy: sum
+		sourceColumn: price_vs_sma50_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_vs_ema20
+		dataType: double
+		lineageTag: f47518f9-a46d-4b52-8f66-72032411c71e
+		summarizeBy: sum
+		sourceColumn: price_vs_ema20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma20_vs_sma50
+		dataType: double
+		lineageTag: 278136e5-e8d2-44a2-8110-a3f80134b213
+		summarizeBy: sum
+		sourceColumn: sma20_vs_sma50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ema20_vs_ema50
+		dataType: double
+		lineageTag: 7782f68c-0bc7-46e9-ac84-c5620eb0bfea
+		summarizeBy: sum
+		sourceColumn: ema20_vs_ema50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trend_direction
+		dataType: string
+		lineageTag: 7fcb3609-0035-4251-928b-0f3b1b1bf665
+		summarizeBy: none
+		sourceColumn: trend_direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column sma5_vs_sma20
+		dataType: double
+		lineageTag: c3d505b6-16b9-45f9-9313-d8057a6d2936
+		summarizeBy: sum
+		sourceColumn: sma5_vs_sma20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column volume_sma_20
+		dataType: double
+		lineageTag: fcfe3b06-f537-4fff-b5a1-fb89f2ae77c9
+		summarizeBy: sum
+		sourceColumn: volume_sma_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column volume_sma_ratio
+		dataType: double
+		lineageTag: 8c784155-d1a0-4399-9876-b43d16a673bc
+		summarizeBy: sum
+		sourceColumn: volume_sma_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_momentum_5
+		dataType: double
+		lineageTag: fc9e9df2-6443-4e3f-a077-6e18cfa25abb
+		summarizeBy: sum
+		sourceColumn: price_momentum_5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_momentum_10
+		dataType: double
+		lineageTag: f1ca3f11-bc47-4859-ad4b-5b2725f1e179
+		summarizeBy: sum
+		sourceColumn: price_momentum_10
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rsi_momentum
+		dataType: double
+		lineageTag: 0781d672-fb01-498d-bf93-463a2f0e8bec
+		summarizeBy: sum
+		sourceColumn: rsi_momentum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column daily_volatility
+		dataType: double
+		lineageTag: f5ca055d-5c86-4856-9dfa-48ed9ac449aa
+		summarizeBy: sum
+		sourceColumn: daily_volatility
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4986503d-efb0-4edb-9480-691a2962f760
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: a6319b6d-304d-4ca0-b2f1-ffde67abd3fe
+			defaultHierarchy: LocalDateTable_3b140679-2cf6-4543-8d3b-b68cce56a72e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ml_technical_indicators = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_ml_technical_indicators = Source{[Schema="dbo",Item="ml_technical_indicators"]}[Data]
+				in
+				    dbo_ml_technical_indicators
+
+	annotation PBI_ResultType = Table
+

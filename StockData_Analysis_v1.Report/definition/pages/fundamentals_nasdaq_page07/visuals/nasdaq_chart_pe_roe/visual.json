@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "nasdaq_chart_pe_roe",
+  "position": {
+    "x": 20,
+    "y": 650,
+    "z": 12,
+    "height": 320,
+    "width": 600,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.ticker",
+              "nativeQueryRef": "ticker",
+              "active": true
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "nasdaq_100_fundamentals"
+                        }
+                      },
+                      "Property": "trailing_pe"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(nasdaq_100_fundamentals.trailing_pe)",
+              "nativeQueryRef": "trailing_pe",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "nasdaq_100_fundamentals"
+                        }
+                      },
+                      "Property": "return_on_equity"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(nasdaq_100_fundamentals.return_on_equity)",
+              "nativeQueryRef": "return_on_equity"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

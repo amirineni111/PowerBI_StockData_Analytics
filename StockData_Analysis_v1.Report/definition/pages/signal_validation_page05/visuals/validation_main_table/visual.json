@@ -1,0 +1,178 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "validation_main_table",
+  "position": {
+    "x": 20,
+    "y": 190,
+    "z": 10,
+    "height": 420,
+    "width": 1100,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "signal_tracking_history.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_date"
+                }
+              },
+              "queryRef": "signal_tracking_history.signal_date",
+              "nativeQueryRef": "signal_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_type"
+                }
+              },
+              "queryRef": "signal_tracking_history.signal_type",
+              "nativeQueryRef": "signal_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_price"
+                }
+              },
+              "queryRef": "signal_tracking_history.signal_price",
+              "nativeQueryRef": "signal_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_price_7d"
+                }
+              },
+              "queryRef": "signal_tracking_history.actual_price_7d",
+              "nativeQueryRef": "actual_price_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_change_7d"
+                }
+              },
+              "queryRef": "signal_tracking_history.actual_change_7d",
+              "nativeQueryRef": "actual_change_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "result_7d"
+                }
+              },
+              "queryRef": "signal_tracking_history.result_7d",
+              "nativeQueryRef": "result_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_change_14d"
+                }
+              },
+              "queryRef": "signal_tracking_history.actual_change_14d",
+              "nativeQueryRef": "actual_change_14d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "result_14d"
+                }
+              },
+              "queryRef": "signal_tracking_history.result_14d",
+              "nativeQueryRef": "result_14d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_change_30d"
+                }
+              },
+              "queryRef": "signal_tracking_history.actual_change_30d",
+              "nativeQueryRef": "actual_change_30d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "result_30d"
+                }
+              },
+              "queryRef": "signal_tracking_history.result_30d",
+              "nativeQueryRef": "result_30d"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

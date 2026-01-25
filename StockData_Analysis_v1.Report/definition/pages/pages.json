@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+  "pageOrder": [
+    "executive_summary_page08",
+    "ai_overview_page01",
+    "ai_accuracy_page02",
+    "140f6e64259e09a02495",
+    "5c530e50aa23888024a8",
+    "ab9a69fb2d0b83207c5a",
+    "ml_daily_scanner_page03",
+    "ml_forex_console_page04",
+    "signal_validation_page05",
+    "fundamentals_nse_page06",
+    "fundamentals_nasdaq_page07",
+    "cbc6d5b4a9a6ad520042",
+    "44e5cf020080b7611dbe"
+  ],
+  "activePageName": "cbc6d5b4a9a6ad520042"
+}

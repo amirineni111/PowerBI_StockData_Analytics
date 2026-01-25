@@ -1,0 +1,74 @@
+table nse_500
+	lineageTag: 0c28f852-a6e9-4971-8bb4-482a7409c793
+
+	column ticker
+		dataType: string
+		lineageTag: 350bcb97-5354-4265-a4a5-5e8dbfbecc03
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: 6fa3e731-7d71-44ab-8679-4a0159a1fc30
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column monitor_startdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fa0f4b1b-d95c-4718-ae4e-2e249f7a7589
+		summarizeBy: none
+		sourceColumn: monitor_startdate
+
+		variation Variation
+			isDefault
+			relationship: 1ec43037-9a37-4194-8b2d-530f0999ef2a
+			defaultHierarchy: LocalDateTable_76b7e245-6695-4ff8-a994-36c63e417384.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column monitor_enddate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 14ae5c15-d195-4f60-9e9e-2ba2f9d6d547
+		summarizeBy: none
+		sourceColumn: monitor_enddate
+
+		variation Variation
+			isDefault
+			relationship: d785a5f3-d30a-42f4-bb64-95e14185240b
+			defaultHierarchy: LocalDateTable_dc323ef4-c91b-4fd5-b8de-faea55dd7b3b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments
+		dataType: string
+		lineageTag: 8d7a2b09-6f5a-4830-90e7-683ae072b3ad
+		summarizeBy: none
+		sourceColumn: comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column process_flag
+		dataType: string
+		lineageTag: 5426e46b-2a9b-4f2c-8431-2a7dd0d32539
+		summarizeBy: none
+		sourceColumn: process_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition nse_500 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500 = Source{[Schema="dbo",Item="nse_500"]}[Data]
+				in
+				    dbo_nse_500
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "forex_chart_model_perf",
+  "position": {
+    "x": 1010,
+    "y": 580,
+    "z": 16,
+    "height": 380,
+    "width": 640,
+    "tabOrder": 16
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_model_performance"
+                    }
+                  },
+                  "Property": "currency_pair"
+                }
+              },
+              "queryRef": "forex_model_performance.currency_pair",
+              "nativeQueryRef": "currency_pair",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "forex_model_performance"
+                        }
+                      },
+                      "Property": "cv_accuracy_mean"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(forex_model_performance.cv_accuracy_mean)",
+              "nativeQueryRef": "cv_accuracy_mean"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "forex_model_performance"
+                        }
+                      },
+                      "Property": "train_f1"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(forex_model_performance.train_f1)",
+              "nativeQueryRef": "train_f1"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

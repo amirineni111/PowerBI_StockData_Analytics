@@ -1,0 +1,266 @@
+relationship 1ec43037-9a37-4194-8b2d-530f0999ef2a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nse_500.monitor_startdate
+	toColumn: LocalDateTable_76b7e245-6695-4ff8-a994-36c63e417384.Date
+
+relationship d785a5f3-d30a-42f4-bb64-95e14185240b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nse_500.monitor_enddate
+	toColumn: LocalDateTable_dc323ef4-c91b-4fd5-b8de-faea55dd7b3b.Date
+
+relationship 1842f2bf-6f3f-4100-9a96-3f6d2b618893
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nse_500_fundamentals.fetch_date
+	toColumn: LocalDateTable_24386cef-20ea-4108-acf2-0e6a94cd5c36.Date
+
+relationship 66ba47a5-7d40-4203-a067-47bde8a9ccad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nse_500_hist_data.trading_date
+	toColumn: LocalDateTable_f4c7f69d-5916-427a-a293-9074532b2af0.Date
+
+relationship 1c632e78-f1f2-45e0-a809-33c42727fb05
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nasdaq_100_hist_data.trading_date
+	toColumn: LocalDateTable_79f48471-0030-431b-8fa6-4870f889b2ac.Date
+
+relationship 97a7c12f-d005-4da8-893f-1a1b627b61af
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nasdaq_100_fundamentals.fetch_date
+	toColumn: LocalDateTable_e2b02a55-ec8d-4968-bc79-9151e1c4d4d5.Date
+
+relationship d4863403-ce1e-4cdd-923f-d5ef63d64980
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nasdaq_top100.monitor_startdate
+	toColumn: LocalDateTable_76c514c0-6132-496b-a41c-d5813ee29a30.Date
+
+relationship d35856ef-51a7-428d-a105-0bc315e1518f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nasdaq_top100.monitor_enddate
+	toColumn: LocalDateTable_35e2224c-f8fb-458f-a63a-f17a526772be.Date
+
+relationship 777098d2-b45c-42f0-b789-6d9a9511bc06
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_trading_predictions.run_timestamp
+	toColumn: LocalDateTable_97b56758-c151-43bd-8018-91cab4522659.Date
+
+relationship 1a6ee736-d976-44ef-b717-0da3128e9f67
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_trading_predictions.trading_date
+	toColumn: LocalDateTable_bb1eb369-39b3-4a03-b07d-e3e3f89c4e9c.Date
+
+relationship 68f5a82d-243f-4d78-99cb-3e565e5ccc00
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_trading_predictions.created_at
+	toColumn: LocalDateTable_948c6929-2102-4a5d-a74b-83c67818abd3.Date
+
+relationship 5aa2ae34-5cd2-4430-8bff-34193dca073b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_technical_indicators.run_timestamp
+	toColumn: LocalDateTable_f6cfb084-047b-4870-a3c7-5c849a2590bd.Date
+
+relationship da2974b8-70ac-4503-8b44-a64fbd84c209
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_technical_indicators.trading_date
+	toColumn: LocalDateTable_f404cee7-13eb-4be0-baef-adf9f07dc7e5.Date
+
+relationship a6319b6d-304d-4ca0-b2f1-ffde67abd3fe
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_technical_indicators.created_at
+	toColumn: LocalDateTable_3b140679-2cf6-4543-8d3b-b68cce56a72e.Date
+
+relationship 34a7d9e9-9104-41c8-97a6-dced9dc639c4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_trading_predictions.run_timestamp
+	toColumn: LocalDateTable_5514c05e-7d74-43d2-a113-8fd53b5bb633.Date
+
+relationship f3662229-9f7e-4602-b095-36b52d63d83b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_trading_predictions.trading_date
+	toColumn: LocalDateTable_c25e166b-ae19-4626-88e5-edd3c9a4d110.Date
+
+relationship 285d3848-11c1-4d8e-8346-7ac66f4804c4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_trading_predictions.created_at
+	toColumn: LocalDateTable_c2cb803c-0f13-4205-b06d-47dd51232c40.Date
+
+relationship 21ebf1fb-08b4-46c9-a535-f6fe9bc0b5c0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_trading_predictions.updated_at
+	toColumn: LocalDateTable_b9f70ee4-de1b-4e56-a5db-123b7487f351.Date
+
+relationship f05b9e99-3148-4260-b056-2f694064681b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_technical_indicators.run_timestamp
+	toColumn: LocalDateTable_e3cb46d5-8363-4e53-94d8-586be046f9ca.Date
+
+relationship 383ed8b5-26de-446c-98a7-02a20f1e2390
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_technical_indicators.trading_date
+	toColumn: LocalDateTable_cb840aac-2c7a-43bd-bf23-eeddafd5d93a.Date
+
+relationship b8229355-db4d-4bda-92c9-d483a1b2b16b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_technical_indicators.created_at
+	toColumn: LocalDateTable_0a10dd10-3bcb-4d66-be96-f6562d7d8d08.Date
+
+relationship 9be0044a-3634-4739-99a3-26444fb24987
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_predict_summary.run_timestamp
+	toColumn: LocalDateTable_957b68cf-38d0-468e-8f7d-d9b8994019ad.Date
+
+relationship 52a1467c-4114-4c6d-b863-1b50874b455a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_predict_summary.analysis_date
+	toColumn: LocalDateTable_258ba0a6-3116-4110-8ec8-7072a89fa65c.Date
+
+relationship 66939027-3d26-45f9-b8f2-d0027d179bad
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_nse_predict_summary.created_at
+	toColumn: LocalDateTable_74b42f87-015a-4425-9f32-cd9bbb9c7b5b.Date
+
+relationship f6c262e9-b35b-489e-9b45-263351973261
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_ml_predictions.prediction_date
+	toColumn: LocalDateTable_4af339ce-c764-4b36-b8e6-7923ce2f9384.Date
+
+relationship 90ab45dc-6715-4e9f-9cec-2bd3af11ce99
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_ml_predictions.date_time
+	toColumn: LocalDateTable_05a5c145-53b1-4218-9820-b99a7f9ed8c2.Date
+
+relationship 0b75d637-2da4-4162-9e0e-ca8a7d15006b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_ml_predictions.created_at
+	toColumn: LocalDateTable_1ffb153f-a84d-4df2-ac42-f92212b10fec.Date
+
+relationship 005d8f43-f5c3-4edc-8df4-8baf2ac64c59
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_master.monitor_startdate
+	toColumn: LocalDateTable_848ab546-5a2d-4832-bedb-65a1494f03cd.Date
+
+relationship 36a67f8e-5074-491a-b916-59f39639b578
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_master.monitor_enddate
+	toColumn: LocalDateTable_97a3a0fb-b8fd-4526-8cba-b54104bf0265.Date
+
+relationship 52e419ed-56be-4b4e-8f40-46a153722f51
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_model_performance.training_date
+	toColumn: LocalDateTable_8f148452-9c3d-443b-8b01-7ec2bd914b8c.Date
+
+relationship 4831eb00-adac-4d43-b000-fb511f6f0af4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_prediction_features.prediction_date
+	toColumn: LocalDateTable_95c9f299-1b01-4821-b68c-b81611280b15.Date
+
+relationship dbf58060-a539-45b8-b4d0-1de1c007160f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_prediction_features.created_at
+	toColumn: LocalDateTable_84e6765b-ef52-4288-bbc7-4d00f3bd9897.Date
+
+relationship 6ce36ed1-7cd8-43eb-b2bc-7c02fa045faa
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ai_prediction_history.prediction_date
+	toColumn: LocalDateTable_1d02fcb9-c1fc-4608-9e83-510d43626979.Date
+
+relationship 1625b0a9-e7ca-4bac-9918-d42cb224c94d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ai_prediction_history.target_date
+	toColumn: LocalDateTable_d3a54b76-5921-45c4-9518-4f5c60ee6783.Date
+
+relationship 8f370491-bbf0-40f3-9ffa-0f6b89694c28
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ai_prediction_history.created_at
+	toColumn: LocalDateTable_09088aec-3f00-458b-81f3-64f0303d15a8.Date
+
+relationship 59ab65b1-0d76-479d-aa56-301ee639f768
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ai_prediction_history.updated_at
+	toColumn: LocalDateTable_3b53b412-8d02-4725-8f4b-1228b9795255.Date
+
+relationship eae1f13f-065f-4367-aa54-4e5bdfa90d63
+	joinOnDateBehavior: datePartOnly
+	fromColumn: signal_tracking_history.signal_date
+	toColumn: LocalDateTable_39ddb334-b292-4369-ac24-e39157e42bb9.Date
+
+relationship 8681198e-0d7a-4455-9c30-e1d1372b2f90
+	joinOnDateBehavior: datePartOnly
+	fromColumn: signal_tracking_history.target_date_7d
+	toColumn: LocalDateTable_d8a3b708-c132-432b-a88b-5cbb21573674.Date
+
+relationship d1d13336-e94a-4395-a780-8dadb9f53ee5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: signal_tracking_history.target_date_14d
+	toColumn: LocalDateTable_3a9a7d14-e0dc-4e07-a42f-067ea92c4e33.Date
+
+relationship 7ea5aba4-1382-4f02-96b2-65541bdfe942
+	joinOnDateBehavior: datePartOnly
+	fromColumn: signal_tracking_history.target_date_30d
+	toColumn: LocalDateTable_8dbb7430-bafd-436e-9c3d-7d6cbcbac959.Date
+
+relationship 7ee7d110-bf97-4ad2-88c1-05a8d4d0d237
+	joinOnDateBehavior: datePartOnly
+	fromColumn: signal_tracking_history.created_at
+	toColumn: LocalDateTable_9a20ff69-93f2-445f-8e52-01a4b1acbdc6.Date
+
+relationship 251b9027-1010-4ddc-ab19-84a573efea7e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: signal_tracking_history.updated_at
+	toColumn: LocalDateTable_ad0020a8-c521-4f5f-8597-71d07681ce28.Date
+
+relationship AutoDetected_e8688a07-e180-46f7-b379-de739ab3ed5d
+	fromColumn: nse_500_fundamentals.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_82fc9e70-1a11-4968-8301-c8aaeab080b9
+	fromColumn: nse_500_hist_data.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_32ee4020-bd5e-4d30-bf21-e17932f6edd4
+	fromColumn: ml_nse_trading_predictions.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_c5c190fc-e98f-4a09-963a-9dc521a5a406
+	fromColumn: ml_nse_technical_indicators.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_c34b4768-5125-44c4-a356-3571dbd351fd
+	fromColumn: ai_prediction_history.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_45095e0d-1651-462d-8eef-89aae49564a4
+	fromColumn: signal_tracking_history.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_e5fe00a5-97f6-482c-8fb9-37cdae1c3bc3
+	fromColumn: nasdaq_100_hist_data.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_bc29ae59-bfba-4fe7-aaf3-ee04f10b3d16
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: nasdaq_100_fundamentals.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_e0f5f496-b0a4-4332-9c90-2bc3d9069965
+	fromColumn: ml_trading_predictions.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_532f5e09-31bd-4b20-8e6c-d84931ee1d9f
+	fromColumn: ml_technical_indicators.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_01ef010d-fd6e-469d-bfff-3482af24285e
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: ml_technical_indicators.indicator_id
+	toColumn: ml_nse_technical_indicators.indicator_id
+
+relationship 557b4597-8ef5-6a95-082a-1d76474022f8
+	fromColumn: ai_prediction_history.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship e05ee2d8-d23b-383e-e77c-13f94c626278
+	fromColumn: ai_prediction_history.ticker
+	toColumn: forex_master.symbol
+

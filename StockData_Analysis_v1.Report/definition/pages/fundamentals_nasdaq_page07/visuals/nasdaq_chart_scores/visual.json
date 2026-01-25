@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "nasdaq_chart_scores",
+  "position": {
+    "x": 1260,
+    "y": 650,
+    "z": 14,
+    "height": 320,
+    "width": 640,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Value Score NASDAQ"
+                }
+              },
+              "queryRef": "_Measures.Value Score NASDAQ",
+              "nativeQueryRef": "Value Score NASDAQ"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Quality Score NASDAQ"
+                }
+              },
+              "queryRef": "_Measures.Quality Score NASDAQ",
+              "nativeQueryRef": "Quality Score NASDAQ"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Growth Score NASDAQ"
+                }
+              },
+              "queryRef": "_Measures.Growth Score NASDAQ",
+              "nativeQueryRef": "Growth Score NASDAQ"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

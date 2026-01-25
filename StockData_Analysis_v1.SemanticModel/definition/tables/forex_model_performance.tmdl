@@ -1,0 +1,146 @@
+table forex_model_performance
+	lineageTag: 3bf8ead7-4a4b-40a9-badc-3794f1d1dc92
+
+	column model_name
+		dataType: string
+		lineageTag: b86a221a-f858-485f-9add-7b3bb7cdcf2e
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_pair
+		dataType: string
+		lineageTag: d561e028-c05d-476b-8c9d-688f015e0153
+		summarizeBy: none
+		sourceColumn: currency_pair
+
+		annotation SummarizationSetBy = Automatic
+
+	column training_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 42be3669-6307-4e9d-a2f5-09b2e9775aec
+		summarizeBy: none
+		sourceColumn: training_date
+
+		variation Variation
+			isDefault
+			relationship: 52e419ed-56be-4b4e-8f40-46a153722f51
+			defaultHierarchy: LocalDateTable_8f148452-9c3d-443b-8b01-7ec2bd914b8c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column cv_accuracy_mean
+		dataType: double
+		lineageTag: 0506ef3f-d745-496f-913e-72704ad0a460
+		summarizeBy: sum
+		sourceColumn: cv_accuracy_mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cv_accuracy_std
+		dataType: double
+		lineageTag: 9f617298-3dd3-4edb-99c1-1b1dc61d1170
+		summarizeBy: sum
+		sourceColumn: cv_accuracy_std
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column train_accuracy
+		dataType: double
+		lineageTag: ec185523-4c5d-49e6-839c-75c2b898bec1
+		summarizeBy: sum
+		sourceColumn: train_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column train_precision
+		dataType: double
+		lineageTag: cd89fcb0-7e8f-49c0-bc39-bb9d85b4b145
+		summarizeBy: sum
+		sourceColumn: train_precision
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column train_recall
+		dataType: double
+		lineageTag: 2c28a8ca-832e-4dde-b4c1-57938761de7d
+		summarizeBy: sum
+		sourceColumn: train_recall
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column train_f1
+		dataType: double
+		lineageTag: 87968511-21fb-4a27-b4d4-e9fef7ca1ded
+		summarizeBy: sum
+		sourceColumn: train_f1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column train_auc
+		dataType: string
+		lineageTag: 74be63e7-9ea5-45d1-abb6-ad795a825a4b
+		summarizeBy: none
+		sourceColumn: train_auc
+
+		annotation SummarizationSetBy = Automatic
+
+	column training_samples
+		dataType: int64
+		formatString: 0
+		lineageTag: d8d91261-c503-4f4a-9dd3-354cb9e29345
+		summarizeBy: sum
+		sourceColumn: training_samples
+
+		annotation SummarizationSetBy = Automatic
+
+	column features_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e04d846-23b7-4752-9344-2be3265431be
+		summarizeBy: sum
+		sourceColumn: features_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_type
+		dataType: string
+		lineageTag: fb64b224-4ab2-47b0-a1eb-b4248daea9bc
+		summarizeBy: none
+		sourceColumn: signal_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_params
+		dataType: string
+		lineageTag: 30af38b5-86df-4c3a-8f68-55d53123c2b6
+		summarizeBy: none
+		sourceColumn: model_params
+
+		annotation SummarizationSetBy = Automatic
+
+	partition forex_model_performance = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_forex_model_performance = Source{[Schema="dbo",Item="forex_model_performance"]}[Data]
+				in
+				    dbo_forex_model_performance
+
+	annotation PBI_ResultType = Table
+

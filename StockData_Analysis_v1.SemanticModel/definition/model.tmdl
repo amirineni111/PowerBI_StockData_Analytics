@@ -17,13 +17,11 @@ ref table DateTableTemplate_2fa248e3-4cf2-41a3-aa0c-8f4592e52996
 ref table LocalDateTable_76b7e245-6695-4ff8-a994-36c63e417384
 ref table LocalDateTable_dc323ef4-c91b-4fd5-b8de-faea55dd7b3b
 ref table nse_500_fundamentals
-ref table LocalDateTable_24386cef-20ea-4108-acf2-0e6a94cd5c36
 ref table nse_500_hist_data
 ref table LocalDateTable_f4c7f69d-5916-427a-a293-9074532b2af0
 ref table nasdaq_100_hist_data
 ref table LocalDateTable_79f48471-0030-431b-8fa6-4870f889b2ac
 ref table nasdaq_100_fundamentals
-ref table LocalDateTable_e2b02a55-ec8d-4968-bc79-9151e1c4d4d5
 ref table nasdaq_top100
 ref table LocalDateTable_76c514c0-6132-496b-a41c-d5813ee29a30
 ref table LocalDateTable_35e2224c-f8fb-458f-a63a-f17a526772be
@@ -94,6 +92,8 @@ ref table LocalDateTable_a177d766-6447-4f76-82fa-a925bee2cd5b
 ref table LocalDateTable_5a689686-296e-40b7-a1ec-35c0ee581f4b
 ref table vw_PowerBI_AI_Technical_Combos
 ref table LocalDateTable_17f464a0-9c26-439e-948c-ebf21aa74f5e
+ref table Date_tbl
+ref table LocalDateTable_235b48d0-46bf-4c86-951b-3edf6b085232
 
 ref cultureInfo en-US
 

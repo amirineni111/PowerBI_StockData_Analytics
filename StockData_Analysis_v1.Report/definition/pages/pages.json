@@ -2,6 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
   "pageOrder": [
     "executive_summary_page08",
+    "fund_master_scoring",
+    "fund_value_stocks",
+    "fund_quality_stocks",
+    "fund_growth_stocks",
+    "fund_dividend_stocks",
+    "fund_garp_strategy",
     "ai_overview_page01",
     "ai_accuracy_page02",
     "140f6e64259e09a02495",
@@ -23,5 +29,5 @@
     "02aff517d4007f28dc16",
     "78c327e59f3b3e0b7859"
   ],
-  "activePageName": "78c327e59f3b3e0b7859"
+  "activePageName": "fund_master_scoring"
 }

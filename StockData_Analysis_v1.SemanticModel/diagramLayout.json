@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 2035,
+        "x": 4225.0006529110306,
         "y": 0
       },
       "nodes": [
@@ -244,18 +244,6 @@
         },
         {
           "location": {
-            "x": 3405.0006529110306,
-            "y": 441.4877645523452
-          },
-          "nodeIndex": "vw_PowerBI_DailySummary_strategy1",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
             "x": 3689.0006529110306,
             "y": 479.4877645523452
           },
@@ -274,18 +262,6 @@
           "nodeIndex": "vw_PowerBI_HistoricalTrend_strategy1",
           "size": {
             "height": 300,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 4257.0006529110306,
-            "y": 467.4877645523452
-          },
-          "nodeIndex": "vw_PowerBI_IndicatorStats_strategy1",
-          "size": {
-            "height": 248,
             "width": 234
           },
           "zIndex": 0
@@ -329,13 +305,12 @@
         },
         {
           "location": {
-            "x": 5343.0006529110306,
-            "y": 441.4877645523452
+            "x": 5293.0006529110306,
+            "y": 491.4877645523452
           },
-          "nodeIndex": "vw_PowerBI_Tier_Performance",
-          "nodeLineageTag": "045ac23b-12cd-4cd9-99c7-6c4feea51555",
+          "nodeIndex": "Date_tbl",
           "size": {
-            "height": 300,
+            "height": 200,
             "width": 234
           },
           "zIndex": 0

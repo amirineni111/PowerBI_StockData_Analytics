@@ -8,11 +8,6 @@ relationship d785a5f3-d30a-42f4-bb64-95e14185240b
 	fromColumn: nse_500.monitor_enddate
 	toColumn: LocalDateTable_dc323ef4-c91b-4fd5-b8de-faea55dd7b3b.Date
 
-relationship 1842f2bf-6f3f-4100-9a96-3f6d2b618893
-	joinOnDateBehavior: datePartOnly
-	fromColumn: nse_500_fundamentals.fetch_date
-	toColumn: LocalDateTable_24386cef-20ea-4108-acf2-0e6a94cd5c36.Date
-
 relationship 66ba47a5-7d40-4203-a067-47bde8a9ccad
 	joinOnDateBehavior: datePartOnly
 	fromColumn: nse_500_hist_data.trading_date
@@ -22,11 +17,6 @@ relationship 1c632e78-f1f2-45e0-a809-33c42727fb05
 	joinOnDateBehavior: datePartOnly
 	fromColumn: nasdaq_100_hist_data.trading_date
 	toColumn: LocalDateTable_79f48471-0030-431b-8fa6-4870f889b2ac.Date
-
-relationship 97a7c12f-d005-4da8-893f-1a1b627b61af
-	joinOnDateBehavior: datePartOnly
-	fromColumn: nasdaq_100_fundamentals.fetch_date
-	toColumn: LocalDateTable_e2b02a55-ec8d-4968-bc79-9151e1c4d4d5.Date
 
 relationship d4863403-ce1e-4cdd-923f-d5ef63d64980
 	joinOnDateBehavior: datePartOnly
@@ -350,4 +340,17 @@ relationship fa326887-6fd5-46e9-b683-c83e75192cdd
 relationship AutoDetected_f46259e9-ee02-460b-85a2-d23638dbb428
 	fromColumn: vw_PowerBI_AI_Technical_Combos.signal_id
 	toColumn: signal_tracking_history.signal_id
+
+relationship 7b8748c1-8538-4024-931b-25deb896987a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date_tbl.Date
+	toColumn: LocalDateTable_235b48d0-46bf-4c86-951b-3edf6b085232.Date
+
+relationship 79062177-0574-9547-9880-1f354f69bed0
+	fromColumn: nse_500_fundamentals.fetch_date
+	toColumn: Date_tbl.Date
+
+relationship 8fd12337-7cac-c29e-66bf-03c156782654
+	fromColumn: nasdaq_100_fundamentals.fetch_date
+	toColumn: Date_tbl.Date
 

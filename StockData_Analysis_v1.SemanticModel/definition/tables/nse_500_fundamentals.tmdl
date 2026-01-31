@@ -19,19 +19,16 @@ table nse_500_fundamentals
 
 	column fetch_date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: 6a61c28a-7000-4370-933a-d13ba5da3f4c
 		summarizeBy: none
 		sourceColumn: fetch_date
 
-		variation Variation
-			isDefault
-			relationship: 1842f2bf-6f3f-4100-9a96-3f6d2b618893
-			defaultHierarchy: LocalDateTable_24386cef-20ea-4108-acf2-0e6a94cd5c36.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column market_cap
 		dataType: int64

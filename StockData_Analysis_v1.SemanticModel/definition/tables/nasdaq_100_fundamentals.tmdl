@@ -19,19 +19,16 @@ table nasdaq_100_fundamentals
 
 	column fetch_date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: 1e98fa52-1469-43d1-8907-623a310e0718
 		summarizeBy: none
 		sourceColumn: fetch_date
 
-		variation Variation
-			isDefault
-			relationship: 97a7c12f-d005-4da8-893f-1a1b627b61af
-			defaultHierarchy: LocalDateTable_e2b02a55-ec8d-4968-bc79-9151e1c4d4d5.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column market_cap
 		dataType: int64

@@ -61,6 +61,52 @@ table nasdaq_top100
 
 		annotation SummarizationSetBy = Automatic
 
+	column sector
+		dataType: string
+		lineageTag: 0639eb47-8c87-4b4f-bf21-b622a6e938c1
+		summarizeBy: none
+		sourceColumn: sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: f425f692-126b-4007-bfb2-1a20f57d141b
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_industry
+		dataType: string
+		lineageTag: 9fc9f3ff-ceb1-4b18-9e48-c03190066f1d
+		summarizeBy: none
+		sourceColumn: sub_industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_summary
+		dataType: string
+		lineageTag: 0fc1c395-3055-4477-ac35-62f0a258f7fa
+		summarizeBy: none
+		sourceColumn: business_summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b36039bf-de72-4efb-a9b5-b338a739d6f6
+		summarizeBy: none
+		sourceColumn: last_updated
+
+		variation Variation
+			isDefault
+			relationship: 2c0ea665-f473-47bc-bb18-a5cc90551cf1
+			defaultHierarchy: LocalDateTable_5a689686-296e-40b7-a1ec-35c0ee581f4b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition nasdaq_top100 = m
 		mode: import
 		source =

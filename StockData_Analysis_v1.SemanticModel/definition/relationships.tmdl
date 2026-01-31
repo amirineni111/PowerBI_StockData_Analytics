@@ -238,7 +238,6 @@ relationship AutoDetected_e5fe00a5-97f6-482c-8fb9-37cdae1c3bc3
 
 relationship AutoDetected_bc29ae59-bfba-4fe7-aaf3-ee04f10b3d16
 	crossFilteringBehavior: bothDirections
-	fromCardinality: one
 	fromColumn: nasdaq_100_fundamentals.ticker
 	toColumn: nasdaq_top100.ticker
 
@@ -263,4 +262,92 @@ relationship 557b4597-8ef5-6a95-082a-1d76474022f8
 relationship e05ee2d8-d23b-383e-e77c-13f94c626278
 	fromColumn: ai_prediction_history.ticker
 	toColumn: forex_master.symbol
+
+relationship d25b9664-2082-4725-baa7-df8253fcac85
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_DataFreshness_strategy1.latest_date
+	toColumn: LocalDateTable_7e0fb96d-2a5b-4f99-9c21-ed4915b5b755.Date
+
+relationship 8aab1511-1e2d-4245-b2b1-69342dbe61dc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_DataFreshness_strategy1.last_updated
+	toColumn: LocalDateTable_a08583eb-6818-403a-8657-8998cf8b952c.Date
+
+relationship 6ada7125-9f3c-4c27-9bed-fdb740ea39e9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_HistoricalTrend_strategy1.prediction_date
+	toColumn: LocalDateTable_17047990-9ba8-426c-a463-caaadf652375.Date
+
+relationship 68bea5ea-c3ff-4401-9ed2-857548ba4da5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_Opportunities_strategy1.report_date
+	toColumn: LocalDateTable_4fbe4123-e12c-47db-96c1-fe0675ca6e64.Date
+
+relationship 4b0ebf60-70d8-4cd7-b5fa-dba4b8dc14c8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_Opportunities_strategy1.prediction_date
+	toColumn: LocalDateTable_7309b863-84cc-4254-a08c-24e2b60d7512.Date
+
+relationship 65df4b7b-3485-4352-aac5-361884dd31a9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_Opportunities_strategy1.ai_target_date
+	toColumn: LocalDateTable_3558cabb-b3a5-43bb-a03f-52a61cd40a91.Date
+
+relationship faa5d111-b197-4226-96de-b18a2ac735c7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_Opportunities_strategy1.signal_date
+	toColumn: LocalDateTable_8143d2f5-42c3-4e70-82e0-c558c9424a02.Date
+
+relationship de0ab758-a39e-490c-9aec-e4a748f23116
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_Opportunities_strategy1.tech_target_7d
+	toColumn: LocalDateTable_f8cff596-23e2-445e-8cea-1905a1619888.Date
+
+relationship 960b1177-e81c-4e21-a6d2-e08cb9a3ca3c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_Opportunities_strategy1.target_date_14d
+	toColumn: LocalDateTable_d305afff-e758-4be0-af38-d94cace01f75.Date
+
+relationship be61febb-0071-4899-b47b-6a9f9510ad03
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_Opportunities_strategy1.target_date_30d
+	toColumn: LocalDateTable_fcf18a8e-0fcd-448f-b4a1-8db556683fb4.Date
+
+relationship 1fa07ae9-a75f-41a1-80f8-530fea5a7945
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_Opportunities_strategy1.last_updated
+	toColumn: LocalDateTable_efcb4713-25fc-4ffc-838a-49e2e329b199.Date
+
+relationship 18a8d845-86e5-489c-ae93-e0810ff5df1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_TopTickers_strategy1.first_prediction
+	toColumn: LocalDateTable_2c032778-2be2-4696-851b-f1c630328a67.Date
+
+relationship ef4223f8-790e-424e-a29b-0c28b09fa1da
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_TopTickers_strategy1.last_prediction
+	toColumn: LocalDateTable_1253e5d7-690d-4bac-8f58-14b3b83b0b47.Date
+
+relationship AutoDetected_d8c4594a-2f4e-40f7-b29b-2cd94d673859
+	fromColumn: vw_PowerBI_Opportunities_strategy1.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship 221b9d2d-df33-4a59-859b-2f11f62ca27a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nse_500.last_updated
+	toColumn: LocalDateTable_a177d766-6447-4f76-82fa-a925bee2cd5b.Date
+
+relationship 2c0ea665-f473-47bc-bb18-a5cc90551cf1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: nasdaq_top100.last_updated
+	toColumn: LocalDateTable_5a689686-296e-40b7-a1ec-35c0ee581f4b.Date
+
+relationship fa326887-6fd5-46e9-b683-c83e75192cdd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_PowerBI_AI_Technical_Combos.signal_date
+	toColumn: LocalDateTable_17f464a0-9c26-439e-948c-ebf21aa74f5e.Date
+
+relationship AutoDetected_f46259e9-ee02-460b-85a2-d23638dbb428
+	fromColumn: vw_PowerBI_AI_Technical_Combos.signal_id
+	toColumn: signal_tracking_history.signal_id
 

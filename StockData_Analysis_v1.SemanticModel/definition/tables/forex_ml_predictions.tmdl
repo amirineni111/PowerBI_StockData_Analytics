@@ -78,13 +78,12 @@ table forex_ml_predictions
 
 	column close_price
 		dataType: double
+		formatString: 0.0000
 		lineageTag: 61357e44-f7b1-45ca-bc54-f7402bb98760
 		summarizeBy: sum
 		sourceColumn: close_price
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column volume
 		dataType: double

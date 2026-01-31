@@ -417,6 +417,82 @@ table _Measures
 		displayFolder: NASDAQ Historical
 		lineageTag: m137-nasdaq-all-time-low
 
+	measure 'Active TIER 1 Signals' =
+			
+			CALCULATE(
+			    COUNTROWS(vw_PowerBI_AI_Technical_Combos),
+			    vw_PowerBI_AI_Technical_Combos[trade_tier] IN {
+			        "TIER 1 - ULTRA (93% win rate)",
+			        "TIER 1 - ULTRA (79% win rate)",
+			        "TIER 1 - ULTRA (76% win rate)"
+			    },
+			    vw_PowerBI_AI_Technical_Combos[result_7d] = BLANK(),
+			    vw_PowerBI_AI_Technical_Combos[signal_type] = "BEARISH"
+			)
+		formatString: 0
+		displayFolder: Strategy-1
+		lineageTag: efc420a4-be71-497a-8745-47b35463ef30
+
+	measure 'Expected Value' =
+			
+			CALCULATE(
+			    AVERAGE(vw_PowerBI_Tier_Performance[expected_value_pct])
+			)
+		displayFolder: Strategy-1
+		lineageTag: 5d38792b-59d7-4bcd-93b5-2c8835217727
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overall Win Rate' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        COUNTROWS(vw_PowerBI_AI_Technical_Combos),
+			        vw_PowerBI_AI_Technical_Combos[result_7d] = "WIN"
+			    ),
+			    CALCULATE(
+			        COUNTROWS(vw_PowerBI_AI_Technical_Combos),
+			        vw_PowerBI_AI_Technical_Combos[result_7d] <> BLANK()
+			    ),
+			    0
+			) * 100
+		displayFolder: Strategy-1
+		lineageTag: 863c2b57-6bdc-4aeb-9bf4-5c9e0523e171
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pending Capital' =
+			
+			CALCULATE(
+			    COUNTROWS(vw_PowerBI_AI_Technical_Combos),
+			    vw_PowerBI_AI_Technical_Combos[result_7d] = BLANK()
+			) * 10000
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Strategy-1
+		lineageTag: b66cfec7-24a4-4d27-a658-c96014425a4a
+
+	measure 'TIER 1 Win Rate' =
+			
+			CALCULATE(
+			    [Overall Win Rate],
+			    left(vw_PowerBI_AI_Technical_Combos[trade_tier],8) = "TIER 1 -"
+			 )
+		displayFolder: Strategy-1
+		lineageTag: 08040314-26a2-4e00-a999-5856f34d6b2b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TIER 2 Win Rate' =
+			
+			CALCULATE(
+			    [Overall Win Rate],
+			    left(vw_PowerBI_AI_Technical_Combos[trade_tier],8) = "TIER 2 -"
+			 )
+		displayFolder: Strategy-1
+		lineageTag: bf204d79-b313-42c2-b74d-3b2c7709a1fc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Measures = m
 		mode: import
 		source =

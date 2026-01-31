@@ -238,7 +238,7 @@
                     "Entity": "ai_prediction_history"
                   }
                 },
-                "Property": "model_name"
+                "Property": "direction_correct"
               }
             },
             "direction": "Ascending"

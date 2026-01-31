@@ -1,0 +1,800 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "79f36b91b3a9128a787a",
+  "position": {
+    "x": 24,
+    "y": 480,
+    "z": 6,
+    "height": 1247.9999999999998,
+    "width": 2448,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.company_name",
+              "nativeQueryRef": "company_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "trade_tier"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.trade_tier",
+              "nativeQueryRef": "trade_tier"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "ai_direction"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.ai_direction",
+              "nativeQueryRef": "ai_direction"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "predicted_change_pct"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.predicted_change_pct)",
+              "nativeQueryRef": "predicted_change_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "ai_confidence"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.ai_confidence)",
+              "nativeQueryRef": "ai_confidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "tech_strength"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.tech_strength)",
+              "nativeQueryRef": "tech_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "indicators_count"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.indicators_count)",
+              "nativeQueryRef": "indicators_count"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "combined_score"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.combined_score)",
+              "nativeQueryRef": "combined_score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "stop_loss_price"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.stop_loss_price)",
+              "nativeQueryRef": "stop_loss_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "take_profit_price"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.take_profit_price)",
+              "nativeQueryRef": "take_profit_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "position_size_pct"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.position_size_pct)",
+              "nativeQueryRef": "position_size_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "warning_flag"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.warning_flag",
+              "nativeQueryRef": "warning_flag"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "signal_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.signal_date",
+              "nativeQueryRef": "signal_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "report_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.report_date",
+              "nativeQueryRef": "report_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.prediction_date",
+              "nativeQueryRef": "prediction_date"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_Opportunities_strategy1"
+                  }
+                },
+                "Property": "trade_tier"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "vw_PowerBI_Opportunities_strategy1"
+                                        }
+                                      },
+                                      "Property": "trade_tier"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'CONFLICTING'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFEBEE'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "vw_PowerBI_Opportunities_strategy1"
+                                        }
+                                      },
+                                      "Property": "trade_tier"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'TIER 2'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#E7F3FF'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "vw_PowerBI_Opportunities_strategy1"
+                                        }
+                                      },
+                                      "Property": "trade_tier"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'TIER 1'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFF3CD'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "vw_PowerBI_Opportunities_strategy1.trade_tier"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "vw_PowerBI_Opportunities_strategy1"
+                                        }
+                                      },
+                                      "Property": "ai_direction"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'BEARISH '"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#F44336'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "vw_PowerBI_Opportunities_strategy1"
+                                        }
+                                      },
+                                      "Property": "ai_direction"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'BULLISH'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#4CAF50'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "vw_PowerBI_Opportunities_strategy1.ai_direction"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Opportunities'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "52355fec043202d24d45",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d6a083b4deab58d6d598",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "26768c2e040ef3d2d6f0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "trade_tier"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4667c08417abc753b4bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "ai_direction"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "908d110a55d3dbe89de6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "warning_flag"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b0b727605efe0a9c24c4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "predicted_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "673c7a3e633ce05dd10a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "ai_confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "08aaf1de45a982cb586f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "tech_strength"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "da445b5151aa9aa55fab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "indicators_count"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b84a87b848d12c585aa1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "combined_score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ceec2883465340176f6a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "stop_loss_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "86726cec24cc45a827a8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "take_profit_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "18d960f0cf5024cf8082",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "position_size_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6b5423edb463247fac6d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "signal_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "82a487a178d7f7428d3f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "report_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7a40f3458e8d908d68db",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

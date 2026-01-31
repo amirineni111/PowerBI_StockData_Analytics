@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "e7f5395742289597c3bf",
+  "position": {
+    "x": 704,
+    "y": 32,
+    "z": 1,
+    "height": 256,
+    "width": 1280,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Active TIER 1 Signals"
+                }
+              },
+              "queryRef": "_Measures.Active TIER 1 Signals",
+              "nativeQueryRef": "Active TIER 1 Signals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Pending Capital"
+                }
+              },
+              "queryRef": "_Measures.Pending Capital",
+              "nativeQueryRef": "Pending Capital"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_PowerBI_AI_Technical_Combos"
+                        }
+                      },
+                      "Property": "signal_date"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Min(vw_PowerBI_AI_Technical_Combos.signal_date)",
+              "nativeQueryRef": "Latest signal_date"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Active TIER 1 Signals"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3a9a8c683032bc11b38d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Active TIER 1 Signals"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f9903a21aa1acd69fb1e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Pending Capital"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "62a32b282701aa748490",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_AI_Technical_Combos"
+                  }
+                },
+                "Property": "signal_date"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

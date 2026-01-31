@@ -1,0 +1,354 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 2035,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 2035.0006529110308,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 814.009140620858,
+            "y": 319.80760287775274
+          },
+          "nodeIndex": "ai_prediction_history",
+          "nodeLineageTag": "350847e1-4192-4072-b9dc-e329974f71e3",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 765.47200996993286,
+            "y": -45.654442260025462
+          },
+          "nodeIndex": "forex_master",
+          "nodeLineageTag": "21719f08-cdf9-4452-a02a-ac036d587f14",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2319.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "forex_ml_predictions",
+          "nodeLineageTag": "3557f409-1582-4184-85c1-bfc3f2e6a49c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2603.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "forex_model_performance",
+          "nodeLineageTag": "3bf8ead7-4a4b-40a9-badc-3794f1d1dc92",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2887.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "forex_prediction_features",
+          "nodeLineageTag": "613bde3d-8b9c-4621-ada9-0fe0560d3c22",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3171.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "ml_nse_predict_summary",
+          "nodeLineageTag": "17d95185-128b-477c-9763-86c7f16aab44",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 737.344535344424,
+            "y": 673.58294749480433
+          },
+          "nodeIndex": "ml_nse_technical_indicators",
+          "nodeLineageTag": "fa35fa0b-9013-4003-855d-1448e5247280",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 303.68449689352315
+          },
+          "nodeIndex": "ml_nse_trading_predictions",
+          "nodeLineageTag": "6199f605-9044-463f-9a8f-9977d9845dd4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1101.0578896045452,
+            "y": 634.55213922937457
+          },
+          "nodeIndex": "ml_technical_indicators",
+          "nodeLineageTag": "ef1da0af-fcfe-42b1-8aa0-11663f41d332",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1801.000652911031,
+            "y": 357.54614701193873
+          },
+          "nodeIndex": "ml_trading_predictions",
+          "nodeLineageTag": "aeebfeb8-04e0-4206-9051-26733db96f7e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1538.7088701373843,
+            "y": 3.862983929467191
+          },
+          "nodeIndex": "nasdaq_100_fundamentals",
+          "nodeLineageTag": "82cb8e92-7ef3-4893-8ad2-05ac2f6ee1da",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1713.7076021259627,
+            "y": 711.25647864629627
+          },
+          "nodeIndex": "nasdaq_100_hist_data",
+          "nodeLineageTag": "d110ea46-cbe2-476a-b259-0b9e727a3366",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1340.4889471022207,
+            "y": 357.22134272143808
+          },
+          "nodeIndex": "nasdaq_top100",
+          "nodeLineageTag": "72ae2eb6-60c5-4a50-9e76-2d326a708413",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 527.356682088411,
+            "y": 303.32402186648983
+          },
+          "nodeIndex": "nse_500",
+          "nodeLineageTag": "0c28f852-a6e9-4971-8bb4-482a7409c793",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 144.41003950672109,
+            "y": 657.38693766988649
+          },
+          "nodeIndex": "nse_500_fundamentals",
+          "nodeLineageTag": "1ad521bb-5832-4c67-bcd7-88d3c35efa56",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 259.30707299995061,
+            "y": -50
+          },
+          "nodeIndex": "nse_500_hist_data",
+          "nodeLineageTag": "cb88a8e2-f868-49ee-bdde-7e1848f696b1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 450.17101649890446,
+            "y": 832.97552910469039
+          },
+          "nodeIndex": "signal_tracking_history",
+          "nodeLineageTag": "9577582f-b58f-4b43-b7c0-5eb39c8c6227",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3405.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "vw_PowerBI_DailySummary_strategy1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3689.0006529110306,
+            "y": 479.4877645523452
+          },
+          "nodeIndex": "vw_PowerBI_DataFreshness_strategy1",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3973.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "vw_PowerBI_HistoricalTrend_strategy1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4257.0006529110306,
+            "y": 467.4877645523452
+          },
+          "nodeIndex": "vw_PowerBI_IndicatorStats_strategy1",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4541.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "vw_PowerBI_Opportunities_strategy1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4825.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "vw_PowerBI_TopTickers_strategy1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5059.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "vw_PowerBI_AI_Technical_Combos",
+          "nodeLineageTag": "8b0275a7-079e-461c-8480-5591c3f0e5e6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5343.0006529110306,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "vw_PowerBI_Tier_Performance",
+          "nodeLineageTag": "045ac23b-12cd-4cd9-99c7-6c4feea51555",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

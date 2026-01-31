@@ -96,5 +96,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c548c7d5d09ba880a3b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "signal_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2088efb20dc8bec40007",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Signal Success Rate 7D"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ed2253dd2000bc99e93a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Signal Success Rate 14D"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "19acb154eb0644585d23",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Signal Success Rate 30D"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

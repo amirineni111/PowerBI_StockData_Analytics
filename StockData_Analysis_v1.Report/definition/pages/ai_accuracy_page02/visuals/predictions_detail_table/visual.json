@@ -118,5 +118,107 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2639f65eaa644e77c9d1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73c4fe60becb06dca646",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4f16fbb00aa41073832d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6df76844e2046273c352",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "predicted_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1e42650be78a20c46963",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "actual_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d4d0a523824d5b28cbe9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "percentage_error"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b3ec0929667b2a040b0a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "direction_correct"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

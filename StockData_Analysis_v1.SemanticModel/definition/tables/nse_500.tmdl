@@ -61,6 +61,52 @@ table nse_500
 
 		annotation SummarizationSetBy = Automatic
 
+	column sector
+		dataType: string
+		lineageTag: 7fe79557-bd4a-4b93-a252-3f4a519c58e7
+		summarizeBy: none
+		sourceColumn: sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: 5e95d6f1-6b25-4224-89c8-5b19109b5fb9
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_industry
+		dataType: string
+		lineageTag: b64da181-1df7-4188-9e9a-1527e72031ab
+		summarizeBy: none
+		sourceColumn: sub_industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column business_summary
+		dataType: string
+		lineageTag: 955af958-53f0-4a61-bf75-37a012480ded
+		summarizeBy: none
+		sourceColumn: business_summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88ba517a-9e4c-422c-840d-fbfcfdf3cebf
+		summarizeBy: none
+		sourceColumn: last_updated
+
+		variation Variation
+			isDefault
+			relationship: 221b9d2d-df33-4a59-859b-2f11f62ca27a
+			defaultHierarchy: LocalDateTable_a177d766-6447-4f76-82fa-a925bee2cd5b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition nse_500 = m
 		mode: import
 		source =
@@ -71,4 +117,6 @@ table nse_500
 				    dbo_nse_500
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

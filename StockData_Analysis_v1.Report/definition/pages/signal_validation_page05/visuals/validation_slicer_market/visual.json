@@ -35,5 +35,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "32d28cb6d2e15b7992de",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -50,5 +50,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1deefc5b77ee590a1c03",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

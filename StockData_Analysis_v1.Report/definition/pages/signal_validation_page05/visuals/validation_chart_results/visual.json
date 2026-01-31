@@ -75,5 +75,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4206a1fe91ce1ad11600",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "result_7d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6992724dac0734002023",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Tracked Signals"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

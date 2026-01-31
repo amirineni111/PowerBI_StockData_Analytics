@@ -5,7 +5,7 @@ table signal_tracking_history
 		dataType: int64
 		formatString: 0
 		lineageTag: 63e47d79-c879-405b-becf-46269cd8f887
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: signal_id
 
 		annotation SummarizationSetBy = Automatic
@@ -36,7 +36,7 @@ table signal_tracking_history
 
 	column signal_date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: 8e5974df-63b8-4d7e-afba-c737138b986c
 		summarizeBy: none
 		sourceColumn: signal_date
@@ -49,6 +49,8 @@ table signal_tracking_history
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column signal_type
 		dataType: string
@@ -143,7 +145,7 @@ table signal_tracking_history
 
 	column target_date_7d
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: cccb3f22-da9c-4050-97de-528226a0622a
 		summarizeBy: none
 		sourceColumn: target_date_7d
@@ -156,6 +158,8 @@ table signal_tracking_history
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column actual_price_7d
 		dataType: double
@@ -187,7 +191,7 @@ table signal_tracking_history
 
 	column target_date_14d
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: 6d0d9406-0c30-4b5e-ae7b-3b4b3a438ad8
 		summarizeBy: none
 		sourceColumn: target_date_14d
@@ -200,6 +204,8 @@ table signal_tracking_history
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column actual_price_14d
 		dataType: double
@@ -231,7 +237,7 @@ table signal_tracking_history
 
 	column target_date_30d
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: 703e31b4-11b2-471c-b603-6a6a8c113a74
 		summarizeBy: none
 		sourceColumn: target_date_30d
@@ -244,6 +250,8 @@ table signal_tracking_history
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column actual_price_30d
 		dataType: double

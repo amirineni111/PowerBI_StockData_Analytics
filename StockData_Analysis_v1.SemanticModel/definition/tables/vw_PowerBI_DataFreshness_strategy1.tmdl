@@ -1,0 +1,78 @@
+table vw_PowerBI_DataFreshness_strategy1
+	lineageTag: 68d27476-3279-4aed-88bc-a241006c6bab
+
+	column data_source
+		dataType: string
+		lineageTag: 0041c8ff-42b2-47d1-8aca-13baf855e0cc
+		summarizeBy: none
+		sourceColumn: data_source
+
+		annotation SummarizationSetBy = Automatic
+
+	column latest_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: ecb0bc81-1b40-4a65-be71-492931ccac3d
+		summarizeBy: none
+		sourceColumn: latest_date
+
+		variation Variation
+			isDefault
+			relationship: d25b9664-2082-4725-baa7-df8253fcac85
+			defaultHierarchy: LocalDateTable_7e0fb96d-2a5b-4f99-9c21-ed4915b5b755.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column last_updated
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0639cabd-b521-4968-8bb0-9ff5c99e2847
+		summarizeBy: none
+		sourceColumn: last_updated
+
+		variation Variation
+			isDefault
+			relationship: 8aab1511-1e2d-4245-b2b1-69342dbe61dc
+			defaultHierarchy: LocalDateTable_a08583eb-6818-403a-8657-8998cf8b952c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column tickers_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 47fcaf80-b18a-4d2d-a4c8-7cf5686f7e5e
+		summarizeBy: sum
+		sourceColumn: tickers_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column records_count
+		dataType: int64
+		formatString: 0
+		lineageTag: eaa98bc4-9583-42f7-a420-2e10de79488a
+		summarizeBy: sum
+		sourceColumn: records_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: e4231318-45fb-4820-b6f4-42fa0f633a43
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_PowerBI_DataFreshness_strategy1 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\MSSQLSERVER01", "stockdata_db"),
+				    dbo_vw_PowerBI_DataFreshness = Source{[Schema="dbo",Item="vw_PowerBI_DataFreshness"]}[Data]
+				in
+				    dbo_vw_PowerBI_DataFreshness
+

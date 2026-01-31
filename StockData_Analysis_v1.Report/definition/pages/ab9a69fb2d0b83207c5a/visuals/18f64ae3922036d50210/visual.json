@@ -241,7 +241,7 @@
                 "Property": "prediction_date"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }

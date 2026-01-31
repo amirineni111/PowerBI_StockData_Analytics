@@ -1,0 +1,367 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "309128103cd6607a8c9b",
+  "position": {
+    "x": 32,
+    "y": 272,
+    "z": 0,
+    "height": 960,
+    "width": 1920,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_TopTickers_strategy1"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "vw_PowerBI_TopTickers_strategy1.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_TopTickers_strategy1"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "vw_PowerBI_TopTickers_strategy1.company_name",
+              "nativeQueryRef": "company_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_TopTickers_strategy1"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "vw_PowerBI_TopTickers_strategy1.market",
+              "nativeQueryRef": "market"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_PowerBI_TopTickers_strategy1"
+                        }
+                      },
+                      "Property": "total_predictions_7d"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_TopTickers_strategy1.total_predictions_7d)",
+              "nativeQueryRef": "total_predictions_7d",
+              "displayName": "total_predictions_7d"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_PowerBI_TopTickers_strategy1"
+                        }
+                      },
+                      "Property": "win_rate_7d_pct"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_TopTickers_strategy1.win_rate_7d_pct)",
+              "nativeQueryRef": "win_rate_7d_pct",
+              "displayName": "win_rate_7d_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_TopTickers_strategy1"
+                    }
+                  },
+                  "Property": "performance_rating"
+                }
+              },
+              "queryRef": "vw_PowerBI_TopTickers_strategy1.performance_rating",
+              "nativeQueryRef": "performance_rating"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_TopTickers_strategy1"
+                    }
+                  },
+                  "Property": "trade_status"
+                }
+              },
+              "queryRef": "vw_PowerBI_TopTickers_strategy1.trade_status",
+              "nativeQueryRef": "trade_status"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_PowerBI_TopTickers_strategy1"
+                        }
+                      },
+                      "Property": "avg_confidence"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_TopTickers_strategy1.avg_confidence)",
+              "nativeQueryRef": "avg_confidence",
+              "displayName": "avg_confidence"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_PowerBI_TopTickers_strategy1"
+                        }
+                      },
+                      "Property": "avg_predicted_move"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_TopTickers_strategy1.avg_predicted_move)",
+              "nativeQueryRef": "avg_predicted_move",
+              "displayName": "avg_predicted_move"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4e833a0a011339396b8d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_TopTickers_strategy1"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "17c03d4123db6c50fe19",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_TopTickers_strategy1"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fe64db9dd0379406eaed",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_TopTickers_strategy1"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f48f90aaa8dd2473421d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_TopTickers_strategy1"
+                  }
+                },
+                "Property": "total_predictions_7d"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "51a05776d5761b0250fa",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_TopTickers_strategy1"
+                  }
+                },
+                "Property": "win_rate_7d_pct"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0cea901fd9cfde125503",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_TopTickers_strategy1"
+              }
+            },
+            "Property": "performance_rating"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "57e019d5bdcd90267a48",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_TopTickers_strategy1"
+              }
+            },
+            "Property": "trade_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cfe66388e59912651fa5",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_TopTickers_strategy1"
+                  }
+                },
+                "Property": "avg_confidence"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c8b9432747f1c99f37c0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_TopTickers_strategy1"
+                  }
+                },
+                "Property": "avg_predicted_move"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

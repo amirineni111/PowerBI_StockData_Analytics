@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["nse_500","nse_500_fundamentals","nse_500_hist_data","nasdaq_100_hist_data","nasdaq_100_fundamentals","nasdaq_top100","ml_trading_predictions","ml_technical_indicators","ml_nse_trading_predictions","ml_nse_technical_indicators","ml_nse_predict_summary","forex_ml_predictions","forex_master","forex_model_performance","forex_prediction_features","ai_prediction_history","signal_tracking_history","_Measures"]
+annotation PBI_QueryOrder = ["nse_500","nse_500_fundamentals","nse_500_hist_data","nasdaq_100_hist_data","nasdaq_100_fundamentals","nasdaq_top100","ml_trading_predictions","ml_technical_indicators","ml_nse_trading_predictions","ml_nse_technical_indicators","ml_nse_predict_summary","forex_ml_predictions","forex_master","forex_model_performance","forex_prediction_features","ai_prediction_history","signal_tracking_history","_Measures","vw_PowerBI_DataFreshness_strategy1","vw_PowerBI_HistoricalTrend_strategy1","vw_PowerBI_Opportunities_strategy1","vw_PowerBI_TopTickers_strategy1","vw_PowerBI_AI_Technical_Combos"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -73,6 +73,27 @@ ref table LocalDateTable_8dbb7430-bafd-436e-9c3d-7d6cbcbac959
 ref table LocalDateTable_9a20ff69-93f2-445f-8e52-01a4b1acbdc6
 ref table LocalDateTable_ad0020a8-c521-4f5f-8597-71d07681ce28
 ref table _Measures
+ref table vw_PowerBI_DataFreshness_strategy1
+ref table LocalDateTable_7e0fb96d-2a5b-4f99-9c21-ed4915b5b755
+ref table LocalDateTable_a08583eb-6818-403a-8657-8998cf8b952c
+ref table vw_PowerBI_HistoricalTrend_strategy1
+ref table LocalDateTable_17047990-9ba8-426c-a463-caaadf652375
+ref table vw_PowerBI_Opportunities_strategy1
+ref table LocalDateTable_4fbe4123-e12c-47db-96c1-fe0675ca6e64
+ref table LocalDateTable_7309b863-84cc-4254-a08c-24e2b60d7512
+ref table LocalDateTable_3558cabb-b3a5-43bb-a03f-52a61cd40a91
+ref table LocalDateTable_8143d2f5-42c3-4e70-82e0-c558c9424a02
+ref table LocalDateTable_f8cff596-23e2-445e-8cea-1905a1619888
+ref table LocalDateTable_d305afff-e758-4be0-af38-d94cace01f75
+ref table LocalDateTable_fcf18a8e-0fcd-448f-b4a1-8db556683fb4
+ref table LocalDateTable_efcb4713-25fc-4ffc-838a-49e2e329b199
+ref table vw_PowerBI_TopTickers_strategy1
+ref table LocalDateTable_2c032778-2be2-4696-851b-f1c630328a67
+ref table LocalDateTable_1253e5d7-690d-4bac-8f58-14b3b83b0b47
+ref table LocalDateTable_a177d766-6447-4f76-82fa-a925bee2cd5b
+ref table LocalDateTable_5a689686-296e-40b7-a1ec-35c0ee581f4b
+ref table vw_PowerBI_AI_Technical_Combos
+ref table LocalDateTable_17f464a0-9c26-439e-948c-ebf21aa74f5e
 
 ref cultureInfo en-US
 

@@ -137,7 +137,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'suz'"
+                                "Value": "'tapa'"
                               }
                             }
                           }
@@ -156,7 +156,7 @@
                             },
                             "Right": {
                               "Literal": {
-                                "Value": "'suz'"
+                                "Value": "'tapa'"
                               }
                             }
                           }
@@ -164,7 +164,96 @@
                       }
                     },
                     "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
+                      "PowerBI.MParameterBehavior": 1,
+                      "filterExpressionMetadata": {
+                        "expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "nse_500"
+                                }
+                              },
+                              "Property": "ticker"
+                            }
+                          }
+                        ],
+                        "decomposedIdentities": {
+                          "values": [
+                            [
+                              {
+                                "0": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'TAPARIA.BO'"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          ],
+                          "columns": [
+                            {
+                              "value": {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "nse_500"
+                                    }
+                                  },
+                                  "Property": "ticker"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        "valueMap": [
+                          {
+                            "0": "TAPARIA.BO"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "n",
+                    "Entity": "nse_500",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "n"
+                                }
+                              },
+                              "Property": "ticker"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'TAPARIA.BO'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
                     }
                   }
                 ]

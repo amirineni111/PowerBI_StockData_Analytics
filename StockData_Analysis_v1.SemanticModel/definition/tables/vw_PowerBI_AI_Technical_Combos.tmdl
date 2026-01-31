@@ -1,0 +1,195 @@
+table vw_PowerBI_AI_Technical_Combos
+	lineageTag: 8b0275a7-079e-461c-8480-5591c3f0e5e6
+
+	column signal_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 25418549-97f1-466e-adad-ed8020cf243a
+		summarizeBy: none
+		sourceColumn: signal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column market
+		dataType: string
+		lineageTag: dfdb621a-61e5-4558-8f98-8705a1bd1411
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: 894fb7e9-f192-4d62-a045-447889adf8b4
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: d52aef3b-cc72-436a-9dcd-7af1d38b43ab
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 31c35bdf-08da-4137-87f1-c7f7fd07936a
+		summarizeBy: none
+		sourceColumn: signal_date
+
+		variation Variation
+			isDefault
+			relationship: fa326887-6fd5-46e9-b683-c83e75192cdd
+			defaultHierarchy: LocalDateTable_17f464a0-9c26-439e-948c-ebf21aa74f5e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column signal_type
+		dataType: string
+		lineageTag: 3880fcf1-38ae-4ee3-91bf-d8879f119862
+		summarizeBy: none
+		sourceColumn: signal_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_strength
+		dataType: int64
+		formatString: 0
+		lineageTag: 48d348ee-8208-421e-b80b-1dee9c43628d
+		summarizeBy: sum
+		sourceColumn: signal_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_price
+		dataType: double
+		lineageTag: e94d7bab-95df-4735-90f3-51e2152cca83
+		summarizeBy: sum
+		sourceColumn: signal_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ai_prediction_pct
+		dataType: double
+		lineageTag: 2374e0bc-ba06-47ca-89c9-a44ceebebacc
+		summarizeBy: sum
+		sourceColumn: ai_prediction_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column technical_combo
+		dataType: string
+		lineageTag: d64b5b81-812b-433e-8739-fc99489a60ae
+		summarizeBy: none
+		sourceColumn: technical_combo
+
+		annotation SummarizationSetBy = Automatic
+
+	column trade_tier
+		dataType: string
+		lineageTag: 25922bb0-87f0-4b50-83a7-74e709034c7d
+		summarizeBy: none
+		sourceColumn: trade_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column result_7d
+		dataType: string
+		lineageTag: 3b39ee6d-951d-4ec2-994c-09ab7703b61b
+		summarizeBy: none
+		sourceColumn: result_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_change_7d
+		dataType: double
+		lineageTag: eda54e49-18a0-41f5-834d-f36188f09d77
+		summarizeBy: sum
+		sourceColumn: actual_change_7d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ai_correct
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1e1dcd26-893d-44e5-a4ab-b18b6c2cc964
+		summarizeBy: none
+		sourceColumn: ai_correct
+
+		annotation SummarizationSetBy = Automatic
+
+	column macd_signal
+		dataType: string
+		lineageTag: 1d0704b9-16b2-40d8-923f-5f87ea5cdfdd
+		summarizeBy: none
+		sourceColumn: macd_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column rsi_signal
+		dataType: string
+		lineageTag: 66cc4e80-1783-43b6-bc0b-f7a68086ad48
+		summarizeBy: none
+		sourceColumn: rsi_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column bb_signal
+		dataType: string
+		lineageTag: 807ca742-6cc5-4237-830b-3316bc9cd22b
+		summarizeBy: none
+		sourceColumn: bb_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column stoch_signal
+		dataType: string
+		lineageTag: 08b6ca29-7855-4ebe-b5da-1935f3eca5a9
+		summarizeBy: none
+		sourceColumn: stoch_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column fib_signal
+		dataType: string
+		lineageTag: 53cea878-dd27-4793-b2d5-da8f85fe2b55
+		summarizeBy: none
+		sourceColumn: fib_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column pattern_signal
+		dataType: string
+		lineageTag: 8cd98c44-5571-4acc-ba6d-c4947ac01785
+		summarizeBy: none
+		sourceColumn: pattern_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_PowerBI_AI_Technical_Combos = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\MSSQLSERVER01", "stockdata_db"),
+				    dbo_vw_PowerBI_DailySummary = Source{[Schema="dbo",Item="vw_PowerBI_AI_Technical_Combos"]}[Data]
+				in
+				    dbo_vw_PowerBI_DailySummary
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

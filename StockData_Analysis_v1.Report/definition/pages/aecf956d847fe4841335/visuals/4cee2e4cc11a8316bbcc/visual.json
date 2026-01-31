@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "4cee2e4cc11a8316bbcc",
+  "position": {
+    "x": 895.99999999999989,
+    "y": 16,
+    "z": 4,
+    "height": 208,
+    "width": 1072,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.signal_date",
+              "nativeQueryRef": "signal_date",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_AI_Technical_Combos"
+                  }
+                },
+                "Property": "signal_date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "12c7e445b1f3858e13cf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

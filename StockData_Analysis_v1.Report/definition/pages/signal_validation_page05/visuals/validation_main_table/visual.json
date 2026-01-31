@@ -171,8 +171,183 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "signal_tracking_history"
+                  }
+                },
+                "Property": "signal_date"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "31a61d73615ae098141d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "420b55bd723adb2ee4ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "signal_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5506cb3c940dc9d8a695",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "signal_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "658bc9a6b0b5a45c7268",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "signal_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "945dec21a6e62b18d405",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "actual_price_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3fdc6fa7d031580705a1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "actual_change_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "edc90c9bea02246778d2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "result_7d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "537a941434109509a38c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "actual_change_14d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c7d6438c03d7db2d9681",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "result_14d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0d84325ca4811e8aea86",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "actual_change_30d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b9b78d45b3ecb52eee50",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "result_30d"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

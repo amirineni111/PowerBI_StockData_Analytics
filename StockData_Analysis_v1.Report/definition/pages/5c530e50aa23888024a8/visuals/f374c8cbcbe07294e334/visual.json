@@ -3,7 +3,7 @@
   "name": "f374c8cbcbe07294e334",
   "position": {
     "x": 16,
-    "y": 464,
+    "y": 464.00000000000006,
     "z": 3000,
     "height": 160,
     "width": 223.99999999999997,
@@ -38,6 +38,13 @@
       "data": [
         {
           "properties": {
+            "numericStart": {
+              "expr": {
+                "Literal": {
+                  "Value": "60D"
+                }
+              }
+            },
             "mode": {
               "expr": {
                 "Literal": {
@@ -50,7 +57,44 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "a",
+                    "Entity": "ai_prediction_history",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Comparison": {
+                        "ComparisonKind": 2,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "a"
+                              }
+                            },
+                            "Property": "model_confidence"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "60D"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         }
       ]
     },

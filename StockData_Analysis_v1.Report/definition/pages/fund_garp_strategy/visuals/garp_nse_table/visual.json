@@ -3,7 +3,7 @@
   "name": "garp_nse_table",
   "position": {
     "x": 16,
-    "y": 640,
+    "y": 864,
     "z": 11,
     "height": 416,
     "width": 1600,
@@ -217,6 +217,40 @@
           }
         ]
       }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NSE Data'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },

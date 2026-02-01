@@ -3,10 +3,10 @@
   "name": "master_nse_table",
   "position": {
     "x": 32,
-    "y": 992.00000000000011,
+    "y": 992,
     "z": 11,
     "height": 560,
-    "width": 1936.0000000000002,
+    "width": 1775.9999999999998,
     "tabOrder": 11
   },
   "visual": {
@@ -241,6 +241,38 @@
               "expr": {
                 "Literal": {
                   "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NSE Data'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }

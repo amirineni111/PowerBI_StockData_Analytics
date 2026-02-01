@@ -3,10 +3,10 @@
   "name": "master_nasdaq_table",
   "position": {
     "x": 32,
-    "y": 432,
+    "y": 431.99999999999994,
     "z": 10,
-    "height": 496.00000000000006,
-    "width": 1936.0000000000002,
+    "height": 496,
+    "width": 1920,
     "tabOrder": 10
   },
   "visual": {
@@ -241,6 +241,38 @@
               "expr": {
                 "Literal": {
                   "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NASDAQ Data'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }

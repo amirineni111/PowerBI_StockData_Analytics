@@ -6,7 +6,7 @@
     "y": 16,
     "z": 0,
     "height": 96,
-    "width": 1136,
+    "width": 864,
     "tabOrder": 0
   },
   "visual": {
@@ -21,9 +21,9 @@
                   {
                     "value": "🚀 High Growth Companies",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "24px",
-                      "fontWeight": "bold"
+                      "fontSize": "24px"
                     }
                   }
                 ]
@@ -33,9 +33,9 @@
                   {
                     "value": "Revenue & earnings momentum:",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px",
-                      "fontWeight": "bold"
+                      "fontSize": "12px"
                     }
                   }
                 ]

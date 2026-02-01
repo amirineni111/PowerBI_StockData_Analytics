@@ -3,7 +3,7 @@
   "name": "garp_nasdaq_table",
   "position": {
     "x": 16,
-    "y": 224,
+    "y": 416,
     "z": 10,
     "height": 400,
     "width": 1600,
@@ -217,6 +217,40 @@
           }
         ]
       }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NASDAQ Data'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },

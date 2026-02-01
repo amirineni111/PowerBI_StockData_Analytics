@@ -494,11 +494,11 @@ table _Measures
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'NASDAQ Value Score' =
-			VAR PE = SELECTEDVALUE(nasdaq_100_fundamentals[trailing_pe])
-			VAR PB = SELECTEDVALUE(nasdaq_100_fundamentals[price_to_book])
-			VAR PS = SELECTEDVALUE(nasdaq_100_fundamentals[price_to_sales])
-			VAR PEG = SELECTEDVALUE(nasdaq_100_fundamentals[peg_ratio])
-			VAR ROE = SELECTEDVALUE(nasdaq_100_fundamentals[return_on_equity])
+			VAR PE = MAX(nasdaq_100_fundamentals[trailing_pe])
+			VAR PB = MAX(nasdaq_100_fundamentals[price_to_book])
+			VAR PS = MAX(nasdaq_100_fundamentals[price_to_sales])
+			VAR PEG = MAX(nasdaq_100_fundamentals[peg_ratio])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
 			VAR PE_Score = IF(ISBLANK(PE) || PE <= 0, 0, IF(PE < 10, 25, IF(PE < 15, 20, IF(PE < 20, 15, IF(PE < 30, 5, 0)))))
 			VAR PB_Score = IF(ISBLANK(PB) || PB <= 0, 0, IF(PB < 1, 25, IF(PB < 1.5, 20, IF(PB < 2, 15, IF(PB < 3, 5, 0)))))
 			VAR PS_Score = IF(ISBLANK(PS) || PS <= 0, 0, IF(PS < 1, 20, IF(PS < 2, 15, IF(PS < 3, 10, IF(PS < 5, 5, 0)))))
@@ -510,11 +510,11 @@ table _Measures
 		lineageTag: fc760f36-6f4b-49cc-a6a8-68d682d648df
 
 	measure 'NSE Value Score' =
-			VAR PE = SELECTEDVALUE(nse_500_fundamentals[trailing_pe])
-			VAR PB = SELECTEDVALUE(nse_500_fundamentals[price_to_book])
-			VAR PS = SELECTEDVALUE(nse_500_fundamentals[price_to_sales])
-			VAR PEG = SELECTEDVALUE(nse_500_fundamentals[peg_ratio])
-			VAR ROE = SELECTEDVALUE(nse_500_fundamentals[return_on_equity])
+			VAR PE = MAX(nse_500_fundamentals[trailing_pe])
+			VAR PB = MAX(nse_500_fundamentals[price_to_book])
+			VAR PS = MAX(nse_500_fundamentals[price_to_sales])
+			VAR PEG = MAX(nse_500_fundamentals[peg_ratio])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
 			VAR PE_Score = IF(ISBLANK(PE) || PE <= 0, 0, IF(PE < 10, 25, IF(PE < 15, 20, IF(PE < 20, 15, IF(PE < 30, 5, 0)))))
 			VAR PB_Score = IF(ISBLANK(PB) || PB <= 0, 0, IF(PB < 1, 25, IF(PB < 1.5, 20, IF(PB < 2, 15, IF(PB < 3, 5, 0)))))
 			VAR PS_Score = IF(ISBLANK(PS) || PS <= 0, 0, IF(PS < 1, 20, IF(PS < 2, 15, IF(PS < 3, 10, IF(PS < 5, 5, 0)))))
@@ -526,13 +526,13 @@ table _Measures
 		lineageTag: ad2b3ccd-2350-4217-ba9d-9d57d72dea78
 
 	measure 'NASDAQ Quality Score' =
-			VAR ROE = SELECTEDVALUE(nasdaq_100_fundamentals[return_on_equity])
-			VAR ROA = SELECTEDVALUE(nasdaq_100_fundamentals[return_on_assets])
-			VAR ProfitMargin = SELECTEDVALUE(nasdaq_100_fundamentals[profit_margin])
-			VAR OpMargin = SELECTEDVALUE(nasdaq_100_fundamentals[operating_margin])
-			VAR DebtEquity = SELECTEDVALUE(nasdaq_100_fundamentals[debt_to_equity])
-			VAR FCF = SELECTEDVALUE(nasdaq_100_fundamentals[free_cashflow])
-			VAR CurrentRatio = SELECTEDVALUE(nasdaq_100_fundamentals[current_ratio])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR ROA = MAX(nasdaq_100_fundamentals[return_on_assets])
+			VAR ProfitMargin = MAX(nasdaq_100_fundamentals[profit_margin])
+			VAR OpMargin = MAX(nasdaq_100_fundamentals[operating_margin])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
+			VAR FCF = MAX(nasdaq_100_fundamentals[free_cashflow])
+			VAR CurrentRatio = MAX(nasdaq_100_fundamentals[current_ratio])
 			VAR ROE_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.30, 25, IF(ROE > 0.20, 20, IF(ROE > 0.15, 15, IF(ROE > 0.10, 8, 0)))))
 			VAR ROA_Score = IF(ISBLANK(ROA), 0, IF(ROA > 0.15, 15, IF(ROA > 0.10, 12, IF(ROA > 0.05, 8, 0))))
 			VAR Margin_Score = IF(ISBLANK(ProfitMargin), 0, IF(ProfitMargin > 0.25, 20, IF(ProfitMargin > 0.15, 15, IF(ProfitMargin > 0.10, 10, IF(ProfitMargin > 0.05, 5, 0)))))
@@ -544,13 +544,13 @@ table _Measures
 		lineageTag: 022f782d-95ef-4e22-9055-b455d8928f5e
 
 	measure 'NSE Quality Score' =
-			VAR ROE = SELECTEDVALUE(nse_500_fundamentals[return_on_equity])
-			VAR ROA = SELECTEDVALUE(nse_500_fundamentals[return_on_assets])
-			VAR ProfitMargin = SELECTEDVALUE(nse_500_fundamentals[profit_margin])
-			VAR OpMargin = SELECTEDVALUE(nse_500_fundamentals[operating_margin])
-			VAR DebtEquity = SELECTEDVALUE(nse_500_fundamentals[debt_to_equity])
-			VAR FCF = SELECTEDVALUE(nse_500_fundamentals[free_cashflow])
-			VAR CurrentRatio = SELECTEDVALUE(nse_500_fundamentals[current_ratio])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR ROA = MAX(nse_500_fundamentals[return_on_assets])
+			VAR ProfitMargin = MAX(nse_500_fundamentals[profit_margin])
+			VAR OpMargin = MAX(nse_500_fundamentals[operating_margin])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
+			VAR FCF = MAX(nse_500_fundamentals[free_cashflow])
+			VAR CurrentRatio = MAX(nse_500_fundamentals[current_ratio])
 			VAR ROE_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.30, 25, IF(ROE > 0.20, 20, IF(ROE > 0.15, 15, IF(ROE > 0.10, 8, 0)))))
 			VAR ROA_Score = IF(ISBLANK(ROA), 0, IF(ROA > 0.15, 15, IF(ROA > 0.10, 12, IF(ROA > 0.05, 8, 0))))
 			VAR Margin_Score = IF(ISBLANK(ProfitMargin), 0, IF(ProfitMargin > 0.25, 20, IF(ProfitMargin > 0.15, 15, IF(ProfitMargin > 0.10, 10, IF(ProfitMargin > 0.05, 5, 0)))))
@@ -562,13 +562,13 @@ table _Measures
 		lineageTag: a9f79aae-373f-4582-ba5a-b628d844a3d1
 
 	measure 'NASDAQ Growth Score' =
-			VAR RevGrowth = SELECTEDVALUE(nasdaq_100_fundamentals[revenue_growth])
-			VAR EarnGrowth = SELECTEDVALUE(nasdaq_100_fundamentals[earnings_growth])
-			VAR FwdPE = SELECTEDVALUE(nasdaq_100_fundamentals[forward_pe])
-			VAR TrailPE = SELECTEDVALUE(nasdaq_100_fundamentals[trailing_pe])
-			VAR PEG = SELECTEDVALUE(nasdaq_100_fundamentals[peg_ratio])
-			VAR ROE = SELECTEDVALUE(nasdaq_100_fundamentals[return_on_equity])
-			VAR ProfitMargin = SELECTEDVALUE(nasdaq_100_fundamentals[profit_margin])
+			VAR RevGrowth = MAX(nasdaq_100_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nasdaq_100_fundamentals[earnings_growth])
+			VAR FwdPE = MAX(nasdaq_100_fundamentals[forward_pe])
+			VAR TrailPE = MAX(nasdaq_100_fundamentals[trailing_pe])
+			VAR PEG = MAX(nasdaq_100_fundamentals[peg_ratio])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR ProfitMargin = MAX(nasdaq_100_fundamentals[profit_margin])
 			VAR RevGrowth_Score = IF(ISBLANK(RevGrowth), 0, IF(RevGrowth > 0.50, 30, IF(RevGrowth > 0.30, 25, IF(RevGrowth > 0.15, 20, IF(RevGrowth > 0.10, 10, IF(RevGrowth > 0, 5, 0))))))
 			VAR EarnGrowth_Score = IF(ISBLANK(EarnGrowth), 0, IF(EarnGrowth > 0.50, 30, IF(EarnGrowth > 0.30, 25, IF(EarnGrowth > 0.15, 20, IF(EarnGrowth > 0.10, 10, IF(EarnGrowth > 0, 5, 0))))))
 			VAR PEG_Score = IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 1, 20, IF(PEG < 1.5, 15, IF(PEG < 2, 10, IF(PEG < 3, 5, 0)))))
@@ -579,13 +579,13 @@ table _Measures
 		lineageTag: 6eb560be-0723-4693-bdf3-e3134ae05dac
 
 	measure 'NSE Growth Score' =
-			VAR RevGrowth = SELECTEDVALUE(nse_500_fundamentals[revenue_growth])
-			VAR EarnGrowth = SELECTEDVALUE(nse_500_fundamentals[earnings_growth])
-			VAR FwdPE = SELECTEDVALUE(nse_500_fundamentals[forward_pe])
-			VAR TrailPE = SELECTEDVALUE(nse_500_fundamentals[trailing_pe])
-			VAR PEG = SELECTEDVALUE(nse_500_fundamentals[peg_ratio])
-			VAR ROE = SELECTEDVALUE(nse_500_fundamentals[return_on_equity])
-			VAR ProfitMargin = SELECTEDVALUE(nse_500_fundamentals[profit_margin])
+			VAR RevGrowth = MAX(nse_500_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nse_500_fundamentals[earnings_growth])
+			VAR FwdPE = MAX(nse_500_fundamentals[forward_pe])
+			VAR TrailPE = MAX(nse_500_fundamentals[trailing_pe])
+			VAR PEG = MAX(nse_500_fundamentals[peg_ratio])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR ProfitMargin = MAX(nse_500_fundamentals[profit_margin])
 			VAR RevGrowth_Score = IF(ISBLANK(RevGrowth), 0, IF(RevGrowth > 0.50, 30, IF(RevGrowth > 0.30, 25, IF(RevGrowth > 0.15, 20, IF(RevGrowth > 0.10, 10, IF(RevGrowth > 0, 5, 0))))))
 			VAR EarnGrowth_Score = IF(ISBLANK(EarnGrowth), 0, IF(EarnGrowth > 0.50, 30, IF(EarnGrowth > 0.30, 25, IF(EarnGrowth > 0.15, 20, IF(EarnGrowth > 0.10, 10, IF(EarnGrowth > 0, 5, 0))))))
 			VAR PEG_Score = IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 1, 20, IF(PEG < 1.5, 15, IF(PEG < 2, 10, IF(PEG < 3, 5, 0)))))
@@ -596,11 +596,11 @@ table _Measures
 		lineageTag: e1421804-1975-4129-b36e-1eb114e88654
 
 	measure 'NASDAQ Dividend Score' =
-			VAR DivYield = SELECTEDVALUE(nasdaq_100_fundamentals[dividend_yield])
-			VAR PayoutRatio = SELECTEDVALUE(nasdaq_100_fundamentals[payout_ratio])
-			VAR FCF = SELECTEDVALUE(nasdaq_100_fundamentals[free_cashflow])
-			VAR DebtEquity = SELECTEDVALUE(nasdaq_100_fundamentals[debt_to_equity])
-			VAR ProfitMargin = SELECTEDVALUE(nasdaq_100_fundamentals[profit_margin])
+			VAR DivYield = MAX(nasdaq_100_fundamentals[dividend_yield])
+			VAR PayoutRatio = MAX(nasdaq_100_fundamentals[payout_ratio])
+			VAR FCF = MAX(nasdaq_100_fundamentals[free_cashflow])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
+			VAR ProfitMargin = MAX(nasdaq_100_fundamentals[profit_margin])
 			VAR Yield_Score = IF(ISBLANK(DivYield) || DivYield <= 0, 0, IF(DivYield > 0.05, 35, IF(DivYield > 0.03, 30, IF(DivYield > 0.02, 20, IF(DivYield > 0.01, 10, 5)))))
 			VAR Payout_Score = IF(ISBLANK(PayoutRatio), 15, IF(PayoutRatio > 0 && PayoutRatio < 0.30, 25, IF(PayoutRatio < 0.50, 20, IF(PayoutRatio < 0.75, 15, IF(PayoutRatio < 1, 5, 0)))))
 			VAR FCF_Score = IF(ISBLANK(FCF) || FCF <= 0, 0, 20)
@@ -611,11 +611,11 @@ table _Measures
 		lineageTag: a7a0b531-83bf-4122-8b06-0ddba091de95
 
 	measure 'NSE Dividend Score' =
-			VAR DivYield = SELECTEDVALUE(nse_500_fundamentals[dividend_yield])
-			VAR PayoutRatio = SELECTEDVALUE(nse_500_fundamentals[payout_ratio])
-			VAR FCF = SELECTEDVALUE(nse_500_fundamentals[free_cashflow])
-			VAR DebtEquity = SELECTEDVALUE(nse_500_fundamentals[debt_to_equity])
-			VAR ProfitMargin = SELECTEDVALUE(nse_500_fundamentals[profit_margin])
+			VAR DivYield = MAX(nse_500_fundamentals[dividend_yield])
+			VAR PayoutRatio = MAX(nse_500_fundamentals[payout_ratio])
+			VAR FCF = MAX(nse_500_fundamentals[free_cashflow])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
+			VAR ProfitMargin = MAX(nse_500_fundamentals[profit_margin])
 			VAR Yield_Score = IF(ISBLANK(DivYield) || DivYield <= 0, 0, IF(DivYield > 0.05, 35, IF(DivYield > 0.03, 30, IF(DivYield > 0.02, 20, IF(DivYield > 0.01, 10, 5)))))
 			VAR Payout_Score = IF(ISBLANK(PayoutRatio), 15, IF(PayoutRatio > 0 && PayoutRatio < 0.30, 25, IF(PayoutRatio < 0.50, 20, IF(PayoutRatio < 0.75, 15, IF(PayoutRatio < 1, 5, 0)))))
 			VAR FCF_Score = IF(ISBLANK(FCF) || FCF <= 0, 0, 20)
@@ -648,10 +648,10 @@ table _Measures
 		lineageTag: 99c38d6b-e6b3-41c5-bad3-43500e895c9b
 
 	measure 'NASDAQ Value Category' =
-			VAR PE = SELECTEDVALUE(nasdaq_100_fundamentals[trailing_pe])
-			VAR PB = SELECTEDVALUE(nasdaq_100_fundamentals[price_to_book])
-			VAR PS = SELECTEDVALUE(nasdaq_100_fundamentals[price_to_sales])
-			VAR ROE = SELECTEDVALUE(nasdaq_100_fundamentals[return_on_equity])
+			VAR PE = MAX(nasdaq_100_fundamentals[trailing_pe])
+			VAR PB = MAX(nasdaq_100_fundamentals[price_to_book])
+			VAR PS = MAX(nasdaq_100_fundamentals[price_to_sales])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
 			VAR IsDeepValue = PE < 10 && PB < 1 && PS < 1 && ROE > 0.15
 			VAR IsUndervalued = PE < 15 && PB < 1.5 && PS < 2 && ROE > 0.10
 			VAR IsFairValue = PE < 20 && PB < 2.5 && PS < 3
@@ -660,10 +660,10 @@ table _Measures
 		lineageTag: 593b2d81-772f-4e52-b2a3-408393b255b5
 
 	measure 'NSE Value Category' =
-			VAR PE = SELECTEDVALUE(nse_500_fundamentals[trailing_pe])
-			VAR PB = SELECTEDVALUE(nse_500_fundamentals[price_to_book])
-			VAR PS = SELECTEDVALUE(nse_500_fundamentals[price_to_sales])
-			VAR ROE = SELECTEDVALUE(nse_500_fundamentals[return_on_equity])
+			VAR PE = MAX(nse_500_fundamentals[trailing_pe])
+			VAR PB = MAX(nse_500_fundamentals[price_to_book])
+			VAR PS = MAX(nse_500_fundamentals[price_to_sales])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
 			VAR IsDeepValue = PE < 10 && PB < 1 && PS < 1 && ROE > 0.15
 			VAR IsUndervalued = PE < 15 && PB < 1.5 && PS < 2 && ROE > 0.10
 			VAR IsFairValue = PE < 20 && PB < 2.5 && PS < 3
@@ -672,10 +672,10 @@ table _Measures
 		lineageTag: 3e1a4b83-4e2d-4d1f-983d-8a5b8095d3fd
 
 	measure 'NASDAQ Quality Category' =
-			VAR ROE = SELECTEDVALUE(nasdaq_100_fundamentals[return_on_equity])
-			VAR ProfitMargin = SELECTEDVALUE(nasdaq_100_fundamentals[profit_margin])
-			VAR DebtEquity = SELECTEDVALUE(nasdaq_100_fundamentals[debt_to_equity])
-			VAR FCF = SELECTEDVALUE(nasdaq_100_fundamentals[free_cashflow])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR ProfitMargin = MAX(nasdaq_100_fundamentals[profit_margin])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
+			VAR FCF = MAX(nasdaq_100_fundamentals[free_cashflow])
 			VAR IsExcellent = ROE > 0.25 && ProfitMargin > 0.20 && DebtEquity < 0.3 && FCF > 0
 			VAR IsGood = ROE > 0.20 && ProfitMargin > 0.15 && DebtEquity < 0.5 && FCF > 0
 			RETURN IF(IsExcellent, "Excellent", IF(IsGood, "Good", "Average"))
@@ -683,10 +683,10 @@ table _Measures
 		lineageTag: 5e3dc162-9382-4f46-910c-2f871565a0c2
 
 	measure 'NSE Quality Category' =
-			VAR ROE = SELECTEDVALUE(nse_500_fundamentals[return_on_equity])
-			VAR ProfitMargin = SELECTEDVALUE(nse_500_fundamentals[profit_margin])
-			VAR DebtEquity = SELECTEDVALUE(nse_500_fundamentals[debt_to_equity])
-			VAR FCF = SELECTEDVALUE(nse_500_fundamentals[free_cashflow])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR ProfitMargin = MAX(nse_500_fundamentals[profit_margin])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
+			VAR FCF = MAX(nse_500_fundamentals[free_cashflow])
 			VAR IsExcellent = ROE > 0.25 && ProfitMargin > 0.20 && DebtEquity < 0.3 && FCF > 0
 			VAR IsGood = ROE > 0.20 && ProfitMargin > 0.15 && DebtEquity < 0.5 && FCF > 0
 			RETURN IF(IsExcellent, "Excellent", IF(IsGood, "Good", "Average"))
@@ -694,9 +694,9 @@ table _Measures
 		lineageTag: 08d125ec-0dcc-4325-92c4-d173ba5bb67f
 
 	measure 'NASDAQ Growth Category' =
-			VAR RevGrowth = SELECTEDVALUE(nasdaq_100_fundamentals[revenue_growth])
-			VAR EarnGrowth = SELECTEDVALUE(nasdaq_100_fundamentals[earnings_growth])
-			VAR ROE = SELECTEDVALUE(nasdaq_100_fundamentals[return_on_equity])
+			VAR RevGrowth = MAX(nasdaq_100_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nasdaq_100_fundamentals[earnings_growth])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
 			VAR IsHighGrowth = RevGrowth > 0.25 && EarnGrowth > 0.25 && ROE > 0.15
 			VAR IsModerateGrowth = RevGrowth > 0.15 && EarnGrowth > 0.15 && ROE > 0.10
 			RETURN IF(IsHighGrowth, "High Growth", IF(IsModerateGrowth, "Moderate Growth", "Low Growth"))
@@ -704,9 +704,9 @@ table _Measures
 		lineageTag: 0377a224-1f3d-42a7-bc06-4799bd42cbc2
 
 	measure 'NSE Growth Category' =
-			VAR RevGrowth = SELECTEDVALUE(nse_500_fundamentals[revenue_growth])
-			VAR EarnGrowth = SELECTEDVALUE(nse_500_fundamentals[earnings_growth])
-			VAR ROE = SELECTEDVALUE(nse_500_fundamentals[return_on_equity])
+			VAR RevGrowth = MAX(nse_500_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nse_500_fundamentals[earnings_growth])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
 			VAR IsHighGrowth = RevGrowth > 0.25 && EarnGrowth > 0.25 && ROE > 0.15
 			VAR IsModerateGrowth = RevGrowth > 0.15 && EarnGrowth > 0.15 && ROE > 0.10
 			RETURN IF(IsHighGrowth, "High Growth", IF(IsModerateGrowth, "Moderate Growth", "Low Growth"))
@@ -714,10 +714,10 @@ table _Measures
 		lineageTag: 264cc0cc-d1fe-4c00-8a77-198da78a5a94
 
 	measure 'NASDAQ Dividend Category' =
-			VAR DivYield = SELECTEDVALUE(nasdaq_100_fundamentals[dividend_yield])
-			VAR PayoutRatio = SELECTEDVALUE(nasdaq_100_fundamentals[payout_ratio])
-			VAR FCF = SELECTEDVALUE(nasdaq_100_fundamentals[free_cashflow])
-			VAR DebtEquity = SELECTEDVALUE(nasdaq_100_fundamentals[debt_to_equity])
+			VAR DivYield = MAX(nasdaq_100_fundamentals[dividend_yield])
+			VAR PayoutRatio = MAX(nasdaq_100_fundamentals[payout_ratio])
+			VAR FCF = MAX(nasdaq_100_fundamentals[free_cashflow])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
 			VAR IsExcellent = DivYield > 0.03 && PayoutRatio < 0.75 && FCF > 0 && DebtEquity < 1.5
 			VAR IsGood = DivYield > 0.02 && PayoutRatio < 0.85 && FCF > 0
 			RETURN IF(IsExcellent, "Excellent Dividend", IF(IsGood, "Good Dividend", IF(DivYield > 0, "Low Dividend", "No Dividend")))
@@ -725,10 +725,10 @@ table _Measures
 		lineageTag: f4bc377e-6824-4df8-8878-16cd781b5311
 
 	measure 'NSE Dividend Category' =
-			VAR DivYield = SELECTEDVALUE(nse_500_fundamentals[dividend_yield])
-			VAR PayoutRatio = SELECTEDVALUE(nse_500_fundamentals[payout_ratio])
-			VAR FCF = SELECTEDVALUE(nse_500_fundamentals[free_cashflow])
-			VAR DebtEquity = SELECTEDVALUE(nse_500_fundamentals[debt_to_equity])
+			VAR DivYield = MAX(nse_500_fundamentals[dividend_yield])
+			VAR PayoutRatio = MAX(nse_500_fundamentals[payout_ratio])
+			VAR FCF = MAX(nse_500_fundamentals[free_cashflow])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
 			VAR IsExcellent = DivYield > 0.03 && PayoutRatio < 0.75 && FCF > 0 && DebtEquity < 1.5
 			VAR IsGood = DivYield > 0.02 && PayoutRatio < 0.85 && FCF > 0
 			RETURN IF(IsExcellent, "Excellent Dividend", IF(IsGood, "Good Dividend", IF(DivYield > 0, "Low Dividend", "No Dividend")))
@@ -736,13 +736,13 @@ table _Measures
 		lineageTag: 33841863-36ca-4673-8792-a12c2b89a262
 
 	measure 'NASDAQ GARP Score' =
-			VAR PE = SELECTEDVALUE(nasdaq_100_fundamentals[trailing_pe])
-			VAR PB = SELECTEDVALUE(nasdaq_100_fundamentals[price_to_book])
-			VAR PEG = SELECTEDVALUE(nasdaq_100_fundamentals[peg_ratio])
-			VAR RevGrowth = SELECTEDVALUE(nasdaq_100_fundamentals[revenue_growth])
-			VAR EarnGrowth = SELECTEDVALUE(nasdaq_100_fundamentals[earnings_growth])
-			VAR ROE = SELECTEDVALUE(nasdaq_100_fundamentals[return_on_equity])
-			VAR DebtEquity = SELECTEDVALUE(nasdaq_100_fundamentals[debt_to_equity])
+			VAR PE = MAX(nasdaq_100_fundamentals[trailing_pe])
+			VAR PB = MAX(nasdaq_100_fundamentals[price_to_book])
+			VAR PEG = MAX(nasdaq_100_fundamentals[peg_ratio])
+			VAR RevGrowth = MAX(nasdaq_100_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nasdaq_100_fundamentals[earnings_growth])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
 			VAR Value_Score = IF(ISBLANK(PE) || PE <= 0, 0, IF(PE < 15, 15, IF(PE < 20, 10, IF(PE < 25, 5, 0)))) + IF(ISBLANK(PB) || PB <= 0, 0, IF(PB < 1.5, 15, IF(PB < 2, 10, IF(PB < 3, 5, 0)))) + IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 1, 10, IF(PEG < 1.5, 7, IF(PEG < 2, 3, 0))))
 			VAR Growth_Score = IF(ISBLANK(RevGrowth), 0, IF(RevGrowth > 0.20, 15, IF(RevGrowth > 0.10, 10, IF(RevGrowth > 0, 5, 0)))) + IF(ISBLANK(EarnGrowth), 0, IF(EarnGrowth > 0.20, 15, IF(EarnGrowth > 0.10, 10, IF(EarnGrowth > 0, 5, 0))))
 			VAR Quality_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.20, 10, IF(ROE > 0.15, 7, IF(ROE > 0.10, 4, 0)))) + IF(ISBLANK(DebtEquity), 5, IF(DebtEquity < 0.5, 10, IF(DebtEquity < 1, 7, IF(DebtEquity < 1.5, 3, 0))))
@@ -753,13 +753,13 @@ table _Measures
 		lineageTag: c4575976-6374-47c2-90d5-6fb05f8fa14b
 
 	measure 'NSE GARP Score' =
-			VAR PE = SELECTEDVALUE(nse_500_fundamentals[trailing_pe])
-			VAR PB = SELECTEDVALUE(nse_500_fundamentals[price_to_book])
-			VAR PEG = SELECTEDVALUE(nse_500_fundamentals[peg_ratio])
-			VAR RevGrowth = SELECTEDVALUE(nse_500_fundamentals[revenue_growth])
-			VAR EarnGrowth = SELECTEDVALUE(nse_500_fundamentals[earnings_growth])
-			VAR ROE = SELECTEDVALUE(nse_500_fundamentals[return_on_equity])
-			VAR DebtEquity = SELECTEDVALUE(nse_500_fundamentals[debt_to_equity])
+			VAR PE = MAX(nse_500_fundamentals[trailing_pe])
+			VAR PB = MAX(nse_500_fundamentals[price_to_book])
+			VAR PEG = MAX(nse_500_fundamentals[peg_ratio])
+			VAR RevGrowth = MAX(nse_500_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nse_500_fundamentals[earnings_growth])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
 			VAR Value_Score = IF(ISBLANK(PE) || PE <= 0, 0, IF(PE < 15, 15, IF(PE < 20, 10, IF(PE < 25, 5, 0)))) + IF(ISBLANK(PB) || PB <= 0, 0, IF(PB < 1.5, 15, IF(PB < 2, 10, IF(PB < 3, 5, 0)))) + IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 1, 10, IF(PEG < 1.5, 7, IF(PEG < 2, 3, 0))))
 			VAR Growth_Score = IF(ISBLANK(RevGrowth), 0, IF(RevGrowth > 0.20, 15, IF(RevGrowth > 0.10, 10, IF(RevGrowth > 0, 5, 0)))) + IF(ISBLANK(EarnGrowth), 0, IF(EarnGrowth > 0.20, 15, IF(EarnGrowth > 0.10, 10, IF(EarnGrowth > 0, 5, 0))))
 			VAR Quality_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.20, 10, IF(ROE > 0.15, 7, IF(ROE > 0.10, 4, 0)))) + IF(ISBLANK(DebtEquity), 5, IF(DebtEquity < 0.5, 10, IF(DebtEquity < 1, 7, IF(DebtEquity < 1.5, 3, 0))))

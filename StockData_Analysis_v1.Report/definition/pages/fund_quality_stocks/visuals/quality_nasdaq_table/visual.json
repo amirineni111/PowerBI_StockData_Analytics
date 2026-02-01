@@ -3,10 +3,10 @@
   "name": "quality_nasdaq_table",
   "position": {
     "x": 16,
-    "y": 224,
+    "y": 320,
     "z": 10,
     "height": 400,
-    "width": 1632,
+    "width": 1631.9999999999998,
     "tabOrder": 10
   },
   "visual": {
@@ -217,6 +217,40 @@
           }
         ]
       }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NASDAQ Data'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "value_title",
+  "position": {
+    "x": 16,
+    "y": 16,
+    "z": 0,
+    "height": 96,
+    "width": 943.99999999999989,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "💎 Value Investing (Graham & Buffett Style)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "24px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Classic value metrics:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "• P/E Ratio < 15 (undervalued)  • Price-to-Book < 1.5 (trading below book value)  • Price-to-Sales < 2 (revenue multiple)  • PEG Ratio < 1 (growth adjusted value)  • ROE > 15% (quality filter)",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

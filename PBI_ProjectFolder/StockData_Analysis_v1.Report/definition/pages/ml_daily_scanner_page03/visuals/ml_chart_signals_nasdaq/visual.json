@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "ml_chart_signals_nasdaq",
+  "position": {
+    "x": 490,
+    "y": 620,
+    "z": 13,
+    "height": 350,
+    "width": 450,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_trading_predictions"
+                    }
+                  },
+                  "Property": "predicted_signal"
+                }
+              },
+              "queryRef": "ml_trading_predictions.predicted_signal",
+              "nativeQueryRef": "predicted_signal",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "ML NASDAQ Total Signals"
+                }
+              },
+              "queryRef": "_Measures.ML NASDAQ Total Signals",
+              "nativeQueryRef": "ML NASDAQ Total Signals"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bottom'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

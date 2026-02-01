@@ -1,0 +1,136 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "nse_main_table",
+  "position": {
+    "x": 20,
+    "y": 190,
+    "z": 10,
+    "height": 450,
+    "width": 1130,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.company_name",
+              "nativeQueryRef": "company_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "trailing_pe"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.trailing_pe",
+              "nativeQueryRef": "trailing_pe"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "price_to_book"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.price_to_book",
+              "nativeQueryRef": "price_to_book"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "return_on_equity"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.return_on_equity",
+              "nativeQueryRef": "return_on_equity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "profit_margin"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.profit_margin",
+              "nativeQueryRef": "profit_margin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "dividend_yield"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.dividend_yield",
+              "nativeQueryRef": "dividend_yield"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "market_cap"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.market_cap",
+              "nativeQueryRef": "market_cap"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

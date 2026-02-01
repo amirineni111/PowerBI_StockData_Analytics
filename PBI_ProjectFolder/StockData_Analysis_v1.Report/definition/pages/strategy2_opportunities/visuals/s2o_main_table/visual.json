@@ -1,0 +1,465 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "s2o_main_table",
+  "position": {
+    "x": 16,
+    "y": 288,
+    "z": 3,
+    "height": 784,
+    "width": 1888,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.market",
+              "nativeQueryRef": "market"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "company"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.company",
+              "nativeQueryRef": "company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.prediction_date",
+              "nativeQueryRef": "prediction_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "ml_signal"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.ml_signal",
+              "nativeQueryRef": "ml_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "ml_confidence_pct"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.ml_confidence_pct",
+              "nativeQueryRef": "ml_confidence_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "tech_signal"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.tech_signal",
+              "nativeQueryRef": "tech_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "tech_signal_strength"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.tech_signal_strength",
+              "nativeQueryRef": "tech_signal_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "signals_aligned"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.signals_aligned",
+              "nativeQueryRef": "signals_aligned"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "trade_grade"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.trade_grade",
+              "nativeQueryRef": "trade_grade"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "opportunity_score"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.opportunity_score",
+              "nativeQueryRef": "opportunity_score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "recommended_action"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.recommended_action",
+              "nativeQueryRef": "recommended_action"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "rsi_assessment"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.rsi_assessment",
+              "nativeQueryRef": "rsi_assessment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "ml_close_price"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.ml_close_price",
+              "nativeQueryRef": "ml_close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_trade_opportunities"
+                    }
+                  },
+                  "Property": "target_date_7d"
+                }
+              },
+              "queryRef": "vw_strategy2_trade_opportunities.target_date_7d",
+              "nativeQueryRef": "target_date_7d"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_strategy2_trade_opportunities"
+                  }
+                },
+                "Property": "prediction_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f2343089b9c7d1fc70d4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d87520bcfbf5b0b6cfd7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73b74ecfed6eb25c1eee",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "company"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3525716fcb2d05a4a362",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ba173284225fe0d7443b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "ml_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b8f5526bca065289c7dd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "ml_confidence_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f2a7a559f447c65f1e34",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "tech_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c57a4765668417ae2cfb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "tech_signal_strength"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "899f4bf4de76588b641b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "signals_aligned"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8fa155808609fc1c7ce9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "trade_grade"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f21d7cfd25b7d0501525",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "opportunity_score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b3eaa4cb511e1f171136",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "recommended_action"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9617c642a5ac74a60bb3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "rsi_assessment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "98e2535972d6faa9348a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "ml_close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "70e898814fc97a30a75d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_trade_opportunities"
+              }
+            },
+            "Property": "target_date_7d"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

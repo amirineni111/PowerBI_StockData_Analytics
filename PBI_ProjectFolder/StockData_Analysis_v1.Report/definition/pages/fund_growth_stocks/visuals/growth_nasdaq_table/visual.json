@@ -1,0 +1,443 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "growth_nasdaq_table",
+  "position": {
+    "x": 16,
+    "y": 336,
+    "z": 10,
+    "height": 400,
+    "width": 1600,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "fetch_date"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.fetch_date",
+              "nativeQueryRef": "fetch_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.ticker",
+              "nativeQueryRef": "Ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.company_name",
+              "nativeQueryRef": "Company"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NASDAQ Growth Score"
+                }
+              },
+              "queryRef": "_Measures.NASDAQ Growth Score",
+              "nativeQueryRef": "Growth Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NASDAQ Growth Category"
+                }
+              },
+              "queryRef": "_Measures.NASDAQ Growth Category",
+              "nativeQueryRef": "Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "revenue_growth"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.revenue_growth",
+              "nativeQueryRef": "Rev Growth %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "earnings_growth"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.earnings_growth",
+              "nativeQueryRef": "Earn Growth %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "forward_pe"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.forward_pe",
+              "nativeQueryRef": "Fwd P/E"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "peg_ratio"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.peg_ratio",
+              "nativeQueryRef": "PEG"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "profit_margin"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.profit_margin",
+              "nativeQueryRef": "Margin %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "return_on_equity"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.return_on_equity",
+              "nativeQueryRef": "ROE %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "total_revenue"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.total_revenue",
+              "nativeQueryRef": "Revenue"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "market_cap"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.market_cap",
+              "nativeQueryRef": "Mkt Cap"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "NASDAQ Growth Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NASDAQ Data'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "560fe2db393798b23d89",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "356f44d64745291a9e99",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6298b9c406b1e17408dd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NASDAQ Growth Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f7f081e6e6ba2159a348",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NASDAQ Growth Category"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6569720f633959b51cb2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "revenue_growth"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6764b7ff11a511073dda",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "earnings_growth"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f92987261a05c402a8e9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "forward_pe"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "499c70b9298b519ba24f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "peg_ratio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "881fbd59c0095da9dc42",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "profit_margin"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c69f8fb33ad3dc5f2ff6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "return_on_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b98637177a60f530ef96",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "total_revenue"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c22f4e3fa956b5b076ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "market_cap"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6547dea53f46b2b1dbe4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "fetch_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

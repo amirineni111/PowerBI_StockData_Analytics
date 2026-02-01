@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "5500219f2f14de1655c7",
+  "position": {
+    "x": 16,
+    "y": 1020,
+    "z": 5,
+    "height": 480,
+    "width": 656,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "trade_tier"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.trade_tier",
+              "nativeQueryRef": "trade_tier",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_PowerBI_AI_Technical_Combos"
+                        }
+                      },
+                      "Property": "signal_id"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(vw_PowerBI_AI_Technical_Combos.signal_id)",
+              "nativeQueryRef": "signal_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "vw_PowerBI_AI_Technical_Combos"
+                      }
+                    },
+                    "Property": "signal_id"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1472997bc457fc01fb41",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "trade_tier"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c96cbc136188757c8ef6",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_AI_Technical_Combos"
+                  }
+                },
+                "Property": "signal_id"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

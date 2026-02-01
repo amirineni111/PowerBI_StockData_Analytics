@@ -1,0 +1,176 @@
+table ml_trading_predictions
+	lineageTag: aeebfeb8-04e0-4206-9051-26733db96f7e
+
+	column prediction_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f17d68ca-c779-4ded-b69d-23689f4a521f
+		summarizeBy: sum
+		sourceColumn: prediction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column run_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bdb2e640-bccf-4bb7-8ffa-1b8911e3cbe7
+		summarizeBy: none
+		sourceColumn: run_timestamp
+
+		variation Variation
+			isDefault
+			relationship: 777098d2-b45c-42f0-b789-6d9a9511bc06
+			defaultHierarchy: LocalDateTable_97b56758-c151-43bd-8018-91cab4522659.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2aa36c5f-dcb0-4061-874d-7e3dc78f8ff0
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		variation Variation
+			isDefault
+			relationship: 1a6ee736-d976-44ef-b717-0da3128e9f67
+			defaultHierarchy: LocalDateTable_bb1eb369-39b3-4a03-b07d-e3e3f89c4e9c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ticker
+		dataType: string
+		lineageTag: a350140d-dfc8-4a21-b504-680d21e3e780
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company
+		dataType: string
+		lineageTag: 74591b64-ae82-447e-9c49-9ed97103f7b7
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_signal
+		dataType: string
+		lineageTag: 4b14b266-45e8-4bc8-ad27-ef40cc890a40
+		summarizeBy: none
+		sourceColumn: predicted_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column confidence
+		dataType: double
+		lineageTag: e8e64638-fb00-4a95-82b0-9a09b1ae6fd2
+		summarizeBy: sum
+		sourceColumn: confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column confidence_percentage
+		dataType: double
+		lineageTag: 131e649a-1455-429a-83f8-70a9cc2d8bf8
+		summarizeBy: sum
+		sourceColumn: confidence_percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column signal_strength
+		dataType: string
+		lineageTag: 3cabbf8f-b139-4b72-86c4-dc0d273c7181
+		summarizeBy: none
+		sourceColumn: signal_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column close_price
+		dataType: double
+		lineageTag: 44be0588-b922-4bed-b7f4-039111d09fc5
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RSI
+		dataType: double
+		lineageTag: baa33774-d0ec-48f2-a92c-74d73c2d80b4
+		summarizeBy: sum
+		sourceColumn: RSI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rsi_category
+		dataType: string
+		lineageTag: a873cd39-a23c-4261-8b2a-0c695c71987d
+		summarizeBy: none
+		sourceColumn: rsi_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column high_confidence
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 89883899-0708-4d9f-8ce3-017bbec9c217
+		summarizeBy: none
+		sourceColumn: high_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+	column sell_probability
+		dataType: double
+		lineageTag: bae60209-0d3c-4012-acce-dc7f34714bad
+		summarizeBy: sum
+		sourceColumn: sell_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column buy_probability
+		dataType: double
+		lineageTag: 84a9236a-1725-4494-b5d0-70d15f720d35
+		summarizeBy: sum
+		sourceColumn: buy_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 793e9c61-9270-4473-801d-9926a80c637e
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: 68f5a82d-243f-4d78-99cb-3e565e5ccc00
+			defaultHierarchy: LocalDateTable_948c6929-2102-4a5d-a74b-83c67818abd3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ml_trading_predictions = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_ml_trading_predictions = Source{[Schema="dbo",Item="ml_trading_predictions"]}[Data]
+				in
+				    dbo_ml_trading_predictions
+
+	annotation PBI_ResultType = Table
+

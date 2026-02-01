@@ -1,0 +1,252 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "forex_main_table",
+  "position": {
+    "x": 20,
+    "y": 190,
+    "z": 10,
+    "height": 380,
+    "width": 1130,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "currency_pair"
+                }
+              },
+              "queryRef": "forex_ml_predictions.currency_pair",
+              "nativeQueryRef": "currency_pair"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "forex_ml_predictions.prediction_date",
+              "nativeQueryRef": "prediction_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "predicted_signal"
+                }
+              },
+              "queryRef": "forex_ml_predictions.predicted_signal",
+              "nativeQueryRef": "predicted_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "signal_confidence"
+                }
+              },
+              "queryRef": "forex_ml_predictions.signal_confidence",
+              "nativeQueryRef": "signal_confidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prob_buy"
+                }
+              },
+              "queryRef": "forex_ml_predictions.prob_buy",
+              "nativeQueryRef": "prob_buy"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prob_sell"
+                }
+              },
+              "queryRef": "forex_ml_predictions.prob_sell",
+              "nativeQueryRef": "prob_sell"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "forex_ml_predictions.close_price",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "model_name"
+                }
+              },
+              "queryRef": "forex_ml_predictions.model_name",
+              "nativeQueryRef": "model_name"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "af0710a79482e2210950",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "currency_pair"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "aaf58dd0e05534e04070",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8972025d1ebd6e6959d5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "predicted_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "47b1c0acd07a06c09a0d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "signal_confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a45d1de5a98d9849a4b6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prob_buy"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "962633a3a7c04c1c3570",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prob_sell"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cc7b6f6d3cda97903b16",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "10412a052dd9e38128c2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "model_name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,196 @@
+table vw_strategy2_historical_performance
+	lineageTag: s2-hist-perf-001
+
+	column ml_signal
+		dataType: string
+		lineageTag: s2-hp-ml-signal
+		summarizeBy: none
+		sourceColumn: ml_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_signal
+		dataType: string
+		lineageTag: s2-hp-tech-signal
+		summarizeBy: none
+		sourceColumn: tech_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_signal_strength
+		dataType: int64
+		formatString: 0
+		lineageTag: s2-hp-tech-str
+		summarizeBy: sum
+		sourceColumn: tech_signal_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column signals_aligned
+		dataType: int64
+		formatString: 0
+		lineageTag: s2-hp-aligned
+		summarizeBy: sum
+		sourceColumn: signals_aligned
+
+		annotation SummarizationSetBy = Automatic
+
+	column combined_confidence
+		dataType: string
+		lineageTag: s2-hp-comb-conf
+		summarizeBy: none
+		sourceColumn: combined_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_signals
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-hp-total
+		summarizeBy: sum
+		sourceColumn: total_signals
+
+		annotation SummarizationSetBy = Automatic
+
+	column wins_7d
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-hp-wins7d
+		summarizeBy: sum
+		sourceColumn: wins_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column losses_7d
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-hp-losses7d
+		summarizeBy: sum
+		sourceColumn: losses_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column completed_7d
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-hp-completed7d
+		summarizeBy: sum
+		sourceColumn: completed_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column win_rate_7d_pct
+		dataType: double
+		lineageTag: s2-hp-winrate7d
+		summarizeBy: sum
+		sourceColumn: win_rate_7d_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column wins_14d
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-hp-wins14d
+		summarizeBy: sum
+		sourceColumn: wins_14d
+
+		annotation SummarizationSetBy = Automatic
+
+	column losses_14d
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-hp-losses14d
+		summarizeBy: sum
+		sourceColumn: losses_14d
+
+		annotation SummarizationSetBy = Automatic
+
+	column win_rate_14d_pct
+		dataType: double
+		lineageTag: s2-hp-winrate14d
+		summarizeBy: sum
+		sourceColumn: win_rate_14d_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column wins_30d
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-hp-wins30d
+		summarizeBy: sum
+		sourceColumn: wins_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column losses_30d
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-hp-losses30d
+		summarizeBy: sum
+		sourceColumn: losses_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column win_rate_30d_pct
+		dataType: double
+		lineageTag: s2-hp-winrate30d
+		summarizeBy: sum
+		sourceColumn: win_rate_30d_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_return_7d
+		dataType: double
+		lineageTag: s2-hp-avgret7d
+		summarizeBy: sum
+		sourceColumn: avg_return_7d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_return_14d
+		dataType: double
+		lineageTag: s2-hp-avgret14d
+		summarizeBy: sum
+		sourceColumn: avg_return_14d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_return_30d
+		dataType: double
+		lineageTag: s2-hp-avgret30d
+		summarizeBy: sum
+		sourceColumn: avg_return_30d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_ml_confidence
+		dataType: double
+		lineageTag: s2-hp-avgmlconf
+		summarizeBy: sum
+		sourceColumn: avg_ml_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_strategy2_historical_performance = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\MSSQLSERVER01", "stockdata_db"),
+				    dbo_vw_strategy2_historical_performance = Source{[Schema="dbo",Item="vw_strategy2_historical_performance"]}[Data]
+				in
+				    dbo_vw_strategy2_historical_performance
+

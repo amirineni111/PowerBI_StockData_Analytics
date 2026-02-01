@@ -1,0 +1,142 @@
+table vw_PowerBI_HistoricalTrend_strategy1
+	lineageTag: 9b609e3c-6434-4137-ba1c-b85a2f621e67
+
+	column prediction_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: f492101e-741b-4f16-abf2-09625e3d1859
+		summarizeBy: none
+		sourceColumn: prediction_date
+
+		variation Variation
+			isDefault
+			relationship: 6ada7125-9f3c-4c27-9bed-fdb740ea39e9
+			defaultHierarchy: LocalDateTable_17047990-9ba8-426c-a463-caaadf652375.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column market
+		dataType: string
+		lineageTag: e9f244dd-581d-4331-88b8-be616f5b68c9
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_ahead
+		dataType: int64
+		formatString: 0
+		lineageTag: a1f0b53b-9bc3-4bad-b05a-7750eb9373b1
+		summarizeBy: sum
+		sourceColumn: days_ahead
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_predictions
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e8f0953-2cc1-4d41-a196-44cee6f2a50d
+		summarizeBy: sum
+		sourceColumn: total_predictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column correct_predictions
+		dataType: int64
+		formatString: 0
+		lineageTag: 11c68744-b5f5-4602-963f-65ece76f8e0f
+		summarizeBy: sum
+		sourceColumn: correct_predictions
+
+		annotation SummarizationSetBy = Automatic
+
+	column accuracy_pct
+		dataType: double
+		lineageTag: be495b03-750d-458b-afac-645c1bfc745b
+		summarizeBy: sum
+		sourceColumn: accuracy_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_confidence
+		dataType: double
+		lineageTag: 4c8479db-67aa-4011-a7e0-b0994cdd4e9d
+		summarizeBy: sum
+		sourceColumn: avg_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_predicted_move
+		dataType: double
+		lineageTag: b76f6474-0c33-4918-82dc-3a1b170b08a0
+		summarizeBy: sum
+		sourceColumn: avg_predicted_move
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_actual_move
+		dataType: double
+		lineageTag: b1b4877c-d747-4bbe-9d9f-9acabbd6ff15
+		summarizeBy: sum
+		sourceColumn: avg_actual_move
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_error_pct
+		dataType: double
+		lineageTag: a8d3808b-00f2-499a-a07b-20a77d92939e
+		summarizeBy: sum
+		sourceColumn: avg_error_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column accuracy_7d_ma
+		dataType: double
+		lineageTag: afc2ded0-a72a-4e03-9086-ebd9e1d37f31
+		summarizeBy: sum
+		sourceColumn: accuracy_7d_ma
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cumulative_accuracy_pct
+		dataType: double
+		lineageTag: 2b8ae169-935c-4acd-a6bf-85758da4956b
+		summarizeBy: sum
+		sourceColumn: cumulative_accuracy_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Accuracy = DIVIDE(vw_PowerBI_HistoricalTrend_strategy1[correct_predictions] ,vw_PowerBI_HistoricalTrend_strategy1[total_predictions])*100
+		formatString: #,0.00
+		lineageTag: 344c97fa-8222-406e-a489-55ecdec4b470
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_PowerBI_HistoricalTrend_strategy1 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\MSSQLSERVER01", "stockdata_db"),
+				    dbo_vw_PowerBI_HistoricalTrend = Source{[Schema="dbo",Item="vw_PowerBI_HistoricalTrend"]}[Data]
+				in
+				    dbo_vw_PowerBI_HistoricalTrend
+

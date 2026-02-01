@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "validation_chart_results",
+  "position": {
+    "x": 640,
+    "y": 620,
+    "z": 14,
+    "height": 340,
+    "width": 600,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "result_7d"
+                }
+              },
+              "queryRef": "signal_tracking_history.result_7d",
+              "nativeQueryRef": "result_7d",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Tracked Signals"
+                }
+              },
+              "queryRef": "_Measures.Total Tracked Signals",
+              "nativeQueryRef": "Total Tracked Signals"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bottom'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4206a1fe91ce1ad11600",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "result_7d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6992724dac0734002023",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Tracked Signals"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

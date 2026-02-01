@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "ai_chart_scatter",
+  "position": {
+    "x": 1240,
+    "y": 570,
+    "z": 14,
+    "height": 490,
+    "width": 660,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "ai_prediction_history.ticker",
+              "nativeQueryRef": "ticker",
+              "active": true
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ai_prediction_history"
+                        }
+                      },
+                      "Property": "predicted_price"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.predicted_price)",
+              "nativeQueryRef": "Sum of predicted_price",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ai_prediction_history"
+                        }
+                      },
+                      "Property": "actual_price"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.actual_price)",
+              "nativeQueryRef": "Sum of actual_price"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

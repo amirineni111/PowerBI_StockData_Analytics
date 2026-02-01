@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "fundamentals_nse_page06",
+  "displayName": "NSE Fundamentals Screener",
+  "displayOption": "FitToWidth",
+  "height": 1080,
+  "width": 1920
+}

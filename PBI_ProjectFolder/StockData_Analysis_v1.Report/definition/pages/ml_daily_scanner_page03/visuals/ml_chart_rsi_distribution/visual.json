@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "ml_chart_rsi_distribution",
+  "position": {
+    "x": 960,
+    "y": 620,
+    "z": 14,
+    "height": 350,
+    "width": 450,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "rsi_category"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.rsi_category",
+              "nativeQueryRef": "rsi_category",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "ML NSE Total Signals"
+                }
+              },
+              "queryRef": "_Measures.ML NSE Total Signals",
+              "nativeQueryRef": "ML NSE Total Signals"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

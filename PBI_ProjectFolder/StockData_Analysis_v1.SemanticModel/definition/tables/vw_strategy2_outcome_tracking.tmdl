@@ -1,0 +1,189 @@
+table vw_strategy2_outcome_tracking
+	lineageTag: s2-outcome-001
+
+	column market
+		dataType: string
+		lineageTag: s2-ot-market
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: s2-ot-ticker
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company
+		dataType: string
+		lineageTag: s2-ot-company
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column prediction_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: s2-ot-pred-date
+		summarizeBy: none
+		sourceColumn: prediction_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column ml_signal
+		dataType: string
+		lineageTag: s2-ot-ml-signal
+		summarizeBy: none
+		sourceColumn: ml_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_confidence
+		dataType: double
+		lineageTag: s2-ot-ml-conf
+		summarizeBy: sum
+		sourceColumn: ml_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ml_direction
+		dataType: string
+		lineageTag: s2-ot-ml-dir
+		summarizeBy: none
+		sourceColumn: ml_direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_close_price
+		dataType: double
+		lineageTag: s2-ot-ml-close
+		summarizeBy: sum
+		sourceColumn: ml_close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tech_signal
+		dataType: string
+		lineageTag: s2-ot-tech-sig
+		summarizeBy: none
+		sourceColumn: tech_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_signal_strength
+		dataType: int64
+		formatString: 0
+		lineageTag: s2-ot-tech-str
+		summarizeBy: sum
+		sourceColumn: tech_signal_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column signals_aligned
+		dataType: int64
+		formatString: 0
+		lineageTag: s2-ot-aligned
+		summarizeBy: sum
+		sourceColumn: signals_aligned
+
+		annotation SummarizationSetBy = Automatic
+
+	column combined_confidence
+		dataType: string
+		lineageTag: s2-ot-comb-conf
+		summarizeBy: none
+		sourceColumn: combined_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+	column result_7d
+		dataType: string
+		lineageTag: s2-ot-result7d
+		summarizeBy: none
+		sourceColumn: result_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_change_7d
+		dataType: double
+		lineageTag: s2-ot-change7d
+		summarizeBy: sum
+		sourceColumn: actual_change_7d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column result_14d
+		dataType: string
+		lineageTag: s2-ot-result14d
+		summarizeBy: none
+		sourceColumn: result_14d
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_change_14d
+		dataType: double
+		lineageTag: s2-ot-change14d
+		summarizeBy: sum
+		sourceColumn: actual_change_14d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column result_30d
+		dataType: string
+		lineageTag: s2-ot-result30d
+		summarizeBy: none
+		sourceColumn: result_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_change_30d
+		dataType: double
+		lineageTag: s2-ot-change30d
+		summarizeBy: sum
+		sourceColumn: actual_change_30d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column outcome_category_7d
+		dataType: string
+		lineageTag: s2-ot-outcome-cat
+		summarizeBy: none
+		sourceColumn: outcome_category_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column strategy_lesson
+		dataType: string
+		lineageTag: s2-ot-lesson
+		summarizeBy: none
+		sourceColumn: strategy_lesson
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_strategy2_outcome_tracking = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\MSSQLSERVER01", "stockdata_db"),
+				    dbo_vw_strategy2_outcome_tracking = Source{[Schema="dbo",Item="vw_strategy2_outcome_tracking"]}[Data]
+				in
+				    dbo_vw_strategy2_outcome_tracking
+

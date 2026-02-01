@@ -1,0 +1,353 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "s2p_perf_table",
+  "position": {
+    "x": 16,
+    "y": 192,
+    "z": 4,
+    "height": 512,
+    "width": 1264,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "ml_signal"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.ml_signal",
+              "nativeQueryRef": "ml_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "tech_signal"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.tech_signal",
+              "nativeQueryRef": "tech_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "tech_signal_strength"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.tech_signal_strength",
+              "nativeQueryRef": "tech_signal_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "signals_aligned"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.signals_aligned",
+              "nativeQueryRef": "signals_aligned"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "total_signals"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.total_signals",
+              "nativeQueryRef": "total_signals"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "wins_7d"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.wins_7d",
+              "nativeQueryRef": "wins_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "losses_7d"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.losses_7d",
+              "nativeQueryRef": "losses_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "win_rate_7d_pct"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.win_rate_7d_pct",
+              "nativeQueryRef": "win_rate_7d_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "avg_return_7d"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.avg_return_7d",
+              "nativeQueryRef": "avg_return_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "win_rate_14d_pct"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.win_rate_14d_pct",
+              "nativeQueryRef": "win_rate_14d_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_strategy2_historical_performance"
+                    }
+                  },
+                  "Property": "avg_return_14d"
+                }
+              },
+              "queryRef": "vw_strategy2_historical_performance.avg_return_14d",
+              "nativeQueryRef": "avg_return_14d"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_strategy2_historical_performance"
+                  }
+                },
+                "Property": "win_rate_7d_pct"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bbee26c2f5dd53fe4143",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "ml_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "95613c984ba11c512510",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "tech_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d1c9a5cfdb5b05a62f4a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "tech_signal_strength"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "400fb5cb81cccbc29971",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "signals_aligned"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "85d8ff8aabdc3f194bb3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "total_signals"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5cc6e5765cdb744ca4b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "wins_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "71b5c8a1a30e99426c2e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "losses_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d8314544ec013db7cca6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "win_rate_7d_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8e494efac338c4df1310",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "avg_return_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "44cf3cf388bf367cc9d1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "win_rate_14d_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a3a2bcf94482f592d7b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_strategy2_historical_performance"
+              }
+            },
+            "Property": "avg_return_14d"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

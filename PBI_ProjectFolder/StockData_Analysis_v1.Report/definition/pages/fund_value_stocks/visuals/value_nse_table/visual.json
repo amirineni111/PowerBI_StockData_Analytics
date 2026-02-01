@@ -1,0 +1,455 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "value_nse_table",
+  "position": {
+    "x": 16,
+    "y": 752,
+    "z": 11,
+    "height": 416.00000000000006,
+    "width": 1536,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "fetch_date"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.fetch_date",
+              "nativeQueryRef": "fetch_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.ticker",
+              "nativeQueryRef": "Ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.company_name",
+              "nativeQueryRef": "Company"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NSE Value Score"
+                }
+              },
+              "queryRef": "_Measures.NSE Value Score",
+              "nativeQueryRef": "Value Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NSE Value Category"
+                }
+              },
+              "queryRef": "_Measures.NSE Value Category",
+              "nativeQueryRef": "Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "trailing_pe"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.trailing_pe",
+              "nativeQueryRef": "P/E"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "forward_pe"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.forward_pe",
+              "nativeQueryRef": "Fwd P/E"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "price_to_book"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.price_to_book",
+              "nativeQueryRef": "P/B"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "price_to_sales"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.price_to_sales",
+              "nativeQueryRef": "P/S"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "peg_ratio"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.peg_ratio",
+              "nativeQueryRef": "PEG"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "return_on_equity"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.return_on_equity",
+              "nativeQueryRef": "ROE %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "debt_to_equity"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.debt_to_equity",
+              "nativeQueryRef": "Debt/Equity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "market_cap"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.market_cap",
+              "nativeQueryRef": "Mkt Cap"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "NSE Value Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NSE Data'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6d29c3b5609ce85a875b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "db538c5fe9af8efaa22e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e0d0608035c9526f73c7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NSE Value Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "af26c2524015adb71917",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NSE Value Category"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "81a6807562af919f20a1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "trailing_pe"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "50a0cbd15d195a4b8de5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "forward_pe"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fc2b23e1ab43f181a840",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "price_to_book"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "185fe152996f4246ba35",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "price_to_sales"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ed262f271c5990c42af1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "peg_ratio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b8ac1d156851bff17781",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "return_on_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6ea8b1e40422dffcb1a9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "debt_to_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5922c4c10af3803c614d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "market_cap"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1cdd09b3e602cdc45d27",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "fetch_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

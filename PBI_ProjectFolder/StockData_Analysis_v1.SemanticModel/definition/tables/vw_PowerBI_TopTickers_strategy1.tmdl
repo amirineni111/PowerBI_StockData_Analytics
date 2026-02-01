@@ -1,0 +1,152 @@
+table vw_PowerBI_TopTickers_strategy1
+	lineageTag: 6dc06983-bcb0-49be-8379-001feb7bbfc5
+
+	column ticker
+		dataType: string
+		lineageTag: 9289971a-8c20-4da5-8c40-c0ef8daabda1
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column market
+		dataType: string
+		lineageTag: ab252f05-7651-4428-a362-0e4211f41217
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: f4fee705-40fe-449d-b50f-8537a0db9166
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_predictions_7d
+		dataType: int64
+		formatString: 0
+		lineageTag: b8b2e3f8-678e-4da7-91bb-a27dae34bba7
+		summarizeBy: sum
+		sourceColumn: total_predictions_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column wins_7d
+		dataType: int64
+		formatString: 0
+		lineageTag: f9210b91-2401-4dec-8fbe-c4462ee16b90
+		summarizeBy: sum
+		sourceColumn: wins_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column win_rate_7d_pct
+		dataType: double
+		lineageTag: 3e5e1921-7fdc-4bc5-95ab-3543b5482abf
+		summarizeBy: sum
+		sourceColumn: win_rate_7d_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_confidence
+		dataType: double
+		lineageTag: d6f71f17-077a-4a1a-b488-3391a37522a7
+		summarizeBy: sum
+		sourceColumn: avg_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_predicted_move
+		dataType: double
+		lineageTag: 83a481d8-7557-4060-b9b7-1de6a6390090
+		summarizeBy: sum
+		sourceColumn: avg_predicted_move
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_actual_move
+		dataType: double
+		lineageTag: b52884b0-df21-406b-88e4-2c1fa34a8c33
+		summarizeBy: sum
+		sourceColumn: avg_actual_move
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_error_pct
+		dataType: double
+		lineageTag: dd89c63d-7e61-4c20-b592-5eb48165fdae
+		summarizeBy: sum
+		sourceColumn: avg_error_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column first_prediction
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1070c447-3b06-4fac-8e47-7c51bbaad793
+		summarizeBy: none
+		sourceColumn: first_prediction
+
+		variation Variation
+			isDefault
+			relationship: 18a8d845-86e5-489c-ae93-e0810ff5df1d
+			defaultHierarchy: LocalDateTable_2c032778-2be2-4696-851b-f1c630328a67.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column last_prediction
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c549445d-07b0-43ed-8c52-978030a01803
+		summarizeBy: none
+		sourceColumn: last_prediction
+
+		variation Variation
+			isDefault
+			relationship: ef4223f8-790e-424e-a29b-0c28b09fa1da
+			defaultHierarchy: LocalDateTable_1253e5d7-690d-4bac-8f58-14b3b83b0b47.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column performance_rating
+		dataType: string
+		lineageTag: 7b4de889-5b1e-4996-ac2b-566d87866db1
+		summarizeBy: none
+		sourceColumn: performance_rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column trade_status
+		dataType: string
+		lineageTag: 307a44a9-37af-481d-8df7-ffb78ccbb718
+		summarizeBy: none
+		sourceColumn: trade_status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_PowerBI_TopTickers_strategy1 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\MSSQLSERVER01", "stockdata_db"),
+				    dbo_vw_PowerBI_TopTickers = Source{[Schema="dbo",Item="vw_PowerBI_TopTickers"]}[Data]
+				in
+				    dbo_vw_PowerBI_TopTickers
+

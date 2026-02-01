@@ -1,0 +1,192 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "ai_main_table",
+  "position": {
+    "x": 20,
+    "y": 210,
+    "z": 10,
+    "height": 500,
+    "width": 1200,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "ai_prediction_history.market",
+              "nativeQueryRef": "market"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "ai_prediction_history.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "ai_prediction_history.company_name",
+              "nativeQueryRef": "company_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "ai_prediction_history.prediction_date",
+              "nativeQueryRef": "prediction_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "target_date"
+                }
+              },
+              "queryRef": "ai_prediction_history.target_date",
+              "nativeQueryRef": "target_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "days_ahead"
+                }
+              },
+              "queryRef": "ai_prediction_history.days_ahead",
+              "nativeQueryRef": "days_ahead"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "current_price"
+                }
+              },
+              "queryRef": "ai_prediction_history.current_price",
+              "nativeQueryRef": "current_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "predicted_price"
+                }
+              },
+              "queryRef": "ai_prediction_history.predicted_price",
+              "nativeQueryRef": "predicted_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "predicted_change_pct"
+                }
+              },
+              "queryRef": "ai_prediction_history.predicted_change_pct",
+              "nativeQueryRef": "predicted_change_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "actual_price"
+                }
+              },
+              "queryRef": "ai_prediction_history.actual_price",
+              "nativeQueryRef": "actual_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "model_confidence"
+                }
+              },
+              "queryRef": "ai_prediction_history.model_confidence",
+              "nativeQueryRef": "model_confidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "direction_correct"
+                }
+              },
+              "queryRef": "ai_prediction_history.direction_correct",
+              "nativeQueryRef": "direction_correct"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

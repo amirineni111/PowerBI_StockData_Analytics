@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "strategy2_opportunities",
+  "displayName": "Strategy-2 Trade Opportunities",
+  "displayOption": "FitToWidth",
+  "height": 1080,
+  "width": 1920
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "validation_slicer_market",
+  "position": {
+    "x": 1380,
+    "y": 190,
+    "z": 12,
+    "height": 180,
+    "width": 230,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "signal_tracking_history.market",
+              "nativeQueryRef": "market",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "32d28cb6d2e15b7992de",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

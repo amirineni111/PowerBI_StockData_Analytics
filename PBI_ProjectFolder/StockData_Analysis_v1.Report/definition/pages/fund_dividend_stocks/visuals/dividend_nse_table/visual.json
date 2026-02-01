@@ -1,0 +1,443 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "dividend_nse_table",
+  "position": {
+    "x": 16,
+    "y": 768,
+    "z": 11,
+    "height": 416.00000000000006,
+    "width": 1632,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "fetch_date"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.fetch_date",
+              "nativeQueryRef": "fetch_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.ticker",
+              "nativeQueryRef": "Ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.company_name",
+              "nativeQueryRef": "Company"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NSE Dividend Score"
+                }
+              },
+              "queryRef": "_Measures.NSE Dividend Score",
+              "nativeQueryRef": "Dividend Score"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NSE Dividend Category"
+                }
+              },
+              "queryRef": "_Measures.NSE Dividend Category",
+              "nativeQueryRef": "Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "dividend_yield"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.dividend_yield",
+              "nativeQueryRef": "Div Yield %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "dividend_rate"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.dividend_rate",
+              "nativeQueryRef": "Div Rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "payout_ratio"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.payout_ratio",
+              "nativeQueryRef": "Payout %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "free_cashflow"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.free_cashflow",
+              "nativeQueryRef": "FCF"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "profit_margin"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.profit_margin",
+              "nativeQueryRef": "Margin %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "debt_to_equity"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.debt_to_equity",
+              "nativeQueryRef": "Debt/Equity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "return_on_equity"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.return_on_equity",
+              "nativeQueryRef": "ROE %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "market_cap"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.market_cap",
+              "nativeQueryRef": "Mkt Cap"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "NSE Dividend Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NSE Data'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ec74f53aa509c6cdb808",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bd2515f29eff501c6342",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "537480a338e785a10cb4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NSE Dividend Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7fdc7088ec2fce02b15f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NSE Dividend Category"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "eef8c7acfb6e5eb8cb9b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "dividend_yield"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8e375a8374d6e48b8080",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "dividend_rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6ad0fdf47b6aca9628a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "payout_ratio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "272331474c9be3d6762c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "free_cashflow"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3c5e0e7fb3d45acdb12a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "profit_margin"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5585d6973b5b8aa4b306",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "debt_to_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "775cb3a6a9a40e93db95",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "return_on_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0860bcb148c1cdb5256d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "market_cap"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bf53e0733e4a228ab15d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "fetch_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

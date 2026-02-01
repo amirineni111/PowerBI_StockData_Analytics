@@ -1,0 +1,136 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "nasdaq_main_table",
+  "position": {
+    "x": 20,
+    "y": 190,
+    "z": 10,
+    "height": 450,
+    "width": 1130,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.company_name",
+              "nativeQueryRef": "company_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "trailing_pe"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.trailing_pe",
+              "nativeQueryRef": "trailing_pe"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "price_to_book"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.price_to_book",
+              "nativeQueryRef": "price_to_book"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "return_on_equity"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.return_on_equity",
+              "nativeQueryRef": "return_on_equity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "profit_margin"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.profit_margin",
+              "nativeQueryRef": "profit_margin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "dividend_yield"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.dividend_yield",
+              "nativeQueryRef": "dividend_yield"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_fundamentals"
+                    }
+                  },
+                  "Property": "market_cap"
+                }
+              },
+              "queryRef": "nasdaq_100_fundamentals.market_cap",
+              "nativeQueryRef": "market_cap"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "validation_slicer_signal",
+  "position": {
+    "x": 1140,
+    "y": 190,
+    "z": 11,
+    "height": 180,
+    "width": 230,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_type"
+                }
+              },
+              "queryRef": "signal_tracking_history.signal_type",
+              "nativeQueryRef": "signal_type",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3fd8445900eedc6006b6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "signal_type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

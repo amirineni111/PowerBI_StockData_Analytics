@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "ai_slicer_market",
+  "position": {
+    "x": 1700,
+    "y": 80,
+    "z": 8,
+    "height": 120,
+    "width": 200,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "ai_prediction_history.market",
+              "nativeQueryRef": "market",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,65 @@
+table Date_tbl
+	lineageTag: c7f0011f-7bd2-4909-afe7-a3f64b108b2f
+
+	column Date
+		formatString: mm/dd/yyyy
+		lineageTag: 371d8bac-eba5-4d51-87d1-988f4aa46528
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 7b8748c1-8538-4024-931b-25deb896987a
+			defaultHierarchy: LocalDateTable_235b48d0-46bf-4c86-951b-3edf6b085232.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Year = YEAR(Date_tbl[Date])
+		formatString: 0
+		lineageTag: e7ab7613-65d3-41c3-b7f1-b624e754fd89
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month = FORMAT('Date_tbl'[Date], "mmmm")
+		lineageTag: 79215696-dc09-422e-8932-9de6646a2807
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum = MONTH('Date_tbl'[Date])
+		formatString: 0
+		lineageTag: 0b059ad4-ce15-44c7-b2f5-e08673ebcae5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter = "Q" & FORMAT('Date_tbl'[Date], "Q")
+		lineageTag: 688af376-a20a-40f0-9aeb-4adcfd6f6007
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Label' = ```
+			
+			IF('Date_tbl'[Date] = MAX('Date_tbl'[Date]), 
+			"Latest Date", 
+			FORMAT('Date_tbl'[Date], "MM-DD-YYYY"))
+			
+			```
+		lineageTag: 93b62956-cfed-475d-a507-6be038ab22c7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date_tbl = calculated
+		mode: import
+		source = CALENDAR(DATE(2024,1,1),DATE(2028,12,31))
+
+	annotation PBI_Id = 8c7759bfc7cc47168894efed6f7bc757
+

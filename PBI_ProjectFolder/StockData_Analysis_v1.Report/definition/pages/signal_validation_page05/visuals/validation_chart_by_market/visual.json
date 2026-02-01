@@ -1,0 +1,89 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "validation_chart_by_market",
+  "position": {
+    "x": 1260,
+    "y": 620,
+    "z": 15,
+    "height": 340,
+    "width": 640,
+    "tabOrder": 15
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "signal_tracking_history.market",
+              "nativeQueryRef": "market",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Signal Success Rate 7D"
+                }
+              },
+              "queryRef": "_Measures.Signal Success Rate 7D",
+              "nativeQueryRef": "Signal Success Rate 7D"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "24f61a2c52d9854e29b0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "signal_tracking_history"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dbf74591550a75a5ca0a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Signal Success Rate 7D"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

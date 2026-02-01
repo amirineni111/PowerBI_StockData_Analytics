@@ -1,0 +1,369 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "3333b2fca3efbff52d24",
+  "position": {
+    "x": 80,
+    "y": 704,
+    "z": 5,
+    "height": 528,
+    "width": 1408,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_DataFreshness_strategy1"
+                    }
+                  },
+                  "Property": "data_source"
+                }
+              },
+              "queryRef": "vw_PowerBI_DataFreshness_strategy1.data_source",
+              "nativeQueryRef": "data_source"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_DataFreshness_strategy1"
+                    }
+                  },
+                  "Property": "last_updated"
+                }
+              },
+              "queryRef": "vw_PowerBI_DataFreshness_strategy1.last_updated",
+              "nativeQueryRef": "last_updated"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_DataFreshness_strategy1"
+                    }
+                  },
+                  "Property": "latest_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_DataFreshness_strategy1.latest_date",
+              "nativeQueryRef": "latest_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_DataFreshness_strategy1"
+                    }
+                  },
+                  "Property": "records_count"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_DataFreshness_strategy1.records_count)",
+              "nativeQueryRef": "records_count"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_DataFreshness_strategy1"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "vw_PowerBI_DataFreshness_strategy1.status",
+              "nativeQueryRef": "status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_DataFreshness_strategy1"
+                    }
+                  },
+                  "Property": "tickers_count"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_DataFreshness_strategy1.tickers_count)",
+              "nativeQueryRef": "tickers_count"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "vw_PowerBI_DataFreshness_strategy1"
+                                        }
+                                      },
+                                      "Property": "status"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'STALE'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#D64550'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "vw_PowerBI_DataFreshness_strategy1"
+                                        }
+                                      },
+                                      "Property": "status"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'CURRENT'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#DEFFE5'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "vw_PowerBI_DataFreshness_strategy1.status"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data Freshness Table'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b4fa8075aefb21a5d44d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_DataFreshness_strategy1"
+              }
+            },
+            "Property": "data_source"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a1ee7f85772746e0962a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_DataFreshness_strategy1"
+              }
+            },
+            "Property": "status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9ba6f9d2665c7a00abfe",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_DataFreshness_strategy1"
+              }
+            },
+            "Property": "last_updated"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fbbb2bc301a600fbacd0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_DataFreshness_strategy1"
+              }
+            },
+            "Property": "latest_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bda4d2cf78d031b92a92",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_DataFreshness_strategy1"
+              }
+            },
+            "Property": "records_count"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1be99c2e6ccf19249a4f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_DataFreshness_strategy1"
+              }
+            },
+            "Property": "tickers_count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "exec_chart_success_rates",
+  "position": {
+    "x": 490,
+    "y": 640,
+    "z": 14,
+    "height": 320,
+    "width": 470,
+    "tabOrder": 14
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "signal_tracking_history"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "signal_tracking_history.market",
+              "nativeQueryRef": "market",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Signal Success Rate 7D"
+                }
+              },
+              "queryRef": "_Measures.Signal Success Rate 7D",
+              "nativeQueryRef": "Signal Success Rate 7D"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Signal Success Rate 14D"
+                }
+              },
+              "queryRef": "_Measures.Signal Success Rate 14D",
+              "nativeQueryRef": "Signal Success Rate 14D"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Signal Success Rate 30D"
+                }
+              },
+              "queryRef": "_Measures.Signal Success Rate 30D",
+              "nativeQueryRef": "Signal Success Rate 30D"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

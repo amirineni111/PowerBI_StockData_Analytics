@@ -1,0 +1,224 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "predictions_detail_table",
+  "position": {
+    "x": 660,
+    "y": 610,
+    "z": 8,
+    "height": 350,
+    "width": 940,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "ai_prediction_history.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "ai_prediction_history.market",
+              "nativeQueryRef": "market"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "ai_prediction_history.prediction_date",
+              "nativeQueryRef": "prediction_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "predicted_change_pct"
+                }
+              },
+              "queryRef": "ai_prediction_history.predicted_change_pct",
+              "nativeQueryRef": "predicted_change_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "actual_change_pct"
+                }
+              },
+              "queryRef": "ai_prediction_history.actual_change_pct",
+              "nativeQueryRef": "actual_change_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "percentage_error"
+                }
+              },
+              "queryRef": "ai_prediction_history.percentage_error",
+              "nativeQueryRef": "percentage_error"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "direction_correct"
+                }
+              },
+              "queryRef": "ai_prediction_history.direction_correct",
+              "nativeQueryRef": "direction_correct"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2639f65eaa644e77c9d1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73c4fe60becb06dca646",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4f16fbb00aa41073832d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6df76844e2046273c352",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "predicted_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1e42650be78a20c46963",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "actual_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d4d0a523824d5b28cbe9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "percentage_error"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b3ec0929667b2a040b0a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "direction_correct"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

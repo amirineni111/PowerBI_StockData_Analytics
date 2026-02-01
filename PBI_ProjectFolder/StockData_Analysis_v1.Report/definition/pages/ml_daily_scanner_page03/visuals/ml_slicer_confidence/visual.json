@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "ml_slicer_confidence",
+  "position": {
+    "x": 1670,
+    "y": 620,
+    "z": 16,
+    "height": 170,
+    "width": 230,
+    "tabOrder": 16
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "high_confidence"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.high_confidence",
+              "nativeQueryRef": "high_confidence",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

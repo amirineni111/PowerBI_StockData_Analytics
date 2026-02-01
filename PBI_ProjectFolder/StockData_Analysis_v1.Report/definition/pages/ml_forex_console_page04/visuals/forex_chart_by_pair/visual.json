@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "forex_chart_by_pair",
+  "position": {
+    "x": 490,
+    "y": 580,
+    "z": 15,
+    "height": 380,
+    "width": 500,
+    "tabOrder": 15
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "currency_pair"
+                }
+              },
+              "queryRef": "forex_ml_predictions.currency_pair",
+              "nativeQueryRef": "currency_pair",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Forex Avg Confidence"
+                }
+              },
+              "queryRef": "_Measures.Forex Avg Confidence",
+              "nativeQueryRef": "Forex Avg Confidence"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

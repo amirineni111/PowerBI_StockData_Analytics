@@ -1,0 +1,116 @@
+table nse_500_hist_data
+	lineageTag: cb88a8e2-f868-49ee-bdde-7e1848f696b1
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 9e8216dc-de27-4273-89fb-62d909d590d6
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		variation Variation
+			isDefault
+			relationship: 66ba47a5-7d40-4203-a067-47bde8a9ccad
+			defaultHierarchy: LocalDateTable_f4c7f69d-5916-427a-a293-9074532b2af0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column open_price
+		dataType: double
+		formatString: 0.00
+		lineageTag: 4cfcbe21-190f-4d46-8423-840137c9b898
+		summarizeBy: none
+		sourceColumn: open_price
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column high_price
+		dataType: double
+		formatString: 0.00
+		lineageTag: 792d0ffe-834b-43e4-8de9-83c3835b67fa
+		summarizeBy: none
+		sourceColumn: high_price
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column low_price
+		dataType: double
+		formatString: 0.00
+		lineageTag: 4f5cc8a9-7dad-43ad-b1ff-69ca7a401096
+		summarizeBy: none
+		sourceColumn: low_price
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column close_price
+		dataType: double
+		formatString: 0.00
+		lineageTag: 71c52317-d824-4a87-8969-0ced284424e7
+		summarizeBy: none
+		sourceColumn: close_price
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column volume
+		dataType: string
+		lineageTag: 70bc4d91-c25f-47d4-84c8-9a4afe785d13
+		summarizeBy: none
+		sourceColumn: volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column dividend
+		dataType: string
+		lineageTag: 23e80840-ec2d-4e2b-9796-562d1815e61a
+		summarizeBy: none
+		sourceColumn: dividend
+
+		annotation SummarizationSetBy = Automatic
+
+	column stocksplit
+		dataType: string
+		lineageTag: cb10ac67-cfcc-4244-b69b-91c78324e10e
+		summarizeBy: none
+		sourceColumn: stocksplit
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: 5aa663d8-43f9-47b4-a1fb-f14ec67a9913
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company
+		dataType: string
+		lineageTag: b14f37ff-0748-481e-b44c-710ecd0c5ee8
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	partition nse_500_hist_data = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500_hist_data = Source{[Schema="dbo",Item="nse_500_hist_data"]}[Data]
+				in
+				    dbo_nse_500_hist_data
+
+	annotation PBI_ResultType = Table
+

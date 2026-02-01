@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "garp_title",
+  "position": {
+    "x": 16,
+    "y": 16,
+    "z": 0,
+    "height": 96,
+    "width": 1007.9999999999999,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "🎯 GARP: Growth At Reasonable Price",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "24px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Combined strategy with technical signals:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "12px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "• Value (40 pts): P/E < 20, P/B < 2, PEG < 1.5  • Growth (30 pts): Revenue & earnings growth > 10%  • Quality (20 pts): ROE > 15%, Debt/Equity < 1  • Momentum (10 pts): Recent technical buy signals",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "11px"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

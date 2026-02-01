@@ -1,0 +1,314 @@
+table vw_strategy2_trade_opportunities
+	lineageTag: s2-trade-opp-001
+
+	column market
+		dataType: string
+		lineageTag: s2-to-market
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: s2-to-ticker
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company
+		dataType: string
+		lineageTag: s2-to-company
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column prediction_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: s2-to-pred-date
+		summarizeBy: none
+		sourceColumn: prediction_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column ml_signal
+		dataType: string
+		lineageTag: s2-to-ml-signal
+		summarizeBy: none
+		sourceColumn: ml_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_confidence
+		dataType: double
+		lineageTag: s2-to-ml-conf
+		summarizeBy: sum
+		sourceColumn: ml_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ml_confidence_pct
+		dataType: double
+		lineageTag: s2-to-ml-conf-pct
+		summarizeBy: sum
+		sourceColumn: ml_confidence_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ml_signal_strength
+		dataType: string
+		lineageTag: s2-to-ml-str
+		summarizeBy: none
+		sourceColumn: ml_signal_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_direction
+		dataType: string
+		lineageTag: s2-to-ml-dir
+		summarizeBy: none
+		sourceColumn: ml_direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_close_price
+		dataType: double
+		lineageTag: s2-to-ml-close
+		summarizeBy: sum
+		sourceColumn: ml_close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ml_rsi
+		dataType: double
+		lineageTag: s2-to-ml-rsi
+		summarizeBy: sum
+		sourceColumn: ml_rsi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rsi_category
+		dataType: string
+		lineageTag: s2-to-rsi-cat
+		summarizeBy: none
+		sourceColumn: rsi_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column buy_probability
+		dataType: double
+		lineageTag: s2-to-buy-prob
+		summarizeBy: sum
+		sourceColumn: buy_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sell_probability
+		dataType: double
+		lineageTag: s2-to-sell-prob
+		summarizeBy: sum
+		sourceColumn: sell_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column tech_signal
+		dataType: string
+		lineageTag: s2-to-tech-sig
+		summarizeBy: none
+		sourceColumn: tech_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_signal_strength
+		dataType: int64
+		formatString: 0
+		lineageTag: s2-to-tech-str
+		summarizeBy: sum
+		sourceColumn: tech_signal_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_macd
+		dataType: string
+		lineageTag: s2-to-tech-macd
+		summarizeBy: none
+		sourceColumn: tech_macd
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_rsi
+		dataType: string
+		lineageTag: s2-to-tech-rsi
+		summarizeBy: none
+		sourceColumn: tech_rsi
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_bb
+		dataType: string
+		lineageTag: s2-to-tech-bb
+		summarizeBy: none
+		sourceColumn: tech_bb
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_sma
+		dataType: string
+		lineageTag: s2-to-tech-sma
+		summarizeBy: none
+		sourceColumn: tech_sma
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_stoch
+		dataType: string
+		lineageTag: s2-to-tech-stoch
+		summarizeBy: none
+		sourceColumn: tech_stoch
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_fib
+		dataType: string
+		lineageTag: s2-to-tech-fib
+		summarizeBy: none
+		sourceColumn: tech_fib
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_pattern
+		dataType: string
+		lineageTag: s2-to-tech-pattern
+		summarizeBy: none
+		sourceColumn: tech_pattern
+
+		annotation SummarizationSetBy = Automatic
+
+	column tech_signal_price
+		dataType: double
+		lineageTag: s2-to-tech-price
+		summarizeBy: sum
+		sourceColumn: tech_signal_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column signals_aligned
+		dataType: int64
+		formatString: 0
+		lineageTag: s2-to-aligned
+		summarizeBy: sum
+		sourceColumn: signals_aligned
+
+		annotation SummarizationSetBy = Automatic
+
+	column combined_confidence
+		dataType: string
+		lineageTag: s2-to-comb-conf
+		summarizeBy: none
+		sourceColumn: combined_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_date_7d
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: s2-to-target7d
+		summarizeBy: none
+		sourceColumn: target_date_7d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column target_date_14d
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: s2-to-target14d
+		summarizeBy: none
+		sourceColumn: target_date_14d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column target_date_30d
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: s2-to-target30d
+		summarizeBy: none
+		sourceColumn: target_date_30d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column opportunity_score
+		dataType: double
+		lineageTag: s2-to-opp-score
+		summarizeBy: sum
+		sourceColumn: opportunity_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trade_grade
+		dataType: string
+		lineageTag: s2-to-trade-grade
+		summarizeBy: none
+		sourceColumn: trade_grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column recommended_action
+		dataType: string
+		lineageTag: s2-to-rec-action
+		summarizeBy: none
+		sourceColumn: recommended_action
+
+		annotation SummarizationSetBy = Automatic
+
+	column rsi_assessment
+		dataType: string
+		lineageTag: s2-to-rsi-assess
+		summarizeBy: none
+		sourceColumn: rsi_assessment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_strategy2_trade_opportunities = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\MSSQLSERVER01", "stockdata_db"),
+				    dbo_vw_strategy2_trade_opportunities = Source{[Schema="dbo",Item="vw_strategy2_trade_opportunities"]}[Data]
+				in
+				    dbo_vw_strategy2_trade_opportunities
+

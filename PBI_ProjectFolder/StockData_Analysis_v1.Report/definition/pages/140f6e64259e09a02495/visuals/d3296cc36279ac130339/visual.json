@@ -1,0 +1,498 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "d3296cc36279ac130339",
+  "position": {
+    "x": 272,
+    "y": 32,
+    "z": 2,
+    "height": 928.00000000000011,
+    "width": 1520,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "ai_prediction_history.company_name",
+              "nativeQueryRef": "company_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "days_ahead"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.days_ahead)",
+              "nativeQueryRef": "days_ahead"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "current_price"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.current_price)",
+              "nativeQueryRef": "current_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "predicted_price"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.predicted_price)",
+              "nativeQueryRef": "predicted_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "actual_price"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.actual_price)",
+              "nativeQueryRef": "actual_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "ai_prediction_history.prediction_date",
+              "nativeQueryRef": "prediction_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "target_date"
+                }
+              },
+              "queryRef": "ai_prediction_history.target_date",
+              "nativeQueryRef": "target_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "created_at"
+                }
+              },
+              "queryRef": "ai_prediction_history.created_at",
+              "nativeQueryRef": "created_at"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "direction_correct"
+                }
+              },
+              "queryRef": "ai_prediction_history.direction_correct",
+              "nativeQueryRef": "direction_correct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "model_name"
+                }
+              },
+              "queryRef": "ai_prediction_history.model_name",
+              "nativeQueryRef": "model_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "model_confidence"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.model_confidence)",
+              "nativeQueryRef": "model_confidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "percentage_error"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.percentage_error)",
+              "nativeQueryRef": "percentage_error"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "predicted_change_pct"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.predicted_change_pct)",
+              "nativeQueryRef": "predicted_change_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "actual_change_pct"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.actual_change_pct)",
+              "nativeQueryRef": "actual_change_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_prediction_history"
+                    }
+                  },
+                  "Property": "absolute_error"
+                }
+              },
+              "queryRef": "Sum(ai_prediction_history.absolute_error)",
+              "nativeQueryRef": "absolute_error"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ai_prediction_history"
+                  }
+                },
+                "Property": "model_name"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "163.91491261134365D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "ai_prediction_history.created_at"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fc2b6283c617d6243a0a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "289f32570bb6cb7b0147",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "current_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "570181e26b5ad0ec4408",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "54823310000087999260",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "created_at"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a0454f7a9315301544d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "actual_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "00c874205a3497b06752",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "predicted_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9151e0e2174689739004",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "target_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4a6c348496322ac6ae40",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "direction_correct"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ccbde4605a6c237d69e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "model_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f525a3a958a46487c5c5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "percentage_error"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9fba0820746bee653678",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "predicted_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6c632c142530726aee35",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "actual_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c6ccc3a05a38071804dc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "absolute_error"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b1d31e72140c05d340b4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "model_confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5796c1cb008a4833200d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_prediction_history"
+              }
+            },
+            "Property": "days_ahead"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

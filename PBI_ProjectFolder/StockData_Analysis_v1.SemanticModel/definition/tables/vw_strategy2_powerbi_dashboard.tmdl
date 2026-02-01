@@ -1,0 +1,125 @@
+table vw_strategy2_powerbi_dashboard
+	lineageTag: s2-dashboard-001
+
+	column market
+		dataType: string
+		lineageTag: s2-db-market
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column prediction_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: s2-db-pred-date
+		summarizeBy: none
+		sourceColumn: prediction_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column total_opportunities
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-db-total-opp
+		summarizeBy: sum
+		sourceColumn: total_opportunities
+
+		annotation SummarizationSetBy = Automatic
+
+	column aligned_signals
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-db-aligned
+		summarizeBy: sum
+		sourceColumn: aligned_signals
+
+		annotation SummarizationSetBy = Automatic
+
+	column grade_a_count
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-db-grade-a
+		summarizeBy: sum
+		sourceColumn: grade_a_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column grade_b_count
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-db-grade-b
+		summarizeBy: sum
+		sourceColumn: grade_b_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column grade_c_count
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-db-grade-c
+		summarizeBy: sum
+		sourceColumn: grade_c_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column grade_d_count
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-db-grade-d
+		summarizeBy: sum
+		sourceColumn: grade_d_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column short_opportunities
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-db-short-opp
+		summarizeBy: sum
+		sourceColumn: short_opportunities
+
+		annotation SummarizationSetBy = Automatic
+
+	column long_opportunities
+		dataType: int64
+		formatString: #,##0
+		lineageTag: s2-db-long-opp
+		summarizeBy: sum
+		sourceColumn: long_opportunities
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_opportunity_score
+		dataType: double
+		lineageTag: s2-db-avg-score
+		summarizeBy: sum
+		sourceColumn: avg_opportunity_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_ml_confidence
+		dataType: double
+		lineageTag: s2-db-avg-conf
+		summarizeBy: sum
+		sourceColumn: avg_ml_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_strategy2_powerbi_dashboard = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\MSSQLSERVER01", "stockdata_db"),
+				    dbo_vw_strategy2_powerbi_dashboard = Source{[Schema="dbo",Item="vw_strategy2_powerbi_dashboard"]}[Data]
+				in
+				    dbo_vw_strategy2_powerbi_dashboard
+

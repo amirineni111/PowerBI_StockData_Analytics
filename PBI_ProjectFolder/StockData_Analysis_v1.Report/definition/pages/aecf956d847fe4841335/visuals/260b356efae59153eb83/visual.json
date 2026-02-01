@@ -1,0 +1,560 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "260b356efae59153eb83",
+  "position": {
+    "x": 16,
+    "y": 304,
+    "z": 0,
+    "height": 1024,
+    "width": 1952,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.market",
+              "nativeQueryRef": "market"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.signal_date",
+              "nativeQueryRef": "signal_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "trade_tier"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.trade_tier",
+              "nativeQueryRef": "trade_tier"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "technical_combo"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.technical_combo",
+              "nativeQueryRef": "technical_combo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_type"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.signal_type",
+              "nativeQueryRef": "signal_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "ai_correct"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.ai_correct",
+              "nativeQueryRef": "ai_correct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_strength"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_AI_Technical_Combos.signal_strength)",
+              "nativeQueryRef": "signal_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "ai_prediction_pct"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.ai_prediction_pct",
+              "nativeQueryRef": "ai_prediction_pct1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "actual_change_7d"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_AI_Technical_Combos.actual_change_7d)",
+              "nativeQueryRef": "actual_change_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "bb_signal"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.bb_signal",
+              "nativeQueryRef": "bb_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "fib_signal"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.fib_signal",
+              "nativeQueryRef": "fib_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "macd_signal"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.macd_signal",
+              "nativeQueryRef": "macd_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "pattern_signal"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.pattern_signal",
+              "nativeQueryRef": "pattern_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "result_7d"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.result_7d",
+              "nativeQueryRef": "result_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "rsi_signal"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.rsi_signal",
+              "nativeQueryRef": "rsi_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_price"
+                }
+              },
+              "queryRef": "Sum(vw_PowerBI_AI_Technical_Combos.signal_price)",
+              "nativeQueryRef": "signal_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "stoch_signal"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.stoch_signal",
+              "nativeQueryRef": "stoch_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_id"
+                }
+              },
+              "queryRef": "vw_PowerBI_AI_Technical_Combos.signal_id",
+              "nativeQueryRef": "signal_id"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3926a38948760e3461ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eedeb61cf06a6a8c959e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "trade_tier"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b1467e5b384f3aa7dc5c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "technical_combo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8a29316587f08699431f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "45e8f0c412c79575c243",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "ai_correct"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a1ef83e059673b1eecbd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "fib_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b7008d2184b5cbc0aaa2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "macd_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fba5637c0a498b38b3ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "pattern_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ae95da330ed16f1d25aa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "result_7d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "690828defaf52f4f9653",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "rsi_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "abcf20c8029048b4606b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "stoch_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6e818f5fdaa73eecb45a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "bb_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "340ea697ede87bfcf263",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_id"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "89bd333907c7055c6cf2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f00f497031bf8dabd63c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3dd9dbde0804cc9fea23",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_strength"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a7f34a31ff2da9cd3401",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "actual_change_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "15a2f56120072f56ed7c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "ai_prediction_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c857685ca67fe28e9139",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_price"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

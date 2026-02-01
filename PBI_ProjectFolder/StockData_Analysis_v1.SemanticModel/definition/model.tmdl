@@ -1,0 +1,103 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["nse_500","nse_500_fundamentals","nse_500_hist_data","nasdaq_100_hist_data","nasdaq_100_fundamentals","nasdaq_top100","ml_trading_predictions","ml_technical_indicators","ml_nse_trading_predictions","ml_nse_technical_indicators","ml_nse_predict_summary","forex_ml_predictions","forex_master","forex_model_performance","forex_prediction_features","ai_prediction_history","signal_tracking_history","_Measures","vw_PowerBI_DataFreshness_strategy1","vw_PowerBI_HistoricalTrend_strategy1","vw_PowerBI_Opportunities_strategy1","vw_PowerBI_TopTickers_strategy1","vw_PowerBI_AI_Technical_Combos","vw_strategy2_trade_opportunities","vw_strategy2_historical_performance","vw_strategy2_outcome_tracking","vw_strategy2_powerbi_dashboard"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table nse_500
+ref table DateTableTemplate_2fa248e3-4cf2-41a3-aa0c-8f4592e52996
+ref table LocalDateTable_76b7e245-6695-4ff8-a994-36c63e417384
+ref table LocalDateTable_dc323ef4-c91b-4fd5-b8de-faea55dd7b3b
+ref table nse_500_fundamentals
+ref table nse_500_hist_data
+ref table LocalDateTable_f4c7f69d-5916-427a-a293-9074532b2af0
+ref table nasdaq_100_hist_data
+ref table LocalDateTable_79f48471-0030-431b-8fa6-4870f889b2ac
+ref table nasdaq_100_fundamentals
+ref table nasdaq_top100
+ref table LocalDateTable_76c514c0-6132-496b-a41c-d5813ee29a30
+ref table LocalDateTable_35e2224c-f8fb-458f-a63a-f17a526772be
+ref table ml_trading_predictions
+ref table LocalDateTable_97b56758-c151-43bd-8018-91cab4522659
+ref table LocalDateTable_bb1eb369-39b3-4a03-b07d-e3e3f89c4e9c
+ref table LocalDateTable_948c6929-2102-4a5d-a74b-83c67818abd3
+ref table ml_technical_indicators
+ref table LocalDateTable_f6cfb084-047b-4870-a3c7-5c849a2590bd
+ref table LocalDateTable_f404cee7-13eb-4be0-baef-adf9f07dc7e5
+ref table LocalDateTable_3b140679-2cf6-4543-8d3b-b68cce56a72e
+ref table ml_nse_trading_predictions
+ref table LocalDateTable_5514c05e-7d74-43d2-a113-8fd53b5bb633
+ref table LocalDateTable_c25e166b-ae19-4626-88e5-edd3c9a4d110
+ref table LocalDateTable_c2cb803c-0f13-4205-b06d-47dd51232c40
+ref table LocalDateTable_b9f70ee4-de1b-4e56-a5db-123b7487f351
+ref table ml_nse_technical_indicators
+ref table LocalDateTable_e3cb46d5-8363-4e53-94d8-586be046f9ca
+ref table LocalDateTable_cb840aac-2c7a-43bd-bf23-eeddafd5d93a
+ref table LocalDateTable_0a10dd10-3bcb-4d66-be96-f6562d7d8d08
+ref table ml_nse_predict_summary
+ref table LocalDateTable_957b68cf-38d0-468e-8f7d-d9b8994019ad
+ref table LocalDateTable_258ba0a6-3116-4110-8ec8-7072a89fa65c
+ref table LocalDateTable_74b42f87-015a-4425-9f32-cd9bbb9c7b5b
+ref table forex_ml_predictions
+ref table LocalDateTable_4af339ce-c764-4b36-b8e6-7923ce2f9384
+ref table LocalDateTable_05a5c145-53b1-4218-9820-b99a7f9ed8c2
+ref table LocalDateTable_1ffb153f-a84d-4df2-ac42-f92212b10fec
+ref table forex_master
+ref table LocalDateTable_848ab546-5a2d-4832-bedb-65a1494f03cd
+ref table LocalDateTable_97a3a0fb-b8fd-4526-8cba-b54104bf0265
+ref table forex_model_performance
+ref table LocalDateTable_8f148452-9c3d-443b-8b01-7ec2bd914b8c
+ref table forex_prediction_features
+ref table LocalDateTable_95c9f299-1b01-4821-b68c-b81611280b15
+ref table LocalDateTable_84e6765b-ef52-4288-bbc7-4d00f3bd9897
+ref table ai_prediction_history
+ref table LocalDateTable_1d02fcb9-c1fc-4608-9e83-510d43626979
+ref table LocalDateTable_d3a54b76-5921-45c4-9518-4f5c60ee6783
+ref table LocalDateTable_09088aec-3f00-458b-81f3-64f0303d15a8
+ref table LocalDateTable_3b53b412-8d02-4725-8f4b-1228b9795255
+ref table signal_tracking_history
+ref table LocalDateTable_39ddb334-b292-4369-ac24-e39157e42bb9
+ref table LocalDateTable_d8a3b708-c132-432b-a88b-5cbb21573674
+ref table LocalDateTable_3a9a7d14-e0dc-4e07-a42f-067ea92c4e33
+ref table LocalDateTable_8dbb7430-bafd-436e-9c3d-7d6cbcbac959
+ref table LocalDateTable_9a20ff69-93f2-445f-8e52-01a4b1acbdc6
+ref table LocalDateTable_ad0020a8-c521-4f5f-8597-71d07681ce28
+ref table _Measures
+ref table vw_PowerBI_DataFreshness_strategy1
+ref table LocalDateTable_7e0fb96d-2a5b-4f99-9c21-ed4915b5b755
+ref table LocalDateTable_a08583eb-6818-403a-8657-8998cf8b952c
+ref table vw_PowerBI_HistoricalTrend_strategy1
+ref table LocalDateTable_17047990-9ba8-426c-a463-caaadf652375
+ref table vw_PowerBI_Opportunities_strategy1
+ref table LocalDateTable_4fbe4123-e12c-47db-96c1-fe0675ca6e64
+ref table LocalDateTable_7309b863-84cc-4254-a08c-24e2b60d7512
+ref table LocalDateTable_3558cabb-b3a5-43bb-a03f-52a61cd40a91
+ref table LocalDateTable_8143d2f5-42c3-4e70-82e0-c558c9424a02
+ref table LocalDateTable_f8cff596-23e2-445e-8cea-1905a1619888
+ref table LocalDateTable_d305afff-e758-4be0-af38-d94cace01f75
+ref table LocalDateTable_fcf18a8e-0fcd-448f-b4a1-8db556683fb4
+ref table LocalDateTable_efcb4713-25fc-4ffc-838a-49e2e329b199
+ref table vw_PowerBI_TopTickers_strategy1
+ref table LocalDateTable_2c032778-2be2-4696-851b-f1c630328a67
+ref table LocalDateTable_1253e5d7-690d-4bac-8f58-14b3b83b0b47
+ref table LocalDateTable_a177d766-6447-4f76-82fa-a925bee2cd5b
+ref table LocalDateTable_5a689686-296e-40b7-a1ec-35c0ee581f4b
+ref table vw_PowerBI_AI_Technical_Combos
+ref table LocalDateTable_17f464a0-9c26-439e-948c-ebf21aa74f5e
+ref table Date_tbl
+ref table LocalDateTable_235b48d0-46bf-4c86-951b-3edf6b085232
+ref table vw_strategy2_trade_opportunities
+ref table vw_strategy2_historical_performance
+ref table vw_strategy2_outcome_tracking
+ref table vw_strategy2_powerbi_dashboard
+
+ref cultureInfo en-US
+

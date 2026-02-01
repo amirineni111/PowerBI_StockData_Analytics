@@ -1,0 +1,98 @@
+table forex_master
+	lineageTag: 21719f08-cdf9-4452-a02a-ac036d587f14
+
+	column symbol
+		dataType: string
+		lineageTag: 13c92d5e-3ce2-4396-8bda-3e30f420cd95
+		summarizeBy: none
+		sourceColumn: symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_from
+		dataType: string
+		lineageTag: 34f90dfb-b33c-4a4f-9b2e-849e86455d1a
+		summarizeBy: none
+		sourceColumn: currency_from
+
+		annotation SummarizationSetBy = Automatic
+
+	column currency_to
+		dataType: string
+		lineageTag: ccae6d09-dde6-49b1-b92a-7e6994237559
+		summarizeBy: none
+		sourceColumn: currency_to
+
+		annotation SummarizationSetBy = Automatic
+
+	column yfinance_symbol
+		dataType: string
+		lineageTag: 2187daab-1f01-4a7c-b435-8f004d2823a2
+		summarizeBy: none
+		sourceColumn: yfinance_symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column monitor_startdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 261e39cd-686c-4404-8bad-a26c268c8fef
+		summarizeBy: none
+		sourceColumn: monitor_startdate
+
+		variation Variation
+			isDefault
+			relationship: 005d8f43-f5c3-4edc-8df4-8baf2ac64c59
+			defaultHierarchy: LocalDateTable_848ab546-5a2d-4832-bedb-65a1494f03cd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column monitor_enddate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 89679425-e78a-4b51-963c-942a799ace91
+		summarizeBy: none
+		sourceColumn: monitor_enddate
+
+		variation Variation
+			isDefault
+			relationship: 36a67f8e-5074-491a-b916-59f39639b578
+			defaultHierarchy: LocalDateTable_97a3a0fb-b8fd-4526-8cba-b54104bf0265.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column comments
+		dataType: string
+		lineageTag: cf058a47-094b-494d-83c0-279ed6aa8a11
+		summarizeBy: none
+		sourceColumn: comments
+
+		annotation SummarizationSetBy = Automatic
+
+	column process_flag
+		dataType: string
+		lineageTag: c1898f0c-a011-4a94-be20-c196f8b3e7e5
+		summarizeBy: none
+		sourceColumn: process_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: string
+		lineageTag: 535a4e1f-f7df-4022-926b-148c49dd85ce
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	partition forex_master = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_forex_master = Source{[Schema="dbo",Item="forex_master"]}[Data]
+				in
+				    dbo_forex_master
+
+	annotation PBI_ResultType = Table
+

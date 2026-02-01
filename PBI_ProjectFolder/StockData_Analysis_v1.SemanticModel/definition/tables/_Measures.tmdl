@@ -1,0 +1,1131 @@
+table _Measures
+	lineageTag: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+
+	measure 'AI Direction Accuracy %' =
+			VAR CorrectCount = COUNTROWS(FILTER(ai_prediction_history, [direction_correct] = TRUE))
+			VAR TotalCount = COUNTROWS(FILTER(ai_prediction_history, NOT(ISBLANK([direction_correct]))))
+			RETURN DIVIDE(CorrectCount, TotalCount, 0)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AI Predictions
+		lineageTag: m001-ai-direction-accuracy
+
+	measure 'AI MAPE %' = AVERAGE(ai_prediction_history[percentage_error])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AI Predictions
+		lineageTag: m002-ai-mape
+
+	measure 'AI RMSE' = SQRT(AVERAGEX(ai_prediction_history, [squared_error]))
+		formatString: 0.0000
+		displayFolder: AI Predictions
+		lineageTag: m003-ai-rmse
+
+	measure 'AI MAE' = AVERAGE(ai_prediction_history[absolute_error])
+		formatString: 0.0000
+		displayFolder: AI Predictions
+		lineageTag: m004-ai-mae
+
+	measure 'AI Total Predictions' = COUNTROWS(ai_prediction_history)
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m005-ai-total-predictions
+
+	measure 'AI Correct Predictions' = COUNTROWS(FILTER(ai_prediction_history, [direction_correct] = TRUE))
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m006-ai-correct-predictions
+
+	measure 'AI Pending Validation' = COUNTROWS(FILTER(ai_prediction_history, ISBLANK([actual_price]) && [target_date] >= TODAY()))
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m007-ai-pending-validation
+
+	measure 'AI Avg Confidence' = AVERAGE(ai_prediction_history[model_confidence])
+		formatString: 0.00%
+		displayFolder: AI Predictions
+		lineageTag: m008-ai-avg-confidence
+
+	measure 'AI Correct Avg Confidence' = CALCULATE(AVERAGE(ai_prediction_history[model_confidence]), ai_prediction_history[direction_correct] = TRUE)
+		formatString: 0.00%
+		displayFolder: AI Predictions
+		lineageTag: m009-ai-correct-avg-confidence
+
+	measure 'AI Avg Predicted Change %' = AVERAGE(ai_prediction_history[predicted_change_pct])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AI Predictions
+		lineageTag: m010-ai-avg-predicted-change
+
+	measure 'AI Avg Actual Change %' = AVERAGE(ai_prediction_history[actual_change_pct])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: AI Predictions
+		lineageTag: m011-ai-avg-actual-change
+
+	measure 'AI Bullish Predictions' = COUNTROWS(FILTER(ai_prediction_history, [predicted_change_pct] > 0))
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m012-ai-bullish-predictions
+
+	measure 'AI Bearish Predictions' = COUNTROWS(FILTER(ai_prediction_history, [predicted_change_pct] < 0))
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m013-ai-bearish-predictions
+
+	measure 'AI Latest Prediction Date' = MAX(ai_prediction_history[prediction_date])
+		formatString: mm/dd/yyyy
+		displayFolder: AI Predictions
+		lineageTag: m014-ai-latest-prediction-date
+
+	measure 'AI Distinct Tickers' = DISTINCTCOUNT(ai_prediction_history[ticker])
+		formatString: #,##0
+		displayFolder: AI Predictions
+		lineageTag: m015-ai-distinct-tickers
+
+	measure 'ML NASDAQ Buy Signals' = COUNTROWS(FILTER(ml_trading_predictions, [predicted_signal] = "BUY"))
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m020-ml-nasdaq-buy
+
+	measure 'ML NASDAQ Sell Signals' = COUNTROWS(FILTER(ml_trading_predictions, [predicted_signal] = "SELL"))
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m021-ml-nasdaq-sell
+
+	measure 'ML NASDAQ Hold Signals' = COUNTROWS(FILTER(ml_trading_predictions, [predicted_signal] = "HOLD"))
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m022-ml-nasdaq-hold
+
+	measure 'ML NASDAQ Total Signals' = COUNTROWS(ml_trading_predictions)
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m023-ml-nasdaq-total
+
+	measure 'ML NASDAQ Avg Confidence' = AVERAGE(ml_trading_predictions[confidence_percentage])
+		formatString: 0.00%
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m024-ml-nasdaq-avg-confidence
+
+	measure 'ML NASDAQ High Confidence Count' = COUNTROWS(FILTER(ml_trading_predictions, [high_confidence] = TRUE))
+		formatString: #,##0
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m025-ml-nasdaq-high-confidence
+
+	measure 'ML NASDAQ Avg Buy Probability' = AVERAGE(ml_trading_predictions[buy_probability])
+		formatString: 0.00%
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m026-ml-nasdaq-avg-buy-prob
+
+	measure 'ML NASDAQ Avg Sell Probability' = AVERAGE(ml_trading_predictions[sell_probability])
+		formatString: 0.00%
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m027-ml-nasdaq-avg-sell-prob
+
+	measure 'ML NASDAQ Latest Date' = MAX(ml_trading_predictions[trading_date])
+		formatString: mm/dd/yyyy
+		displayFolder: ML Signals - NASDAQ
+		lineageTag: m029-ml-nasdaq-latest-date
+
+	measure 'ML NSE Buy Signals' = COUNTROWS(FILTER(ml_nse_trading_predictions, [predicted_signal] = "BUY"))
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m030-ml-nse-buy
+
+	measure 'ML NSE Sell Signals' = COUNTROWS(FILTER(ml_nse_trading_predictions, [predicted_signal] = "SELL"))
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m031-ml-nse-sell
+
+	measure 'ML NSE Hold Signals' = COUNTROWS(FILTER(ml_nse_trading_predictions, [predicted_signal] = "HOLD"))
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m032-ml-nse-hold
+
+	measure 'ML NSE Total Signals' = COUNTROWS(ml_nse_trading_predictions)
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m033-ml-nse-total
+
+	measure 'ML NSE Avg Confidence' = AVERAGE(ml_nse_trading_predictions[confidence_percentage])
+		formatString: 0.00%
+		displayFolder: ML Signals - NSE
+		lineageTag: m034-ml-nse-avg-confidence
+
+	measure 'ML NSE High Confidence Count' = COUNTROWS(FILTER(ml_nse_trading_predictions, [high_confidence] = TRUE))
+		formatString: #,##0
+		displayFolder: ML Signals - NSE
+		lineageTag: m035-ml-nse-high-confidence
+
+	measure 'ML NSE Avg Buy Probability' = AVERAGE(ml_nse_trading_predictions[buy_probability])
+		formatString: 0.00%
+		displayFolder: ML Signals - NSE
+		lineageTag: m036-ml-nse-avg-buy-prob
+
+	measure 'ML NSE Avg Sell Probability' = AVERAGE(ml_nse_trading_predictions[sell_probability])
+		formatString: 0.00%
+		displayFolder: ML Signals - NSE
+		lineageTag: m037-ml-nse-avg-sell-prob
+
+	measure 'ML NSE Latest Date' = MAX(ml_nse_trading_predictions[trading_date])
+		formatString: mm/dd/yyyy
+		displayFolder: ML Signals - NSE
+		lineageTag: m040-ml-nse-latest-date
+
+	measure 'Forex Buy Signals' = COUNTROWS(FILTER(forex_ml_predictions, [predicted_signal] = "BUY"))
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m050-forex-buy
+
+	measure 'Forex Sell Signals' = COUNTROWS(FILTER(forex_ml_predictions, [predicted_signal] = "SELL"))
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m051-forex-sell
+
+	measure 'Forex Hold Signals' = COUNTROWS(FILTER(forex_ml_predictions, [predicted_signal] = "HOLD"))
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m052-forex-hold
+
+	measure 'Forex Total Signals' = COUNTROWS(forex_ml_predictions)
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m053-forex-total
+
+	measure 'Forex Avg Confidence' = AVERAGE(forex_ml_predictions[signal_confidence])
+		formatString: 0.00%
+		displayFolder: ML Signals - Forex
+		lineageTag: m054-forex-avg-confidence
+
+	measure 'Forex Avg Buy Probability' = AVERAGE(forex_ml_predictions[prob_buy])
+		formatString: 0.00%
+		displayFolder: ML Signals - Forex
+		lineageTag: m055-forex-avg-buy-prob
+
+	measure 'Forex Avg Sell Probability' = AVERAGE(forex_ml_predictions[prob_sell])
+		formatString: 0.00%
+		displayFolder: ML Signals - Forex
+		lineageTag: m056-forex-avg-sell-prob
+
+	measure 'Forex Latest Date' = MAX(forex_ml_predictions[prediction_date])
+		formatString: mm/dd/yyyy
+		displayFolder: ML Signals - Forex
+		lineageTag: m058-forex-latest-date
+
+	measure 'Forex Distinct Pairs' = DISTINCTCOUNT(forex_ml_predictions[currency_pair])
+		formatString: #,##0
+		displayFolder: ML Signals - Forex
+		lineageTag: m059-forex-distinct-pairs
+
+	measure 'Forex CV Accuracy' = AVERAGE(forex_model_performance[cv_accuracy_mean])
+		formatString: 0.00%
+		displayFolder: Forex Model Performance
+		lineageTag: m060-forex-model-cv-accuracy
+
+	measure 'Forex Precision' = AVERAGE(forex_model_performance[train_precision])
+		formatString: 0.00%
+		displayFolder: Forex Model Performance
+		lineageTag: m062-forex-model-precision
+
+	measure 'Forex Recall' = AVERAGE(forex_model_performance[train_recall])
+		formatString: 0.00%
+		displayFolder: Forex Model Performance
+		lineageTag: m063-forex-model-recall
+
+	measure 'Forex F1 Score' = AVERAGE(forex_model_performance[train_f1])
+		formatString: 0.00%
+		displayFolder: Forex Model Performance
+		lineageTag: m064-forex-model-f1
+
+	measure 'Signal Success Rate 7D' =
+			VAR SuccessCount = COUNTROWS(FILTER(signal_tracking_history, [result_7d] = "SUCCESS"))
+			VAR TotalCount = COUNTROWS(FILTER(signal_tracking_history, NOT(ISBLANK([result_7d]))))
+			RETURN DIVIDE(SuccessCount, TotalCount, 0)
+		formatString: 0.00%
+		displayFolder: Signal Validation
+		lineageTag: m070-signal-success-7d
+
+	measure 'Signal Success Rate 14D' =
+			VAR SuccessCount = COUNTROWS(FILTER(signal_tracking_history, [result_14d] = "SUCCESS"))
+			VAR TotalCount = COUNTROWS(FILTER(signal_tracking_history, NOT(ISBLANK([result_14d]))))
+			RETURN DIVIDE(SuccessCount, TotalCount, 0)
+		formatString: 0.00%
+		displayFolder: Signal Validation
+		lineageTag: m071-signal-success-14d
+
+	measure 'Signal Success Rate 30D' =
+			VAR SuccessCount = COUNTROWS(FILTER(signal_tracking_history, [result_30d] = "SUCCESS"))
+			VAR TotalCount = COUNTROWS(FILTER(signal_tracking_history, NOT(ISBLANK([result_30d]))))
+			RETURN DIVIDE(SuccessCount, TotalCount, 0)
+		formatString: 0.00%
+		displayFolder: Signal Validation
+		lineageTag: m072-signal-success-30d
+
+	measure 'Total Tracked Signals' = COUNTROWS(signal_tracking_history)
+		formatString: #,##0
+		displayFolder: Signal Validation
+		lineageTag: m073-signal-total-tracked
+
+	measure 'NSE Avg PE' = AVERAGE(nse_500_fundamentals[trailing_pe])
+		formatString: 0.00
+		displayFolder: Fundamentals - NSE
+		lineageTag: m080-nse-avg-pe
+
+	measure 'NSE Avg PB' = AVERAGE(nse_500_fundamentals[price_to_book])
+		formatString: 0.00
+		displayFolder: Fundamentals - NSE
+		lineageTag: m082-nse-avg-pb
+
+	measure 'NSE Avg ROE' = AVERAGE(nse_500_fundamentals[return_on_equity])
+		formatString: 0.00%
+		displayFolder: Fundamentals - NSE
+		lineageTag: m083-nse-avg-roe
+
+	measure 'NSE Avg Dividend Yield' = AVERAGE(nse_500_fundamentals[dividend_yield])
+		formatString: 0.00%
+		displayFolder: Fundamentals - NSE
+		lineageTag: m087-nse-avg-div-yield
+
+	measure 'NASDAQ Avg PE' = AVERAGE(nasdaq_100_fundamentals[trailing_pe])
+		formatString: 0.00
+		displayFolder: Fundamentals - NASDAQ
+		lineageTag: m100-nasdaq-avg-pe
+
+	measure 'NASDAQ Avg PB' = AVERAGE(nasdaq_100_fundamentals[price_to_book])
+		formatString: 0.00
+		displayFolder: Fundamentals - NASDAQ
+		lineageTag: m102-nasdaq-avg-pb
+
+	measure 'NASDAQ Avg ROE' = AVERAGE(nasdaq_100_fundamentals[return_on_equity])
+		formatString: 0.00%
+		displayFolder: Fundamentals - NASDAQ
+		lineageTag: m103-nasdaq-avg-roe
+
+	measure 'NASDAQ Avg Dividend Yield' = AVERAGE(nasdaq_100_fundamentals[dividend_yield])
+		formatString: 0.00%
+		displayFolder: Fundamentals - NASDAQ
+		lineageTag: m107-nasdaq-avg-div-yield
+
+	measure 'Value Score' =
+			VAR AvgPE = [NSE Avg PE]
+			VAR PE_Score = IF(AvgPE < 15, 50, IF(AvgPE < 25, 30, 0))
+			VAR AvgPB = [NSE Avg PB]
+			VAR PB_Score = IF(AvgPB < 1.5, 50, IF(AvgPB < 3, 30, 0))
+			RETURN PE_Score + PB_Score
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m120-nse-value-score
+
+	measure 'Quality Score' =
+			VAR AvgROE = [NSE Avg ROE]
+			VAR ROE_Score = IF(AvgROE > 0.20, 100, IF(AvgROE > 0.10, 60, 0))
+			RETURN ROE_Score
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m121-nse-quality-score
+
+	measure 'Growth Score' = 100
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m122-nse-growth-score
+
+	measure 'Value Score NASDAQ' =
+			VAR AvgPE = [NASDAQ Avg PE]
+			VAR PE_Score = IF(AvgPE < 20, 50, IF(AvgPE < 35, 30, 0))
+			VAR AvgPB = [NASDAQ Avg PB]
+			VAR PB_Score = IF(AvgPB < 3, 50, IF(AvgPB < 6, 30, 0))
+			RETURN PE_Score + PB_Score
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m123-nasdaq-value-score
+
+	measure 'Quality Score NASDAQ' =
+			VAR AvgROE = [NASDAQ Avg ROE]
+			VAR ROE_Score = IF(AvgROE > 0.25, 100, IF(AvgROE > 0.15, 60, 0))
+			RETURN ROE_Score
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m124-nasdaq-quality-score
+
+	measure 'Growth Score NASDAQ' = 100
+		formatString: 0
+		displayFolder: Fundamental Scores
+		lineageTag: m125-nasdaq-growth-score
+
+	measure 'NSE 52W High' =
+			CALCULATE(
+				MAX(nse_500_hist_data[close_price]),
+				FILTER(
+					ALL(nse_500_hist_data[trading_date]),
+					nse_500_hist_data[trading_date] >= TODAY() - 365
+				)
+			)
+		formatString: 0.00
+		displayFolder: NSE Historical
+		lineageTag: m130-nse-52w-high
+
+	measure 'NSE 52W Low' =
+			CALCULATE(
+				MIN(nse_500_hist_data[close_price]),
+				FILTER(
+					ALL(nse_500_hist_data[trading_date]),
+					nse_500_hist_data[trading_date] >= TODAY() - 365
+				)
+			)
+		formatString: #,##0.00
+		displayFolder: NSE Historical
+		lineageTag: m131-nse-52w-low
+
+	measure 'NSE All Time High' = CALCULATE(MAX(nse_500_hist_data[close_price]), ALL(nse_500_hist_data[trading_date]))
+		formatString: #,##0.00
+		displayFolder: NSE Historical
+		lineageTag: m132-nse-all-time-high
+
+	measure 'NSE All Time Low' = CALCULATE(MIN(nse_500_hist_data[close_price]), ALL(nse_500_hist_data[trading_date]))
+		formatString: #,##0.00
+		displayFolder: NSE Historical
+		lineageTag: m133-nse-all-time-low
+
+	measure 'NASDAQ 52W High' =
+			CALCULATE(
+				MAX(nasdaq_100_hist_data[close_price]),
+				FILTER(
+					ALL(nasdaq_100_hist_data[trading_date]),
+					nasdaq_100_hist_data[trading_date] >= TODAY() - 365
+				)
+			)
+		formatString: #,##0.00
+		displayFolder: NASDAQ Historical
+		lineageTag: m134-nasdaq-52w-high
+
+	measure 'NASDAQ 52W Low' =
+			CALCULATE(
+				MIN(nasdaq_100_hist_data[close_price]),
+				FILTER(
+					ALL(nasdaq_100_hist_data[trading_date]),
+					nasdaq_100_hist_data[trading_date] >= TODAY() - 365
+				)
+			)
+		formatString: #,##0.00
+		displayFolder: NASDAQ Historical
+		lineageTag: m135-nasdaq-52w-low
+
+	measure 'NASDAQ All Time High' = CALCULATE(MAX(nasdaq_100_hist_data[close_price]), ALL(nasdaq_100_hist_data[trading_date]))
+		formatString: #,##0.00
+		displayFolder: NASDAQ Historical
+		lineageTag: m136-nasdaq-all-time-high
+
+	measure 'NASDAQ All Time Low' = CALCULATE(MIN(nasdaq_100_hist_data[close_price]), ALL(nasdaq_100_hist_data[trading_date]))
+		formatString: #,##0.00
+		displayFolder: NASDAQ Historical
+		lineageTag: m137-nasdaq-all-time-low
+
+	measure 'Active TIER 1 Signals' =
+			
+			CALCULATE(
+			    COUNTROWS(vw_PowerBI_AI_Technical_Combos),
+			    vw_PowerBI_AI_Technical_Combos[trade_tier] IN {
+			        "TIER 1 - ULTRA (93% win rate)",
+			        "TIER 1 - ULTRA (79% win rate)",
+			        "TIER 1 - ULTRA (76% win rate)"
+			    },
+			    vw_PowerBI_AI_Technical_Combos[result_7d] = BLANK(),
+			    vw_PowerBI_AI_Technical_Combos[signal_type] = "BEARISH"
+			)
+		formatString: 0
+		displayFolder: Strategy-1
+		lineageTag: efc420a4-be71-497a-8745-47b35463ef30
+
+	measure 'Expected Value' =
+			
+			CALCULATE(
+			    AVERAGE(vw_PowerBI_Tier_Performance[expected_value_pct])
+			)
+		displayFolder: Strategy-1
+		lineageTag: 5d38792b-59d7-4bcd-93b5-2c8835217727
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Overall Win Rate' =
+			
+			DIVIDE(
+			    CALCULATE(
+			        COUNTROWS(vw_PowerBI_AI_Technical_Combos),
+			        vw_PowerBI_AI_Technical_Combos[result_7d] = "WIN"
+			    ),
+			    CALCULATE(
+			        COUNTROWS(vw_PowerBI_AI_Technical_Combos),
+			        vw_PowerBI_AI_Technical_Combos[result_7d] <> BLANK()
+			    ),
+			    0
+			) * 100
+		displayFolder: Strategy-1
+		lineageTag: 863c2b57-6bdc-4aeb-9bf4-5c9e0523e171
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pending Capital' =
+			
+			CALCULATE(
+			    COUNTROWS(vw_PowerBI_AI_Technical_Combos),
+			    vw_PowerBI_AI_Technical_Combos[result_7d] = BLANK()
+			) * 10000
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Strategy-1
+		lineageTag: b66cfec7-24a4-4d27-a658-c96014425a4a
+
+	measure 'TIER 1 Win Rate' =
+			
+			CALCULATE(
+			    [Overall Win Rate],
+			    left(vw_PowerBI_AI_Technical_Combos[trade_tier],8) = "TIER 1 -"
+			 )
+		displayFolder: Strategy-1
+		lineageTag: 08040314-26a2-4e00-a999-5856f34d6b2b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TIER 2 Win Rate' =
+			
+			CALCULATE(
+			    [Overall Win Rate],
+			    left(vw_PowerBI_AI_Technical_Combos[trade_tier],8) = "TIER 2 -"
+			 )
+		displayFolder: Strategy-1
+		lineageTag: bf204d79-b313-42c2-b74d-3b2c7709a1fc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'NASDAQ Value Score' =
+			VAR PE = MAX(nasdaq_100_fundamentals[trailing_pe])
+			VAR PB = MAX(nasdaq_100_fundamentals[price_to_book])
+			VAR PS = MAX(nasdaq_100_fundamentals[price_to_sales])
+			VAR PEG = MAX(nasdaq_100_fundamentals[peg_ratio])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR PE_Score = IF(ISBLANK(PE) || PE <= 0, 0, IF(PE < 10, 25, IF(PE < 15, 20, IF(PE < 20, 15, IF(PE < 30, 5, 0)))))
+			VAR PB_Score = IF(ISBLANK(PB) || PB <= 0, 0, IF(PB < 1, 25, IF(PB < 1.5, 20, IF(PB < 2, 15, IF(PB < 3, 5, 0)))))
+			VAR PS_Score = IF(ISBLANK(PS) || PS <= 0, 0, IF(PS < 1, 20, IF(PS < 2, 15, IF(PS < 3, 10, IF(PS < 5, 5, 0)))))
+			VAR PEG_Score = IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 0.5, 15, IF(PEG < 1, 12, IF(PEG < 1.5, 8, IF(PEG < 2, 4, 0)))))
+			VAR ROE_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.25, 15, IF(ROE > 0.20, 12, IF(ROE > 0.15, 8, IF(ROE > 0.10, 4, 0)))))
+			RETURN PE_Score + PB_Score + PS_Score + PEG_Score + ROE_Score
+		formatString: 0
+		displayFolder: Fundamental Scores - NASDAQ
+		lineageTag: fc760f36-6f4b-49cc-a6a8-68d682d648df
+
+	measure 'NSE Value Score' =
+			VAR PE = MAX(nse_500_fundamentals[trailing_pe])
+			VAR PB = MAX(nse_500_fundamentals[price_to_book])
+			VAR PS = MAX(nse_500_fundamentals[price_to_sales])
+			VAR PEG = MAX(nse_500_fundamentals[peg_ratio])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR PE_Score = IF(ISBLANK(PE) || PE <= 0, 0, IF(PE < 10, 25, IF(PE < 15, 20, IF(PE < 20, 15, IF(PE < 30, 5, 0)))))
+			VAR PB_Score = IF(ISBLANK(PB) || PB <= 0, 0, IF(PB < 1, 25, IF(PB < 1.5, 20, IF(PB < 2, 15, IF(PB < 3, 5, 0)))))
+			VAR PS_Score = IF(ISBLANK(PS) || PS <= 0, 0, IF(PS < 1, 20, IF(PS < 2, 15, IF(PS < 3, 10, IF(PS < 5, 5, 0)))))
+			VAR PEG_Score = IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 0.5, 15, IF(PEG < 1, 12, IF(PEG < 1.5, 8, IF(PEG < 2, 4, 0)))))
+			VAR ROE_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.25, 15, IF(ROE > 0.20, 12, IF(ROE > 0.15, 8, IF(ROE > 0.10, 4, 0)))))
+			RETURN PE_Score + PB_Score + PS_Score + PEG_Score + ROE_Score
+		formatString: 0
+		displayFolder: Fundamental Scores - NSE
+		lineageTag: ad2b3ccd-2350-4217-ba9d-9d57d72dea78
+
+	measure 'NASDAQ Quality Score' =
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR ROA = MAX(nasdaq_100_fundamentals[return_on_assets])
+			VAR ProfitMargin = MAX(nasdaq_100_fundamentals[profit_margin])
+			VAR OpMargin = MAX(nasdaq_100_fundamentals[operating_margin])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
+			VAR FCF = MAX(nasdaq_100_fundamentals[free_cashflow])
+			VAR CurrentRatio = MAX(nasdaq_100_fundamentals[current_ratio])
+			VAR ROE_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.30, 25, IF(ROE > 0.20, 20, IF(ROE > 0.15, 15, IF(ROE > 0.10, 8, 0)))))
+			VAR ROA_Score = IF(ISBLANK(ROA), 0, IF(ROA > 0.15, 15, IF(ROA > 0.10, 12, IF(ROA > 0.05, 8, 0))))
+			VAR Margin_Score = IF(ISBLANK(ProfitMargin), 0, IF(ProfitMargin > 0.25, 20, IF(ProfitMargin > 0.15, 15, IF(ProfitMargin > 0.10, 10, IF(ProfitMargin > 0.05, 5, 0)))))
+			VAR Debt_Score = IF(ISBLANK(DebtEquity), 10, IF(DebtEquity < 0.3, 20, IF(DebtEquity < 0.5, 15, IF(DebtEquity < 1, 10, IF(DebtEquity < 1.5, 5, 0)))))
+			VAR FCF_Score = IF(ISBLANK(FCF) || FCF <= 0, 0, 20)
+			RETURN ROE_Score + ROA_Score + Margin_Score + Debt_Score + FCF_Score
+		formatString: 0
+		displayFolder: Fundamental Categories - NASDAQ
+		lineageTag: 022f782d-95ef-4e22-9055-b455d8928f5e
+
+	measure 'NSE Quality Score' =
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR ROA = MAX(nse_500_fundamentals[return_on_assets])
+			VAR ProfitMargin = MAX(nse_500_fundamentals[profit_margin])
+			VAR OpMargin = MAX(nse_500_fundamentals[operating_margin])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
+			VAR FCF = MAX(nse_500_fundamentals[free_cashflow])
+			VAR CurrentRatio = MAX(nse_500_fundamentals[current_ratio])
+			VAR ROE_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.30, 25, IF(ROE > 0.20, 20, IF(ROE > 0.15, 15, IF(ROE > 0.10, 8, 0)))))
+			VAR ROA_Score = IF(ISBLANK(ROA), 0, IF(ROA > 0.15, 15, IF(ROA > 0.10, 12, IF(ROA > 0.05, 8, 0))))
+			VAR Margin_Score = IF(ISBLANK(ProfitMargin), 0, IF(ProfitMargin > 0.25, 20, IF(ProfitMargin > 0.15, 15, IF(ProfitMargin > 0.10, 10, IF(ProfitMargin > 0.05, 5, 0)))))
+			VAR Debt_Score = IF(ISBLANK(DebtEquity), 10, IF(DebtEquity < 0.3, 20, IF(DebtEquity < 0.5, 15, IF(DebtEquity < 1, 10, IF(DebtEquity < 1.5, 5, 0)))))
+			VAR FCF_Score = IF(ISBLANK(FCF) || FCF <= 0, 0, 20)
+			RETURN ROE_Score + ROA_Score + Margin_Score + Debt_Score + FCF_Score
+		formatString: 0
+		displayFolder: Fundamental Scores - NSE
+		lineageTag: a9f79aae-373f-4582-ba5a-b628d844a3d1
+
+	measure 'NASDAQ Growth Score' =
+			VAR RevGrowth = MAX(nasdaq_100_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nasdaq_100_fundamentals[earnings_growth])
+			VAR FwdPE = MAX(nasdaq_100_fundamentals[forward_pe])
+			VAR TrailPE = MAX(nasdaq_100_fundamentals[trailing_pe])
+			VAR PEG = MAX(nasdaq_100_fundamentals[peg_ratio])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR ProfitMargin = MAX(nasdaq_100_fundamentals[profit_margin])
+			VAR RevGrowth_Score = IF(ISBLANK(RevGrowth), 0, IF(RevGrowth > 0.50, 30, IF(RevGrowth > 0.30, 25, IF(RevGrowth > 0.15, 20, IF(RevGrowth > 0.10, 10, IF(RevGrowth > 0, 5, 0))))))
+			VAR EarnGrowth_Score = IF(ISBLANK(EarnGrowth), 0, IF(EarnGrowth > 0.50, 30, IF(EarnGrowth > 0.30, 25, IF(EarnGrowth > 0.15, 20, IF(EarnGrowth > 0.10, 10, IF(EarnGrowth > 0, 5, 0))))))
+			VAR PEG_Score = IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 1, 20, IF(PEG < 1.5, 15, IF(PEG < 2, 10, IF(PEG < 3, 5, 0)))))
+			VAR ROE_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.20, 20, IF(ROE > 0.15, 15, IF(ROE > 0.10, 10, 0))))
+			RETURN RevGrowth_Score + EarnGrowth_Score + PEG_Score + ROE_Score
+		formatString: 0
+		displayFolder: Fundamental Categories - NASDAQ
+		lineageTag: 6eb560be-0723-4693-bdf3-e3134ae05dac
+
+	measure 'NSE Growth Score' =
+			VAR RevGrowth = MAX(nse_500_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nse_500_fundamentals[earnings_growth])
+			VAR FwdPE = MAX(nse_500_fundamentals[forward_pe])
+			VAR TrailPE = MAX(nse_500_fundamentals[trailing_pe])
+			VAR PEG = MAX(nse_500_fundamentals[peg_ratio])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR ProfitMargin = MAX(nse_500_fundamentals[profit_margin])
+			VAR RevGrowth_Score = IF(ISBLANK(RevGrowth), 0, IF(RevGrowth > 0.50, 30, IF(RevGrowth > 0.30, 25, IF(RevGrowth > 0.15, 20, IF(RevGrowth > 0.10, 10, IF(RevGrowth > 0, 5, 0))))))
+			VAR EarnGrowth_Score = IF(ISBLANK(EarnGrowth), 0, IF(EarnGrowth > 0.50, 30, IF(EarnGrowth > 0.30, 25, IF(EarnGrowth > 0.15, 20, IF(EarnGrowth > 0.10, 10, IF(EarnGrowth > 0, 5, 0))))))
+			VAR PEG_Score = IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 1, 20, IF(PEG < 1.5, 15, IF(PEG < 2, 10, IF(PEG < 3, 5, 0)))))
+			VAR ROE_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.20, 20, IF(ROE > 0.15, 15, IF(ROE > 0.10, 10, 0))))
+			RETURN RevGrowth_Score + EarnGrowth_Score + PEG_Score + ROE_Score
+		formatString: 0
+		displayFolder: Fundamental Scores - NSE
+		lineageTag: e1421804-1975-4129-b36e-1eb114e88654
+
+	measure 'NASDAQ Dividend Score' =
+			VAR DivYield = MAX(nasdaq_100_fundamentals[dividend_yield])
+			VAR PayoutRatio = MAX(nasdaq_100_fundamentals[payout_ratio])
+			VAR FCF = MAX(nasdaq_100_fundamentals[free_cashflow])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
+			VAR ProfitMargin = MAX(nasdaq_100_fundamentals[profit_margin])
+			VAR Yield_Score = IF(ISBLANK(DivYield) || DivYield <= 0, 0, IF(DivYield > 0.05, 35, IF(DivYield > 0.03, 30, IF(DivYield > 0.02, 20, IF(DivYield > 0.01, 10, 5)))))
+			VAR Payout_Score = IF(ISBLANK(PayoutRatio), 15, IF(PayoutRatio > 0 && PayoutRatio < 0.30, 25, IF(PayoutRatio < 0.50, 20, IF(PayoutRatio < 0.75, 15, IF(PayoutRatio < 1, 5, 0)))))
+			VAR FCF_Score = IF(ISBLANK(FCF) || FCF <= 0, 0, 20)
+			VAR Debt_Score = IF(ISBLANK(DebtEquity), 10, IF(DebtEquity < 0.5, 20, IF(DebtEquity < 1, 15, IF(DebtEquity < 1.5, 10, 0))))
+			RETURN Yield_Score + Payout_Score + FCF_Score + Debt_Score
+		formatString: 0
+		displayFolder: Fundamental Categories - NASDAQ
+		lineageTag: a7a0b531-83bf-4122-8b06-0ddba091de95
+
+	measure 'NSE Dividend Score' =
+			VAR DivYield = MAX(nse_500_fundamentals[dividend_yield])
+			VAR PayoutRatio = MAX(nse_500_fundamentals[payout_ratio])
+			VAR FCF = MAX(nse_500_fundamentals[free_cashflow])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
+			VAR ProfitMargin = MAX(nse_500_fundamentals[profit_margin])
+			VAR Yield_Score = IF(ISBLANK(DivYield) || DivYield <= 0, 0, IF(DivYield > 0.05, 35, IF(DivYield > 0.03, 30, IF(DivYield > 0.02, 20, IF(DivYield > 0.01, 10, 5)))))
+			VAR Payout_Score = IF(ISBLANK(PayoutRatio), 15, IF(PayoutRatio > 0 && PayoutRatio < 0.30, 25, IF(PayoutRatio < 0.50, 20, IF(PayoutRatio < 0.75, 15, IF(PayoutRatio < 1, 5, 0)))))
+			VAR FCF_Score = IF(ISBLANK(FCF) || FCF <= 0, 0, 20)
+			VAR Debt_Score = IF(ISBLANK(DebtEquity), 10, IF(DebtEquity < 0.5, 20, IF(DebtEquity < 1, 15, IF(DebtEquity < 1.5, 10, 0))))
+			RETURN Yield_Score + Payout_Score + FCF_Score + Debt_Score
+		formatString: 0
+		displayFolder: Fundamental Scores - NSE
+		lineageTag: 4d55b607-9e18-4fdc-a9d8-cbc6f1dd4c59
+
+	measure 'NASDAQ Total Score' = [NASDAQ Value Score] + [NASDAQ Quality Score] + [NASDAQ Growth Score] + [NASDAQ Dividend Score]
+		formatString: 0"/400"
+		displayFolder: Fundamental Scores - NASDAQ
+		lineageTag: fa009-nasdaq-total-score
+
+	measure 'NSE Total Score' = [NSE Value Score] + [NSE Quality Score] + [NSE Growth Score] + [NSE Dividend Score]
+		formatString: 0"/400"
+		displayFolder: Fundamental Scores - NSE
+		lineageTag: fa010-nse-total-score
+
+	measure 'NASDAQ Rating' =
+			VAR TotalScore = [NASDAQ Total Score]
+			RETURN IF(TotalScore >= 300, "A+", IF(TotalScore >= 250, "A", IF(TotalScore >= 200, "B", IF(TotalScore >= 150, "C", "D"))))
+		displayFolder: Fundamental Categories - NASDAQ
+		lineageTag: a27712b5-ce45-4b10-a85c-98f236d4173b
+
+	measure 'NSE Rating' =
+			VAR TotalScore = [NSE Total Score]
+			RETURN IF(TotalScore >= 300, "A+", IF(TotalScore >= 250, "A", IF(TotalScore >= 200, "B", IF(TotalScore >= 150, "C", "D"))))
+		displayFolder: Fundamental Scores - NSE
+		lineageTag: 99c38d6b-e6b3-41c5-bad3-43500e895c9b
+
+	measure 'NASDAQ Value Category' =
+			VAR PE = MAX(nasdaq_100_fundamentals[trailing_pe])
+			VAR PB = MAX(nasdaq_100_fundamentals[price_to_book])
+			VAR PS = MAX(nasdaq_100_fundamentals[price_to_sales])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR IsDeepValue = PE < 10 && PB < 1 && PS < 1 && ROE > 0.15
+			VAR IsUndervalued = PE < 15 && PB < 1.5 && PS < 2 && ROE > 0.10
+			VAR IsFairValue = PE < 20 && PB < 2.5 && PS < 3
+			RETURN IF(IsDeepValue, "Deep Value", IF(IsUndervalued, "Undervalued", IF(IsFairValue, "Fair Value", "Overvalued")))
+		displayFolder: Fundamental Categories - NASDAQ
+		lineageTag: 593b2d81-772f-4e52-b2a3-408393b255b5
+
+	measure 'NSE Value Category' =
+			VAR PE = MAX(nse_500_fundamentals[trailing_pe])
+			VAR PB = MAX(nse_500_fundamentals[price_to_book])
+			VAR PS = MAX(nse_500_fundamentals[price_to_sales])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR IsDeepValue = PE < 10 && PB < 1 && PS < 1 && ROE > 0.15
+			VAR IsUndervalued = PE < 15 && PB < 1.5 && PS < 2 && ROE > 0.10
+			VAR IsFairValue = PE < 20 && PB < 2.5 && PS < 3
+			RETURN IF(IsDeepValue, "Deep Value", IF(IsUndervalued, "Undervalued", IF(IsFairValue, "Fair Value", "Overvalued")))
+		displayFolder: Fundamental Categories - NSE
+		lineageTag: 3e1a4b83-4e2d-4d1f-983d-8a5b8095d3fd
+
+	measure 'NASDAQ Quality Category' =
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR ProfitMargin = MAX(nasdaq_100_fundamentals[profit_margin])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
+			VAR FCF = MAX(nasdaq_100_fundamentals[free_cashflow])
+			VAR IsExcellent = ROE > 0.25 && ProfitMargin > 0.20 && DebtEquity < 0.3 && FCF > 0
+			VAR IsGood = ROE > 0.20 && ProfitMargin > 0.15 && DebtEquity < 0.5 && FCF > 0
+			RETURN IF(IsExcellent, "Excellent", IF(IsGood, "Good", "Average"))
+		displayFolder: Fundamental Categories - NASDAQ
+		lineageTag: 5e3dc162-9382-4f46-910c-2f871565a0c2
+
+	measure 'NSE Quality Category' =
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR ProfitMargin = MAX(nse_500_fundamentals[profit_margin])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
+			VAR FCF = MAX(nse_500_fundamentals[free_cashflow])
+			VAR IsExcellent = ROE > 0.25 && ProfitMargin > 0.20 && DebtEquity < 0.3 && FCF > 0
+			VAR IsGood = ROE > 0.20 && ProfitMargin > 0.15 && DebtEquity < 0.5 && FCF > 0
+			RETURN IF(IsExcellent, "Excellent", IF(IsGood, "Good", "Average"))
+		displayFolder: Fundamental Categories - NSE
+		lineageTag: 08d125ec-0dcc-4325-92c4-d173ba5bb67f
+
+	measure 'NASDAQ Growth Category' =
+			VAR RevGrowth = MAX(nasdaq_100_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nasdaq_100_fundamentals[earnings_growth])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR IsHighGrowth = RevGrowth > 0.25 && EarnGrowth > 0.25 && ROE > 0.15
+			VAR IsModerateGrowth = RevGrowth > 0.15 && EarnGrowth > 0.15 && ROE > 0.10
+			RETURN IF(IsHighGrowth, "High Growth", IF(IsModerateGrowth, "Moderate Growth", "Low Growth"))
+		displayFolder: Fundamental Categories - NASDAQ
+		lineageTag: 0377a224-1f3d-42a7-bc06-4799bd42cbc2
+
+	measure 'NSE Growth Category' =
+			VAR RevGrowth = MAX(nse_500_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nse_500_fundamentals[earnings_growth])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR IsHighGrowth = RevGrowth > 0.25 && EarnGrowth > 0.25 && ROE > 0.15
+			VAR IsModerateGrowth = RevGrowth > 0.15 && EarnGrowth > 0.15 && ROE > 0.10
+			RETURN IF(IsHighGrowth, "High Growth", IF(IsModerateGrowth, "Moderate Growth", "Low Growth"))
+		displayFolder: Fundamental Categories - NSE
+		lineageTag: 264cc0cc-d1fe-4c00-8a77-198da78a5a94
+
+	measure 'NASDAQ Dividend Category' =
+			VAR DivYield = MAX(nasdaq_100_fundamentals[dividend_yield])
+			VAR PayoutRatio = MAX(nasdaq_100_fundamentals[payout_ratio])
+			VAR FCF = MAX(nasdaq_100_fundamentals[free_cashflow])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
+			VAR IsExcellent = DivYield > 0.03 && PayoutRatio < 0.75 && FCF > 0 && DebtEquity < 1.5
+			VAR IsGood = DivYield > 0.02 && PayoutRatio < 0.85 && FCF > 0
+			RETURN IF(IsExcellent, "Excellent Dividend", IF(IsGood, "Good Dividend", IF(DivYield > 0, "Low Dividend", "No Dividend")))
+		displayFolder: Fundamental Categories - NASDAQ
+		lineageTag: f4bc377e-6824-4df8-8878-16cd781b5311
+
+	measure 'NSE Dividend Category' =
+			VAR DivYield = MAX(nse_500_fundamentals[dividend_yield])
+			VAR PayoutRatio = MAX(nse_500_fundamentals[payout_ratio])
+			VAR FCF = MAX(nse_500_fundamentals[free_cashflow])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
+			VAR IsExcellent = DivYield > 0.03 && PayoutRatio < 0.75 && FCF > 0 && DebtEquity < 1.5
+			VAR IsGood = DivYield > 0.02 && PayoutRatio < 0.85 && FCF > 0
+			RETURN IF(IsExcellent, "Excellent Dividend", IF(IsGood, "Good Dividend", IF(DivYield > 0, "Low Dividend", "No Dividend")))
+		displayFolder: Fundamental Categories - NSE
+		lineageTag: 33841863-36ca-4673-8792-a12c2b89a262
+
+	measure 'NASDAQ GARP Score' =
+			VAR PE = MAX(nasdaq_100_fundamentals[trailing_pe])
+			VAR PB = MAX(nasdaq_100_fundamentals[price_to_book])
+			VAR PEG = MAX(nasdaq_100_fundamentals[peg_ratio])
+			VAR RevGrowth = MAX(nasdaq_100_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nasdaq_100_fundamentals[earnings_growth])
+			VAR ROE = MAX(nasdaq_100_fundamentals[return_on_equity])
+			VAR DebtEquity = MAX(nasdaq_100_fundamentals[debt_to_equity])
+			VAR Value_Score = IF(ISBLANK(PE) || PE <= 0, 0, IF(PE < 15, 15, IF(PE < 20, 10, IF(PE < 25, 5, 0)))) + IF(ISBLANK(PB) || PB <= 0, 0, IF(PB < 1.5, 15, IF(PB < 2, 10, IF(PB < 3, 5, 0)))) + IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 1, 10, IF(PEG < 1.5, 7, IF(PEG < 2, 3, 0))))
+			VAR Growth_Score = IF(ISBLANK(RevGrowth), 0, IF(RevGrowth > 0.20, 15, IF(RevGrowth > 0.10, 10, IF(RevGrowth > 0, 5, 0)))) + IF(ISBLANK(EarnGrowth), 0, IF(EarnGrowth > 0.20, 15, IF(EarnGrowth > 0.10, 10, IF(EarnGrowth > 0, 5, 0))))
+			VAR Quality_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.20, 10, IF(ROE > 0.15, 7, IF(ROE > 0.10, 4, 0)))) + IF(ISBLANK(DebtEquity), 5, IF(DebtEquity < 0.5, 10, IF(DebtEquity < 1, 7, IF(DebtEquity < 1.5, 3, 0))))
+			VAR Momentum_Score = 0
+			RETURN Value_Score + Growth_Score + Quality_Score + Momentum_Score
+		formatString: 0
+		displayFolder: GARP Strategy - NASDAQ
+		lineageTag: c4575976-6374-47c2-90d5-6fb05f8fa14b
+
+	measure 'NSE GARP Score' =
+			VAR PE = MAX(nse_500_fundamentals[trailing_pe])
+			VAR PB = MAX(nse_500_fundamentals[price_to_book])
+			VAR PEG = MAX(nse_500_fundamentals[peg_ratio])
+			VAR RevGrowth = MAX(nse_500_fundamentals[revenue_growth])
+			VAR EarnGrowth = MAX(nse_500_fundamentals[earnings_growth])
+			VAR ROE = MAX(nse_500_fundamentals[return_on_equity])
+			VAR DebtEquity = MAX(nse_500_fundamentals[debt_to_equity])
+			VAR Value_Score = IF(ISBLANK(PE) || PE <= 0, 0, IF(PE < 15, 15, IF(PE < 20, 10, IF(PE < 25, 5, 0)))) + IF(ISBLANK(PB) || PB <= 0, 0, IF(PB < 1.5, 15, IF(PB < 2, 10, IF(PB < 3, 5, 0)))) + IF(ISBLANK(PEG) || PEG <= 0, 0, IF(PEG < 1, 10, IF(PEG < 1.5, 7, IF(PEG < 2, 3, 0))))
+			VAR Growth_Score = IF(ISBLANK(RevGrowth), 0, IF(RevGrowth > 0.20, 15, IF(RevGrowth > 0.10, 10, IF(RevGrowth > 0, 5, 0)))) + IF(ISBLANK(EarnGrowth), 0, IF(EarnGrowth > 0.20, 15, IF(EarnGrowth > 0.10, 10, IF(EarnGrowth > 0, 5, 0))))
+			VAR Quality_Score = IF(ISBLANK(ROE), 0, IF(ROE > 0.20, 10, IF(ROE > 0.15, 7, IF(ROE > 0.10, 4, 0)))) + IF(ISBLANK(DebtEquity), 5, IF(DebtEquity < 0.5, 10, IF(DebtEquity < 1, 7, IF(DebtEquity < 1.5, 3, 0))))
+			VAR Momentum_Score = 0
+			RETURN Value_Score + Growth_Score + Quality_Score + Momentum_Score
+		formatString: 0
+		displayFolder: GARP Strategy - NSE
+		lineageTag: fbf34e84-a65b-4895-a5cb-53c5e918656e
+
+	measure 'NASDAQ GARP Signal' =
+			VAR Score = [NASDAQ GARP Score]
+			RETURN IF(Score >= 70, "BUY", IF(Score >= 50, "HOLD", "SELL"))
+		displayFolder: GARP Strategy - NASDAQ
+		lineageTag: dbaa2c0c-8cf3-41ad-bf4a-3957b28e7267
+
+	measure 'NSE GARP Signal' =
+			VAR Score = [NSE GARP Score]
+			RETURN IF(Score >= 70, "BUY", IF(Score >= 50, "HOLD", "SELL"))
+		displayFolder: GARP Strategy - NSE
+		lineageTag: 076fe2b2-c712-4686-a911-f6f461833a4a
+
+	measure 'NASDAQ Avg Total Score' = AVERAGEX(nasdaq_100_fundamentals, CALCULATE([NASDAQ Total Score]))
+		formatString: 0"/400"
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa025-nasdaq-avg-total-score
+
+	measure 'NSE Avg Total Score' = AVERAGEX(nse_500_fundamentals, CALCULATE([NSE Total Score]))
+		formatString: 0"/400"
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa026-nse-avg-total-score
+
+	measure 'NASDAQ A+ Stocks Count' = SUMX(nasdaq_100_fundamentals, IF(CALCULATE([NASDAQ Total Score]) >= 300, 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa027-nasdaq-aplus-count
+
+	measure 'NSE A+ Stocks Count' = SUMX(nse_500_fundamentals, IF(CALCULATE([NSE Total Score]) >= 300, 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa028-nse-aplus-count
+
+	measure 'NASDAQ Deep Value Count' = SUMX(nasdaq_100_fundamentals, IF(CALCULATE([NASDAQ Value Category]) = "Deep Value", 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa029-nasdaq-deepvalue-count
+
+	measure 'NSE Deep Value Count' = SUMX(nse_500_fundamentals, IF(CALCULATE([NSE Value Category]) = "Deep Value", 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa030-nse-deepvalue-count
+
+	measure 'NASDAQ Excellent Quality Count' = SUMX(nasdaq_100_fundamentals, IF(CALCULATE([NASDAQ Quality Category]) = "Excellent", 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa031-nasdaq-excellent-quality-count
+
+	measure 'NSE Excellent Quality Count' = SUMX(nse_500_fundamentals, IF(CALCULATE([NSE Quality Category]) = "Excellent", 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa032-nse-excellent-quality-count
+
+	measure 'NASDAQ High Growth Count' = SUMX(nasdaq_100_fundamentals, IF(CALCULATE([NASDAQ Growth Category]) = "High Growth", 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa033-nasdaq-highgrowth-count
+
+	measure 'NSE High Growth Count' = SUMX(nse_500_fundamentals, IF(CALCULATE([NSE Growth Category]) = "High Growth", 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa034-nse-highgrowth-count
+
+	measure 'NASDAQ Excellent Dividend Count' = SUMX(nasdaq_100_fundamentals, IF(CALCULATE([NASDAQ Dividend Category]) = "Excellent Dividend", 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa035-nasdaq-excellent-dividend-count
+
+	measure 'NSE Excellent Dividend Count' = SUMX(nse_500_fundamentals, IF(CALCULATE([NSE Dividend Category]) = "Excellent Dividend", 1, 0))
+		formatString: 0
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa036-nse-excellent-dividend-count
+
+	measure 'NASDAQ GARP Buy Signals' = SUMX(nasdaq_100_fundamentals, IF(CALCULATE([NASDAQ GARP Signal]) = "BUY", 1, 0))
+		formatString: 0
+		displayFolder: GARP Strategy - NASDAQ
+		lineageTag: fa037-nasdaq-garp-buy-count
+
+	measure 'NSE GARP Buy Signals' = SUMX(nse_500_fundamentals, IF(CALCULATE([NSE GARP Signal]) = "BUY", 1, 0))
+		formatString: 0
+		displayFolder: GARP Strategy - NSE
+		lineageTag: fa038-nse-garp-buy-count
+
+	measure 'NASDAQ Avg Value Score' = AVERAGEX(nasdaq_100_fundamentals, CALCULATE([NASDAQ Value Score]))
+		formatString: 0.0"/100"
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa039-nasdaq-avg-value-score
+
+	measure 'NSE Avg Value Score' = AVERAGEX(nse_500_fundamentals, CALCULATE([NSE Value Score]))
+		formatString: 0.0"/100"
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa040-nse-avg-value-score
+
+	measure 'NASDAQ Avg Quality Score' = AVERAGEX(nasdaq_100_fundamentals, CALCULATE([NASDAQ Quality Score]))
+		formatString: 0.0"/100"
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa041-nasdaq-avg-quality-score
+
+	measure 'NSE Avg Quality Score' = AVERAGEX(nse_500_fundamentals, CALCULATE([NSE Quality Score]))
+		formatString: 0.0"/100"
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa042-nse-avg-quality-score
+
+	measure 'NASDAQ Avg Growth Score' = AVERAGEX(nasdaq_100_fundamentals, CALCULATE([NASDAQ Growth Score]))
+		formatString: 0.0"/100"
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa043-nasdaq-avg-growth-score
+
+	measure 'NSE Avg Growth Score' = AVERAGEX(nse_500_fundamentals, CALCULATE([NSE Growth Score]))
+		formatString: 0.0"/100"
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa044-nse-avg-growth-score
+
+	measure 'NASDAQ Avg Dividend Score' = AVERAGEX(nasdaq_100_fundamentals, CALCULATE([NASDAQ Dividend Score]))
+		formatString: 0.0"/100"
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa045-nasdaq-avg-dividend-score
+
+	measure 'NSE Avg Dividend Score' = AVERAGEX(nse_500_fundamentals, CALCULATE([NSE Dividend Score]))
+		formatString: 0.0"/100"
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa046-nse-avg-dividend-score
+
+	measure 'NASDAQ Avg GARP Score' = AVERAGEX(nasdaq_100_fundamentals, CALCULATE([NASDAQ GARP Score]))
+		formatString: 0.0"/100"
+		displayFolder: GARP Strategy - NASDAQ
+		lineageTag: fa047-nasdaq-avg-garp-score
+
+	measure 'NSE Avg GARP Score' = AVERAGEX(nse_500_fundamentals, CALCULATE([NSE GARP Score]))
+		formatString: 0.0"/100"
+		displayFolder: GARP Strategy - NSE
+		lineageTag: fa048-nse-avg-garp-score
+
+	measure 'NASDAQ Low Debt Count' = COUNTROWS(FILTER(nasdaq_100_fundamentals, nasdaq_100_fundamentals[debt_to_equity] < 0.5))
+		formatString: 0
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa049-nasdaq-lowdebt-count
+
+	measure 'NSE Low Debt Count' = COUNTROWS(FILTER(nse_500_fundamentals, nse_500_fundamentals[debt_to_equity] < 0.5))
+		formatString: 0
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa050-nse-lowdebt-count
+
+	measure 'NASDAQ Sustainable Dividend Count' = COUNTROWS(FILTER(nasdaq_100_fundamentals, nasdaq_100_fundamentals[payout_ratio] > 0 && nasdaq_100_fundamentals[payout_ratio] < 0.75))
+		formatString: 0
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa051-nasdaq-sustainable-div-count
+
+	measure 'NSE Sustainable Dividend Count' = COUNTROWS(FILTER(nse_500_fundamentals, nse_500_fundamentals[payout_ratio] > 0 && nse_500_fundamentals[payout_ratio] < 0.75))
+		formatString: 0
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa052-nse-sustainable-div-count
+
+	measure 'NASDAQ In Uptrend Count' = COUNTROWS(FILTER(nasdaq_100_fundamentals, nasdaq_100_fundamentals[fifty_day_avg] > nasdaq_100_fundamentals[two_hundred_day_avg]))
+		formatString: 0
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa053-nasdaq-uptrend-count
+
+	measure 'NSE In Uptrend Count' = COUNTROWS(FILTER(nse_500_fundamentals, nse_500_fundamentals[fifty_day_avg] > nse_500_fundamentals[two_hundred_day_avg]))
+		formatString: 0
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa054-nse-uptrend-count
+
+	measure 'NASDAQ Avg Profit Margin' = AVERAGE(nasdaq_100_fundamentals[profit_margin])
+		formatString: 0.0%
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa055-nasdaq-avg-profit-margin
+
+	measure 'NSE Avg Profit Margin' = AVERAGE(nse_500_fundamentals[profit_margin])
+		formatString: 0.0%
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa056-nse-avg-profit-margin
+
+	measure 'NASDAQ Avg Rev Growth' = AVERAGE(nasdaq_100_fundamentals[revenue_growth])
+		formatString: 0.0%
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa057-nasdaq-avg-rev-growth
+
+	measure 'NSE Avg Rev Growth' = AVERAGE(nse_500_fundamentals[revenue_growth])
+		formatString: 0.0%
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa058-nse-avg-rev-growth
+
+	measure 'NASDAQ Avg Earn Growth' = AVERAGE(nasdaq_100_fundamentals[earnings_growth])
+		formatString: 0.0%
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa059-nasdaq-avg-earn-growth
+
+	measure 'NSE Avg Earn Growth' = AVERAGE(nse_500_fundamentals[earnings_growth])
+		formatString: 0.0%
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa060-nse-avg-earn-growth
+
+	measure 'NASDAQ Avg Payout Ratio' = AVERAGE(nasdaq_100_fundamentals[payout_ratio])
+		formatString: 0.0%
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa061-nasdaq-avg-payout
+
+	measure 'NSE Avg Payout Ratio' = AVERAGE(nse_500_fundamentals[payout_ratio])
+		formatString: 0.0%
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa062-nse-avg-payout
+
+	measure 'NASDAQ Avg PEG' = AVERAGE(nasdaq_100_fundamentals[peg_ratio])
+		formatString: 0.00
+		displayFolder: Summary KPIs - NASDAQ
+		lineageTag: fa063-nasdaq-avg-peg
+
+	measure 'NSE Avg PEG' = AVERAGE(nse_500_fundamentals[peg_ratio])
+		formatString: 0.00
+		displayFolder: Summary KPIs - NSE
+		lineageTag: fa064-nse-avg-peg
+
+	measure 'S2 Total Opportunities' = COUNTROWS(vw_strategy2_trade_opportunities)
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m001-total-opp
+
+	measure 'S2 Grade A Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, LEFT([trade_grade], 1) = "A"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m002-grade-a
+
+	measure 'S2 Grade B Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, LEFT([trade_grade], 1) = "B"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m003-grade-b
+
+	measure 'S2 Aligned Signals' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [signals_aligned] = 1))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m004-aligned
+
+	measure 'S2 Short Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [recommended_action] = "SELL / SHORT"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m005-short-opp
+
+	measure 'S2 Long Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [recommended_action] = "BUY / LONG"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m006-long-opp
+
+	measure 'S2 Avg Opportunity Score' = AVERAGE(vw_strategy2_trade_opportunities[opportunity_score])
+		formatString: 0.0
+		displayFolder: Strategy-2
+		lineageTag: s2-m007-avg-score
+
+	measure 'S2 Avg ML Confidence' = AVERAGE(vw_strategy2_trade_opportunities[ml_confidence])
+		formatString: 0.0%
+		displayFolder: Strategy-2
+		lineageTag: s2-m008-avg-ml-conf
+
+	measure 'S2 Win Rate 7D' =
+			VAR TotalWins = SUM(vw_strategy2_historical_performance[wins_7d])
+			VAR TotalLosses = SUM(vw_strategy2_historical_performance[losses_7d])
+			RETURN DIVIDE(TotalWins, TotalWins + TotalLosses, 0)
+		formatString: 0.0%
+		displayFolder: Strategy-2
+		lineageTag: s2-m009-winrate-7d
+
+	measure 'S2 Win Rate 14D' =
+			VAR TotalWins = SUM(vw_strategy2_historical_performance[wins_14d])
+			VAR TotalLosses = SUM(vw_strategy2_historical_performance[losses_14d])
+			RETURN DIVIDE(TotalWins, TotalWins + TotalLosses, 0)
+		formatString: 0.0%
+		displayFolder: Strategy-2
+		lineageTag: s2-m010-winrate-14d
+
+	measure 'S2 Win Rate 30D' =
+			VAR TotalWins = SUM(vw_strategy2_historical_performance[wins_30d])
+			VAR TotalLosses = SUM(vw_strategy2_historical_performance[losses_30d])
+			RETURN DIVIDE(TotalWins, TotalWins + TotalLosses, 0)
+		formatString: 0.0%
+		displayFolder: Strategy-2
+		lineageTag: s2-m011-winrate-30d
+
+	measure 'S2 Total Historical Signals' = SUM(vw_strategy2_historical_performance[total_signals])
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m012-total-hist
+
+	measure 'S2 Avg Return 7D' = AVERAGE(vw_strategy2_historical_performance[avg_return_7d])
+		formatString: 0.00%
+		displayFolder: Strategy-2
+		lineageTag: s2-m013-avg-ret-7d
+
+	measure 'S2 Avg Return 14D' = AVERAGE(vw_strategy2_historical_performance[avg_return_14d])
+		formatString: 0.00%
+		displayFolder: Strategy-2
+		lineageTag: s2-m014-avg-ret-14d
+
+	measure 'S2 Outcome Wins' = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, [result_7d] = "WIN"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m015-outcome-wins
+
+	measure 'S2 Outcome Losses' = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, [result_7d] = "LOSS"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m016-outcome-losses
+
+	measure 'S2 Outcome Pending' = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, ISBLANK([result_7d])))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m017-outcome-pending
+
+	measure 'S2 Aligned Win Rate' =
+			VAR AlignedWins = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, [signals_aligned] = 1 && [result_7d] = "WIN"))
+			VAR AlignedTotal = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, [signals_aligned] = 1 && NOT(ISBLANK([result_7d]))))
+			RETURN DIVIDE(AlignedWins, AlignedTotal, 0)
+		formatString: 0.0%
+		displayFolder: Strategy-2
+		lineageTag: s2-m018-aligned-winrate
+
+	measure 'S2 Latest Prediction Date' = MAX(vw_strategy2_trade_opportunities[prediction_date])
+		formatString: mm/dd/yyyy
+		displayFolder: Strategy-2
+		lineageTag: s2-m019-latest-date
+
+	measure 'S2 NSE Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [market] = "NSE"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m020-nse-opp
+
+	measure 'S2 NASDAQ Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [market] = "NASDAQ"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m021-nasdaq-opp
+
+	measure 'S2 Forex Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [market] = "Forex"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m022-forex-opp
+
+	measure 'S2 High Conviction Count' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [opportunity_score] >= 100))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m023-high-conviction
+
+	measure 'S2 RSI Overbought Good Entry' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [rsi_assessment] = "RSI Overbought - Good Entry"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m024-rsi-overbought
+
+	measure 'S2 RSI Oversold Good Entry' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [rsi_assessment] = "RSI Oversold - Good Entry"))
+		formatString: #,##0
+		displayFolder: Strategy-2
+		lineageTag: s2-m025-rsi-oversold
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [tmp = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"tmp"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

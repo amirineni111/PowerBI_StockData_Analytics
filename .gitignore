@@ -1,2 +1,61 @@
+# Power BI Local Files
+*.pbix
+*.pbit
+.pbi/
+*.mez
+
+# Power BI cache and temp files
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+**/.pbi/cache/
+**/cache/
+*.tmp
+*.temp
+
+# Sensitive/credential files
+*.datasource
+**/localSettings.json
+secrets.json
+credentials.json
+*.pfx
+*.key
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE/Editor files
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.idea/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Log files
+*.log
+logs/
+
+# Node modules (if any web components)
+node_modules/
+
+# Python (if any scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+.env

@@ -3,7 +3,7 @@
   "name": "841ed6e824af897a97ac",
   "position": {
     "x": 704,
-    "y": 336,
+    "y": 448.00000000000006,
     "z": 2,
     "height": 1008,
     "width": 1280,
@@ -64,21 +64,6 @@
               "queryRef": "Sum(vw_PowerBI_AI_Technical_Combos.ai_prediction_pct)",
               "nativeQueryRef": "AI Predicted Change%",
               "displayName": "AI Predicted Change%"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_AI_Technical_Combos"
-                    }
-                  },
-                  "Property": "technical_combo"
-                }
-              },
-              "queryRef": "vw_PowerBI_AI_Technical_Combos.technical_combo",
-              "nativeQueryRef": "Technical Setup",
-              "displayName": "Technical Setup"
             },
             {
               "field": {
@@ -343,20 +328,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "e34c94edbee57597133e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_PowerBI_AI_Technical_Combos"
-              }
-            },
-            "Property": "technical_combo"
-          }
-        },
-        "type": "Categorical"
       },
       {
         "name": "05727f33501a323381a7",

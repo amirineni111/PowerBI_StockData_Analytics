@@ -1,0 +1,102 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "fc8c031f601276b3d32e",
+  "position": {
+    "x": 792,
+    "y": 288,
+    "z": 13,
+    "height": 144,
+    "width": 720,
+    "tabOrder": 13
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.prediction_date",
+              "nativeQueryRef": "prediction_date",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_Opportunities_strategy1"
+                  }
+                },
+                "Property": "prediction_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "numericInputStyle": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "06dd33fa8555478615f5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

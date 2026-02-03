@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "cce470813c01f8316bae",
+  "position": {
+    "x": 304,
+    "y": 16,
+    "z": 2,
+    "height": 160,
+    "width": 384,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_TopTickers_strategy1"
+                    }
+                  },
+                  "Property": "first_prediction"
+                }
+              },
+              "queryRef": "vw_PowerBI_TopTickers_strategy1.first_prediction",
+              "nativeQueryRef": "first_prediction",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_TopTickers_strategy1"
+                  }
+                },
+                "Property": "first_prediction"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Between'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "date": [
+        {
+          "properties": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d65fbebfd4913a7046f7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_TopTickers_strategy1"
+              }
+            },
+            "Property": "first_prediction"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

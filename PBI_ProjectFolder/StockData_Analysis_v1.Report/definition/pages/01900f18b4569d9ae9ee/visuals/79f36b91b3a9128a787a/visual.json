@@ -107,34 +107,6 @@
                       "Entity": "vw_PowerBI_Opportunities_strategy1"
                     }
                   },
-                  "Property": "tech_strength"
-                }
-              },
-              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.tech_strength)",
-              "nativeQueryRef": "tech_strength"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_Opportunities_strategy1"
-                    }
-                  },
-                  "Property": "indicators_count"
-                }
-              },
-              "queryRef": "Sum(vw_PowerBI_Opportunities_strategy1.indicators_count)",
-              "nativeQueryRef": "indicators_count"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_Opportunities_strategy1"
-                    }
-                  },
                   "Property": "combined_score"
                 }
               },
@@ -252,7 +224,7 @@
                     "Entity": "vw_PowerBI_Opportunities_strategy1"
                   }
                 },
-                "Property": "trade_tier"
+                "Property": "warning_flag"
               }
             },
             "direction": "Descending"
@@ -665,34 +637,6 @@
               }
             },
             "Property": "ai_confidence"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "08aaf1de45a982cb586f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_PowerBI_Opportunities_strategy1"
-              }
-            },
-            "Property": "tech_strength"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "da445b5151aa9aa55fab",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_PowerBI_Opportunities_strategy1"
-              }
-            },
-            "Property": "indicators_count"
           }
         },
         "type": "Advanced"

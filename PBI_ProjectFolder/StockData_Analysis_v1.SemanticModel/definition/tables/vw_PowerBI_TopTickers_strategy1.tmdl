@@ -95,7 +95,7 @@ table vw_PowerBI_TopTickers_strategy1
 
 	column first_prediction
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: 1070c447-3b06-4fac-8e47-7c51bbaad793
 		summarizeBy: none
 		sourceColumn: first_prediction
@@ -109,9 +109,11 @@ table vw_PowerBI_TopTickers_strategy1
 
 		annotation UnderlyingDateTimeDataType = Date
 
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
 	column last_prediction
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: c549445d-07b0-43ed-8c52-978030a01803
 		summarizeBy: none
 		sourceColumn: last_prediction
@@ -124,6 +126,8 @@ table vw_PowerBI_TopTickers_strategy1
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column performance_rating
 		dataType: string

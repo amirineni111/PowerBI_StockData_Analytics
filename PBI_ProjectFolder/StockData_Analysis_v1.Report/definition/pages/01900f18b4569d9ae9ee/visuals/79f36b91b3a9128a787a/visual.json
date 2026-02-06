@@ -224,10 +224,10 @@
                     "Entity": "vw_PowerBI_Opportunities_strategy1"
                   }
                 },
-                "Property": "warning_flag"
+                "Property": "company_name"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }

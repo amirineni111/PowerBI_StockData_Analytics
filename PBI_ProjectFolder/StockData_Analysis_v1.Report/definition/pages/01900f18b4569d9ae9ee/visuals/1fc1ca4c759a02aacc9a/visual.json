@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "4cee2e4cc11a8316bbcc",
+  "name": "1fc1ca4c759a02aacc9a",
   "position": {
-    "x": 896,
-    "y": 16,
-    "z": 4,
-    "height": 208,
-    "width": 224,
-    "tabOrder": 4
+    "x": 1200,
+    "y": 288,
+    "z": 14,
+    "height": 144,
+    "width": 624,
+    "tabOrder": 14
   },
   "visual": {
     "visualType": "slicer",
@@ -20,35 +20,18 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                      "Entity": "vw_PowerBI_Opportunities_strategy1"
                     }
                   },
-                  "Property": "signal_date"
+                  "Property": "company_name"
                 }
               },
-              "queryRef": "vw_PowerBI_AI_Technical_Combos.signal_date",
-              "nativeQueryRef": "signal_date",
+              "queryRef": "vw_PowerBI_Opportunities_strategy1.company_name",
+              "nativeQueryRef": "company_name",
               "active": true
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "vw_PowerBI_AI_Technical_Combos"
-                  }
-                },
-                "Property": "signal_date"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
     "objects": {
@@ -58,7 +41,7 @@
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Basic'"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -67,7 +50,28 @@
       ],
       "general": [
         {
-          "properties": {}
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -76,15 +80,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "12c7e445b1f3858e13cf",
+        "name": "3794486f7c7b56377838",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_AI_Technical_Combos"
+                "Entity": "vw_PowerBI_Opportunities_strategy1"
               }
             },
-            "Property": "signal_date"
+            "Property": "company_name"
           }
         },
         "type": "Categorical"

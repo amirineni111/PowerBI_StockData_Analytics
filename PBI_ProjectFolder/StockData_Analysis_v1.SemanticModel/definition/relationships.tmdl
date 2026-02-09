@@ -354,3 +354,13 @@ relationship 8fd12337-7cac-c29e-66bf-03c156782654
 	fromColumn: nasdaq_100_fundamentals.fetch_date
 	toColumn: Date_tbl.Date
 
+relationship 5ea36853-4f56-472e-a8bb-c7dc22349fc1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: ml_trading_predictions.updated_at
+	toColumn: LocalDateTable_8c8cb331-295d-4385-8146-5725df093c80.Date
+
+relationship ce7f7be1-d913-4dd7-ab98-45129148e493
+	joinOnDateBehavior: datePartOnly
+	fromColumn: forex_ml_predictions.updated_at
+	toColumn: LocalDateTable_23de91d2-bc17-4d37-a4b8-84a4ae2f85f3.Date
+

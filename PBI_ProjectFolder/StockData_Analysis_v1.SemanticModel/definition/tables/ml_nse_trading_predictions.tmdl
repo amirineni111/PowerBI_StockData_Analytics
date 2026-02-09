@@ -284,6 +284,24 @@ table ml_nse_trading_predictions
 
 		annotation SummarizationSetBy = Automatic
 
+	column direction_correct_1d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e2a80fcc-d614-48b5-9a19-0cd67775e4ad
+		summarizeBy: none
+		sourceColumn: direction_correct_1d
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_5d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9e4e068f-281b-4a11-94d9-9d7f8d579263
+		summarizeBy: none
+		sourceColumn: direction_correct_5d
+
+		annotation SummarizationSetBy = Automatic
+
 	partition ml_nse_trading_predictions = m
 		mode: import
 		source =

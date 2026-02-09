@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "strategy2_performance",
-  "displayName": "Strategy-2 Historical Performance",
+  "displayName": "Strategy-1: Historical Performance",
   "displayOption": "FitToWidth",
   "height": 1080,
   "width": 1920

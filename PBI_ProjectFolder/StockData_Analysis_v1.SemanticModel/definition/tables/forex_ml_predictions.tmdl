@@ -182,6 +182,76 @@ table forex_ml_predictions
 
 		annotation SummarizationSetBy = Automatic
 
+	column actual_return_1d
+		dataType: double
+		lineageTag: 7aa11cb9-0b39-4f2c-a4db-b523f9bb42dd
+		summarizeBy: sum
+		sourceColumn: actual_return_1d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_return_5d
+		dataType: double
+		lineageTag: 6faa81f9-b050-4462-97f4-14206b62dea7
+		summarizeBy: sum
+		sourceColumn: actual_return_5d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_return_10d
+		dataType: double
+		lineageTag: 181e872f-7a54-4f63-8e85-0393e2e5cf4a
+		summarizeBy: sum
+		sourceColumn: actual_return_10d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prediction_accuracy
+		dataType: string
+		lineageTag: bc5374cf-f3a1-4894-ab3f-6cda356842f8
+		summarizeBy: none
+		sourceColumn: prediction_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_1d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2fc1d273-b1c1-4768-9408-2c512fc116e9
+		summarizeBy: none
+		sourceColumn: direction_correct_1d
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_5d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5b6a4920-b23d-4e63-9500-b40b6f446262
+		summarizeBy: none
+		sourceColumn: direction_correct_5d
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b127f139-14e9-4147-bbe4-0a8d137ec87f
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: ce7f7be1-d913-4dd7-ab98-45129148e493
+			defaultHierarchy: LocalDateTable_23de91d2-bc17-4d37-a4b8-84a4ae2f85f3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition forex_ml_predictions = m
 		mode: import
 		source =

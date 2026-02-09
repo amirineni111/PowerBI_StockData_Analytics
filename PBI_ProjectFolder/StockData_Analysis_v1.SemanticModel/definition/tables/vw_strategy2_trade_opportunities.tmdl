@@ -303,6 +303,114 @@ table vw_strategy2_trade_opportunities
 
 		annotation SummarizationSetBy = Automatic
 
+	column ml_volume
+		dataType: double
+		lineageTag: 9df1cc8a-b722-43a6-89ad-74af833c0573
+		summarizeBy: sum
+		sourceColumn: ml_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column hold_probability
+		dataType: double
+		lineageTag: 8ea0b312-22e0-4121-adc4-d19e88a8959a
+		summarizeBy: sum
+		sourceColumn: hold_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column model_name
+		dataType: string
+		lineageTag: faaedcd2-158d-490c-b3b7-2bfc192e5353
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_version
+		dataType: string
+		lineageTag: 2073f262-e92b-464b-a214-a2bcc392262e
+		summarizeBy: none
+		sourceColumn: model_version
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector
+		dataType: string
+		lineageTag: fd374529-f213-4034-bda0-5a9943228cdf
+		summarizeBy: none
+		sourceColumn: sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_cap_category
+		dataType: string
+		lineageTag: af22b05f-6d60-4306-bd3f-3455019287b4
+		summarizeBy: none
+		sourceColumn: market_cap_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column actual_return_1d
+		dataType: double
+		lineageTag: 236bb832-4160-4470-9e79-a0258bf2d77d
+		summarizeBy: sum
+		sourceColumn: actual_return_1d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_return_5d
+		dataType: double
+		lineageTag: 712acb9f-01c5-4733-9739-88c399c73031
+		summarizeBy: sum
+		sourceColumn: actual_return_5d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_return_10d
+		dataType: double
+		lineageTag: 27f5c05d-a376-4c5f-8c3f-a6d257b706cb
+		summarizeBy: sum
+		sourceColumn: actual_return_10d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prediction_accuracy
+		dataType: string
+		lineageTag: 6514ea31-d2d0-4a80-8c5a-9376ee484ed9
+		summarizeBy: none
+		sourceColumn: prediction_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_1d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d7b478fc-02e5-4a48-86e9-20a1ff67e7e7
+		summarizeBy: none
+		sourceColumn: direction_correct_1d
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_5d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: aeca1cad-ffd9-47d6-b0d9-5fe2ca37312f
+		summarizeBy: none
+		sourceColumn: direction_correct_5d
+
+		annotation SummarizationSetBy = Automatic
+
 	partition vw_strategy2_trade_opportunities = m
 		mode: import
 		source =

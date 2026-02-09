@@ -163,6 +163,76 @@ table ml_trading_predictions
 
 		annotation SummarizationSetBy = Automatic
 
+	column actual_return_1d
+		dataType: double
+		lineageTag: c5143f6c-1466-42f1-9ce1-8a8a9a91f34f
+		summarizeBy: sum
+		sourceColumn: actual_return_1d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_return_5d
+		dataType: double
+		lineageTag: 4cee66a7-7d53-490d-8582-474b7f8f3b15
+		summarizeBy: sum
+		sourceColumn: actual_return_5d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_return_10d
+		dataType: double
+		lineageTag: 3324fc46-450c-455f-9c6e-405b1e2252d7
+		summarizeBy: sum
+		sourceColumn: actual_return_10d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prediction_accuracy
+		dataType: string
+		lineageTag: 61768589-3af8-4021-aaa6-6cabe6e6a3c9
+		summarizeBy: none
+		sourceColumn: prediction_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_1d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3b5c39dc-ae1d-4004-b6f7-15c1a0cd2405
+		summarizeBy: none
+		sourceColumn: direction_correct_1d
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_5d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1b366e78-8066-44c5-8fca-cb4e0d8c6e0f
+		summarizeBy: none
+		sourceColumn: direction_correct_5d
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bd639b17-d848-4abf-bf3d-e07fdd5b2a3e
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: 5ea36853-4f56-472e-a8bb-c7dc22349fc1
+			defaultHierarchy: LocalDateTable_8c8cb331-295d-4385-8146-5725df093c80.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition ml_trading_predictions = m
 		mode: import
 		source =

@@ -98,6 +98,8 @@ ref table vw_strategy2_trade_opportunities
 ref table vw_strategy2_historical_performance
 ref table vw_strategy2_outcome_tracking
 ref table vw_strategy2_powerbi_dashboard
+ref table LocalDateTable_8c8cb331-295d-4385-8146-5725df093c80
+ref table LocalDateTable_23de91d2-bc17-4d37-a4b8-84a4ae2f85f3
 
 ref cultureInfo en-US
 

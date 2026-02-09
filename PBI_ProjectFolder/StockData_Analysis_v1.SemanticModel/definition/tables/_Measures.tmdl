@@ -983,42 +983,42 @@ table _Measures
 
 	measure 'S2 Total Opportunities' = COUNTROWS(vw_strategy2_trade_opportunities)
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m001-total-opp
 
 	measure 'S2 Grade A Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, LEFT([trade_grade], 1) = "A"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m002-grade-a
 
 	measure 'S2 Grade B Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, LEFT([trade_grade], 1) = "B"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m003-grade-b
 
 	measure 'S2 Aligned Signals' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [signals_aligned] = 1))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m004-aligned
 
 	measure 'S2 Short Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [recommended_action] = "SELL / SHORT"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m005-short-opp
 
 	measure 'S2 Long Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [recommended_action] = "BUY / LONG"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m006-long-opp
 
 	measure 'S2 Avg Opportunity Score' = AVERAGE(vw_strategy2_trade_opportunities[opportunity_score])
 		formatString: 0.0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m007-avg-score
 
 	measure 'S2 Avg ML Confidence' = AVERAGE(vw_strategy2_trade_opportunities[ml_confidence])
 		formatString: 0.0%
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m008-avg-ml-conf
 
 	measure 'S2 Win Rate 7D' =
@@ -1026,7 +1026,7 @@ table _Measures
 			VAR TotalLosses = SUM(vw_strategy2_historical_performance[losses_7d])
 			RETURN DIVIDE(TotalWins, TotalWins + TotalLosses, 0)
 		formatString: 0.0%
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m009-winrate-7d
 
 	measure 'S2 Win Rate 14D' =
@@ -1034,7 +1034,7 @@ table _Measures
 			VAR TotalLosses = SUM(vw_strategy2_historical_performance[losses_14d])
 			RETURN DIVIDE(TotalWins, TotalWins + TotalLosses, 0)
 		formatString: 0.0%
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m010-winrate-14d
 
 	measure 'S2 Win Rate 30D' =
@@ -1042,37 +1042,37 @@ table _Measures
 			VAR TotalLosses = SUM(vw_strategy2_historical_performance[losses_30d])
 			RETURN DIVIDE(TotalWins, TotalWins + TotalLosses, 0)
 		formatString: 0.0%
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m011-winrate-30d
 
 	measure 'S2 Total Historical Signals' = SUM(vw_strategy2_historical_performance[total_signals])
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m012-total-hist
 
 	measure 'S2 Avg Return 7D' = AVERAGE(vw_strategy2_historical_performance[avg_return_7d])
 		formatString: 0.00%
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m013-avg-ret-7d
 
 	measure 'S2 Avg Return 14D' = AVERAGE(vw_strategy2_historical_performance[avg_return_14d])
 		formatString: 0.00%
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m014-avg-ret-14d
 
 	measure 'S2 Outcome Wins' = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, [result_7d] = "WIN"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m015-outcome-wins
 
 	measure 'S2 Outcome Losses' = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, [result_7d] = "LOSS"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m016-outcome-losses
 
 	measure 'S2 Outcome Pending' = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, ISBLANK([result_7d])))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m017-outcome-pending
 
 	measure 'S2 Aligned Win Rate' =
@@ -1080,42 +1080,42 @@ table _Measures
 			VAR AlignedTotal = COUNTROWS(FILTER(vw_strategy2_outcome_tracking, [signals_aligned] = 1 && NOT(ISBLANK([result_7d]))))
 			RETURN DIVIDE(AlignedWins, AlignedTotal, 0)
 		formatString: 0.0%
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m018-aligned-winrate
 
 	measure 'S2 Latest Prediction Date' = MAX(vw_strategy2_trade_opportunities[prediction_date])
 		formatString: mm/dd/yyyy
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m019-latest-date
 
 	measure 'S2 NSE Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [market] = "NSE"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m020-nse-opp
 
 	measure 'S2 NASDAQ Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [market] = "NASDAQ"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m021-nasdaq-opp
 
 	measure 'S2 Forex Opportunities' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [market] = "Forex"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m022-forex-opp
 
 	measure 'S2 High Conviction Count' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [opportunity_score] >= 100))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m023-high-conviction
 
 	measure 'S2 RSI Overbought Good Entry' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [rsi_assessment] = "RSI Overbought - Good Entry"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m024-rsi-overbought
 
 	measure 'S2 RSI Oversold Good Entry' = COUNTROWS(FILTER(vw_strategy2_trade_opportunities, [rsi_assessment] = "RSI Oversold - Good Entry"))
 		formatString: #,##0
-		displayFolder: Strategy-2
+		displayFolder: Strategy-1
 		lineageTag: s2-m025-rsi-oversold
 
 	partition _Measures = m

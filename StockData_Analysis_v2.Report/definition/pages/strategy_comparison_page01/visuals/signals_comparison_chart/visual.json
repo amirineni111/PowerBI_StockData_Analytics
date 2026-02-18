@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "signals_comparison_chart",
+  "position": {
+    "x": 20,
+    "y": 240,
+    "z": 5,
+    "height": 380,
+    "width": 1180,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}},
+                  "Property": "predicted_signal"
+                }
+              },
+              "queryRef": "ml_trading_predictions.predicted_signal",
+              "nativeQueryRef": "predicted_signal"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "signal_confidence"}},
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(ml_trading_predictions.signal_confidence)",
+              "nativeQueryRef": "signal_confidence"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

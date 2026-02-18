@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "technical_metrics_table",
+  "position": {"x": 20, "y": 1180, "z": 6, "height": 300, "width": 1180, "tabOrder": 6},
+  "visual": {
+    "visualType": "table",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "forex_prediction_features"}}, "Property": "prediction_date"}}, "queryRef": "forex_prediction_features.prediction_date", "nativeQueryRef": "prediction_date"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "forex_prediction_features"}}, "Property": "rsi"}}, "queryRef": "forex_prediction_features.rsi", "nativeQueryRef": "RSI"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "forex_prediction_features"}}, "Property": "macd"}}, "queryRef": "forex_prediction_features.macd", "nativeQueryRef": "MACD"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "forex_prediction_features"}}, "Property": "atr"}}, "queryRef": "forex_prediction_features.atr", "nativeQueryRef": "ATR"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "forex_prediction_features"}}, "Property": "sma_50"}}, "queryRef": "forex_prediction_features.sma_50", "nativeQueryRef": "SMA-50"}
+          ]
+        }
+      }
+    },
+    "objects": {},
+    "drillFilterOtherVisuals": true
+  }
+}

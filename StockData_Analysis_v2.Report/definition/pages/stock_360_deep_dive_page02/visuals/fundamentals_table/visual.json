@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "fundamentals_table",
+  "position": {
+    "x": 20,
+    "y": 320,
+    "z": 6,
+    "height": 400,
+    "width": 1180,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "nse_500_fundamentals"}}, "Property": "ticker"}}, "queryRef": "nse_500_fundamentals.ticker", "nativeQueryRef": "ticker"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "nse_500_fundamentals"}}, "Property": "company_name"}}, "queryRef": "nse_500_fundamentals.company_name", "nativeQueryRef": "company_name"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "nse_500_fundamentals"}}, "Property": "market_cap"}}, "queryRef": "nse_500_fundamentals.market_cap", "nativeQueryRef": "market_cap"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "nse_500_fundamentals"}}, "Property": "trailing_pe"}}, "queryRef": "nse_500_fundamentals.trailing_pe", "nativeQueryRef": "trailing_pe"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "nse_500_fundamentals"}}, "Property": "price_to_book"}}, "queryRef": "nse_500_fundamentals.price_to_book", "nativeQueryRef": "price_to_book"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "nse_500_fundamentals"}}, "Property": "return_on_equity"}}, "queryRef": "nse_500_fundamentals.return_on_equity", "nativeQueryRef": "return_on_equity"}
+          ]
+        }
+      }
+    },
+    "objects": {"subTotals": [{"properties": {"rowSubtotals": {"expr": {"Literal": {"Value": "false"}}}}}]},
+    "drillFilterOtherVisuals": true
+  }
+}

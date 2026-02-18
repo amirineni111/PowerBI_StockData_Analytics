@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "technical_title",
+  "position": {"x": 20, "y": 20, "z": 0, "height": 60, "width": 800, "tabOrder": 0},
+  "visual": {
+    "visualType": "textbox",
+    "objects": {"general": [{"properties": {"paragraphs": {"expr": {"Literal": {"Value": "[{\"textRuns\":[{\"value\":\"📊 TECHNICAL ANALYSIS - INDICATORS & SIGNALS\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"24pt\",\"color\":\"#333333\"}}]}]"}}}]}
+  }
+}

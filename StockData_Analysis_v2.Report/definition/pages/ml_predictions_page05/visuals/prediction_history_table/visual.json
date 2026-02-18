@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "prediction_history_table",
+  "position": {"x": 20, "y": 650, "z": 7, "height": 380, "width": 1180, "tabOrder": 7},
+  "visual": {
+    "visualType": "table",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "prediction_date"}}, "queryRef": "ml_trading_predictions.prediction_date", "nativeQueryRef": "prediction_date"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "ticker"}}, "queryRef": "ml_trading_predictions.ticker", "nativeQueryRef": "ticker"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "predicted_signal"}}, "queryRef": "ml_trading_predictions.predicted_signal", "nativeQueryRef": "predicted_signal"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "signal_confidence"}}, "queryRef": "ml_trading_predictions.signal_confidence", "nativeQueryRef": "signal_confidence"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "predicted_price"}}, "queryRef": "ml_trading_predictions.predicted_price", "nativeQueryRef": "predicted_price"}
+          ]
+        }
+      }
+    },
+    "objects": {},
+    "drillFilterOtherVisuals": true
+  }
+}

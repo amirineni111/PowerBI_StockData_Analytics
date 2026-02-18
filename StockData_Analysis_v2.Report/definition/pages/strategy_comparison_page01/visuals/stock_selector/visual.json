@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "stock_selector",
+  "position": {
+    "x": 1220,
+    "y": 100,
+    "z": 6,
+    "height": 520,
+    "width": 280,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}},
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "ml_trading_predictions.ticker",
+              "nativeQueryRef": "ticker"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "general": [{"properties": {"orientation": {"expr": {"Literal": {"Value": "0D"}}}}}]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

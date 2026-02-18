@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "macd_chart",
+  "position": {"x": 620, "y": 100, "z": 2, "height": 350, "width": 580, "tabOrder": 2},
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [{"field": {"Column": {"Expression": {"SourceRef": {"Entity": "forex_prediction_features"}}, "Property": "prediction_date"}}, "queryRef": "forex_prediction_features.prediction_date", "nativeQueryRef": "prediction_date"}]
+        },
+        "Y": {
+          "projections": [
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "forex_prediction_features"}}, "Property": "macd"}}, "queryRef": "forex_prediction_features.macd", "nativeQueryRef": "macd"},
+            {"field": {"Column": {"Expression": {"SourceRef": {"Entity": "forex_prediction_features"}}, "Property": "macd_signal"}}, "queryRef": "forex_prediction_features.macd_signal", "nativeQueryRef": "macd_signal"}
+          ]
+        }
+      }
+    },
+    "objects": {"legend": [{"properties": {"show": {"expr": {"Literal": {"Value": "true"}}}}}]},
+    "drillFilterOtherVisuals": true
+  }
+}

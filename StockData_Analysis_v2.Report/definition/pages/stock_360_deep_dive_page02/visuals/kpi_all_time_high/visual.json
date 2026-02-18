@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "kpi_all_time_high",
+  "position": {
+    "x": 1144,
+    "y": 100,
+    "z": 5,
+    "height": 100,
+    "width": 250,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [{"field": {"Measure": {"Expression": {"SourceRef": {"Entity": "_Measures"}}, "Property": "NSE All Time High"}}, "queryRef": "_Measures.NSE All Time High", "nativeQueryRef": "NSE All Time High"}]
+        }
+      }
+    },
+    "objects": {"labels": [{"properties": {"fontSize": {"expr": {"Literal": {"Value": "20D"}}}, "color": {"solid": {"color": {"expr": {"Literal": {"Value": "'#107C10'"}}}}}}], "categoryLabels": [{"properties": {"show": {"expr": {"Literal": {"Value": "true"}}}}}]},
+    "drillFilterOtherVisuals": true
+  }
+}

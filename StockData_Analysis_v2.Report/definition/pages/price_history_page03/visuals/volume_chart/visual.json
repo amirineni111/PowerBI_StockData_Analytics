@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "volume_chart",
+  "position": {"x": 20, "y": 520, "z": 2, "height": 300, "width": 580, "tabOrder": 2},
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [{"field": {"Column": {"Expression": {"SourceRef": {"Entity": "nse_500_hist_data"}}, "Property": "trading_date"}}, "queryRef": "nse_500_hist_data.trading_date", "nativeQueryRef": "trading_date"}]
+        },
+        "Y": {
+          "projections": [{"field": {"Column": {"Expression": {"SourceRef": {"Entity": "nse_500_hist_data"}}, "Property": "volume"}}, "queryRef": "nse_500_hist_data.volume", "nativeQueryRef": "volume"}]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

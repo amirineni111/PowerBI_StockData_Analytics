@@ -1,0 +1,24 @@
+{
+  "pages": [
+    {
+      "name": "strategy_comparison_page01",
+      "displayName": "Strategy Comparison & Accuracy"
+    },
+    {
+      "name": "stock_360_deep_dive_page02",
+      "displayName": "Stock 360 Deep Dive"
+    },
+    {
+      "name": "price_history_page03",
+      "displayName": "Price & History Analysis"
+    },
+    {
+      "name": "technical_analysis_page04",
+      "displayName": "Technical Analysis"
+    },
+    {
+      "name": "ml_predictions_page05",
+      "displayName": "ML Predictions & Results"
+    }
+  ]
+}

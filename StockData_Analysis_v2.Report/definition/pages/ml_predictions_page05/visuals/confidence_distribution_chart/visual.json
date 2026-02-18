@@ -10,7 +10,7 @@
           "projections": [{"field": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "signal_confidence"}}, "queryRef": "ml_trading_predictions.signal_confidence", "nativeQueryRef": "signal_confidence"}]
         },
         "Values": {
-          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": "Count"}}, "queryRef": "ml_trading_predictions.Count", "nativeQueryRef": "Count"}]
+          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": 1}}, "queryRef": "ml_trading_predictions.Count", "nativeQueryRef": "Count"}]
         }
       }
     },

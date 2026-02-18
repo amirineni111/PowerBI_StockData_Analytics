@@ -7,7 +7,7 @@
     "query": {
       "queryState": {
         "Values": {
-          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": "Average", "Property": "signal_confidence"}}, "queryRef": "ml_trading_predictions.Average_signal_confidence", "nativeQueryRef": "Average_signal_confidence"}]
+          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": 4, "Property": "signal_confidence"}}, "queryRef": "ml_trading_predictions.Average_signal_confidence", "nativeQueryRef": "Average_signal_confidence"}]
         }
       }
     },

@@ -10,7 +10,7 @@
           "projections": [{"field": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "ticker"}}, "queryRef": "ml_trading_predictions.ticker", "nativeQueryRef": "ticker"}]
         },
         "Y": {
-          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": "Count"}}, "queryRef": "ml_trading_predictions.Count", "nativeQueryRef": "Count"}]
+          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": 1}}, "queryRef": "ml_trading_predictions.Count", "nativeQueryRef": "Count"}]
         },
         "Legend": {
           "projections": [{"field": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "predicted_signal"}}, "queryRef": "ml_trading_predictions.predicted_signal", "nativeQueryRef": "predicted_signal"}]

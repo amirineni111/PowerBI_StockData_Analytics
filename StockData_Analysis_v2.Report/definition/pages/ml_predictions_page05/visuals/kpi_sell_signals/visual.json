@@ -7,7 +7,7 @@
     "query": {
       "queryState": {
         "Values": {
-          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": "CountIf", "Property": "predicted_signal"}, "selector": {"expr": {"Comparison": {"ComparisonKind": "Is", "Left": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "predicted_signal"}}, "Right": {"Literal": {"Value": "'Sell'"}}}}}}, "queryRef": "ml_trading_predictions.Sell_count", "nativeQueryRef": "Sell_count"}]
+          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": 5, "Property": "predicted_signal"}, "selector": {"expr": {"Comparison": {"ComparisonKind": "Is", "Left": {"Column": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Property": "predicted_signal"}}, "Right": {"Literal": {"Value": "'Sell'"}}}}}}, "queryRef": "ml_trading_predictions.Sell_count", "nativeQueryRef": "Sell_count"}]
         }
       }
     },

@@ -7,7 +7,7 @@
     "query": {
       "queryState": {
         "Values": {
-          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": "Count"}}, "queryRef": "ml_trading_predictions.Count", "nativeQueryRef": "Count"}]
+          "projections": [{"field": {"Aggregation": {"Expression": {"SourceRef": {"Entity": "ml_trading_predictions"}}, "Function": 1}}, "queryRef": "ml_trading_predictions.Count", "nativeQueryRef": "Count"}]
         }
       }
     },

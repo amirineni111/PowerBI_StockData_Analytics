@@ -11,7 +11,7 @@
         }
       }
     },
-    "objects": {"calloutValue": [{"properties": {"text": {"expr": {"Literal": {"Value": "\"Buy Signals\""}}}}}],
+    "objects": {"calloutValue": [{"properties": {"text": {"expr": {"Literal": {"Value": "\"Buy Signals\""}}}}}]},
     "drillFilterOtherVisuals": true
   }
 }

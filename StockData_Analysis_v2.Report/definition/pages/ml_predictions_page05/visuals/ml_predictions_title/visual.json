@@ -4,6 +4,6 @@
   "position": {"x": 20, "y": 20, "z": 0, "height": 60, "width": 800, "tabOrder": 0},
   "visual": {
     "visualType": "textbox",
-    "objects": {"general": [{"properties": {"paragraphs": {"expr": {"Literal": {"Value": "[{\"textRuns\":[{\"value\":\"🤖 ML PREDICTIONS & RESULTS - MODEL PERFORMANCE\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"24pt\",\"color\":\"#333333\"}}]}]"}}}]}
+    "objects": {"general": [{"properties": {"paragraphs": {"expr": {"Literal": {"Value": "[{\"textRuns\":[{\"value\":\"🤖 ML PREDICTIONS & RESULTS - MODEL PERFORMANCE\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"24pt\",\"color\":\"#333333\"}}]}]"}}}}}]}
   }
 }

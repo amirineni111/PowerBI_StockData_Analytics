@@ -32,11 +32,6 @@ table vw_PowerBI_Opportunities_strategy1
 		summarizeBy: none
 		sourceColumn: report_date
 
-		variation Variation
-			isDefault
-			relationship: 68bea5ea-c3ff-4401-9ed2-857548ba4da5
-			defaultHierarchy: LocalDateTable_4fbe4123-e12c-47db-96c1-fe0675ca6e64.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -50,11 +45,6 @@ table vw_PowerBI_Opportunities_strategy1
 		summarizeBy: none
 		sourceColumn: prediction_date
 
-		variation Variation
-			isDefault
-			relationship: 4b0ebf60-70d8-4cd7-b5fa-dba4b8dc14c8
-			defaultHierarchy: LocalDateTable_7309b863-84cc-4254-a08c-24e2b60d7512.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -67,11 +57,6 @@ table vw_PowerBI_Opportunities_strategy1
 		lineageTag: 77778887-bb4d-4d0b-8337-ae19f55ffb1d
 		summarizeBy: none
 		sourceColumn: ai_target_date
-
-		variation Variation
-			isDefault
-			relationship: 65df4b7b-3485-4352-aac5-361884dd31a9
-			defaultHierarchy: LocalDateTable_3558cabb-b3a5-43bb-a03f-52a61cd40a91.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -204,11 +189,6 @@ table vw_PowerBI_Opportunities_strategy1
 		summarizeBy: none
 		sourceColumn: signal_date
 
-		variation Variation
-			isDefault
-			relationship: faa5d111-b197-4226-96de-b18a2ac735c7
-			defaultHierarchy: LocalDateTable_8143d2f5-42c3-4e70-82e0-c558c9424a02.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -305,11 +285,6 @@ table vw_PowerBI_Opportunities_strategy1
 		summarizeBy: none
 		sourceColumn: tech_target_7d
 
-		variation Variation
-			isDefault
-			relationship: de0ab758-a39e-490c-9aec-e4a748f23116
-			defaultHierarchy: LocalDateTable_f8cff596-23e2-445e-8cea-1905a1619888.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -349,11 +324,6 @@ table vw_PowerBI_Opportunities_strategy1
 		summarizeBy: none
 		sourceColumn: target_date_14d
 
-		variation Variation
-			isDefault
-			relationship: 960b1177-e81c-4e21-a6d2-e08cb9a3ca3c
-			defaultHierarchy: LocalDateTable_d305afff-e758-4be0-af38-d94cace01f75.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -372,11 +342,6 @@ table vw_PowerBI_Opportunities_strategy1
 		lineageTag: 32da0ccd-3fdd-4da6-94dd-f06db7f17942
 		summarizeBy: none
 		sourceColumn: target_date_30d
-
-		variation Variation
-			isDefault
-			relationship: be61febb-0071-4899-b47b-6a9f9510ad03
-			defaultHierarchy: LocalDateTable_fcf18a8e-0fcd-448f-b4a1-8db556683fb4.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -506,11 +471,6 @@ table vw_PowerBI_Opportunities_strategy1
 		lineageTag: 87236c50-8544-476c-a7bd-8dde465a6531
 		summarizeBy: none
 		sourceColumn: last_updated
-
-		variation Variation
-			isDefault
-			relationship: 1fa07ae9-a75f-41a1-80f8-530fea5a7945
-			defaultHierarchy: LocalDateTable_efcb4713-25fc-4ffc-838a-49e2e329b199.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

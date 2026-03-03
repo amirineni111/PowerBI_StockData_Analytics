@@ -8,11 +8,6 @@ table nasdaq_100_hist_data
 		summarizeBy: none
 		sourceColumn: trading_date
 
-		variation Variation
-			isDefault
-			relationship: 1c632e78-f1f2-45e0-a809-33c42727fb05
-			defaultHierarchy: LocalDateTable_79f48471-0030-431b-8fa6-4870f889b2ac.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

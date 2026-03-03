@@ -17,11 +17,6 @@ table ml_technical_indicators
 		summarizeBy: none
 		sourceColumn: run_timestamp
 
-		variation Variation
-			isDefault
-			relationship: 5aa2ae34-5cd2-4430-8bff-34193dca073b
-			defaultHierarchy: LocalDateTable_f6cfb084-047b-4870-a3c7-5c849a2590bd.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column trading_date
@@ -30,11 +25,6 @@ table ml_technical_indicators
 		lineageTag: d042b63f-678f-4414-9603-a4ba78979630
 		summarizeBy: none
 		sourceColumn: trading_date
-
-		variation Variation
-			isDefault
-			relationship: da2974b8-70ac-4503-8b44-a64fbd84c209
-			defaultHierarchy: LocalDateTable_f404cee7-13eb-4be0-baef-adf9f07dc7e5.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -320,11 +310,6 @@ table ml_technical_indicators
 		lineageTag: 4986503d-efb0-4edb-9480-691a2962f760
 		summarizeBy: none
 		sourceColumn: created_at
-
-		variation Variation
-			isDefault
-			relationship: a6319b6d-304d-4ca0-b2f1-ffde67abd3fe
-			defaultHierarchy: LocalDateTable_3b140679-2cf6-4543-8d3b-b68cce56a72e.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

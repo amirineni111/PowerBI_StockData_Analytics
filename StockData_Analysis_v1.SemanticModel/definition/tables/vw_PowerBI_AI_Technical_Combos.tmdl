@@ -41,11 +41,6 @@ table vw_PowerBI_AI_Technical_Combos
 		summarizeBy: none
 		sourceColumn: signal_date
 
-		variation Variation
-			isDefault
-			relationship: fa326887-6fd5-46e9-b683-c83e75192cdd
-			defaultHierarchy: LocalDateTable_17f464a0-9c26-439e-948c-ebf21aa74f5e.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

@@ -24,11 +24,6 @@ table nse_500
 		summarizeBy: none
 		sourceColumn: monitor_startdate
 
-		variation Variation
-			isDefault
-			relationship: 1ec43037-9a37-4194-8b2d-530f0999ef2a
-			defaultHierarchy: LocalDateTable_76b7e245-6695-4ff8-a994-36c63e417384.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column monitor_enddate
@@ -37,11 +32,6 @@ table nse_500
 		lineageTag: 14ae5c15-d195-4f60-9e9e-2ba2f9d6d547
 		summarizeBy: none
 		sourceColumn: monitor_enddate
-
-		variation Variation
-			isDefault
-			relationship: d785a5f3-d30a-42f4-bb64-95e14185240b
-			defaultHierarchy: LocalDateTable_dc323ef4-c91b-4fd5-b8de-faea55dd7b3b.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -99,11 +89,6 @@ table nse_500
 		lineageTag: 88ba517a-9e4c-422c-840d-fbfcfdf3cebf
 		summarizeBy: none
 		sourceColumn: last_updated
-
-		variation Variation
-			isDefault
-			relationship: 221b9d2d-df33-4a59-859b-2f11f62ca27a
-			defaultHierarchy: LocalDateTable_a177d766-6447-4f76-82fa-a925bee2cd5b.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

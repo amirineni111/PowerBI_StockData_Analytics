@@ -17,11 +17,6 @@ table ml_nse_predict_summary
 		summarizeBy: none
 		sourceColumn: run_timestamp
 
-		variation Variation
-			isDefault
-			relationship: 9be0044a-3634-4739-99a3-26444fb24987
-			defaultHierarchy: LocalDateTable_957b68cf-38d0-468e-8f7d-d9b8994019ad.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column analysis_date
@@ -30,11 +25,6 @@ table ml_nse_predict_summary
 		lineageTag: 3a3bbb63-0f2b-4af1-8c12-da7a8e29a142
 		summarizeBy: none
 		sourceColumn: analysis_date
-
-		variation Variation
-			isDefault
-			relationship: 52a1467c-4114-4c6d-b863-1b50874b455a
-			defaultHierarchy: LocalDateTable_258ba0a6-3116-4110-8ec8-7072a89fa65c.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -358,11 +348,6 @@ table ml_nse_predict_summary
 		lineageTag: 3303d056-8adc-484f-b63b-24a4ba137629
 		summarizeBy: none
 		sourceColumn: created_at
-
-		variation Variation
-			isDefault
-			relationship: 66939027-3d26-45f9-b8f2-d0027d179bad
-			defaultHierarchy: LocalDateTable_74b42f87-015a-4425-9f32-cd9bbb9c7b5b.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

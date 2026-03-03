@@ -17,11 +17,6 @@ table forex_prediction_features
 		summarizeBy: none
 		sourceColumn: prediction_date
 
-		variation Variation
-			isDefault
-			relationship: 4831eb00-adac-4d43-b000-fb511f6f0af4
-			defaultHierarchy: LocalDateTable_95c9f299-1b01-4821-b68c-b81611280b15.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column currency_pair
@@ -344,11 +339,6 @@ table forex_prediction_features
 		lineageTag: 5557fcc8-a908-43f5-9987-5465d4c10a94
 		summarizeBy: none
 		sourceColumn: created_at
-
-		variation Variation
-			isDefault
-			relationship: dbf58060-a539-45b8-b4d0-1de1c007160f
-			defaultHierarchy: LocalDateTable_84e6765b-ef52-4288-bbc7-4d00f3bd9897.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

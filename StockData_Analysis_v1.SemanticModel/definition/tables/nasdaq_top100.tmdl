@@ -24,11 +24,6 @@ table nasdaq_top100
 		summarizeBy: none
 		sourceColumn: monitor_startdate
 
-		variation Variation
-			isDefault
-			relationship: d4863403-ce1e-4cdd-923f-d5ef63d64980
-			defaultHierarchy: LocalDateTable_76c514c0-6132-496b-a41c-d5813ee29a30.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column monitor_enddate
@@ -37,11 +32,6 @@ table nasdaq_top100
 		lineageTag: 174402eb-6ed2-48d7-bff9-5918845a5c01
 		summarizeBy: none
 		sourceColumn: monitor_enddate
-
-		variation Variation
-			isDefault
-			relationship: d35856ef-51a7-428d-a105-0bc315e1518f
-			defaultHierarchy: LocalDateTable_35e2224c-f8fb-458f-a63a-f17a526772be.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -99,11 +89,6 @@ table nasdaq_top100
 		lineageTag: b36039bf-de72-4efb-a9b5-b338a739d6f6
 		summarizeBy: none
 		sourceColumn: last_updated
-
-		variation Variation
-			isDefault
-			relationship: 2c0ea665-f473-47bc-bb18-a5cc90551cf1
-			defaultHierarchy: LocalDateTable_5a689686-296e-40b7-a1ec-35c0ee581f4b.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

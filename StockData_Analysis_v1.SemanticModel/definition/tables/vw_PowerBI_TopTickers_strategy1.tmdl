@@ -100,11 +100,6 @@ table vw_PowerBI_TopTickers_strategy1
 		summarizeBy: none
 		sourceColumn: first_prediction
 
-		variation Variation
-			isDefault
-			relationship: 18a8d845-86e5-489c-ae93-e0810ff5df1d
-			defaultHierarchy: LocalDateTable_2c032778-2be2-4696-851b-f1c630328a67.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -115,11 +110,6 @@ table vw_PowerBI_TopTickers_strategy1
 		lineageTag: c549445d-07b0-43ed-8c52-978030a01803
 		summarizeBy: none
 		sourceColumn: last_prediction
-
-		variation Variation
-			isDefault
-			relationship: ef4223f8-790e-424e-a29b-0c28b09fa1da
-			defaultHierarchy: LocalDateTable_1253e5d7-690d-4bac-8f58-14b3b83b0b47.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

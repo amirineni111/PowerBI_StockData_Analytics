@@ -17,11 +17,6 @@ table forex_ml_predictions
 		summarizeBy: none
 		sourceColumn: prediction_date
 
-		variation Variation
-			isDefault
-			relationship: f6c262e9-b35b-489e-9b45-263351973261
-			defaultHierarchy: LocalDateTable_4af339ce-c764-4b36-b8e6-7923ce2f9384.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column currency_pair
@@ -38,11 +33,6 @@ table forex_ml_predictions
 		lineageTag: 4f9b03c0-221a-4a37-b2f1-712e29c93faa
 		summarizeBy: none
 		sourceColumn: date_time
-
-		variation Variation
-			isDefault
-			relationship: 90ab45dc-6715-4e9f-9cec-2bd3af11ce99
-			defaultHierarchy: LocalDateTable_05a5c145-53b1-4218-9820-b99a7f9ed8c2.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -175,10 +165,70 @@ table forex_ml_predictions
 		summarizeBy: none
 		sourceColumn: created_at
 
-		variation Variation
-			isDefault
-			relationship: 0b75d637-2da4-4162-9e0e-ca8a7d15006b
-			defaultHierarchy: LocalDateTable_1ffb153f-a84d-4df2-ac42-f92212b10fec.'Date Hierarchy'
+		annotation SummarizationSetBy = Automatic
+
+	column actual_return_1d
+		dataType: double
+		lineageTag: a76befdd-4880-472b-b28c-ea47ea3dbe4b
+		summarizeBy: sum
+		sourceColumn: actual_return_1d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_return_5d
+		dataType: double
+		lineageTag: e5094116-41d3-439a-a820-384fb14a564b
+		summarizeBy: sum
+		sourceColumn: actual_return_5d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_return_10d
+		dataType: double
+		lineageTag: 45d7fd6d-f66e-4652-a69a-4cf157db2901
+		summarizeBy: sum
+		sourceColumn: actual_return_10d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prediction_accuracy
+		dataType: string
+		lineageTag: 75eb72c0-eab2-45b6-bf36-0fbb4c98313d
+		summarizeBy: none
+		sourceColumn: prediction_accuracy
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_1d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b4202ae5-4050-4e6a-b4ae-d427715b6439
+		summarizeBy: none
+		sourceColumn: direction_correct_1d
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_5d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ad7e7893-671a-4be8-8266-0939a8d52ba8
+		summarizeBy: none
+		sourceColumn: direction_correct_5d
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 572c8ecd-4e9d-4dee-b598-e0f7eaa7160c
+		summarizeBy: none
+		sourceColumn: updated_at
 
 		annotation SummarizationSetBy = Automatic
 

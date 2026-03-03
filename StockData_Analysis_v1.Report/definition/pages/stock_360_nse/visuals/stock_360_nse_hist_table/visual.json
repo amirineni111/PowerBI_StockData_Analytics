@@ -1,0 +1,192 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "stock_360_nse_hist_table",
+  "position": {
+    "x": 20,
+    "y": 894,
+    "z": 47,
+    "height": 480,
+    "width": 1880,
+    "tabOrder": 47
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_hist_data"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "nse_500_hist_data.trading_date",
+              "nativeQueryRef": "Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_hist_data"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500_hist_data.ticker",
+              "nativeQueryRef": "Ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_hist_data"
+                    }
+                  },
+                  "Property": "open_price"
+                }
+              },
+              "queryRef": "nse_500_hist_data.open_price",
+              "nativeQueryRef": "Open"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_hist_data"
+                    }
+                  },
+                  "Property": "high_price"
+                }
+              },
+              "queryRef": "nse_500_hist_data.high_price",
+              "nativeQueryRef": "High"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_hist_data"
+                    }
+                  },
+                  "Property": "low_price"
+                }
+              },
+              "queryRef": "nse_500_hist_data.low_price",
+              "nativeQueryRef": "Low"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_hist_data"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "nse_500_hist_data.close_price",
+              "nativeQueryRef": "Close"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_hist_data"
+                    }
+                  },
+                  "Property": "volume"
+                }
+              },
+              "queryRef": "nse_500_hist_data.volume",
+              "nativeQueryRef": "Volume"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nse_500_hist_data"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Historical Price Data'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -16,11 +16,6 @@ table vw_PowerBI_DataFreshness_strategy1
 		summarizeBy: none
 		sourceColumn: latest_date
 
-		variation Variation
-			isDefault
-			relationship: d25b9664-2082-4725-baa7-df8253fcac85
-			defaultHierarchy: LocalDateTable_7e0fb96d-2a5b-4f99-9c21-ed4915b5b755.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -33,11 +28,6 @@ table vw_PowerBI_DataFreshness_strategy1
 		lineageTag: 0639cabd-b521-4968-8bb0-9ff5c99e2847
 		summarizeBy: none
 		sourceColumn: last_updated
-
-		variation Variation
-			isDefault
-			relationship: 8aab1511-1e2d-4245-b2b1-69342dbe61dc
-			defaultHierarchy: LocalDateTable_a08583eb-6818-403a-8657-8998cf8b952c.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

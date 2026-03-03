@@ -41,11 +41,6 @@ table ai_prediction_history
 		summarizeBy: none
 		sourceColumn: prediction_date
 
-		variation Variation
-			isDefault
-			relationship: 6ce36ed1-7cd8-43eb-b2bc-7c02fa045faa
-			defaultHierarchy: LocalDateTable_1d02fcb9-c1fc-4608-9e83-510d43626979.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -58,11 +53,6 @@ table ai_prediction_history
 		lineageTag: 67c27f50-76fe-438a-8e15-e0cd2df02f08
 		summarizeBy: none
 		sourceColumn: target_date
-
-		variation Variation
-			isDefault
-			relationship: 1625b0a9-e7ca-4bac-9918-d42cb224c94d
-			defaultHierarchy: LocalDateTable_d3a54b76-5921-45c4-9518-4f5c60ee6783.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -190,11 +180,6 @@ table ai_prediction_history
 		summarizeBy: none
 		sourceColumn: created_at
 
-		variation Variation
-			isDefault
-			relationship: 8f370491-bbf0-40f3-9ffa-0f6b89694c28
-			defaultHierarchy: LocalDateTable_09088aec-3f00-458b-81f3-64f0303d15a8.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column updated_at
@@ -203,11 +188,6 @@ table ai_prediction_history
 		lineageTag: 7e1fb1db-e2d1-4c22-947b-d9e1e70a6c4b
 		summarizeBy: none
 		sourceColumn: updated_at
-
-		variation Variation
-			isDefault
-			relationship: 59ab65b1-0d76-479d-aa56-301ee639f768
-			defaultHierarchy: LocalDateTable_3b53b412-8d02-4725-8f4b-1228b9795255.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

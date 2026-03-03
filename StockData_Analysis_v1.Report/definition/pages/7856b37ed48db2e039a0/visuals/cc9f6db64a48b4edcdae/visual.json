@@ -1,0 +1,183 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "cc9f6db64a48b4edcdae",
+  "position": {
+    "x": 80,
+    "y": 176,
+    "z": 0,
+    "height": 272,
+    "width": 272,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_hist_data"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "nasdaq_100_hist_data.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_hist_data"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nasdaq_100_hist_data.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "nasdaq_100_hist_data"
+                        }
+                      },
+                      "Property": "ticker"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(nasdaq_100_hist_data.ticker)",
+              "nativeQueryRef": "Count of ticker"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NASDAQ Data'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f83063c0cb57044a500b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_hist_data"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bff8f5fc5580269e8ec4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_hist_data"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3edb3deec32d3c200864",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nasdaq_100_hist_data"
+                  }
+                },
+                "Property": "ticker"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "n",
+              "Entity": "nasdaq_100_hist_data",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 1,
+                  "Left": {
+                    "Aggregation": {
+                      "Expression": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "n"
+                            }
+                          },
+                          "Property": "ticker"
+                        }
+                      },
+                      "Function": 5
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

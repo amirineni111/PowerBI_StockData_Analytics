@@ -1,6 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
   "pageOrder": [
+    "7856b37ed48db2e039a0",
+    "stock_360_nasdaq",
+    "794de9b24d5ba37c6830",
+    "stock_360_nse",
+    "5b197213dde4cb300000",
     "executive_summary_page08",
     "fund_master_scoring",
     "fund_value_stocks",
@@ -29,5 +34,5 @@
     "02aff517d4007f28dc16",
     "78c327e59f3b3e0b7859"
   ],
-  "activePageName": "fund_garp_strategy"
+  "activePageName": "7856b37ed48db2e039a0"
 }

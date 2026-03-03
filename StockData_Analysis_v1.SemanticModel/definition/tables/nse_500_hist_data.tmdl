@@ -8,11 +8,6 @@ table nse_500_hist_data
 		summarizeBy: none
 		sourceColumn: trading_date
 
-		variation Variation
-			isDefault
-			relationship: 66ba47a5-7d40-4203-a067-47bde8a9ccad
-			defaultHierarchy: LocalDateTable_f4c7f69d-5916-427a-a293-9074532b2af0.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

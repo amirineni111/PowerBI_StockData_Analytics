@@ -1,0 +1,295 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "9b2c34f40318669ad7d0",
+  "position": {
+    "x": 12,
+    "y": 792,
+    "z": 45001,
+    "height": 608,
+    "width": 1888,
+    "tabOrder": 45001
+  },
+  "visual": {
+    "visualType": "PBI_CV_886A053E_9DFD_4EA0_A47D_CCAEB89AF969",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_100_hist_data"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "nasdaq_100_hist_data.trading_date",
+              "nativeQueryRef": "Date",
+              "active": true
+            }
+          ]
+        },
+        "close": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "nasdaq_100_hist_data"
+                        }
+                      },
+                      "Property": "close_price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(nasdaq_100_hist_data.close_price)",
+              "nativeQueryRef": "Close"
+            }
+          ]
+        },
+        "open": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "nasdaq_100_hist_data"
+                        }
+                      },
+                      "Property": "open_price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(nasdaq_100_hist_data.open_price)",
+              "nativeQueryRef": "Sum of open_price"
+            }
+          ]
+        },
+        "high": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "nasdaq_100_hist_data"
+                        }
+                      },
+                      "Property": "high_price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(nasdaq_100_hist_data.high_price)",
+              "nativeQueryRef": "Sum of high_price"
+            }
+          ]
+        },
+        "low": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "nasdaq_100_hist_data"
+                        }
+                      },
+                      "Property": "low_price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(nasdaq_100_hist_data.low_price)",
+              "nativeQueryRef": "Sum of low_price"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nasdaq_100_hist_data"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Historical Price Data'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9615c5c0db639366a039",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_hist_data"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "64d5483b9025d377005a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nasdaq_100_hist_data"
+                  }
+                },
+                "Property": "close_price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1afb33b80038b6b75d9c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nasdaq_100_hist_data"
+                  }
+                },
+                "Property": "open_price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c87247b770b6967d035d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nasdaq_100_hist_data"
+                  }
+                },
+                "Property": "high_price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2bf2bb350695e3c5e0d8",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nasdaq_100_hist_data"
+                  }
+                },
+                "Property": "low_price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

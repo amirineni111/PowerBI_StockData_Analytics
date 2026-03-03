@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "master_title",
   "position": {
     "x": 16,
@@ -45,6 +45,7 @@
                   {
                     "value": "• Value Score (0-100): P/E, P/B, P/S, PEG, ROE  • Quality Score (0-100): ROE, margins, debt ratios, cash flow  • Growth Score (0-100): Revenue & earnings growth  • Dividend Score (0-100): Yield, payout ratio, sustainability",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt"
                     }

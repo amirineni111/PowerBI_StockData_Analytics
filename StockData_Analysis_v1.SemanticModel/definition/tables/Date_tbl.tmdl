@@ -8,11 +8,6 @@ table Date_tbl
 		isNameInferred
 		sourceColumn: [Date]
 
-		variation Variation
-			isDefault
-			relationship: 7b8748c1-8538-4024-931b-25deb896987a
-			defaultHierarchy: LocalDateTable_235b48d0-46bf-4c86-951b-3edf6b085232.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

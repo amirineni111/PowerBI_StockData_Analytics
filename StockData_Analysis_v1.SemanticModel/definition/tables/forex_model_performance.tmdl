@@ -24,11 +24,6 @@ table forex_model_performance
 		summarizeBy: none
 		sourceColumn: training_date
 
-		variation Variation
-			isDefault
-			relationship: 52e419ed-56be-4b4e-8f40-46a153722f51
-			defaultHierarchy: LocalDateTable_8f148452-9c3d-443b-8b01-7ec2bd914b8c.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column cv_accuracy_mean
@@ -92,12 +87,14 @@ table forex_model_performance
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column train_auc
-		dataType: string
+		dataType: double
 		lineageTag: 74be63e7-9ea5-45d1-abb6-ad795a825a4b
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: train_auc
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column training_samples
 		dataType: int64
@@ -130,6 +127,24 @@ table forex_model_performance
 		lineageTag: 30af38b5-86df-4c3a-8f68-55d53123c2b6
 		summarizeBy: none
 		sourceColumn: model_params
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 741e187b-ed3c-4076-a80d-d9b350395fd5
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a22aede3-0fb9-4490-b1ba-ded505868d61
+		summarizeBy: none
+		sourceColumn: created_at
 
 		annotation SummarizationSetBy = Automatic
 

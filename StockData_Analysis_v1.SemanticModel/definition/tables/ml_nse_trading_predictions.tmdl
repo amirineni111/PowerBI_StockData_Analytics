@@ -17,11 +17,6 @@ table ml_nse_trading_predictions
 		summarizeBy: none
 		sourceColumn: run_timestamp
 
-		variation Variation
-			isDefault
-			relationship: 34a7d9e9-9104-41c8-97a6-dced9dc639c4
-			defaultHierarchy: LocalDateTable_5514c05e-7d74-43d2-a113-8fd53b5bb633.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column trading_date
@@ -30,11 +25,6 @@ table ml_nse_trading_predictions
 		lineageTag: f8f1f8ea-7c1f-4e6f-b33b-272bdb32a338
 		summarizeBy: none
 		sourceColumn: trading_date
-
-		variation Variation
-			isDefault
-			relationship: f3662229-9f7e-4602-b095-36b52d63d83b
-			defaultHierarchy: LocalDateTable_c25e166b-ae19-4626-88e5-edd3c9a4d110.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -263,11 +253,6 @@ table ml_nse_trading_predictions
 		summarizeBy: none
 		sourceColumn: created_at
 
-		variation Variation
-			isDefault
-			relationship: 285d3848-11c1-4d8e-8346-7ac66f4804c4
-			defaultHierarchy: LocalDateTable_c2cb803c-0f13-4205-b06d-47dd51232c40.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column updated_at
@@ -277,10 +262,23 @@ table ml_nse_trading_predictions
 		summarizeBy: none
 		sourceColumn: updated_at
 
-		variation Variation
-			isDefault
-			relationship: 21ebf1fb-08b4-46c9-a535-f6fe9bc0b5c0
-			defaultHierarchy: LocalDateTable_b9f70ee4-de1b-4e56-a5db-123b7487f351.'Date Hierarchy'
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_1d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a3b8c60a-8b45-415b-ab89-db116200c0f0
+		summarizeBy: none
+		sourceColumn: direction_correct_1d
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction_correct_5d
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2e551a8a-c9e4-4a10-96a5-ea92f024b150
+		summarizeBy: none
+		sourceColumn: direction_correct_5d
 
 		annotation SummarizationSetBy = Automatic
 

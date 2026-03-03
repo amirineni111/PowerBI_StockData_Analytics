@@ -112,7 +112,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "datetime'2026-01-26T00:00:00'"
+                                "Value": "datetime'2026-02-14T00:00:00'"
                               }
                             }
                           ]
@@ -189,5 +189,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d9f52b3fb3b2a4c96c98",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "fetch_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

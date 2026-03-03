@@ -41,11 +41,6 @@ table signal_tracking_history
 		summarizeBy: none
 		sourceColumn: signal_date
 
-		variation Variation
-			isDefault
-			relationship: eae1f13f-065f-4367-aa54-4e5bdfa90d63
-			defaultHierarchy: LocalDateTable_39ddb334-b292-4369-ac24-e39157e42bb9.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -150,11 +145,6 @@ table signal_tracking_history
 		summarizeBy: none
 		sourceColumn: target_date_7d
 
-		variation Variation
-			isDefault
-			relationship: 8681198e-0d7a-4455-9c30-e1d1372b2f90
-			defaultHierarchy: LocalDateTable_d8a3b708-c132-432b-a88b-5cbb21573674.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -195,11 +185,6 @@ table signal_tracking_history
 		lineageTag: 6d0d9406-0c30-4b5e-ae7b-3b4b3a438ad8
 		summarizeBy: none
 		sourceColumn: target_date_14d
-
-		variation Variation
-			isDefault
-			relationship: d1d13336-e94a-4395-a780-8dadb9f53ee5
-			defaultHierarchy: LocalDateTable_3a9a7d14-e0dc-4e07-a42f-067ea92c4e33.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -242,11 +227,6 @@ table signal_tracking_history
 		summarizeBy: none
 		sourceColumn: target_date_30d
 
-		variation Variation
-			isDefault
-			relationship: 7ea5aba4-1382-4f02-96b2-65541bdfe942
-			defaultHierarchy: LocalDateTable_8dbb7430-bafd-436e-9c3d-7d6cbcbac959.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -288,11 +268,6 @@ table signal_tracking_history
 		summarizeBy: none
 		sourceColumn: created_at
 
-		variation Variation
-			isDefault
-			relationship: 7ee7d110-bf97-4ad2-88c1-05a8d4d0d237
-			defaultHierarchy: LocalDateTable_9a20ff69-93f2-445f-8e52-01a4b1acbdc6.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column updated_at
@@ -301,11 +276,6 @@ table signal_tracking_history
 		lineageTag: a0f7f0b5-973c-4049-be27-7bdf70baedef
 		summarizeBy: none
 		sourceColumn: updated_at
-
-		variation Variation
-			isDefault
-			relationship: 251b9027-1010-4ddc-ab19-84a573efea7e
-			defaultHierarchy: LocalDateTable_ad0020a8-c521-4f5f-8597-71d07681ce28.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

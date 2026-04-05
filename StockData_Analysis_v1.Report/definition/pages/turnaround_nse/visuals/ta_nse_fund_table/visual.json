@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ta_nse_fund_table",
   "position": {
     "x": 16,
@@ -234,11 +234,181 @@
                   }
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "692f4b91067ec7d9c533",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f878fd9ec88406f5630f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "38f5daaf1843eaee334c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "trailing_pe"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "db3421b6bea915fc9a91",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "forward_pe"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "aff52b9faf79e706fc5f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "profit_margin"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "902b86096dbce3da75d7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "return_on_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "52b87b0725f297211845",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "earnings_growth"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9ac2ad1e2c319f2151a7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "revenue_growth"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "572ab2e3dfca4b6f5dfe",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "debt_to_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d15eb3cb81681f1ae045",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "free_cashflow"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "89058c3ab9454a84b2a8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "market_cap"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

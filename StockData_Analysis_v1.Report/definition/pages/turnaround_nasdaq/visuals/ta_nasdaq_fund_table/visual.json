@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ta_nasdaq_fund_table",
   "position": {
     "x": 16,
@@ -234,11 +234,181 @@
                   }
                 }
               }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ff1cedaeea54c0327b04",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8da4e9510378d5877a9f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "88136c7098cb687fa878",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "trailing_pe"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "01febfcb33a717d701a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "forward_pe"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "637242c1f351519fb62d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "profit_margin"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1451c0ac0121ed3f1079",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "return_on_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "64fcc0ca213c25d055e3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "earnings_growth"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "448833f571ce65e67c9f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "revenue_growth"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ae0d0e14253c3c2b0e92",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "debt_to_equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "17e46d4d0b57e27fd3fe",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "free_cashflow"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3486e99801d0521f5fdb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "market_cap"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

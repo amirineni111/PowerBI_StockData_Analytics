@@ -1,0 +1,463 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "8b478698c991d9d5dc42",
+  "position": {
+    "x": 272,
+    "y": 32,
+    "z": 2000,
+    "height": 1440,
+    "width": 1712.0000000000002,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "days_ahead"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.days_ahead)",
+              "nativeQueryRef": "days_ahead"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "current_price"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.current_price)",
+              "nativeQueryRef": "current_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "predicted_price"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.predicted_price)",
+              "nativeQueryRef": "predicted_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "actual_price"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.actual_price)",
+              "nativeQueryRef": "actual_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "ai_NSE_prediction_history.prediction_date",
+              "nativeQueryRef": "prediction_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "target_date"
+                }
+              },
+              "queryRef": "ai_NSE_prediction_history.target_date",
+              "nativeQueryRef": "target_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "created_at"
+                }
+              },
+              "queryRef": "ai_NSE_prediction_history.created_at",
+              "nativeQueryRef": "created_at1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "direction_correct"
+                }
+              },
+              "queryRef": "ai_NSE_prediction_history.direction_correct",
+              "nativeQueryRef": "direction_correct1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "model_name"
+                }
+              },
+              "queryRef": "ai_NSE_prediction_history.model_name",
+              "nativeQueryRef": "model_name1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "model_confidence"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.model_confidence)",
+              "nativeQueryRef": "model_confidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "percentage_error"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.percentage_error)",
+              "nativeQueryRef": "percentage_error"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "predicted_change_pct"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.predicted_change_pct)",
+              "nativeQueryRef": "predicted_change_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "actual_change_pct"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.actual_change_pct)",
+              "nativeQueryRef": "actual_change_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ai_NSE_prediction_history"
+                    }
+                  },
+                  "Property": "absolute_error"
+                }
+              },
+              "queryRef": "Sum(ai_NSE_prediction_history.absolute_error)",
+              "nativeQueryRef": "absolute_error"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "78151e3cdcea208a3b04",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1eaa20b57bc3c00c301d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef9135a98694d62a7408",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "target_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9b6ad1b210cdd04a7a98",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "created_at"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "559f00d8975d0e5b5852",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "direction_correct"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c872dd435e4a1c63ea94",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "model_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6a9db9a9e227519b09a8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "days_ahead"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7ec62c5016905917e007",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "current_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e58c1af297d08e419000",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "predicted_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "36bf9bd300e23c0da197",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "actual_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "44237b269a1e04cc02ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "model_confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dc73635b1cabe4c988e7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "percentage_error"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "391704428a6049be82d3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "predicted_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "98b7bbf67ed370897a06",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "actual_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2a101a5a0209a3ee88c7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "absolute_error"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

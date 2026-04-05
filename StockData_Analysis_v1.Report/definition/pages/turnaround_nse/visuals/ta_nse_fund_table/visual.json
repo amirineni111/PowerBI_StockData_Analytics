@@ -1,0 +1,244 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "ta_nse_fund_table",
+  "position": {
+    "x": 16,
+    "y": 928.00000000000011,
+    "z": 8000,
+    "height": 640,
+    "width": 2080,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "Ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.company_name",
+              "nativeQueryRef": "Company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "trailing_pe"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.trailing_pe",
+              "nativeQueryRef": "Trail PE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "forward_pe"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.forward_pe",
+              "nativeQueryRef": "Fwd PE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "profit_margin"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.profit_margin",
+              "nativeQueryRef": "Margin"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "return_on_equity"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.return_on_equity",
+              "nativeQueryRef": "ROE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "earnings_growth"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.earnings_growth",
+              "nativeQueryRef": "Earn Growth"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "revenue_growth"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.revenue_growth",
+              "nativeQueryRef": "Rev Growth"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "debt_to_equity"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.debt_to_equity",
+              "nativeQueryRef": "Debt/Equity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "free_cashflow"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.free_cashflow",
+              "nativeQueryRef": "FCF"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500_fundamentals"
+                    }
+                  },
+                  "Property": "market_cap"
+                }
+              },
+              "queryRef": "nse_500_fundamentals.market_cap",
+              "nativeQueryRef": "Mkt Cap"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "NSE Turnaround Score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NSE Current Fundamentals'"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

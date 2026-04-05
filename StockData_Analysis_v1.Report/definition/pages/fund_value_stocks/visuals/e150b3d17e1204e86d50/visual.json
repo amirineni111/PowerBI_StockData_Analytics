@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "e150b3d17e1204e86d50",
   "position": {
     "x": 992,
     "y": 16,
-    "z": 20,
+    "z": 14000,
     "height": 128,
     "width": 336,
-    "tabOrder": 20
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "nasdaq_100_fundamentals"
+                      "Entity": "nasdaq_top100"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "nasdaq_100_fundamentals.ticker",
-              "nativeQueryRef": "ticker1",
+              "queryRef": "nasdaq_top100.ticker",
+              "nativeQueryRef": "ticker",
               "active": true
             }
           ]
@@ -136,23 +136,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bb963851f97631ff52a4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nasdaq_100_fundamentals"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

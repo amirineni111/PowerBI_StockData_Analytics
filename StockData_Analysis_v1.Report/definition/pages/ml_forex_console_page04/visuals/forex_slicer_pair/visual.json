@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "forex_slicer_pair",
   "position": {
-    "x": 1160,
-    "y": 190,
-    "z": 11,
-    "height": 180,
-    "width": 250,
-    "tabOrder": 11
+    "x": 1296,
+    "y": 48,
+    "z": 8000,
+    "height": 96,
+    "width": 288,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "forex_ml_predictions"
+                      "Entity": "forex_master"
                     }
                   },
-                  "Property": "currency_pair"
+                  "Property": "symbol"
                 }
               },
-              "queryRef": "forex_ml_predictions.currency_pair",
-              "nativeQueryRef": "currency_pair",
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol",
               "active": true
             }
           ]
@@ -37,46 +37,50 @@
     "objects": {
       "general": [
         {
+          "properties": {}
+        }
+      ],
+      "data": [
+        {
           "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "f",
-                    "Entity": "forex_ml_predictions",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "f"
-                                }
-                              },
-                              "Property": "currency_pair"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'AUDUSD'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
               }
             }
           }
@@ -88,15 +92,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e6fa89a479301e902e30",
+        "name": "ebafe796234512678e9a",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "forex_ml_predictions"
+                "Entity": "forex_master"
               }
             },
-            "Property": "currency_pair"
+            "Property": "symbol"
           }
         },
         "type": "Categorical"

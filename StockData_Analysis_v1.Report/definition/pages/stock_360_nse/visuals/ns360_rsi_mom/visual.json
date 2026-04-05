@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ns360_rsi_mom",
   "position": {
     "x": 330,
     "y": 764,
-    "z": 41,
+    "z": 39000,
     "height": 90,
     "width": 295,
-    "tabOrder": 41
+    "tabOrder": 39000
   },
   "visual": {
     "visualType": "card",

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "a1f6f81cad181748883e",
+  "displayName": "Str1- NSE ML",
+  "displayOption": "FitToWidth",
+  "height": 1500,
+  "width": 1920,
+  "pageBinding": {
+    "name": "d69083eda84d3fa0d7ad",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  }
+}

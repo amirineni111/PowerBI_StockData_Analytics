@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ml_kpi_nasdaq_sell",
   "position": {
-    "x": 780,
+    "x": 239.99999999999997,
     "y": 80,
-    "z": 5,
-    "height": 100,
-    "width": 180,
-    "tabOrder": 5
+    "z": 5000,
+    "height": 112.00000000000001,
+    "width": 239.99999999999997,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",
@@ -49,5 +49,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "13c394d93896958d400d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "ML NASDAQ Sell Signals"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

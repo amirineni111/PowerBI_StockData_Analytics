@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "turnaround_nasdaq",
+  "displayName": "Turnaround - NASDAQ",
+  "displayOption": "FitToWidth",
+  "height": 1600,
+  "width": 2140,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "80355de02ef1494a3493",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "c135c06f706a51d174cc",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "fa3444d05a5c5d2dbc6a",
+        "boundFilter": "80355de02ef1494a3493",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode"
+}

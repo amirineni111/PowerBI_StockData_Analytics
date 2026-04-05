@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ml_slicer_signal",
   "position": {
-    "x": 1430,
-    "y": 620,
-    "z": 15,
-    "height": 170,
-    "width": 230,
-    "tabOrder": 15
+    "x": 1328,
+    "y": 16,
+    "z": 12000,
+    "height": 96,
+    "width": 239.99999999999997,
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,20 +20,66 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "ml_nse_trading_predictions"
+                      "Entity": "ml_trading_predictions"
                     }
                   },
                   "Property": "predicted_signal"
                 }
               },
-              "queryRef": "ml_nse_trading_predictions.predicted_signal",
-              "nativeQueryRef": "predicted_signal",
+              "queryRef": "ml_trading_predictions.predicted_signal",
+              "nativeQueryRef": "predicted_signal1",
               "active": true
             }
           ]
         }
       }
     },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "51236824147e10eb1c12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "predicted_signal"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

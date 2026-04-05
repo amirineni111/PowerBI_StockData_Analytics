@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_roe",
   "position": {
     "x": 20,
     "y": 244,
-    "z": 10,
+    "z": 10000,
     "height": 90,
     "width": 295,
-    "tabOrder": 10
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "card",

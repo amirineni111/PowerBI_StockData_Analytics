@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "dividend_kpi_avgpayout",
   "position": {
     "x": 440,
     "y": 120,
-    "z": 3,
+    "z": 3000,
     "height": 100,
     "width": 200,
-    "tabOrder": 3
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "card",
@@ -49,23 +49,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ccff9aeadb231b50ae41",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NASDAQ Avg Payout Ratio"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

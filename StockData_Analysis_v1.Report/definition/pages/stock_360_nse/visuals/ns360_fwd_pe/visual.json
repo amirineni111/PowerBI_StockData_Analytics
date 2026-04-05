@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ns360_fwd_pe",
   "position": {
     "x": 640,
     "y": 114,
-    "z": 5,
+    "z": 5000,
     "height": 90,
     "width": 295,
-    "tabOrder": 5
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",
@@ -159,5 +159,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d8337d2c74bc3a8c422",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nse_500_fundamentals"
+                  }
+                },
+                "Property": "forward_pe"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

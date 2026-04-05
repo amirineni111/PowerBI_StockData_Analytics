@@ -1,0 +1,158 @@
+table technical_nse_stochastic
+	lineageTag: ecc9ad72-6a03-4b48-9a25-99ad13dee217
+
+	column ticker
+		dataType: string
+		lineageTag: e2812db6-e43e-4cf3-9c97-db9d61f88311
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 8652c110-7a02-494b-abab-bedf5cda98b6
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: be2d1924-6832-4cfe-b20c-ad82f0fd4d71
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_5d_k
+		dataType: double
+		lineageTag: c3bcc482-ebe9-488b-a807-6ddf0b360345
+		summarizeBy: sum
+		sourceColumn: stoch_5d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_5d_d
+		dataType: double
+		lineageTag: 708a20df-f178-45ce-ab5e-18d6a378e925
+		summarizeBy: sum
+		sourceColumn: stoch_5d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_14d_k
+		dataType: double
+		lineageTag: 38ca4c08-f127-447f-a3e2-34767800d4fe
+		summarizeBy: sum
+		sourceColumn: stoch_14d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_14d_d
+		dataType: double
+		lineageTag: cf0d0323-72ac-48ee-80dd-a4527be20079
+		summarizeBy: sum
+		sourceColumn: stoch_14d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_21d_k
+		dataType: double
+		lineageTag: a051780c-754a-46da-8775-71c5757a71b9
+		summarizeBy: sum
+		sourceColumn: stoch_21d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_21d_d
+		dataType: double
+		lineageTag: bf83e0a3-11be-4ec4-a474-15d9442ba762
+		summarizeBy: sum
+		sourceColumn: stoch_21d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_status
+		dataType: string
+		lineageTag: de77ff77-b3b9-4b38-87e3-c237e92dab71
+		summarizeBy: none
+		sourceColumn: stoch_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column stoch_crossover
+		dataType: string
+		lineageTag: a56168d6-2d0e-4f6f-a021-bb50cb319862
+		summarizeBy: none
+		sourceColumn: stoch_crossover
+
+		annotation SummarizationSetBy = Automatic
+
+	column stoch_trade_signal
+		dataType: string
+		lineageTag: 288c2107-2e42-48f6-9335-91df0da5e5ec
+		summarizeBy: none
+		sourceColumn: stoch_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column extreme_zone_distance
+		dataType: double
+		lineageTag: 44a2f9a9-9858-4b01-a0de-41c70e0221d5
+		summarizeBy: sum
+		sourceColumn: extreme_zone_distance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column momentum_strength
+		dataType: double
+		lineageTag: b037569e-fa5f-4dfd-ae31-bbc46b7e4e59
+		summarizeBy: sum
+		sourceColumn: momentum_strength
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition technical_nse_stochastic = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nse_500_stochastic"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

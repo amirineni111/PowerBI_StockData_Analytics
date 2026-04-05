@@ -1,0 +1,282 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "289acd3ff910a5b2b56e",
+  "position": {
+    "x": 1184,
+    "y": 16,
+    "z": 4,
+    "height": 384,
+    "width": 768,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_bb_signals"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nse_bb_signals.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_bb_signals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nse_bb_signals.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_bb_signals"
+                    }
+                  },
+                  "Property": "SMA_20"
+                }
+              },
+              "queryRef": "Sum(technical_nse_bb_signals.SMA_20)",
+              "nativeQueryRef": "SMA_20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_bb_signals"
+                    }
+                  },
+                  "Property": "Lower_Band"
+                }
+              },
+              "queryRef": "Sum(technical_nse_bb_signals.Lower_Band)",
+              "nativeQueryRef": "Lower_Band"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_bb_signals"
+                    }
+                  },
+                  "Property": "Upper_Band"
+                }
+              },
+              "queryRef": "Sum(technical_nse_bb_signals.Upper_Band)",
+              "nativeQueryRef": "Upper_Band"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_bb_signals"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_nse_bb_signals.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_bb_signals"
+                    }
+                  },
+                  "Property": "bb_trade_signal"
+                }
+              },
+              "queryRef": "technical_nse_bb_signals.bb_trade_signal",
+              "nativeQueryRef": "bb_trade_signal"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nse_bb_signals"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'NSE BB Signals'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3b573c57416630433904",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_bb_signals"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8e4d7261f0d0e39c732b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_bb_signals"
+              }
+            },
+            "Property": "bb_trade_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "adc7a581b46bec179b6e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_bb_signals"
+              }
+            },
+            "Property": "SMA_20"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2e7490d4fd2ead95088f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_bb_signals"
+              }
+            },
+            "Property": "Lower_Band"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7ab88c6654b5fd5aac16",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_bb_signals"
+              }
+            },
+            "Property": "Upper_Band"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c2401316175de429761d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_bb_signals"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7959550a4747acb39874",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_bb_signals"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

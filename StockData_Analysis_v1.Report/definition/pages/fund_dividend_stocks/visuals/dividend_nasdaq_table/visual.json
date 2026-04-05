@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "dividend_nasdaq_table",
   "position": {
     "x": 16,
     "y": 336,
-    "z": 10,
+    "z": 5000,
     "height": 400.00000000000006,
     "width": 1632,
-    "tabOrder": 10
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "nasdaq_100_fundamentals"
+                      "Entity": "nasdaq_top100"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "nasdaq_100_fundamentals.ticker",
-              "nativeQueryRef": "Ticker"
+              "queryRef": "nasdaq_top100.ticker",
+              "nativeQueryRef": "ticker"
             },
             {
               "field": {
@@ -257,12 +257,26 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9a6cd90c5a8151cbe3dc",
+        "name": "e0c221454c4d47227e05",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
                 "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "fetch_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "97295473e025e2d0030e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
               }
             },
             "Property": "ticker"
@@ -271,7 +285,7 @@
         "type": "Categorical"
       },
       {
-        "name": "f44b8d6cd9de739b098f",
+        "name": "a41a3f643c6ed6c400a7",
         "field": {
           "Column": {
             "Expression": {
@@ -285,7 +299,7 @@
         "type": "Categorical"
       },
       {
-        "name": "e6f60dfc7093400c60bd",
+        "name": "2fecec15abe6b0505e54",
         "field": {
           "Measure": {
             "Expression": {
@@ -299,7 +313,7 @@
         "type": "Advanced"
       },
       {
-        "name": "8da803b5170393a6585a",
+        "name": "d59dc889a57e4931eabd",
         "field": {
           "Measure": {
             "Expression": {
@@ -313,7 +327,7 @@
         "type": "Advanced"
       },
       {
-        "name": "be93a2177ab9c4428ee4",
+        "name": "7311e7d949098707a443",
         "field": {
           "Column": {
             "Expression": {
@@ -327,7 +341,7 @@
         "type": "Advanced"
       },
       {
-        "name": "1f03fd2e2f919cc5c734",
+        "name": "cb6981605b907305c798",
         "field": {
           "Column": {
             "Expression": {
@@ -341,7 +355,7 @@
         "type": "Advanced"
       },
       {
-        "name": "a3f8c92f65bbebee4351",
+        "name": "2d90e8ea30a1131c8010",
         "field": {
           "Column": {
             "Expression": {
@@ -355,7 +369,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3ef908f2c0917f33096a",
+        "name": "8a729cff06670e5b82de",
         "field": {
           "Column": {
             "Expression": {
@@ -369,7 +383,7 @@
         "type": "Advanced"
       },
       {
-        "name": "671a545e085a3da0ceb5",
+        "name": "9f3156d4227bd34481d0",
         "field": {
           "Column": {
             "Expression": {
@@ -383,7 +397,7 @@
         "type": "Advanced"
       },
       {
-        "name": "a91dae22f9242e3336b5",
+        "name": "21a6882d00b5dcbddc50",
         "field": {
           "Column": {
             "Expression": {
@@ -397,7 +411,7 @@
         "type": "Advanced"
       },
       {
-        "name": "e0c49df847f42c80bb87",
+        "name": "34ab8c4d235e58315077",
         "field": {
           "Column": {
             "Expression": {
@@ -411,7 +425,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3442185a90c860e341cc",
+        "name": "e4c91d460256c0c00e30",
         "field": {
           "Column": {
             "Expression": {
@@ -425,18 +439,53 @@
         "type": "Advanced"
       },
       {
-        "name": "c4c0e390dbae4a36b875",
+        "name": "4063627089012709ce0d",
         "field": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "nasdaq_100_fundamentals"
+                "Entity": "_Measures"
               }
             },
-            "Property": "fetch_date"
+            "Property": "NASDAQ_Show Selected Ticker"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_Measures",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "_"
+                        }
+                      },
+                      "Property": "NASDAQ_Show Selected Ticker"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
       }
     ]
   }

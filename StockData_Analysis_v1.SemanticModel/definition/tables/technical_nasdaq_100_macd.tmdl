@@ -1,0 +1,102 @@
+table technical_nasdaq_100_macd
+	lineageTag: 95382b75-ecf6-478a-a5e8-e8fd13ae8ce7
+
+	column ticker
+		dataType: string
+		lineageTag: d70ab770-c860-447a-929d-3404b8711027
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: c78b4367-cb07-4d51-a9d8-dbea6dcfcdbb
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column EMA_12
+		dataType: double
+		lineageTag: af78643b-0b16-49a8-9120-ffce0394c4c0
+		summarizeBy: sum
+		sourceColumn: EMA_12
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EMA_26
+		dataType: double
+		lineageTag: cf36b82e-c562-41ec-89a5-ab594711100d
+		summarizeBy: sum
+		sourceColumn: EMA_26
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MACD
+		dataType: double
+		lineageTag: 2a8a44e9-e643-42a4-9929-2f6c282a5604
+		summarizeBy: sum
+		sourceColumn: MACD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Signal_Line
+		dataType: double
+		lineageTag: 96aee1cd-e314-4118-8e7b-f563c1453cf7
+		summarizeBy: sum
+		sourceColumn: Signal_Line
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MACD_Signal
+		dataType: string
+		lineageTag: c08dfbbc-825e-4ec4-abeb-9c7128f34043
+		summarizeBy: none
+		sourceColumn: MACD_Signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Histogram
+		dataType: double
+		lineageTag: 9aefa230-18c2-43c6-afdb-69e61a6290ee
+		summarizeBy: sum
+		sourceColumn: Histogram
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition technical_nasdaq_100_macd = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nasdaq_100_macd"]}[Data],
+				    #"Filtered Rows" =  Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

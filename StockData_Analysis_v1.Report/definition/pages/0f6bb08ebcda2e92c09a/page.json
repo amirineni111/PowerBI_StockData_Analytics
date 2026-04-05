@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "0f6bb08ebcda2e92c09a",
+  "displayName": "Str1-Forex ML",
+  "displayOption": "FitToWidth",
+  "height": 1300,
+  "width": 1920,
+  "pageBinding": {
+    "name": "dc7295e01732b6c8f398",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  }
+}

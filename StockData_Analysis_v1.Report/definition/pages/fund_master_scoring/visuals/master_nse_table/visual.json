@@ -4,10 +4,10 @@
   "position": {
     "x": 32,
     "y": 992,
-    "z": 11,
+    "z": 5000,
     "height": 560,
-    "width": 1775.9999999999998,
-    "tabOrder": 11
+    "width": 1919.9999999999998,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "nse_500_fundamentals"
+                      "Entity": "nse_500"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "nse_500_fundamentals.ticker",
-              "nativeQueryRef": "Ticker"
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker"
             },
             {
               "field": {
@@ -311,12 +311,75 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d5c333005f21abe255ef",
+        "name": "a2b3c4d5e6f7a8b9c0d1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NSE_Show Selected Ticker"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "_Measures",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "m"
+                        }
+                      },
+                      "Property": "NSE_Show Selected Ticker"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "94258178972bdb5a69d0",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
                 "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "fetch_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1617c6177c1dc130b203",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
               }
             },
             "Property": "ticker"
@@ -325,7 +388,7 @@
         "type": "Categorical"
       },
       {
-        "name": "5d58fd95466861e0c58f",
+        "name": "6974271cc86890dba7ad",
         "field": {
           "Column": {
             "Expression": {
@@ -339,7 +402,7 @@
         "type": "Categorical"
       },
       {
-        "name": "005e94fb13bd0ca70cce",
+        "name": "f5a8b162077c099c34cc",
         "field": {
           "Measure": {
             "Expression": {
@@ -353,7 +416,7 @@
         "type": "Advanced"
       },
       {
-        "name": "c8b93bd6fb5b705b2f1e",
+        "name": "249bfc7fd8b20d82a1ee",
         "field": {
           "Measure": {
             "Expression": {
@@ -367,7 +430,7 @@
         "type": "Advanced"
       },
       {
-        "name": "d2602ed65e9e6518a5fd",
+        "name": "d6569576830ac1658120",
         "field": {
           "Measure": {
             "Expression": {
@@ -381,7 +444,7 @@
         "type": "Advanced"
       },
       {
-        "name": "b06895544773f5b9374f",
+        "name": "ba095e710dcb10c42983",
         "field": {
           "Measure": {
             "Expression": {
@@ -395,7 +458,7 @@
         "type": "Advanced"
       },
       {
-        "name": "6e2597d543cb4db8dc61",
+        "name": "3d1d546632790d5ab680",
         "field": {
           "Measure": {
             "Expression": {
@@ -409,7 +472,7 @@
         "type": "Advanced"
       },
       {
-        "name": "6e32b81bd1d4d813d895",
+        "name": "49de8ef806551d5260c4",
         "field": {
           "Measure": {
             "Expression": {
@@ -423,7 +486,7 @@
         "type": "Advanced"
       },
       {
-        "name": "ba593495abc18c064770",
+        "name": "0ec2c06402bb807c0513",
         "field": {
           "Column": {
             "Expression": {
@@ -437,7 +500,7 @@
         "type": "Advanced"
       },
       {
-        "name": "033785002f24b646b37a",
+        "name": "14145e38ac1c7e540b54",
         "field": {
           "Column": {
             "Expression": {
@@ -451,7 +514,7 @@
         "type": "Advanced"
       },
       {
-        "name": "a12873cc56ddaa68cb0a",
+        "name": "9d1f6491bd097a5ad22a",
         "field": {
           "Column": {
             "Expression": {
@@ -465,7 +528,7 @@
         "type": "Advanced"
       },
       {
-        "name": "d430e017e95ae96312db",
+        "name": "47ad7844b4a838e044c9",
         "field": {
           "Column": {
             "Expression": {
@@ -477,20 +540,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "1f463693e44256af4a6f",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nse_500_fundamentals"
-              }
-            },
-            "Property": "fetch_date"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

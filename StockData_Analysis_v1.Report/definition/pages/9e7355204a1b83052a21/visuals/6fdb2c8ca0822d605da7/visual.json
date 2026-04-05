@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "6fdb2c8ca0822d605da7",
+  "position": {
+    "x": 1120,
+    "y": 128,
+    "z": 13006,
+    "height": 144,
+    "width": 160,
+    "tabOrder": 13005
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "rsi_category"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.rsi_category",
+              "nativeQueryRef": "rsi_category",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1d9ea2834808308c9a19",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "rsi_category"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

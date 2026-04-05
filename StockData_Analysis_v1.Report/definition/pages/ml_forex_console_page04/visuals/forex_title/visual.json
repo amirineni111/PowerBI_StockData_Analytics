@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "forex_title",
   "position": {
-    "x": 20,
-    "y": 10,
+    "x": 16,
+    "y": 48,
     "z": 0,
-    "height": 60,
-    "width": 1880,
+    "height": 64,
+    "width": 752,
     "tabOrder": 0
   },
   "visual": {
@@ -21,9 +21,9 @@
                   {
                     "value": "💱 FOREX ML TRADING CONSOLE",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "24px",
-                      "fontWeight": "bold"
+                      "fontSize": "24px"
                     }
                   }
                 ]

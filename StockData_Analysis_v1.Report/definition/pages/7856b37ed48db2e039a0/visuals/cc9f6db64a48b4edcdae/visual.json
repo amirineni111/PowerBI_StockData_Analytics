@@ -93,34 +93,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "f83063c0cb57044a500b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nasdaq_100_hist_data"
-              }
-            },
-            "Property": "trading_date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "bff8f5fc5580269e8ec4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nasdaq_100_hist_data"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "3edb3deec32d3c200864",
         "field": {
           "Aggregation": {

@@ -1,0 +1,246 @@
+table technical_nasdaq_100_support_resistance
+	lineageTag: fbf45d69-e92b-48e9-9a28-587d1bb62853
+
+	column ticker
+		dataType: string
+		lineageTag: f5c1efab-2d8c-474e-86d5-c91ca74fcc38
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: adb6fb4b-b1f8-4aea-882a-d9b1cf4ea49d
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: b48e4d27-62d7-4fee-9985-15968da8a1e2
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pivot_point
+		dataType: double
+		lineageTag: 53e78c90-82a7-49bc-902f-2e392ed90234
+		summarizeBy: sum
+		sourceColumn: pivot_point
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column r1
+		dataType: double
+		lineageTag: 6bf2e94d-de16-4e98-af6f-d654f522d741
+		summarizeBy: sum
+		sourceColumn: r1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column r2
+		dataType: double
+		lineageTag: 8a3ce50f-8342-43cb-8578-9b52fef6322e
+		summarizeBy: sum
+		sourceColumn: r2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column r3
+		dataType: double
+		lineageTag: d1339283-1e4f-4f5e-aaf3-d83a4901a104
+		summarizeBy: sum
+		sourceColumn: r3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s1
+		dataType: double
+		lineageTag: b6ce3cc6-7403-4fec-be5a-c10003be4692
+		summarizeBy: sum
+		sourceColumn: s1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s2
+		dataType: double
+		lineageTag: b8999d8d-6ca9-4d5d-8fc4-8bfc59913c87
+		summarizeBy: sum
+		sourceColumn: s2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s3
+		dataType: double
+		lineageTag: 97b38271-611a-447c-9a41-7bc7f380d0b9
+		summarizeBy: sum
+		sourceColumn: s3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_high_20d
+		dataType: double
+		lineageTag: a471ea72-9341-456b-8e69-936ff587f53d
+		summarizeBy: sum
+		sourceColumn: swing_high_20d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_low_20d
+		dataType: double
+		lineageTag: 55a425b0-da04-40b4-b359-c11d898dca2a
+		summarizeBy: sum
+		sourceColumn: swing_low_20d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_high_50d
+		dataType: double
+		lineageTag: da7c6b6d-b58a-47e4-a6dc-21774cc4cb94
+		summarizeBy: sum
+		sourceColumn: swing_high_50d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_low_50d
+		dataType: double
+		lineageTag: 759b7535-fb81-4cff-ae2d-6cac2edbf67f
+		summarizeBy: sum
+		sourceColumn: swing_low_50d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ma_20
+		dataType: double
+		lineageTag: 87a7e59f-6767-4ff6-b2a4-29f06404a138
+		summarizeBy: sum
+		sourceColumn: ma_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ma_50
+		dataType: double
+		lineageTag: e78cfadc-8027-48b3-b1d9-39ddfa42a33a
+		summarizeBy: sum
+		sourceColumn: ma_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ma_200
+		dataType: double
+		lineageTag: 7d09e064-c96b-415f-9030-f811862c6240
+		summarizeBy: sum
+		sourceColumn: ma_200
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pivot_status
+		dataType: string
+		lineageTag: b69c81cb-864e-489a-8307-37e35ac17abe
+		summarizeBy: none
+		sourceColumn: pivot_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column nearest_support
+		dataType: string
+		lineageTag: cab6e1b8-4c61-403d-99b2-7f8c9f315efb
+		summarizeBy: none
+		sourceColumn: nearest_support
+
+		annotation SummarizationSetBy = Automatic
+
+	column nearest_resistance
+		dataType: string
+		lineageTag: 214f7f88-1fd9-4cb5-b9c5-2379f0820480
+		summarizeBy: none
+		sourceColumn: nearest_resistance
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_to_s1_pct
+		dataType: double
+		lineageTag: 11739b0c-2738-4f95-a4b3-320dde46408a
+		summarizeBy: sum
+		sourceColumn: distance_to_s1_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column distance_to_r1_pct
+		dataType: double
+		lineageTag: e4ebc6bc-ef8c-4a0b-8563-a7254d42f953
+		summarizeBy: sum
+		sourceColumn: distance_to_r1_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sr_trade_signal
+		dataType: string
+		lineageTag: 8baed84c-dc15-4c9b-81f2-51f683eae3e3
+		summarizeBy: none
+		sourceColumn: sr_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition technical_nasdaq_100_support_resistance = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nasdaq_100_support_resistance"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

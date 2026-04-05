@@ -1,0 +1,158 @@
+table technical_nasdaq_100_stochastic
+	lineageTag: 979011db-1662-4039-8dbe-f0614fd310b9
+
+	column ticker
+		dataType: string
+		lineageTag: a36ec06d-e351-4495-94c9-12986f0d3bb9
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: ffd8db39-0626-4d15-ac79-27e5fe0d5def
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: a93e120f-6cf8-4eea-b64c-da44411300d2
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_5d_k
+		dataType: double
+		lineageTag: 789fea56-79ba-4b2f-81e0-121028d899af
+		summarizeBy: sum
+		sourceColumn: stoch_5d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_5d_d
+		dataType: double
+		lineageTag: e13cf7c9-05bf-43d2-a9d6-a0a047e80bf9
+		summarizeBy: sum
+		sourceColumn: stoch_5d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_14d_k
+		dataType: double
+		lineageTag: ae39cf79-9895-4126-9866-d7ddec22fef1
+		summarizeBy: sum
+		sourceColumn: stoch_14d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_14d_d
+		dataType: double
+		lineageTag: cdcbfc5b-7bc6-4ab2-ac3f-38bb07266799
+		summarizeBy: sum
+		sourceColumn: stoch_14d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_21d_k
+		dataType: double
+		lineageTag: 0ee510d6-fac6-4d98-88c5-2a9e9a695298
+		summarizeBy: sum
+		sourceColumn: stoch_21d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_21d_d
+		dataType: double
+		lineageTag: 021a18c0-e1ee-4119-954a-5af0dd3d9830
+		summarizeBy: sum
+		sourceColumn: stoch_21d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_status
+		dataType: string
+		lineageTag: be54ef3e-4689-4275-9b7d-7868a90f333a
+		summarizeBy: none
+		sourceColumn: stoch_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column stoch_crossover
+		dataType: string
+		lineageTag: 9fe6f8ef-c6dd-475c-b787-98520adb2799
+		summarizeBy: none
+		sourceColumn: stoch_crossover
+
+		annotation SummarizationSetBy = Automatic
+
+	column stoch_trade_signal
+		dataType: string
+		lineageTag: c1668d0a-c39b-4660-8d74-6025c70243e8
+		summarizeBy: none
+		sourceColumn: stoch_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column extreme_zone_distance
+		dataType: double
+		lineageTag: 99e3699b-d310-4e6a-867f-cf2e6a40d33b
+		summarizeBy: sum
+		sourceColumn: extreme_zone_distance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column momentum_strength
+		dataType: double
+		lineageTag: 7bf5a424-f829-43b8-a521-696515af7668
+		summarizeBy: sum
+		sourceColumn: momentum_strength
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition technical_nasdaq_100_stochastic = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nasdaq_100_stochastic"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

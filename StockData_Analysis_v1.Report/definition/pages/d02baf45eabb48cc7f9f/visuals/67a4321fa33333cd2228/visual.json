@@ -1,0 +1,282 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "67a4321fa33333cd2228",
+  "position": {
+    "x": 768,
+    "y": 944,
+    "z": 7000,
+    "height": 496,
+    "width": 848,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_macd"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_macd.trading_date",
+              "nativeQueryRef": "trading_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_macd"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_macd.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_macd"
+                    }
+                  },
+                  "Property": "Signal_Line"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_macd.Signal_Line)",
+              "nativeQueryRef": "Signal_Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_macd"
+                    }
+                  },
+                  "Property": "MACD"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_macd.MACD)",
+              "nativeQueryRef": "MACD"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_macd"
+                    }
+                  },
+                  "Property": "MACD_Signal"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_macd.MACD_Signal",
+              "nativeQueryRef": "MACD_Signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_macd"
+                    }
+                  },
+                  "Property": "EMA_12"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_macd.EMA_12)",
+              "nativeQueryRef": "EMA_12"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_macd"
+                    }
+                  },
+                  "Property": "EMA_26"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_macd.EMA_26)",
+              "nativeQueryRef": "EMA_26"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nasdaq_100_macd"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'MACD Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5efc5358465d57be32f3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_macd"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3ab89636b75c0879fac0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_macd"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bffecf8b887ea0bc8b99",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_macd"
+              }
+            },
+            "Property": "MACD_Signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "452aced74eb091e7204d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_macd"
+              }
+            },
+            "Property": "Signal_Line"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f769afd0727cc978b5cb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_macd"
+              }
+            },
+            "Property": "MACD"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f41baaf1e5edc7bc74b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_macd"
+              }
+            },
+            "Property": "EMA_12"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "47beca6bd036b4aa95dc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_macd"
+              }
+            },
+            "Property": "EMA_26"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

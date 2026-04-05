@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_52lo",
   "position": {
     "x": 1570,
     "y": 504,
-    "z": 29,
+    "z": 29000,
     "height": 90,
     "width": 295,
-    "tabOrder": 29
+    "tabOrder": 29000
   },
   "visual": {
     "visualType": "card",

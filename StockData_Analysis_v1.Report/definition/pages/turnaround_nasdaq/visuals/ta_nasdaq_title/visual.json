@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "ta_nasdaq_title",
+  "position": {
+    "x": 16,
+    "y": 16,
+    "z": 0,
+    "height": 192,
+    "width": 1248,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "🔄 NASDAQ Turnaround Analysis",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontSize": "24px"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Identifies stocks showing fundamental improvement: margin recovery, earnings turnaround, debt reduction & valuation rerating",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "• Margin (15 pts): Profit margin improving  • Earnings (15 pts): Earnings growth turning positive  • Revenue (15 pts): Revenue growth recovery  • ROE (15 pts): Return on equity improving  • Debt (15 pts): Debt reduction  • FCF (15 pts): Free cashflow turnaround  • PE Rerating (10 pts): Forward PE < Trailing PE",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

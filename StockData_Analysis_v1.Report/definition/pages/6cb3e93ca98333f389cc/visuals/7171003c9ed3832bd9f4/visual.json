@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "7171003c9ed3832bd9f4",
   "position": {
     "x": 16,
-    "y": 144,
-    "z": 3,
+    "y": 176,
+    "z": 2000,
     "height": 288,
-    "width": 656,
-    "tabOrder": 3
+    "width": 352,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                      "Entity": "nse_500"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "vw_PowerBI_AI_Technical_Combos.ticker",
-              "nativeQueryRef": "ticker",
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker1",
               "active": true
             }
           ]
@@ -106,12 +106,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "110c13d6b584b9e52505",
+        "name": "34f37da2060feae9163f",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_AI_Technical_Combos"
+                "Entity": "nse_500"
               }
             },
             "Property": "ticker"

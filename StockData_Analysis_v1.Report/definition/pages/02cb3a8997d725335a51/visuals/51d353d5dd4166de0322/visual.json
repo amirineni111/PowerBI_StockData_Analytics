@@ -1,0 +1,282 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "51d353d5dd4166de0322",
+  "position": {
+    "x": 768,
+    "y": 944,
+    "z": 7000,
+    "height": 496,
+    "width": 848,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_macd"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_forex_macd.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_macd"
+                    }
+                  },
+                  "Property": "symbol"
+                }
+              },
+              "queryRef": "technical_forex_macd.symbol",
+              "nativeQueryRef": "symbol"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_macd"
+                    }
+                  },
+                  "Property": "Signal_Line"
+                }
+              },
+              "queryRef": "Sum(technical_forex_macd.Signal_Line)",
+              "nativeQueryRef": "Signal_Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_macd"
+                    }
+                  },
+                  "Property": "MACD"
+                }
+              },
+              "queryRef": "Sum(technical_forex_macd.MACD)",
+              "nativeQueryRef": "MACD"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_macd"
+                    }
+                  },
+                  "Property": "MACD_Signal"
+                }
+              },
+              "queryRef": "technical_forex_macd.MACD_Signal",
+              "nativeQueryRef": "MACD_Signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_macd"
+                    }
+                  },
+                  "Property": "EMA_12"
+                }
+              },
+              "queryRef": "Sum(technical_forex_macd.EMA_12)",
+              "nativeQueryRef": "EMA_12"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_macd"
+                    }
+                  },
+                  "Property": "EMA_26"
+                }
+              },
+              "queryRef": "Sum(technical_forex_macd.EMA_26)",
+              "nativeQueryRef": "EMA_26"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_forex_macd"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'MACD Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "50ce10d9d83a24bd1557",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_macd"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "03edc9e4888de2cef858",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_macd"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "db8e9890d578196094d9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_macd"
+              }
+            },
+            "Property": "MACD_Signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5c74bd004aecd988a35e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_macd"
+              }
+            },
+            "Property": "Signal_Line"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "32a76ddc9e4f4c0facd8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_macd"
+              }
+            },
+            "Property": "MACD"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "684dc4b2a9e050f3b060",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_macd"
+              }
+            },
+            "Property": "EMA_12"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4914c437d3d7c2a4953d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_macd"
+              }
+            },
+            "Property": "EMA_26"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

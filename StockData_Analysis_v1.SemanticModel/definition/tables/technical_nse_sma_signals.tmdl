@@ -1,0 +1,138 @@
+table technical_nse_sma_signals
+	lineageTag: bc43bcb6-63e6-4bf2-8a22-53731e552a2d
+
+	column ticker
+		dataType: string
+		lineageTag: 4185d94a-1bc7-4100-b08c-431c507e577c
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 45205c16-9934-4411-b7cf-07651d24f0ea
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: bab1e4c5-0241-4e47-9d44-132dd5483244
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SMA_50
+		dataType: double
+		lineageTag: 8a53f507-9d35-4755-87b9-436e826da8a8
+		summarizeBy: sum
+		sourceColumn: SMA_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SMA_20
+		dataType: double
+		lineageTag: b9048818-8c94-4eb9-8815-8125bd7e1103
+		summarizeBy: sum
+		sourceColumn: SMA_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EMA_200
+		dataType: double
+		lineageTag: 777072d1-6857-42ae-9159-c009e03bd760
+		summarizeBy: sum
+		sourceColumn: EMA_200
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EMA_100
+		dataType: double
+		lineageTag: 1478ee6f-17af-4a04-ab16-07da1fa385df
+		summarizeBy: sum
+		sourceColumn: EMA_100
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EMA_50
+		dataType: double
+		lineageTag: fe632156-92f6-4ada-837e-691589c58001
+		summarizeBy: sum
+		sourceColumn: EMA_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EMA_20
+		dataType: double
+		lineageTag: c30e25c0-918a-4507-b24c-bfc0faedadf1
+		summarizeBy: sum
+		sourceColumn: EMA_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sma_trade_signal
+		dataType: string
+		lineageTag: 8cb36bea-c642-409e-b22e-047bf245b3ee
+		summarizeBy: none
+		sourceColumn: sma_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trend_Status
+		dataType: string
+		lineageTag: e0a9af5e-3ccd-46c5-aaa9-33d5c4419003
+		summarizeBy: none
+		sourceColumn: Trend_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column SMA_Cross_Status
+		dataType: string
+		lineageTag: 7af8d580-c588-452b-9905-150fd71c8ecf
+		summarizeBy: none
+		sourceColumn: SMA_Cross_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition technical_nse_sma_signals = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nse_500_sma_signals"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

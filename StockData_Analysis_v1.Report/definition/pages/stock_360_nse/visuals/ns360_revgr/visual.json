@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ns360_revgr",
   "position": {
     "x": 950,
     "y": 244,
-    "z": 13,
+    "z": 13000,
     "height": 90,
     "width": 295,
-    "tabOrder": 13
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "card",
@@ -159,5 +159,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "201e730beed05ce76e10",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nse_500_fundamentals"
+                  }
+                },
+                "Property": "revenue_growth"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

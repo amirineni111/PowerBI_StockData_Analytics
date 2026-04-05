@@ -1,0 +1,82 @@
+table technical_nasdaq_100_macd_signals
+	lineageTag: 7c038f02-4e9c-4b5a-a053-26431ac44b5a
+
+	column ticker
+		dataType: string
+		lineageTag: c402b8c5-88f6-4bd3-bb63-ea465e01b8c4
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 35442568-4082-406f-a839-817ac1c80bfc
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column MACD
+		dataType: double
+		lineageTag: eb52ddd3-7b98-4a58-ab41-3f1b4f46874c
+		summarizeBy: sum
+		sourceColumn: MACD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Signal_Line
+		dataType: double
+		lineageTag: 0b5a7985-50ec-4e55-b7f8-6c57324590d0
+		summarizeBy: sum
+		sourceColumn: Signal_Line
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Histogram
+		dataType: double
+		lineageTag: 305e7613-0419-4f33-9f57-49ffe1a73a20
+		summarizeBy: sum
+		sourceColumn: Histogram
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column macd_trade_signal
+		dataType: string
+		lineageTag: 8e85e0b4-2ecf-496c-8dbb-950a72dde3b7
+		summarizeBy: none
+		sourceColumn: macd_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition technical_nasdaq_100_macd_signals = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nasdaq_100_macd_signals"]}[Data],
+				    #"Filtered Rows" =  Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

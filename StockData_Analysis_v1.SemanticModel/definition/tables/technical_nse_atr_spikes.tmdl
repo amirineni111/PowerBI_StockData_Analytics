@@ -1,0 +1,62 @@
+table technical_nse_atr_spikes
+	lineageTag: b2e5f24c-62e7-4803-8186-8f8b26f9f562
+
+	column ticker
+		dataType: string
+		lineageTag: 581c438b-ce5f-43a6-bf69-5edc4dd26fd2
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: f738efd4-3b17-49a9-b4ae-f7f900f5b378
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column ATR_14
+		dataType: double
+		lineageTag: 26de3b32-19b5-4c23-9b43-fe25215d678f
+		summarizeBy: sum
+		sourceColumn: ATR_14
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column atr_volatility_signal
+		dataType: string
+		lineageTag: a5d4a06d-c1b5-4725-8c0a-6cd0ccdae522
+		summarizeBy: none
+		sourceColumn: atr_volatility_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition technical_nse_atr_spikes = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nse_500_atr_spikes"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

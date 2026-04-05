@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "8fefbe3335c193fbf568",
   "position": {
     "x": 1664,
     "y": 224,
-    "z": 13,
+    "z": 7000,
     "height": 96,
     "width": 240.00000000000003,
-    "tabOrder": 13
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "50f9f53374af8a65d304",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE High Growth Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

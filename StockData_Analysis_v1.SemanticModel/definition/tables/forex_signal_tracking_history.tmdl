@@ -1,0 +1,289 @@
+table forex_signal_tracking_history
+	lineageTag: ea611f81-271d-40d1-97cb-8e1ebd3d680a
+
+	column signal_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8750e10f-53c8-497b-b1e3-8e28d4dea0f6
+		summarizeBy: sum
+		sourceColumn: signal_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column market
+		dataType: string
+		lineageTag: 0c64d70b-38f8-4f9a-b69d-ecff5ecfb9c3
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: f7950063-b0b4-4721-a897-13860c14b356
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: efa352fc-38fb-4749-821c-2a6ea7d04def
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 555786aa-20b7-47e8-bb27-2570b22c09c9
+		summarizeBy: none
+		sourceColumn: signal_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column signal_type
+		dataType: string
+		lineageTag: 272ea3d7-7fb7-4751-bff2-6c9caac25899
+		summarizeBy: none
+		sourceColumn: signal_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_strength
+		dataType: int64
+		formatString: 0
+		lineageTag: bc7ee25b-12bc-4a17-a1d6-ee16d716e94d
+		summarizeBy: sum
+		sourceColumn: signal_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_status
+		dataType: string
+		lineageTag: 1a9c12bb-ec6e-4e45-8eca-2900c8aca995
+		summarizeBy: none
+		sourceColumn: signal_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column macd_signal
+		dataType: string
+		lineageTag: f029624d-a2e7-4834-9b7b-8a1cd61e4210
+		summarizeBy: none
+		sourceColumn: macd_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column rsi_signal
+		dataType: string
+		lineageTag: 718aa5d7-7d89-495f-908c-aadff60acc06
+		summarizeBy: none
+		sourceColumn: rsi_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column bb_signal
+		dataType: string
+		lineageTag: 768febf4-2607-4e93-bdfb-db038a803d9c
+		summarizeBy: none
+		sourceColumn: bb_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column sma_signal
+		dataType: string
+		lineageTag: c74f4a13-ba35-47cb-b5ad-943ac726b775
+		summarizeBy: none
+		sourceColumn: sma_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column stoch_signal
+		dataType: string
+		lineageTag: 4a2a9ea9-2752-48de-8235-0e98e97a6839
+		summarizeBy: none
+		sourceColumn: stoch_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column fib_signal
+		dataType: string
+		lineageTag: 8d4c834b-fcaf-489f-ab54-4f36c3393afd
+		summarizeBy: none
+		sourceColumn: fib_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column pattern_signal
+		dataType: string
+		lineageTag: 6bac7cbb-5d6d-46db-8560-5540142c9c2c
+		summarizeBy: none
+		sourceColumn: pattern_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_price
+		dataType: double
+		lineageTag: 11765a86-f669-438c-bc87-76522ae69c00
+		summarizeBy: sum
+		sourceColumn: signal_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column target_date_7d
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 34f4d057-c653-447f-830b-41bd511b0e63
+		summarizeBy: none
+		sourceColumn: target_date_7d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column actual_price_7d
+		dataType: double
+		lineageTag: dbc5578c-be63-4ae4-99fc-806cf8415d6f
+		summarizeBy: sum
+		sourceColumn: actual_price_7d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_change_7d
+		dataType: double
+		lineageTag: 9f0d66b9-f7b4-4835-b1d3-34eae340457d
+		summarizeBy: sum
+		sourceColumn: actual_change_7d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column result_7d
+		dataType: string
+		lineageTag: 121c56cf-4b4b-44d8-8874-570e394722a4
+		summarizeBy: none
+		sourceColumn: result_7d
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_date_14d
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ff0f497d-7d4a-451b-afed-cc8b06d1554c
+		summarizeBy: none
+		sourceColumn: target_date_14d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column actual_price_14d
+		dataType: double
+		lineageTag: 4b50e5dc-c872-4b93-8ee2-d4d3df4db189
+		summarizeBy: sum
+		sourceColumn: actual_price_14d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_change_14d
+		dataType: double
+		lineageTag: 09c8fdab-747e-4f05-9a6e-42ce11cdd3de
+		summarizeBy: sum
+		sourceColumn: actual_change_14d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column result_14d
+		dataType: string
+		lineageTag: 520a5e8e-4fd0-44c2-83ed-ba225b8812a3
+		summarizeBy: none
+		sourceColumn: result_14d
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_date_30d
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 59932976-44e7-4029-86a2-803974857517
+		summarizeBy: none
+		sourceColumn: target_date_30d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column actual_price_30d
+		dataType: double
+		lineageTag: 3bd8bd9f-3acd-4fca-8898-377a63360a93
+		summarizeBy: sum
+		sourceColumn: actual_price_30d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_change_30d
+		dataType: double
+		lineageTag: ec3011cd-d1f4-4187-894c-41ad3e029caa
+		summarizeBy: sum
+		sourceColumn: actual_change_30d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column result_30d
+		dataType: string
+		lineageTag: b4197b0d-1667-4500-9e8d-0301bac15072
+		summarizeBy: none
+		sourceColumn: result_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 68ffed03-52c5-444b-965a-8e2b77195e88
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d9ea3e4b-5752-4b86-90a3-947188302dbc
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition forex_signal_tracking_history = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_signal_tracking_history = Source{[Schema="dbo",Item="signal_tracking_history"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_signal_tracking_history, each ([market] = "Forex"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

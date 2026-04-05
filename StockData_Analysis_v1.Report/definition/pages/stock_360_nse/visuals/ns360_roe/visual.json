@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "ns360_roe",
   "position": {
     "x": 20,
     "y": 244,
-    "z": 10,
+    "z": 10000,
     "height": 90,
     "width": 295,
-    "tabOrder": 10
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "card",
@@ -159,5 +159,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2cd534b031d2762485ff",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nse_500_fundamentals"
+                  }
+                },
+                "Property": "return_on_equity"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

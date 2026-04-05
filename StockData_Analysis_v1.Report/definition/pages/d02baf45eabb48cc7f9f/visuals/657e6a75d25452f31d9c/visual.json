@@ -1,0 +1,198 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "657e6a75d25452f31d9c",
+  "position": {
+    "x": 752,
+    "y": 16,
+    "z": 3000,
+    "height": 384,
+    "width": 416,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_atr_spikes"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_atr_spikes.trading_date",
+              "nativeQueryRef": "trading_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_atr_spikes"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_atr_spikes.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_atr_spikes"
+                    }
+                  },
+                  "Property": "ATR_14"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_atr_spikes.ATR_14)",
+              "nativeQueryRef": "ATR_14"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_atr_spikes"
+                    }
+                  },
+                  "Property": "atr_volatility_signal"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_atr_spikes.atr_volatility_signal",
+              "nativeQueryRef": "atr_volatility_signal1"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nasdaq_100_atr_spikes"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ATR Spikes Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "240b71578cbf46ac8c25",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_atr_spikes"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3a3282d085e76d2dd5e9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_atr_spikes"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f74c25e8a2b08e869988",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_atr_spikes"
+              }
+            },
+            "Property": "atr_volatility_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "aa3310a0ea14831c8332",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_atr_spikes"
+              }
+            },
+            "Property": "ATR_14"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

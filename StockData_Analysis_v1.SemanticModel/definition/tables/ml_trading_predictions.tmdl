@@ -21,7 +21,7 @@ table ml_trading_predictions
 
 	column trading_date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: mm/dd/yyyy
 		lineageTag: 2aa36c5f-dcb0-4061-874d-7e3dc78f8ff0
 		summarizeBy: none
 		sourceColumn: trading_date
@@ -29,6 +29,8 @@ table ml_trading_predictions
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column ticker
 		dataType: string
@@ -141,12 +143,14 @@ table ml_trading_predictions
 
 	column created_at
 		dataType: dateTime
-		formatString: General Date
+		formatString: mm/dd/yyyy
 		lineageTag: 793e9c61-9270-4473-801d-9926a80c637e
 		summarizeBy: none
 		sourceColumn: created_at
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column actual_return_1d
 		dataType: double
@@ -215,6 +219,7 @@ table ml_trading_predictions
 
 	partition ml_trading_predictions = m
 		mode: import
+		queryGroup: ml_tables
 		source =
 				let
 				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),

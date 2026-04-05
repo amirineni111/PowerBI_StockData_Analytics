@@ -1,0 +1,198 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "77877ea27923f30cb912",
+  "position": {
+    "x": 752,
+    "y": 16,
+    "z": 3000,
+    "height": 384,
+    "width": 416,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_rsi_signals"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nse_rsi_signals.trading_date",
+              "nativeQueryRef": "trading_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_rsi_signals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nse_rsi_signals.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_rsi_signals"
+                    }
+                  },
+                  "Property": "rsi_trade_signal"
+                }
+              },
+              "queryRef": "technical_nse_rsi_signals.rsi_trade_signal",
+              "nativeQueryRef": "rsi_trade_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_rsi_signals"
+                    }
+                  },
+                  "Property": "RSI"
+                }
+              },
+              "queryRef": "Sum(technical_nse_rsi_signals.RSI)",
+              "nativeQueryRef": "RSI"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nse_rsi_signals"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'RSI Signals'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b1e19140fd9713646fc1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_rsi_signals"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c6a0e873836f3791d29d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_rsi_signals"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c547ec292e6991a10beb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_rsi_signals"
+              }
+            },
+            "Property": "rsi_trade_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6d941ac0c57dd10a0ee8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_rsi_signals"
+              }
+            },
+            "Property": "RSI"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

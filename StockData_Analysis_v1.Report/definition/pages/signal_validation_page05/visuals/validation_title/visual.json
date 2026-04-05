@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "validation_title",
   "position": {
-    "x": 20,
-    "y": 10,
+    "x": 16,
+    "y": 64,
     "z": 0,
-    "height": 60,
-    "width": 1880,
+    "height": 48,
+    "width": 927.99999999999989,
     "tabOrder": 0
   },
   "visual": {
@@ -19,11 +19,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "✅ SIGNAL VALIDATION & BACKTESTING",
+                    "value": "✅ NSE - SIGNAL VALIDATION & BACKTESTING",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "24px",
-                      "fontWeight": "bold"
+                      "fontSize": "24px"
                     }
                   }
                 ]

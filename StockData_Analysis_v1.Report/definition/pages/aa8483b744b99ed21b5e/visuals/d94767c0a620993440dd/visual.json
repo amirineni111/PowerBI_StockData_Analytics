@@ -1,0 +1,241 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "d94767c0a620993440dd",
+  "position": {
+    "x": 16,
+    "y": 192,
+    "z": 1,
+    "height": 496,
+    "width": 656,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_hist_data"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "forex_hist_data.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_master"
+                    }
+                  },
+                  "Property": "symbol"
+                }
+              },
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_hist_data"
+                    }
+                  },
+                  "Property": "open_price"
+                }
+              },
+              "queryRef": "Sum(forex_hist_data.open_price)",
+              "nativeQueryRef": "open_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_hist_data"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(forex_hist_data.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_hist_data"
+                    }
+                  },
+                  "Property": "previous_close"
+                }
+              },
+              "queryRef": "Sum(forex_hist_data.previous_close)",
+              "nativeQueryRef": "previous_close"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_hist_data"
+                    }
+                  },
+                  "Property": "daily_change"
+                }
+              },
+              "queryRef": "Sum(forex_hist_data.daily_change)",
+              "nativeQueryRef": "daily_change"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_hist_data"
+                    }
+                  },
+                  "Property": "daily_change_pct"
+                }
+              },
+              "queryRef": "Sum(forex_hist_data.daily_change_pct)",
+              "nativeQueryRef": "daily_change_pct"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "forex_hist_data"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "06a8ccf0c830d4b9dbdc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "affaf96bedd59ad61853",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_hist_data"
+              }
+            },
+            "Property": "open_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "755e006523998a9ae6a6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_hist_data"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2982b8a087cb2256a1d3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_hist_data"
+              }
+            },
+            "Property": "previous_close"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "00d3b54982a0eb6109ac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_hist_data"
+              }
+            },
+            "Property": "daily_change"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c3322bd017959d2d9440",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_hist_data"
+              }
+            },
+            "Property": "daily_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "977b044ad197068e5ded",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_hist_data"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

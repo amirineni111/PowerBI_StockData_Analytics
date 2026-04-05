@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_fwd_pe",
   "position": {
     "x": 640,
     "y": 114,
-    "z": 5,
+    "z": 5000,
     "height": 90,
     "width": 295,
-    "tabOrder": 5
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",

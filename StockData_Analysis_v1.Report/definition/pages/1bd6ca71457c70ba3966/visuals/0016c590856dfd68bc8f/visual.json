@@ -1,0 +1,730 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "0016c590856dfd68bc8f",
+  "position": {
+    "x": 16,
+    "y": 784,
+    "z": 6000,
+    "height": 592,
+    "width": 1936,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_support_resistance.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_support_resistance.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "r1"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.r1)",
+              "nativeQueryRef": "r1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "r2"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.r2)",
+              "nativeQueryRef": "r2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "r3"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.r3)",
+              "nativeQueryRef": "r3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "s1"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.s1)",
+              "nativeQueryRef": "s1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "s2"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.s2)",
+              "nativeQueryRef": "s2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "s3"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.s3)",
+              "nativeQueryRef": "s3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "nearest_resistance"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_support_resistance.nearest_resistance",
+              "nativeQueryRef": "nearest_resistance1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "nearest_support"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_support_resistance.nearest_support",
+              "nativeQueryRef": "nearest_support1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "pivot_point"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.pivot_point)",
+              "nativeQueryRef": "pivot_point"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "pivot_status"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_support_resistance.pivot_status",
+              "nativeQueryRef": "pivot_status1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "distance_to_r1_pct"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.distance_to_r1_pct)",
+              "nativeQueryRef": "distance_to_r1_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "distance_to_s1_pct"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.distance_to_s1_pct)",
+              "nativeQueryRef": "distance_to_s1_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "ma_20"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.ma_20)",
+              "nativeQueryRef": "ma_20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "ma_50"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.ma_50)",
+              "nativeQueryRef": "ma_50"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "ma_200"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.ma_200)",
+              "nativeQueryRef": "ma_200"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "sr_trade_signal"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_support_resistance.sr_trade_signal",
+              "nativeQueryRef": "sr_trade_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "swing_high_20d"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.swing_high_20d)",
+              "nativeQueryRef": "swing_high_20d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "swing_high_50d"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.swing_high_50d)",
+              "nativeQueryRef": "swing_high_50d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "swing_low_20d"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.swing_low_20d)",
+              "nativeQueryRef": "swing_low_20d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_support_resistance"
+                    }
+                  },
+                  "Property": "swing_low_50d"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_support_resistance.swing_low_50d)",
+              "nativeQueryRef": "swing_low_50d"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nasdaq_100_support_resistance"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Support and Resistance Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fff9e62f303da03b025b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2b7308062ef7741dd677",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fee97a5504c4804057ee",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "nearest_resistance"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "32a37e9352836b459a15",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "nearest_support"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b46bcdad09a3389e2fb7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "pivot_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "54a12d0eac487325fa0a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "sr_trade_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "345e2b72c61400425bde",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a92c4f682e140b00c666",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "r1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3a5970db8f67ba3416ea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "r2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "93b415083595135af6d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "r3"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "97fd39c0ea3b96dfa6ee",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "s1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8e5b7e13eadadcd3a181",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "s2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4f8e87ea81e8212815b6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "s3"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fc2943842b7d711d30ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "distance_to_r1_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1197e04ea573d13a4da4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "distance_to_s1_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2c0b891334e94c8c7be2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "ma_20"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6fd317826d25d506b221",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "ma_50"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4aaa54843490d909e142",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "ma_200"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "45cdac75dba53487816e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "swing_high_20d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f4d23d7695f17276f9b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "swing_high_50d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fccb74d74e90161d45e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "swing_low_20d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3f1956b98910d2f0ffe4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "swing_low_50d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4b6f3b13dae74eaf0373",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_support_resistance"
+              }
+            },
+            "Property": "pivot_point"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

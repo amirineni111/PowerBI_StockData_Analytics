@@ -361,6 +361,7 @@ table ml_nse_predict_summary
 
 	partition ml_nse_predict_summary = m
 		mode: import
+		queryGroup: ml_tables
 		source =
 				let
 				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),

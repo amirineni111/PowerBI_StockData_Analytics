@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "forex_main_table",
   "position": {
-    "x": 20,
-    "y": 190,
-    "z": 10,
-    "height": 380,
-    "width": 1130,
-    "tabOrder": 10
+    "x": 16,
+    "y": 336,
+    "z": 7000,
+    "height": 960,
+    "width": 1887.9999999999998,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "forex_ml_predictions"
+                      "Entity": "forex_master"
                     }
                   },
-                  "Property": "currency_pair"
+                  "Property": "symbol"
                 }
               },
-              "queryRef": "forex_ml_predictions.currency_pair",
-              "nativeQueryRef": "currency_pair"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol"
             },
             {
               "field": {
@@ -107,6 +107,20 @@
                       "Entity": "forex_ml_predictions"
                     }
                   },
+                  "Property": "prob_hold"
+                }
+              },
+              "queryRef": "Sum(forex_ml_predictions.prob_hold)",
+              "nativeQueryRef": "prob_hold"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
                   "Property": "close_price"
                 }
               },
@@ -126,31 +140,153 @@
               },
               "queryRef": "forex_ml_predictions.model_name",
               "nativeQueryRef": "model_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "direction_correct_1d"
+                }
+              },
+              "queryRef": "forex_ml_predictions.direction_correct_1d",
+              "nativeQueryRef": "direction_correct_1d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "direction_correct_5d"
+                }
+              },
+              "queryRef": "forex_ml_predictions.direction_correct_5d",
+              "nativeQueryRef": "direction_correct_5d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "actual_return_1d"
+                }
+              },
+              "queryRef": "Sum(forex_ml_predictions.actual_return_1d)",
+              "nativeQueryRef": "actual_return_1d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "actual_return_5d"
+                }
+              },
+              "queryRef": "Sum(forex_ml_predictions.actual_return_5d)",
+              "nativeQueryRef": "actual_return_5d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "actual_return_10d"
+                }
+              },
+              "queryRef": "Sum(forex_ml_predictions.actual_return_10d)",
+              "nativeQueryRef": "actual_return_10d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prediction_accuracy"
+                }
+              },
+              "queryRef": "forex_ml_predictions.prediction_accuracy",
+              "nativeQueryRef": "prediction_accuracy"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "forex_ml_predictions"
+                  }
+                },
+                "Property": "prediction_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "af0710a79482e2210950",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "forex_ml_predictions"
-              }
-            },
-            "Property": "currency_pair"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "aaf58dd0e05534e04070",
+        "name": "cf97831c6d520d82e403",
         "field": {
           "Column": {
             "Expression": {
@@ -164,7 +300,7 @@
         "type": "Categorical"
       },
       {
-        "name": "8972025d1ebd6e6959d5",
+        "name": "44aca84a3e300612900b",
         "field": {
           "Column": {
             "Expression": {
@@ -178,7 +314,7 @@
         "type": "Categorical"
       },
       {
-        "name": "47b1c0acd07a06c09a0d",
+        "name": "7fcae3d0b240d3257091",
         "field": {
           "Column": {
             "Expression": {
@@ -192,7 +328,7 @@
         "type": "Advanced"
       },
       {
-        "name": "a45d1de5a98d9849a4b6",
+        "name": "46ee0fca75404bd05a6e",
         "field": {
           "Column": {
             "Expression": {
@@ -206,7 +342,7 @@
         "type": "Advanced"
       },
       {
-        "name": "962633a3a7c04c1c3570",
+        "name": "db9d8f30069b49518015",
         "field": {
           "Column": {
             "Expression": {
@@ -220,7 +356,7 @@
         "type": "Advanced"
       },
       {
-        "name": "cc7b6f6d3cda97903b16",
+        "name": "771d7c51e030b831b40c",
         "field": {
           "Column": {
             "Expression": {
@@ -234,7 +370,7 @@
         "type": "Advanced"
       },
       {
-        "name": "10412a052dd9e38128c2",
+        "name": "2a129f69ded6d836c75a",
         "field": {
           "Column": {
             "Expression": {
@@ -243,6 +379,118 @@
               }
             },
             "Property": "model_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eef01ab9d4027244eace",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "direction_correct_1d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ee0e17526b45ce0363a3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "direction_correct_5d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c5fa2870271c0389e32d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prob_hold"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "84eb35b4a6e60092ea4d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "actual_return_10d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e4a0f3116e4d3c74967c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "actual_return_1d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5b278afe5108d3362973",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "actual_return_5d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dd10cf806d514e82d9a2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prediction_accuracy"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "965bd5ca5604e5164d96",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
           }
         },
         "type": "Categorical"

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "94e520c0e3c3d56dd002",
+  "position": {
+    "x": 1296,
+    "y": 160,
+    "z": 9002,
+    "height": 111.99999999999999,
+    "width": 464,
+    "tabOrder": 9002
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "signal_confidence"
+                }
+              },
+              "queryRef": "forex_ml_predictions.signal_confidence",
+              "nativeQueryRef": "Sum of signal_confidence",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Between'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2987e58878394ba96703",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "signal_confidence"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

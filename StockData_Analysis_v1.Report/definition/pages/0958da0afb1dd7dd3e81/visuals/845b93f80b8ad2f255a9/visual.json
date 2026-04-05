@@ -1,0 +1,492 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "845b93f80b8ad2f255a9",
+  "position": {
+    "x": 1184,
+    "y": 16,
+    "z": 4000,
+    "height": 384,
+    "width": 768,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_forex_stochastic.trading_date",
+              "nativeQueryRef": "trading_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_forex_stochastic.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_trade_signal"
+                }
+              },
+              "queryRef": "technical_forex_stochastic.stoch_trade_signal",
+              "nativeQueryRef": "stoch_trade_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_status"
+                }
+              },
+              "queryRef": "technical_forex_stochastic.stoch_status",
+              "nativeQueryRef": "stoch_status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_crossover"
+                }
+              },
+              "queryRef": "technical_forex_stochastic.stoch_crossover",
+              "nativeQueryRef": "stoch_crossover"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_crossover"
+                }
+              },
+              "queryRef": "technical_forex_stochastic.stoch_crossover",
+              "nativeQueryRef": "stoch_crossover"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "momentum_strength"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.momentum_strength)",
+              "nativeQueryRef": "momentum_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "extreme_zone_distance"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.extreme_zone_distance)",
+              "nativeQueryRef": "extreme_zone_distance"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_5d_d"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.stoch_5d_d)",
+              "nativeQueryRef": "stoch_5d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_5d_k"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.stoch_5d_k)",
+              "nativeQueryRef": "stoch_5d_k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_21d_d"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.stoch_21d_d)",
+              "nativeQueryRef": "stoch_21d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_21d_k"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.stoch_21d_k)",
+              "nativeQueryRef": "stoch_21d_k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_14d_d"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.stoch_14d_d)",
+              "nativeQueryRef": "stoch_14d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_stochastic"
+                    }
+                  },
+                  "Property": "stoch_14d_k"
+                }
+              },
+              "queryRef": "Sum(technical_forex_stochastic.stoch_14d_k)",
+              "nativeQueryRef": "stoch_14d_k"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_forex_stochastic"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stochastic Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "75f52f5c052f9deaf249",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "03cc4561116c725b1e2a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "96c83baffdbb059faf68",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_trade_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0a97267e7048e13ab4c7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5742ed847b3b75770595",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_crossover"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f7e058d7be10dc3b406d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "momentum_strength"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "87f22dd9767d445acb5e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "extreme_zone_distance"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3a036be051da2c5ecb40",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8cca6ddafefa104ce5ec",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_5d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e7c74852b32805d69cf9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_5d_k"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b9369b556bd7127e71e2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_21d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ed3b15b05aa0bdde7613",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_21d_k"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "26ce639359e102e7d745",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_14d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b914a2235f5f1382cbb0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_stochastic"
+              }
+            },
+            "Property": "stoch_14d_k"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

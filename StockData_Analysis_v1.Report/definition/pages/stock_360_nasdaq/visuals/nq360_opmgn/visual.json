@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_opmgn",
   "position": {
     "x": 640,
     "y": 244,
-    "z": 12,
+    "z": 12000,
     "height": 90,
     "width": 295,
-    "tabOrder": 12
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "card",

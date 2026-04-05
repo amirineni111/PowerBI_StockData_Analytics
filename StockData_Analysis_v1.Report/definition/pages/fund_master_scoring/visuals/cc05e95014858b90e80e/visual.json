@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "cc05e95014858b90e80e",
   "position": {
     "x": 48,
     "y": 256,
-    "z": 13,
+    "z": 6000,
     "height": 112,
     "width": 224,
-    "tabOrder": 13
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "656d5b07fa6d0dba8f9b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Avg Total Score"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

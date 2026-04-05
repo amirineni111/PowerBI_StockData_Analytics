@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "c9e6ff6d019d1a9d0979",
   "position": {
     "x": 1648,
     "y": 0,
-    "z": 18,
+    "z": 12000,
     "height": 192,
     "width": 256,
-    "tabOrder": 18
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "slicer",
@@ -189,23 +189,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "20bf52afce85862783df",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nse_500_fundamentals"
-              }
-            },
-            "Property": "fetch_date"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

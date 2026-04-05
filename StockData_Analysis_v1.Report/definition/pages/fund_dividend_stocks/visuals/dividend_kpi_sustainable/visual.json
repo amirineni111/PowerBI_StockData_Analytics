@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "dividend_kpi_sustainable",
   "position": {
     "x": 650,
     "y": 120,
-    "z": 4,
+    "z": 4000,
     "height": 100,
     "width": 200,
-    "tabOrder": 4
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "card",
@@ -49,23 +49,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "85eae2a06b9ead2dbaed",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NASDAQ Sustainable Dividend Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

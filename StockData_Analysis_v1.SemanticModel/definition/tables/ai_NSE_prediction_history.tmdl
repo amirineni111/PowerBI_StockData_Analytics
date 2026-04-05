@@ -1,0 +1,210 @@
+table ai_NSE_prediction_history
+	lineageTag: 280ede92-b7fb-46b0-b70a-1a34e67de0b9
+
+	column prediction_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e2bebb7-0e44-4cac-81d4-9338fb8e46eb
+		summarizeBy: sum
+		sourceColumn: prediction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column market
+		dataType: string
+		lineageTag: 53acfcb9-8398-4b7c-b7b5-b87c40ee3d39
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: d99f236f-cb39-4c00-84da-08e1fa977425
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: db89034e-36da-42b5-a443-ffba7913f3ca
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column prediction_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 55eb7148-e9dd-4788-ab9e-ab70b6d0f0f2
+		summarizeBy: none
+		sourceColumn: prediction_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column target_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: f1f696ef-d4eb-4995-ac22-146771520f21
+		summarizeBy: none
+		sourceColumn: target_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column days_ahead
+		dataType: int64
+		formatString: 0
+		lineageTag: c8c28f0a-7970-451a-ab8d-4526e4f612fa
+		summarizeBy: sum
+		sourceColumn: days_ahead
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_name
+		dataType: string
+		lineageTag: 26f52d11-fe76-4686-9d50-61be95f899ff
+		summarizeBy: none
+		sourceColumn: model_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_price
+		dataType: double
+		lineageTag: 60e03ec6-5fec-44eb-8f36-89ad179490f6
+		summarizeBy: sum
+		sourceColumn: current_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column predicted_price
+		dataType: double
+		lineageTag: 7bf141ad-1796-432a-beb0-b6c96dadaa55
+		summarizeBy: sum
+		sourceColumn: predicted_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column predicted_change_pct
+		dataType: double
+		lineageTag: 2855a4ab-87b1-4e52-a670-dd844e5ac477
+		summarizeBy: sum
+		sourceColumn: predicted_change_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_price
+		dataType: double
+		lineageTag: 84a61e8d-d7f2-4f71-a5eb-995dc46b33b0
+		summarizeBy: sum
+		sourceColumn: actual_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column actual_change_pct
+		dataType: double
+		lineageTag: f82078d0-0781-4409-9672-17b8ad9111e1
+		summarizeBy: sum
+		sourceColumn: actual_change_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column absolute_error
+		dataType: double
+		lineageTag: bfddab13-0fd9-4fb3-91c7-b11a6575c4d8
+		summarizeBy: sum
+		sourceColumn: absolute_error
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column squared_error
+		dataType: double
+		lineageTag: 3cfe4a0f-0ebb-417b-a8e5-da7b97d00147
+		summarizeBy: sum
+		sourceColumn: squared_error
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column percentage_error
+		dataType: double
+		lineageTag: 22ac1e56-9c82-47b9-b8aa-6ff1b279f792
+		summarizeBy: sum
+		sourceColumn: percentage_error
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column direction_correct
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6561419b-a531-4a69-9403-fdc62ec861e7
+		summarizeBy: none
+		sourceColumn: direction_correct
+
+		annotation SummarizationSetBy = Automatic
+
+	column model_confidence
+		dataType: double
+		lineageTag: 26d1ae32-0261-4fd7-9290-b2ef8b632b5d
+		summarizeBy: sum
+		sourceColumn: model_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e9d4c985-2fb0-409b-8ced-504f2ad78d3a
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 68d3fd9f-1ca0-40f3-8cdc-501b6e35882c
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ai_NSE_prediction_history = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_ai_prediction_history = Source{[Schema="dbo",Item="ai_prediction_history"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_ai_prediction_history, each ([market] = "NSE 500"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

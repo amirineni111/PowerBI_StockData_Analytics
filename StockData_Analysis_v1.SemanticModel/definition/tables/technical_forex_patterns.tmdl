@@ -1,0 +1,194 @@
+table technical_forex_patterns
+	lineageTag: dc416262-aa99-4a61-aaa4-7eca829e7121
+
+	column ticker
+		dataType: string
+		lineageTag: 3f087112-c7e1-4077-8fc7-d36da4ce7622
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 142638a1-6198-4c7c-a73d-cfd934a22b58
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: 1ae35fbb-4af5-42c7-aa54-0e2da730a87b
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ma_20
+		dataType: double
+		lineageTag: 28685686-c580-4818-b491-5784a1360326
+		summarizeBy: sum
+		sourceColumn: ma_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ma_50
+		dataType: double
+		lineageTag: 5dc29882-9a43-4221-aea2-70254eaa079f
+		summarizeBy: sum
+		sourceColumn: ma_50
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column doji
+		dataType: string
+		lineageTag: d362e125-5520-48df-867d-1b75c5f55ed0
+		summarizeBy: none
+		sourceColumn: doji
+
+		annotation SummarizationSetBy = Automatic
+
+	column hammer
+		dataType: string
+		lineageTag: 89c3c91e-7a29-46e2-ac30-fc23a846cd54
+		summarizeBy: none
+		sourceColumn: hammer
+
+		annotation SummarizationSetBy = Automatic
+
+	column shooting_star
+		dataType: string
+		lineageTag: f53563c8-e607-4407-a51c-add52097ab63
+		summarizeBy: none
+		sourceColumn: shooting_star
+
+		annotation SummarizationSetBy = Automatic
+
+	column bullish_engulfing
+		dataType: string
+		lineageTag: 24252271-3232-4207-b173-5a26d7e9873c
+		summarizeBy: none
+		sourceColumn: bullish_engulfing
+
+		annotation SummarizationSetBy = Automatic
+
+	column bearish_engulfing
+		dataType: string
+		lineageTag: b9366d78-bcc6-496a-8c16-8e2387fdafe8
+		summarizeBy: none
+		sourceColumn: bearish_engulfing
+
+		annotation SummarizationSetBy = Automatic
+
+	column morning_star
+		dataType: string
+		lineageTag: ef34c767-7dd5-461b-ba9d-9d05db958fe5
+		summarizeBy: none
+		sourceColumn: morning_star
+
+		annotation SummarizationSetBy = Automatic
+
+	column evening_star
+		dataType: string
+		lineageTag: 21f6c254-17f4-486b-b4da-4842526b40cb
+		summarizeBy: none
+		sourceColumn: evening_star
+
+		annotation SummarizationSetBy = Automatic
+
+	column cup_and_handle
+		dataType: string
+		lineageTag: 369d99ac-2488-4521-a522-e1ed9aa5e34f
+		summarizeBy: none
+		sourceColumn: cup_and_handle
+
+		annotation SummarizationSetBy = Automatic
+
+	column inverse_cup_handle
+		dataType: string
+		lineageTag: 50ec29e0-8795-49d6-a708-a521d03741b0
+		summarizeBy: none
+		sourceColumn: inverse_cup_handle
+
+		annotation SummarizationSetBy = Automatic
+
+	column double_top
+		dataType: string
+		lineageTag: e71c4120-9593-4c6d-ac50-06924e903266
+		summarizeBy: none
+		sourceColumn: double_top
+
+		annotation SummarizationSetBy = Automatic
+
+	column double_bottom
+		dataType: string
+		lineageTag: b61c577c-1ed3-451c-88ce-5abbff2f6e02
+		summarizeBy: none
+		sourceColumn: double_bottom
+
+		annotation SummarizationSetBy = Automatic
+
+	column head_and_shoulders
+		dataType: string
+		lineageTag: e33990cb-7dba-464e-b8e4-69644fcccc7d
+		summarizeBy: none
+		sourceColumn: head_and_shoulders
+
+		annotation SummarizationSetBy = Automatic
+
+	column inverse_head_shoulders
+		dataType: string
+		lineageTag: 153c4635-9e4f-4ba7-ae81-887cd8108ed9
+		summarizeBy: none
+		sourceColumn: inverse_head_shoulders
+
+		annotation SummarizationSetBy = Automatic
+
+	column patterns_detected
+		dataType: string
+		lineageTag: 6d80f495-2b67-4b2f-b142-25b64ce45032
+		summarizeBy: none
+		sourceColumn: patterns_detected
+
+		annotation SummarizationSetBy = Automatic
+
+	column pattern_signal
+		dataType: string
+		lineageTag: 85d9c3b7-5e01-43b9-be97-14f0a9a261be
+		summarizeBy: none
+		sourceColumn: pattern_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition technical_forex_patterns = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="forex_patterns"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

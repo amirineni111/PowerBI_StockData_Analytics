@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "nq360_erngr",
   "position": {
     "x": 1260,
     "y": 244,
-    "z": 14,
+    "z": 14000,
     "height": 90,
     "width": 295,
-    "tabOrder": 14
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "card",
@@ -159,5 +159,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "de71a5c5c6dcf2c81753",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nasdaq_100_fundamentals"
+                  }
+                },
+                "Property": "earnings_growth"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

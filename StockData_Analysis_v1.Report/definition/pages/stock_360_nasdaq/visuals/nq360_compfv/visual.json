@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_compfv",
   "position": {
     "x": 330,
     "y": 374,
-    "z": 18,
+    "z": 18000,
     "height": 90,
     "width": 295,
-    "tabOrder": 18
+    "tabOrder": 18000
   },
   "visual": {
     "visualType": "card",

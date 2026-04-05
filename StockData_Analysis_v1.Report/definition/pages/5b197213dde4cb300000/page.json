@@ -4,5 +4,47 @@
   "displayName": "NSE Stock 360-Trend",
   "displayOption": "FitToWidth",
   "height": 1400,
-  "width": 1920
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "062c86338a47bbda49c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "5d4afd5f5469e72592c4",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "b21f0b661b1dcae7e612",
+        "boundFilter": "062c86338a47bbda49c0",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode"
 }

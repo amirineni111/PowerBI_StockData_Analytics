@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f32f90144162fc3397fa",
   "position": {
     "x": 1680,
     "y": 496,
-    "z": 15,
+    "z": 9000,
     "height": 96,
     "width": 224,
-    "tabOrder": 15
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2fa2273bb09f355f13ea",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Avg Profit Margin"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

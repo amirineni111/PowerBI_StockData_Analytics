@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ns360_fcf",
   "position": {
     "x": 640,
     "y": 504,
-    "z": 26,
+    "z": 26000,
     "height": 90,
     "width": 295,
-    "tabOrder": 26
+    "tabOrder": 26000
   },
   "visual": {
     "visualType": "card",

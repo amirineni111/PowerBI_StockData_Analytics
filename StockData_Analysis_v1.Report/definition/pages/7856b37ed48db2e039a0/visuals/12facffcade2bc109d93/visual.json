@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "12facffcade2bc109d93",
+  "position": {
+    "x": 80,
+    "y": 464,
+    "z": 3001,
+    "height": 160,
+    "width": 1008,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "We have three different process involved here.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#d64550"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Technical recommendations tracked into dbo.signal_tracking_history table ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#d64550"
+                    }
+                  }
+                ],
+                "listType": "ordered"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "dbo.AI_prediction_history populate from streamlit repo for ML models",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#d64550"
+                    }
+                  }
+                ],
+                "listType": "ordered"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "ml_* tables populated from dedicated machine B as stand alone process.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#d64550"
+                    }
+                  }
+                ],
+                "listType": "ordered"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

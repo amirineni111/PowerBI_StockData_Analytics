@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "deedb1fbf5bf05613b5c",
   "position": {
     "x": 1680,
     "y": 336,
-    "z": 14,
+    "z": 8000,
     "height": 112,
     "width": 208,
-    "tabOrder": 14
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "51ec78af9a03ccf46685",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Avg GARP Score"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

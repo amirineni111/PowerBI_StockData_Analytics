@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "d981ade92228d34de678",
   "position": {
     "x": 1616,
     "y": 224,
-    "z": 13,
+    "z": 7000,
     "height": 96,
     "width": 240.00000000000003,
-    "tabOrder": 13
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "16d13a7c12565b6002bd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Deep Value Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

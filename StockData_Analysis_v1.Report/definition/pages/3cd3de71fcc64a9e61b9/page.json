@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "3cd3de71fcc64a9e61b9",
+  "displayName": "Str3-Forex-Technical-Signal Validation & Back testing",
+  "displayOption": "FitToWidth",
+  "height": 1300,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ce5f2a81dc4c632674e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "513818c72054c52b2f12",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "d4817d6ee841a40f2832",
+        "boundFilter": "ce5f2a81dc4c632674e5",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  }
+}

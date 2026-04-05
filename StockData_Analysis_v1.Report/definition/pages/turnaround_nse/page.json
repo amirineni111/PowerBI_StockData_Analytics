@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "turnaround_nse",
+  "displayName": "Turnaround - NSE",
+  "displayOption": "FitToWidth",
+  "height": 1600,
+  "width": 2140,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c4338d97f888682b61f0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "8fef8fd71f22e8b1b6d8",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "fe0b5182b2c3e8dbd5a8",
+        "boundFilter": "c4338d97f888682b61f0",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode"
+}

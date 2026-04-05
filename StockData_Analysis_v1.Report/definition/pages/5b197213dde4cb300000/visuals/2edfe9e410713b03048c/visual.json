@@ -4,10 +4,10 @@
   "position": {
     "x": 16,
     "y": 672,
-    "z": 45001,
+    "z": 3000,
     "height": 480,
     "width": 1887.9999999999998,
-    "tabOrder": 45001
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "PBI_CV_886A053E_9DFD_4EA0_A47D_CCAEB89AF969",
@@ -201,7 +201,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3b9943c4e664b7db7708",
+        "name": "100dda7b875054ab8962",
         "field": {
           "Column": {
             "Expression": {
@@ -212,29 +212,66 @@
             "Property": "trading_date"
           }
         },
-        "type": "Categorical"
-      },
-      {
-        "name": "9ddd90b9514918512a0d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "nse_500_hist_data"
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "n",
+              "Entity": "nse_500_hist_data",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Between": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "n"
+                        }
+                      },
+                      "Property": "trading_date"
+                    }
+                  },
+                  "LowerBound": {
+                    "DateSpan": {
+                      "Expression": {
+                        "DateAdd": {
+                          "Expression": {
+                            "DateAdd": {
+                              "Expression": {
+                                "Now": {}
+                              },
+                              "Amount": 1,
+                              "TimeUnit": 0
+                            }
+                          },
+                          "Amount": -180,
+                          "TimeUnit": 0
+                        }
+                      },
+                      "TimeUnit": 0
+                    }
+                  },
+                  "UpperBound": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 0
+                    }
                   }
-                },
-                "Property": "open_price"
+                }
               }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
+            }
+          ]
+        }
       },
       {
-        "name": "8c0c993517521c4591a0",
+        "name": "0a6ad46abc7ca11e0893",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -253,7 +290,26 @@
         "type": "Advanced"
       },
       {
-        "name": "fda60883121ab9cc80a2",
+        "name": "79069380a49a0a61d20e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nse_500_hist_data"
+                  }
+                },
+                "Property": "low_price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1b8b00a8c8cb900c8c5d",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -272,7 +328,7 @@
         "type": "Advanced"
       },
       {
-        "name": "c32511c0daba7002e217",
+        "name": "c39e31c0b0ae25b23574",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -282,7 +338,7 @@
                     "Entity": "nse_500_hist_data"
                   }
                 },
-                "Property": "low_price"
+                "Property": "open_price"
               }
             },
             "Function": 0

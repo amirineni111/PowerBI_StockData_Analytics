@@ -150,6 +150,7 @@ table forex_model_performance
 
 	partition forex_model_performance = m
 		mode: import
+		queryGroup: ml_tables
 		source =
 				let
 				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),

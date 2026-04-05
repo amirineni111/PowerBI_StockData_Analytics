@@ -1,0 +1,478 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "81fd84287819f62d0b76",
+  "position": {
+    "x": 1184,
+    "y": 16,
+    "z": 4000,
+    "height": 384,
+    "width": 768,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_stochastic.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_stochastic.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_trade_signal"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_stochastic.stoch_trade_signal",
+              "nativeQueryRef": "stoch_trade_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_status"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_stochastic.stoch_status",
+              "nativeQueryRef": "stoch_status1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_crossover"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_stochastic.stoch_crossover",
+              "nativeQueryRef": "stoch_crossover1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "momentum_strength"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.momentum_strength)",
+              "nativeQueryRef": "momentum_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "extreme_zone_distance"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.extreme_zone_distance)",
+              "nativeQueryRef": "extreme_zone_distance"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_5d_d"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.stoch_5d_d)",
+              "nativeQueryRef": "stoch_5d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_5d_k"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.stoch_5d_k)",
+              "nativeQueryRef": "stoch_5d_k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_14d_d"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.stoch_14d_d)",
+              "nativeQueryRef": "stoch_14d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_14d_k"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.stoch_14d_k)",
+              "nativeQueryRef": "stoch_14d_k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_21d_d"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.stoch_21d_d)",
+              "nativeQueryRef": "stoch_21d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "stoch_21d_k"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.stoch_21d_k)",
+              "nativeQueryRef": "stoch_21d_k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_stochastic"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_stochastic.close_price)",
+              "nativeQueryRef": "close_price"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nasdaq_100_stochastic"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stochastic Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f6562becfbb425a70974",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9da959e3c45bc500eb34",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ce22bd2eba08e997b167",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_trade_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e87681087969f9c41107",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "16e7adafdd43afd6f8de",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_crossover"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6d87df40b55179b7082b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "momentum_strength"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "834c0fa7df15bb27e964",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "extreme_zone_distance"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1ec21436add64795f459",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_5d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6bd9d4f9e283f8b7029f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_5d_k"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "844339f80e08e703a010",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_14d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d8f432d782c61a74c543",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_14d_k"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0996c0f347dc3af358d5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_21d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6b555d49153bd2763ad5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "stoch_21d_k"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "78ff4cc60197a611539e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_stochastic"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

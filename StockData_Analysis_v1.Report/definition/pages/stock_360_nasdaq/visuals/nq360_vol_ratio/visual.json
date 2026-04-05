@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_vol_ratio",
   "position": {
     "x": 1260,
     "y": 764,
-    "z": 44,
+    "z": 42000,
     "height": 90,
     "width": 295,
-    "tabOrder": 44
+    "tabOrder": 42000
   },
   "visual": {
     "visualType": "card",

@@ -4,10 +4,10 @@
   "position": {
     "x": 12,
     "y": 792,
-    "z": 45001,
+    "z": 3000,
     "height": 608,
     "width": 1888,
-    "tabOrder": 45001
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "PBI_CV_886A053E_9DFD_4EA0_A47D_CCAEB89AF969",
@@ -201,7 +201,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9615c5c0db639366a039",
+        "name": "0a55d05f77620a6422e1",
         "field": {
           "Column": {
             "Expression": {
@@ -212,10 +212,66 @@
             "Property": "trading_date"
           }
         },
-        "type": "Categorical"
+        "type": "RelativeDate",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "n",
+              "Entity": "nasdaq_100_hist_data",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Between": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "n"
+                        }
+                      },
+                      "Property": "trading_date"
+                    }
+                  },
+                  "LowerBound": {
+                    "DateSpan": {
+                      "Expression": {
+                        "DateAdd": {
+                          "Expression": {
+                            "DateAdd": {
+                              "Expression": {
+                                "Now": {}
+                              },
+                              "Amount": 1,
+                              "TimeUnit": 0
+                            }
+                          },
+                          "Amount": -180,
+                          "TimeUnit": 0
+                        }
+                      },
+                      "TimeUnit": 0
+                    }
+                  },
+                  "UpperBound": {
+                    "DateSpan": {
+                      "Expression": {
+                        "Now": {}
+                      },
+                      "TimeUnit": 0
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       },
       {
-        "name": "64d5483b9025d377005a",
+        "name": "a292089d0120a9b1d43e",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -234,7 +290,7 @@
         "type": "Advanced"
       },
       {
-        "name": "1afb33b80038b6b75d9c",
+        "name": "fddaa569cb9168e30602",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -253,7 +309,7 @@
         "type": "Advanced"
       },
       {
-        "name": "c87247b770b6967d035d",
+        "name": "657af5b5233a30e000a8",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -272,7 +328,7 @@
         "type": "Advanced"
       },
       {
-        "name": "2bf2bb350695e3c5e0d8",
+        "name": "c645d74081947e0dce04",
         "field": {
           "Aggregation": {
             "Expression": {

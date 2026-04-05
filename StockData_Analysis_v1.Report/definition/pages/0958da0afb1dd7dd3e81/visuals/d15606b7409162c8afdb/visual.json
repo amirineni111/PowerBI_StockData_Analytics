@@ -1,0 +1,590 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "d15606b7409162c8afdb",
+  "position": {
+    "x": 16,
+    "y": 432,
+    "z": 5000,
+    "height": 304,
+    "width": 1936,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_forex_patterns.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_forex_patterns.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_forex_patterns.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "bullish_engulfing"
+                }
+              },
+              "queryRef": "technical_forex_patterns.bullish_engulfing",
+              "nativeQueryRef": "bullish_engulfing"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "bearish_engulfing"
+                }
+              },
+              "queryRef": "technical_forex_patterns.bearish_engulfing",
+              "nativeQueryRef": "bearish_engulfing"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "cup_and_handle"
+                }
+              },
+              "queryRef": "technical_forex_patterns.cup_and_handle",
+              "nativeQueryRef": "cup_and_handle"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "doji"
+                }
+              },
+              "queryRef": "technical_forex_patterns.doji",
+              "nativeQueryRef": "doji"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "double_bottom"
+                }
+              },
+              "queryRef": "technical_forex_patterns.double_bottom",
+              "nativeQueryRef": "double_bottom"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "double_top"
+                }
+              },
+              "queryRef": "technical_forex_patterns.double_top",
+              "nativeQueryRef": "double_top"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "evening_star"
+                }
+              },
+              "queryRef": "technical_forex_patterns.evening_star",
+              "nativeQueryRef": "evening_star"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "hammer"
+                }
+              },
+              "queryRef": "technical_forex_patterns.hammer",
+              "nativeQueryRef": "hammer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "head_and_shoulders"
+                }
+              },
+              "queryRef": "technical_forex_patterns.head_and_shoulders",
+              "nativeQueryRef": "head_and_shoulders"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "inverse_cup_handle"
+                }
+              },
+              "queryRef": "technical_forex_patterns.inverse_cup_handle",
+              "nativeQueryRef": "inverse_cup_handle"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "inverse_head_shoulders"
+                }
+              },
+              "queryRef": "technical_forex_patterns.inverse_head_shoulders",
+              "nativeQueryRef": "inverse_head_shoulders"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "morning_star"
+                }
+              },
+              "queryRef": "technical_forex_patterns.morning_star",
+              "nativeQueryRef": "morning_star"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "pattern_signal"
+                }
+              },
+              "queryRef": "technical_forex_patterns.pattern_signal",
+              "nativeQueryRef": "pattern_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "patterns_detected"
+                }
+              },
+              "queryRef": "technical_forex_patterns.patterns_detected",
+              "nativeQueryRef": "patterns_detected"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_patterns"
+                    }
+                  },
+                  "Property": "shooting_star"
+                }
+              },
+              "queryRef": "technical_forex_patterns.shooting_star",
+              "nativeQueryRef": "shooting_star"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_forex_patterns"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'technical pattern'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4963b2be5efcef74df37",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "431bee61d6a60b76b4c7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dc41dac8d82a6df63bf3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "bullish_engulfing"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e28bf6b3c9ad85339dfe",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "bearish_engulfing"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a2ec4d404ce38920dc2f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "cup_and_handle"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "333dc0dc190af9603380",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "doji"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "59da60fba122e51dfbdf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "double_bottom"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ddcec02629757cc79c6c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "double_top"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a9af443cf54959aca664",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "evening_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ac06f21959ce027a5a80",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "hammer"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b0de2f2e0ef38085759b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "head_and_shoulders"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "881186345d518f593e6b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "inverse_cup_handle"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bf7f0be684a1c9d18d20",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "inverse_head_shoulders"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e2a58764e0f222d496c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "morning_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b8533f92f5aab97907e2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "pattern_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a83dc31eb8af14b56ad5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "patterns_detected"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "77851c1e572de49b485d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "shooting_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8b470a5cbc496655b968",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_patterns"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

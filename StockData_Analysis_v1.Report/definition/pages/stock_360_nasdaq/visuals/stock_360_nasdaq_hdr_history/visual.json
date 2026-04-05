@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "stock_360_nasdaq_hdr_history",
   "position": {
-    "x": 20,
-    "y": 862,
-    "z": 46,
-    "height": 28,
-    "width": 1880,
-    "tabOrder": 46
+    "x": 16,
+    "y": 864,
+    "z": 44000,
+    "height": 32,
+    "width": 288,
+    "tabOrder": 44000
   },
   "visual": {
     "visualType": "textbox",
@@ -21,9 +21,9 @@
                   {
                     "value": "📅 Historical Price Data",
                     "textStyle": {
+                      "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "13px",
-                      "fontWeight": "bold"
+                      "fontSize": "13px"
                     }
                   }
                 ]

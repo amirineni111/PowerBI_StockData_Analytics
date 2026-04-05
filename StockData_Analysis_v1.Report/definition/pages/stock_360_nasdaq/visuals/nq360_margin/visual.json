@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "nq360_margin",
   "position": {
     "x": 330,
     "y": 244,
-    "z": 11,
+    "z": 11000,
     "height": 90,
     "width": 295,
-    "tabOrder": 11
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "card",
@@ -159,5 +159,28 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "407bb351cca75e70c6ac",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "nasdaq_100_fundamentals"
+                  }
+                },
+                "Property": "profit_margin"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_hdr_tech_trend",
   "position": {
     "x": 20,
     "y": 602,
-    "z": 32,
+    "z": 30000,
     "height": 28,
     "width": 1880,
-    "tabOrder": 32
+    "tabOrder": 30000
   },
   "visual": {
     "visualType": "textbox",

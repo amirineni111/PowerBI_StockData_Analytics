@@ -3,6 +3,87 @@
   "name": "stock_360_nse",
   "displayName": "NSE Stock 360",
   "displayOption": "FitToWidth",
-  "height": 1400,
-  "width": 1920
+  "height": 1500,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9bf526cf9a91038cead9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "n",
+              "Entity": "nse_500",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "n"
+                          }
+                        },
+                        "Property": "ticker"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'UJJIVANSFB.NS'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "a036196644cdb9008417",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "2d3613d2c6302ccb0033",
+        "boundFilter": "9bf526cf9a91038cead9",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode"
 }

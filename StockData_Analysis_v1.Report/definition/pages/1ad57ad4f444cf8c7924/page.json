@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "1ad57ad4f444cf8c7924",
+  "displayName": "Str2-ai NASDAQ",
+  "displayOption": "FitToWidth",
+  "height": 1200,
+  "width": 2000,
+  "pageBinding": {
+    "name": "6216e4d94075623e16c8",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "495be49b07cc09ec04b3",
+  "displayName": "Str2-ai NASDAQ Prediction Streamlit",
+  "displayOption": "FitToWidth",
+  "height": 1200,
+  "width": 2000,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b5e58a07d002d53c5c52",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "2e7858ed4baa0b180354",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "27a0299871b3d7b62c5a",
+        "boundFilter": "b5e58a07d002d53c5c52",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode"
+}

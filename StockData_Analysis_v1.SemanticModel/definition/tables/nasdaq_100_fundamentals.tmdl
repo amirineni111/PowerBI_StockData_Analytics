@@ -130,23 +130,21 @@ table nasdaq_100_fundamentals
 
 	column profit_margin
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: e0edb30e-aee9-45e4-a333-b6759dad441f
 		summarizeBy: sum
 		sourceColumn: profit_margin
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column operating_margin
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 35113dc0-d09e-4e69-97f2-51478b744505
 		summarizeBy: sum
 		sourceColumn: operating_margin
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column gross_margin
 		dataType: double
@@ -160,13 +158,12 @@ table nasdaq_100_fundamentals
 
 	column return_on_equity
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 73ce061d-2acb-4885-b172-5e850734eefa
 		summarizeBy: sum
 		sourceColumn: return_on_equity
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column return_on_assets
 		dataType: double
@@ -199,23 +196,21 @@ table nasdaq_100_fundamentals
 
 	column revenue_growth
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 9e1e4b9f-fa47-4d2c-90bd-0c1a98853f2e
 		summarizeBy: sum
 		sourceColumn: revenue_growth
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column earnings_growth
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: d9a46d28-7f6e-41cb-9f0a-aa4ee5471a7f
 		summarizeBy: sum
 		sourceColumn: earnings_growth
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column dividend_rate
 		dataType: double
@@ -229,13 +224,12 @@ table nasdaq_100_fundamentals
 
 	column dividend_yield
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 5e3bf771-2232-4d23-bcf8-bdaf996cf40d
 		summarizeBy: sum
 		sourceColumn: dividend_yield
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column payout_ratio
 		dataType: double

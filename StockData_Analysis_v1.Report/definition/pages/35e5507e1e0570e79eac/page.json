@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "35e5507e1e0570e79eac",
+  "displayName": "Forex-Technical-Top Rated Daily-Active Opportunities",
+  "displayOption": "FitToWidth",
+  "height": 1500,
+  "width": 2000,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e930364c659cc932c651",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "7d10d5483949e003fd06",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "bc085d94a50ef2ba0e59",
+        "boundFilter": "e930364c659cc932c651",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "validation_main_table",
   "position": {
-    "x": 20,
-    "y": 190,
-    "z": 10,
-    "height": 420,
-    "width": 1100,
-    "tabOrder": 10
+    "x": 48,
+    "y": 272,
+    "z": 5000,
+    "height": 544,
+    "width": 1808,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,55 +20,55 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "signal_tracking_history.ticker",
-              "nativeQueryRef": "ticker"
+              "queryRef": "nse_signal_tracking_history.ticker",
+              "nativeQueryRef": "ticker1"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "signal_date"
                 }
               },
-              "queryRef": "signal_tracking_history.signal_date",
-              "nativeQueryRef": "signal_date"
+              "queryRef": "nse_signal_tracking_history.signal_date",
+              "nativeQueryRef": "signal_date1"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "signal_type"
                 }
               },
-              "queryRef": "signal_tracking_history.signal_type",
-              "nativeQueryRef": "signal_type"
+              "queryRef": "nse_signal_tracking_history.signal_type",
+              "nativeQueryRef": "signal_type1"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "signal_price"
                 }
               },
-              "queryRef": "signal_tracking_history.signal_price",
+              "queryRef": "Sum(nse_signal_tracking_history.signal_price)",
               "nativeQueryRef": "signal_price"
             },
             {
@@ -76,13 +76,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "actual_price_7d"
                 }
               },
-              "queryRef": "signal_tracking_history.actual_price_7d",
+              "queryRef": "Sum(nse_signal_tracking_history.actual_price_7d)",
               "nativeQueryRef": "actual_price_7d"
             },
             {
@@ -90,13 +90,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "actual_change_7d"
                 }
               },
-              "queryRef": "signal_tracking_history.actual_change_7d",
+              "queryRef": "Sum(nse_signal_tracking_history.actual_change_7d)",
               "nativeQueryRef": "actual_change_7d"
             },
             {
@@ -104,27 +104,41 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "result_7d"
                 }
               },
-              "queryRef": "signal_tracking_history.result_7d",
-              "nativeQueryRef": "result_7d"
+              "queryRef": "nse_signal_tracking_history.result_7d",
+              "nativeQueryRef": "result_7d1"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_price_14d"
+                }
+              },
+              "queryRef": "Sum(nse_signal_tracking_history.actual_price_14d)",
+              "nativeQueryRef": "actual_price_14d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "actual_change_14d"
                 }
               },
-              "queryRef": "signal_tracking_history.actual_change_14d",
+              "queryRef": "Sum(nse_signal_tracking_history.actual_change_14d)",
               "nativeQueryRef": "actual_change_14d"
             },
             {
@@ -132,27 +146,41 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "result_14d"
                 }
               },
-              "queryRef": "signal_tracking_history.result_14d",
-              "nativeQueryRef": "result_14d"
+              "queryRef": "nse_signal_tracking_history.result_14d",
+              "nativeQueryRef": "result_14d1"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_price_30d"
+                }
+              },
+              "queryRef": "Sum(nse_signal_tracking_history.actual_price_30d)",
+              "nativeQueryRef": "actual_price_30d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "actual_change_30d"
                 }
               },
-              "queryRef": "signal_tracking_history.actual_change_30d",
+              "queryRef": "Sum(nse_signal_tracking_history.actual_change_30d)",
               "nativeQueryRef": "actual_change_30d"
             },
             {
@@ -160,14 +188,126 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "signal_tracking_history"
+                      "Entity": "nse_signal_tracking_history"
                     }
                   },
                   "Property": "result_30d"
                 }
               },
-              "queryRef": "signal_tracking_history.result_30d",
-              "nativeQueryRef": "result_30d"
+              "queryRef": "nse_signal_tracking_history.result_30d",
+              "nativeQueryRef": "result_30d1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "bb_signal"
+                }
+              },
+              "queryRef": "nse_signal_tracking_history.bb_signal",
+              "nativeQueryRef": "bb_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "fib_signal"
+                }
+              },
+              "queryRef": "nse_signal_tracking_history.fib_signal",
+              "nativeQueryRef": "fib_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "macd_signal"
+                }
+              },
+              "queryRef": "nse_signal_tracking_history.macd_signal",
+              "nativeQueryRef": "macd_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "pattern_signal"
+                }
+              },
+              "queryRef": "nse_signal_tracking_history.pattern_signal",
+              "nativeQueryRef": "pattern_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "rsi_signal"
+                }
+              },
+              "queryRef": "nse_signal_tracking_history.rsi_signal",
+              "nativeQueryRef": "rsi_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_strength"
+                }
+              },
+              "queryRef": "Sum(nse_signal_tracking_history.signal_strength)",
+              "nativeQueryRef": "signal_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "stoch_signal"
+                }
+              },
+              "queryRef": "nse_signal_tracking_history.stoch_signal",
+              "nativeQueryRef": "stoch_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_signal_tracking_history"
+                    }
+                  },
+                  "Property": "sma_signal"
+                }
+              },
+              "queryRef": "nse_signal_tracking_history.sma_signal",
+              "nativeQueryRef": "sma_signal"
             }
           ]
         }
@@ -179,13 +319,13 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "signal_tracking_history"
+                    "Entity": "nse_signal_tracking_history"
                   }
                 },
                 "Property": "signal_date"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -195,12 +335,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "31a61d73615ae098141d",
+        "name": "f60e69fb0ce281d97887",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "signal_tracking_history"
+                "Entity": "nse_signal_tracking_history"
               }
             },
             "Property": "ticker"
@@ -209,12 +349,12 @@
         "type": "Categorical"
       },
       {
-        "name": "420b55bd723adb2ee4ad",
+        "name": "fad9fc4c0655f411b3c7",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "signal_tracking_history"
+                "Entity": "nse_signal_tracking_history"
               }
             },
             "Property": "signal_date"
@@ -223,12 +363,12 @@
         "type": "Categorical"
       },
       {
-        "name": "5506cb3c940dc9d8a695",
+        "name": "7b2cb96359d98d811dc5",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "signal_tracking_history"
+                "Entity": "nse_signal_tracking_history"
               }
             },
             "Property": "signal_type"
@@ -237,54 +377,12 @@
         "type": "Categorical"
       },
       {
-        "name": "658bc9a6b0b5a45c7268",
+        "name": "170fabca08d2cad825ce",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "signal_tracking_history"
-              }
-            },
-            "Property": "signal_price"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "945dec21a6e62b18d405",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "signal_tracking_history"
-              }
-            },
-            "Property": "actual_price_7d"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3fdc6fa7d031580705a1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "signal_tracking_history"
-              }
-            },
-            "Property": "actual_change_7d"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "edc90c9bea02246778d2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "signal_tracking_history"
+                "Entity": "nse_signal_tracking_history"
               }
             },
             "Property": "result_7d"
@@ -293,26 +391,12 @@
         "type": "Categorical"
       },
       {
-        "name": "537a941434109509a38c",
+        "name": "6e65dd99f1b09cfd0aba",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "signal_tracking_history"
-              }
-            },
-            "Property": "actual_change_14d"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c7d6438c03d7db2d9681",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "signal_tracking_history"
+                "Entity": "nse_signal_tracking_history"
               }
             },
             "Property": "result_14d"
@@ -321,12 +405,110 @@
         "type": "Categorical"
       },
       {
-        "name": "0d84325ca4811e8aea86",
+        "name": "3d91fade7fad7f48f1ba",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "signal_tracking_history"
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "result_30d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6da73b0a96851a43b732",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "signal_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f00bf521722e8baa410e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "actual_price_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e3fa97833a4ee760d996",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "actual_change_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "aff618f92049e08db246",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "actual_price_14d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cbb3982b9c132726c6a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "actual_change_14d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f3e0d203df4df79f3481",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "actual_price_30d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "be0b841ed890c1658731",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
               }
             },
             "Property": "actual_change_30d"
@@ -335,18 +517,116 @@
         "type": "Advanced"
       },
       {
-        "name": "b9b78d45b3ecb52eee50",
+        "name": "f591e2423a4a17186799",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "signal_tracking_history"
+                "Entity": "nse_signal_tracking_history"
               }
             },
-            "Property": "result_30d"
+            "Property": "bb_signal"
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "5bdd68bcbc1266511f4c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "fib_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8227ef8e1c312808102e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "macd_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c53abe7d978ef8f78329",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "pattern_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0cc5b29a38f47f664a6c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "rsi_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "09f4dbb4b6271a39ef0e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "stoch_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ea4a0ade01861474ff8c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "sma_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3b3e900cfa46d5065285",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_signal_tracking_history"
+              }
+            },
+            "Property": "signal_strength"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 4225,
+        "x": 2035,
         "y": 0
       },
       "nodes": [
@@ -311,6 +311,68 @@
           "nodeIndex": "Date_tbl",
           "size": {
             "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5527.0006529110306,
+            "y": 0
+          },
+          "nodeIndex": "nasdaq_fair_value",
+          "nodeLineageTag": "c845e121-3213-450a-a0e1-606376b7429f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5951.2347192608831,
+            "y": 0
+          },
+          "nodeIndex": "nse_fair_value",
+          "nodeLineageTag": "3b34c26e-72b3-40e2-926f-da638d302565",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6753.2347192608831,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "ai_NSE_prediction_history",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6469.2347192608831,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "ai_NASDAQ_prediction_history",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6185.2347192608831,
+            "y": 441.4877645523452
+          },
+          "nodeIndex": "ai_Forex_prediction_history",
+          "size": {
+            "height": 300,
             "width": 234
           },
           "zIndex": 0

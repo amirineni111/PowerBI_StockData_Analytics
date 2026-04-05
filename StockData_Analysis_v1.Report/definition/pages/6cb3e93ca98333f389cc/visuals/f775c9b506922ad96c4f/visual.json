@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "f775c9b506922ad96c4f",
   "position": {
     "x": 16,
     "y": 496,
-    "z": 4,
+    "z": 3000,
     "height": 448,
-    "width": 656,
-    "tabOrder": 4
+    "width": 352,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_AI_Technical_Combos"
+                      "Entity": "NSE_vw_PowerBI_AI_Technical_Combos"
                     }
                   },
                   "Property": "technical_combo"
                 }
               },
-              "queryRef": "vw_PowerBI_AI_Technical_Combos.technical_combo",
-              "nativeQueryRef": "technical_combo",
+              "queryRef": "NSE_vw_PowerBI_AI_Technical_Combos.technical_combo",
+              "nativeQueryRef": "technical_combo1",
               "active": true
             }
           ]
@@ -106,12 +106,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d9fda6db5fa5f1a2ae55",
+        "name": "603725eeca6666553b93",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_AI_Technical_Combos"
+                "Entity": "NSE_vw_PowerBI_AI_Technical_Combos"
               }
             },
             "Property": "technical_combo"

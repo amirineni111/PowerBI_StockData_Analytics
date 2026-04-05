@@ -1,0 +1,646 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "b760a785f2dabd717cf0",
+  "position": {
+    "x": 16,
+    "y": 432,
+    "z": 5000,
+    "height": 288,
+    "width": 1936,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nse_patterns.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nse_patterns.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_nse_patterns.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "bullish_engulfing"
+                }
+              },
+              "queryRef": "technical_nse_patterns.bullish_engulfing",
+              "nativeQueryRef": "bullish_engulfing"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "bearish_engulfing"
+                }
+              },
+              "queryRef": "technical_nse_patterns.bearish_engulfing",
+              "nativeQueryRef": "bearish_engulfing"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "cup_and_handle"
+                }
+              },
+              "queryRef": "technical_nse_patterns.cup_and_handle",
+              "nativeQueryRef": "cup_and_handle"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "doji"
+                }
+              },
+              "queryRef": "technical_nse_patterns.doji",
+              "nativeQueryRef": "doji"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "double_bottom"
+                }
+              },
+              "queryRef": "technical_nse_patterns.double_bottom",
+              "nativeQueryRef": "double_bottom"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "double_top"
+                }
+              },
+              "queryRef": "technical_nse_patterns.double_top",
+              "nativeQueryRef": "double_top"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "evening_star"
+                }
+              },
+              "queryRef": "technical_nse_patterns.evening_star",
+              "nativeQueryRef": "evening_star"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "hammer"
+                }
+              },
+              "queryRef": "technical_nse_patterns.hammer",
+              "nativeQueryRef": "hammer"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "head_and_shoulders"
+                }
+              },
+              "queryRef": "technical_nse_patterns.head_and_shoulders",
+              "nativeQueryRef": "head_and_shoulders"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "inverse_cup_handle"
+                }
+              },
+              "queryRef": "technical_nse_patterns.inverse_cup_handle",
+              "nativeQueryRef": "inverse_cup_handle"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "inverse_head_shoulders"
+                }
+              },
+              "queryRef": "technical_nse_patterns.inverse_head_shoulders",
+              "nativeQueryRef": "inverse_head_shoulders"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "morning_star"
+                }
+              },
+              "queryRef": "technical_nse_patterns.morning_star",
+              "nativeQueryRef": "morning_star"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "pattern_signal"
+                }
+              },
+              "queryRef": "technical_nse_patterns.pattern_signal",
+              "nativeQueryRef": "pattern_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "patterns_detected"
+                }
+              },
+              "queryRef": "technical_nse_patterns.patterns_detected",
+              "nativeQueryRef": "patterns_detected"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "shooting_star"
+                }
+              },
+              "queryRef": "technical_nse_patterns.shooting_star",
+              "nativeQueryRef": "shooting_star"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "ma_20"
+                }
+              },
+              "queryRef": "Sum(technical_nse_patterns.ma_20)",
+              "nativeQueryRef": "ma_20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_patterns"
+                    }
+                  },
+                  "Property": "ma_50"
+                }
+              },
+              "queryRef": "Sum(technical_nse_patterns.ma_50)",
+              "nativeQueryRef": "ma_50"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nse_patterns"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'technical pattern'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a6e0c7741af548528b94",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "acd081a1f2a339f6a887",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c6fcfd7f8d946497cd93",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "bullish_engulfing"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b8e08d8c3438b410f3b3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "bearish_engulfing"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "61ab0a81c0da916980ac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "cup_and_handle"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fcc768596ab33d496f6d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "doji"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "33c9aedd72c5d37dce3d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "double_bottom"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "16b1444730b8cef1957f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "double_top"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "383a26d3e4999978c3d9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "evening_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2501f22a29a6a53c4cff",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "hammer"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d1288fb1b7738ee588f7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "head_and_shoulders"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0a9943614a3f86e8da77",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "inverse_cup_handle"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "36da9ee9fbb4bcbee893",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "inverse_head_shoulders"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7c07fe59deae43d2b00d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "morning_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d10001659ddb0eea6064",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "pattern_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d28de1490da8cdebbbb7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "patterns_detected"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "459ee34002518daa84ba",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "shooting_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "37c2b0c3e253eba31655",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d327b23c0462bff4dbe4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "ma_20"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d81f4ba6b8e69039fece",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_patterns"
+              }
+            },
+            "Property": "ma_50"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

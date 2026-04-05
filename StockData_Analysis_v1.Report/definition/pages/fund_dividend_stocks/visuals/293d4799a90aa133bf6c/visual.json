@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "293d4799a90aa133bf6c",
   "position": {
     "x": 1695.9999999999998,
     "y": 352,
-    "z": 14,
+    "z": 8000,
     "height": 96,
     "width": 192,
-    "tabOrder": 14
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9fa5df761015bd8bcb14",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Avg Dividend Yield"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

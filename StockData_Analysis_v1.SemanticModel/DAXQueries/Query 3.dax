@@ -1,0 +1,17 @@
+DEFINE
+    MEASURE '_Measures'[NASDAQ Dividend Score] = VAR _filter = TREATAS(VALUES(nasdaq_top100[ticker]), nasdaq_100_fundamentals[ticker])
+VAR DivYield = CALCULATE(MAX(nasdaq_100_fundamentals[dividend_yield]), _filter)
+VAR PayoutRatio = CALCULATE(MAX(nasdaq_100_fundamentals[payout_ratio]), _filter)
+VAR FCF = CALCULATE(MAX(nasdaq_100_fundamentals[free_cashflow]), _filter)
+VAR DebtEquity = CALCULATE(MAX(nasdaq_100_fundamentals[debt_to_equity]), _filter)
+VAR ProfitMargin = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), _filter)
+VAR Yield_Score = IF(ISBLANK(DivYield) || DivYield <= 0, 0, IF(DivYield > 0.05, 35, IF(DivYield > 0.03, 30, IF(DivYield > 0.02, 20, IF(DivYield > 0.01, 10, 5)))))
+VAR Payout_Score = IF(ISBLANK(PayoutRatio), 15, IF(PayoutRatio > 0 && PayoutRatio < 0.30, 25, IF(PayoutRatio < 0.50, 20, IF(PayoutRatio < 0.75, 15, IF(PayoutRatio < 1, 5, 0)))))
+VAR FCF_Score = IF(ISBLANK(FCF) || FCF <= 0, 0, 20)
+VAR Debt_Score = IF(ISBLANK(DebtEquity), 10, IF(DebtEquity < 0.5, 20, IF(DebtEquity < 1, 15, IF(DebtEquity < 1.5, 10, 0))))
+RETURN Yield_Score + Payout_Score + FCF_Score + Debt_Score
+
+EVALUATE
+    SUMMARIZECOLUMNS(
+        "NASDAQ Dividend Score", [NASDAQ Dividend Score]
+    )

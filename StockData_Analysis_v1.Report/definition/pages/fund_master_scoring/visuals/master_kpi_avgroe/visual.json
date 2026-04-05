@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "master_kpi_avgroe",
   "position": {
     "x": 544,
     "y": 112,
-    "z": 4,
+    "z": 3000,
     "height": 112,
     "width": 224,
-    "tabOrder": 4
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "card",
@@ -49,23 +49,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ee10183d76c8543dd5ef",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NASDAQ Avg ROE"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "quality_nse_table",
   "position": {
     "x": 16,
     "y": 768,
-    "z": 11,
+    "z": 6000,
     "height": 416.00000000000006,
     "width": 1631.9999999999998,
-    "tabOrder": 11
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "tableEx",
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "nse_500_fundamentals"
+                      "Entity": "nse_500"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "nse_500_fundamentals.ticker",
-              "nativeQueryRef": "Ticker"
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker"
             },
             {
               "field": {
@@ -257,12 +257,26 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "c19bcfb901e86f87bda6",
+        "name": "4ce7bd3f740602140477",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
                 "Entity": "nse_500_fundamentals"
+              }
+            },
+            "Property": "fetch_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bba07ca0e04251b901c5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
               }
             },
             "Property": "ticker"
@@ -271,7 +285,7 @@
         "type": "Categorical"
       },
       {
-        "name": "b434a9bcebd41ae120e4",
+        "name": "e10a8de2b6183258ed46",
         "field": {
           "Column": {
             "Expression": {
@@ -285,7 +299,7 @@
         "type": "Categorical"
       },
       {
-        "name": "57b32eb4a3050475cc6f",
+        "name": "299dd6440abcc01001d4",
         "field": {
           "Measure": {
             "Expression": {
@@ -299,7 +313,7 @@
         "type": "Advanced"
       },
       {
-        "name": "41beb88b2eab97966feb",
+        "name": "50572c209c2e005b3e15",
         "field": {
           "Measure": {
             "Expression": {
@@ -313,7 +327,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3af2d131b00de0ddd976",
+        "name": "ffa28a2204e1710d0e25",
         "field": {
           "Column": {
             "Expression": {
@@ -327,7 +341,7 @@
         "type": "Advanced"
       },
       {
-        "name": "b7ae22241eacdf68cc61",
+        "name": "86a718f69765b97c68d0",
         "field": {
           "Column": {
             "Expression": {
@@ -341,7 +355,7 @@
         "type": "Advanced"
       },
       {
-        "name": "39881c8496462b4ba609",
+        "name": "f57f1bfac9379a0eaa20",
         "field": {
           "Column": {
             "Expression": {
@@ -355,7 +369,7 @@
         "type": "Advanced"
       },
       {
-        "name": "207aed9d13735cf46317",
+        "name": "36aea3305315410de997",
         "field": {
           "Column": {
             "Expression": {
@@ -369,7 +383,7 @@
         "type": "Advanced"
       },
       {
-        "name": "21f4a5b42670ddc6dfa1",
+        "name": "a84f09dfe8063305473e",
         "field": {
           "Column": {
             "Expression": {
@@ -383,7 +397,7 @@
         "type": "Advanced"
       },
       {
-        "name": "6c750dd8bbb4420338df",
+        "name": "2ebdf28b2a9559706b31",
         "field": {
           "Column": {
             "Expression": {
@@ -397,7 +411,7 @@
         "type": "Advanced"
       },
       {
-        "name": "657ed9c87268a13bc192",
+        "name": "2739070330e806bda907",
         "field": {
           "Column": {
             "Expression": {
@@ -411,7 +425,7 @@
         "type": "Advanced"
       },
       {
-        "name": "1797184379d90611e355",
+        "name": "984be50ad4dae6dda511",
         "field": {
           "Column": {
             "Expression": {
@@ -425,18 +439,53 @@
         "type": "Advanced"
       },
       {
-        "name": "340316ab8176e21a841b",
+        "name": "be9389fbec20a0768156",
         "field": {
-          "Column": {
+          "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "nse_500_fundamentals"
+                "Entity": "_Measures"
               }
             },
-            "Property": "fetch_date"
+            "Property": "NSE_Show Selected Ticker"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_Measures",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 0,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "_"
+                        }
+                      },
+                      "Property": "NSE_Show Selected Ticker"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "1L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
       }
     ]
   }

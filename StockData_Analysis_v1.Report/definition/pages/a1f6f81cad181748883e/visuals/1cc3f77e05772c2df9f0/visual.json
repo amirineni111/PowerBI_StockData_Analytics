@@ -1,0 +1,290 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "1cc3f77e05772c2df9f0",
+  "position": {
+    "x": 16,
+    "y": 492,
+    "z": 4000,
+    "height": 1008,
+    "width": 1888,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "company"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.company",
+              "nativeQueryRef": "company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "predicted_signal"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.predicted_signal",
+              "nativeQueryRef": "predicted_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "confidence_percentage"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.confidence_percentage",
+              "nativeQueryRef": "confidence_percentage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "buy_probability"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.buy_probability",
+              "nativeQueryRef": "buy_probability"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "sell_probability"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.sell_probability",
+              "nativeQueryRef": "sell_probability"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.close_price",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "rsi"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.rsi",
+              "nativeQueryRef": "rsi"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "rsi_category"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.rsi_category",
+              "nativeQueryRef": "rsi_category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "direction_correct_1d"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.direction_correct_1d",
+              "nativeQueryRef": "direction_correct_1d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "direction_correct_5d"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.direction_correct_5d",
+              "nativeQueryRef": "direction_correct_5d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "actual_return_1d"
+                }
+              },
+              "queryRef": "Sum(ml_nse_trading_predictions.actual_return_1d)",
+              "nativeQueryRef": "actual_return_1d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "actual_return_5d"
+                }
+              },
+              "queryRef": "Sum(ml_nse_trading_predictions.actual_return_5d)",
+              "nativeQueryRef": "actual_return_5d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "actual_return_10d"
+                }
+              },
+              "queryRef": "Sum(ml_nse_trading_predictions.actual_return_10d)",
+              "nativeQueryRef": "actual_return_10d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "confidence"
+                }
+              },
+              "queryRef": "Sum(ml_nse_trading_predictions.confidence)",
+              "nativeQueryRef": "confidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ml_nse_trading_predictions"
+                    }
+                  },
+                  "Property": "signal_strength"
+                }
+              },
+              "queryRef": "ml_nse_trading_predictions.signal_strength",
+              "nativeQueryRef": "signal_strength"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

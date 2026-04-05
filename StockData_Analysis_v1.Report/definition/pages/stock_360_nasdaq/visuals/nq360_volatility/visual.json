@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_volatility",
   "position": {
     "x": 1570,
     "y": 764,
-    "z": 45,
+    "z": 43000,
     "height": 90,
     "width": 295,
-    "tabOrder": 45
+    "tabOrder": 43000
   },
   "visual": {
     "visualType": "card",

@@ -1,0 +1,590 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "82595b5138adc60976c3",
+  "position": {
+    "x": 16,
+    "y": 432,
+    "z": 5000,
+    "height": 304,
+    "width": 1936,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.trading_date",
+              "nativeQueryRef": "trading_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_patterns.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "bullish_engulfing"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.bullish_engulfing",
+              "nativeQueryRef": "bullish_engulfing1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "bearish_engulfing"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.bearish_engulfing",
+              "nativeQueryRef": "bearish_engulfing1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "cup_and_handle"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.cup_and_handle",
+              "nativeQueryRef": "cup_and_handle1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "doji"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.doji",
+              "nativeQueryRef": "doji1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "double_bottom"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.double_bottom",
+              "nativeQueryRef": "double_bottom1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "double_top"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.double_top",
+              "nativeQueryRef": "double_top1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "evening_star"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.evening_star",
+              "nativeQueryRef": "evening_star1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "hammer"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.hammer",
+              "nativeQueryRef": "hammer1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "head_and_shoulders"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.head_and_shoulders",
+              "nativeQueryRef": "head_and_shoulders1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "inverse_cup_handle"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.inverse_cup_handle",
+              "nativeQueryRef": "inverse_cup_handle1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "inverse_head_shoulders"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.inverse_head_shoulders",
+              "nativeQueryRef": "inverse_head_shoulders1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "morning_star"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.morning_star",
+              "nativeQueryRef": "morning_star1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "pattern_signal"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.pattern_signal",
+              "nativeQueryRef": "pattern_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "patterns_detected"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.patterns_detected",
+              "nativeQueryRef": "patterns_detected1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_patterns"
+                    }
+                  },
+                  "Property": "shooting_star"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_patterns.shooting_star",
+              "nativeQueryRef": "shooting_star1"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nasdaq_100_patterns"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'technical pattern'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "69a41d3098c4e17c50b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "75c54851c3645dbf2d33",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1b5a764e0c40d5b5e3a1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "bullish_engulfing"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2a2dc33a27586ec73673",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "bearish_engulfing"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4309aec921dfabb8f733",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "cup_and_handle"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2c0c0c47b5622ed5135d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "doji"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e3edcbeddf010bf73b79",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "double_bottom"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f516ae109666a6c0eb21",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "double_top"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0db8d9f11a2f3828e7c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "evening_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "531b10462e99ee541375",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "hammer"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "25b8a861716ae09e66aa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "head_and_shoulders"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f01aba61d97561452b2d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "inverse_cup_handle"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bbb0e46bc0e0d05a228d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "inverse_head_shoulders"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2c723f100c2a55ddc033",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "morning_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "875144cf735e73458e3f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "pattern_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d98266d7199f6f23e2d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "patterns_detected"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2f8eff0e5ef5da59d240",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "shooting_star"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6a27dcf73bbc00fd4cea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_patterns"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

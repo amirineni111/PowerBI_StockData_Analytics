@@ -1,0 +1,633 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "65f9faead7aecb134f97",
+  "position": {
+    "x": 48,
+    "y": 272,
+    "z": 1000,
+    "height": 544,
+    "width": 1808,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_date"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.signal_date",
+              "nativeQueryRef": "signal_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_type"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.signal_type",
+              "nativeQueryRef": "signal_type1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_price"
+                }
+              },
+              "queryRef": "Sum(forex_signal_tracking_history.signal_price)",
+              "nativeQueryRef": "signal_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_price_7d"
+                }
+              },
+              "queryRef": "Sum(forex_signal_tracking_history.actual_price_7d)",
+              "nativeQueryRef": "actual_price_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_change_7d"
+                }
+              },
+              "queryRef": "Sum(forex_signal_tracking_history.actual_change_7d)",
+              "nativeQueryRef": "actual_change_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "result_7d"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.result_7d",
+              "nativeQueryRef": "result_7d1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_price_14d"
+                }
+              },
+              "queryRef": "Sum(forex_signal_tracking_history.actual_price_14d)",
+              "nativeQueryRef": "actual_price_14d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_change_14d"
+                }
+              },
+              "queryRef": "Sum(forex_signal_tracking_history.actual_change_14d)",
+              "nativeQueryRef": "actual_change_14d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "result_14d"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.result_14d",
+              "nativeQueryRef": "result_14d1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_price_30d"
+                }
+              },
+              "queryRef": "Sum(forex_signal_tracking_history.actual_price_30d)",
+              "nativeQueryRef": "actual_price_30d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "actual_change_30d"
+                }
+              },
+              "queryRef": "Sum(forex_signal_tracking_history.actual_change_30d)",
+              "nativeQueryRef": "actual_change_30d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "result_30d"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.result_30d",
+              "nativeQueryRef": "result_30d1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "bb_signal"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.bb_signal",
+              "nativeQueryRef": "bb_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "fib_signal"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.fib_signal",
+              "nativeQueryRef": "fib_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "macd_signal"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.macd_signal",
+              "nativeQueryRef": "macd_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "pattern_signal"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.pattern_signal",
+              "nativeQueryRef": "pattern_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "rsi_signal"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.rsi_signal",
+              "nativeQueryRef": "rsi_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_status"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.signal_status",
+              "nativeQueryRef": "signal_status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "signal_strength"
+                }
+              },
+              "queryRef": "Sum(forex_signal_tracking_history.signal_strength)",
+              "nativeQueryRef": "signal_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_signal_tracking_history"
+                    }
+                  },
+                  "Property": "stoch_signal"
+                }
+              },
+              "queryRef": "forex_signal_tracking_history.stoch_signal",
+              "nativeQueryRef": "stoch_signal"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "forex_signal_tracking_history"
+                  }
+                },
+                "Property": "signal_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "33cbe6b65d4b0b9c03b5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1aabef5881248a7258be",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "signal_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "033bbf194aa6bdb3d71a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "signal_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "334fff411a5de1d515e3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "result_7d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "02e9c1b9b85b0535fe59",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "result_14d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eb107a587e72cd272ffd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "result_30d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73370297f2e18f627a9f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "bb_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "247b5390cc1e31d35231",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "fib_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "67a58b1701baece3d0d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "macd_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8fdbeb5fae00f45a8972",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "pattern_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d9de740c975b36ba2efe",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "rsi_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "354ef7fe40374565cbe6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "signal_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d93efcf85fb13e359ee2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "stoch_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6290abac79a520ab2f75",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "signal_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dfb7b6d9157f725efd29",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "actual_price_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3bea25cac91c6eb06d12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "actual_change_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3094dd35d49806e9d973",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "actual_price_14d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d522819103fbe7b09582",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "actual_change_14d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "82fe59c8d8630ff03767",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "actual_price_30d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d2f04ee795d05c07176f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "actual_change_30d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2d98b225adfa3f2eb839",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_signal_tracking_history"
+              }
+            },
+            "Property": "signal_strength"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

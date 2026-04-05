@@ -4,10 +4,10 @@
   "position": {
     "x": 608,
     "y": 176,
-    "z": 1,
+    "z": 1000,
     "height": 272,
     "width": 272,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "tableEx",
@@ -92,34 +92,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "11475cf30523408202c0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nse_500_hist_data"
-              }
-            },
-            "Property": "trading_date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "dadab7dbd2b2ca4a046d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nse_500_hist_data"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "473d48947410dca789b0",
         "field": {

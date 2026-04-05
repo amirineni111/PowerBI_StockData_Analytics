@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "forex_kpi_buy",
   "position": {
-    "x": 20,
-    "y": 80,
-    "z": 1,
-    "height": 100,
-    "width": 180,
-    "tabOrder": 1
+    "x": 16,
+    "y": 128,
+    "z": 1000,
+    "height": 96,
+    "width": 176,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "card",
@@ -49,5 +49,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "816c56cc1261e252e009",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Forex Buy Signals"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

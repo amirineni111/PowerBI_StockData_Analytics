@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 160,
-    "z": 45000,
+    "z": 2000,
     "height": 592,
     "width": 1888,
-    "tabOrder": 45000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "lineChart",
@@ -143,42 +143,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "953d02d26aa1993b98e5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nasdaq_100_hist_data"
-              }
-            },
-            "Property": "trading_date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "1b9fb8bdbd1d55ecc023",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "nasdaq_100_hist_data"
-                  }
-                },
-                "Property": "close_price"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

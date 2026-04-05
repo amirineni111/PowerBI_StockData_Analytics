@@ -4,10 +4,10 @@
   "position": {
     "x": 16,
     "y": 128,
-    "z": 45000,
+    "z": 2000,
     "height": 480,
     "width": 1887.9999999999998,
-    "tabOrder": 45000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "lineChart",
@@ -143,42 +143,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "411ce280d1575b62eb07",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nse_500_hist_data"
-              }
-            },
-            "Property": "trading_date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a8f9cabf0a1e8c14d65d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "nse_500_hist_data"
-                  }
-                },
-                "Property": "close_price"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

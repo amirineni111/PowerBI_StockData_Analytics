@@ -1,0 +1,160 @@
+table technical_forex_support_resistance
+	lineageTag: 53d4ba60-eb60-4445-b35b-cb08d7ac5a0d
+
+	column ticker
+		dataType: string
+		lineageTag: ccc51c07-a300-4c49-99c2-57bcce58b65c
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 550489cd-0347-4641-8678-9dade9863796
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: 51e9981e-7ff1-457c-b4e6-7027fa7828b0
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pivot_point
+		dataType: double
+		lineageTag: 7703e54d-9717-4069-8053-a756ca994141
+		summarizeBy: sum
+		sourceColumn: pivot_point
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column r1
+		dataType: double
+		lineageTag: fa154e26-7419-4106-ad51-cdf2b865e244
+		summarizeBy: sum
+		sourceColumn: r1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column r2
+		dataType: double
+		lineageTag: aff9f3fb-bfdb-44fa-93c8-98554e885387
+		summarizeBy: sum
+		sourceColumn: r2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column r3
+		dataType: double
+		lineageTag: edc4858c-a2f9-4405-9302-892c0687e094
+		summarizeBy: sum
+		sourceColumn: r3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s1
+		dataType: double
+		lineageTag: f6b842a4-4a44-49ed-956b-8d3769e2c48a
+		summarizeBy: sum
+		sourceColumn: s1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s2
+		dataType: double
+		lineageTag: 04d86b79-f9e4-4d10-815a-2441ebd4384d
+		summarizeBy: sum
+		sourceColumn: s2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column s3
+		dataType: double
+		lineageTag: 644c1059-490e-4727-a871-184b3156761c
+		summarizeBy: sum
+		sourceColumn: s3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_high_20d
+		dataType: double
+		lineageTag: 58576bbe-9b28-4701-92f7-1ffea7a824c7
+		summarizeBy: sum
+		sourceColumn: swing_high_20d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_low_20d
+		dataType: double
+		lineageTag: 9a6dd556-9cf9-440a-b17f-3cd3ece489f4
+		summarizeBy: sum
+		sourceColumn: swing_low_20d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pivot_status
+		dataType: string
+		lineageTag: 6ed209e1-b14c-4cfa-a77e-244000b8d014
+		summarizeBy: none
+		sourceColumn: pivot_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column sr_trade_signal
+		dataType: string
+		lineageTag: d2494e95-29a0-44be-96b3-d85d69fbc205
+		summarizeBy: none
+		sourceColumn: sr_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition technical_forex_support_resistance = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="forex_support_resistance"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

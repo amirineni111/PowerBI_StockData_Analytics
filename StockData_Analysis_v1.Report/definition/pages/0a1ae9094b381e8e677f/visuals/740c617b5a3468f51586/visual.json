@@ -1,0 +1,569 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "740c617b5a3468f51586",
+  "position": {
+    "x": 448,
+    "y": 208,
+    "z": 0,
+    "height": 784,
+    "width": 1536,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_date"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.signal_date",
+              "nativeQueryRef": "signal_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "trade_tier"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.trade_tier",
+              "nativeQueryRef": "trade_tier1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_type"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.signal_type",
+              "nativeQueryRef": "signal_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "ai_prediction_pct"
+                }
+              },
+              "queryRef": "Sum(NASDAQ_vw_PowerBI_AI_Technical_Combos.ai_prediction_pct)",
+              "nativeQueryRef": "ai_prediction_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_price"
+                }
+              },
+              "queryRef": "Sum(NASDAQ_vw_PowerBI_AI_Technical_Combos.signal_price)",
+              "nativeQueryRef": "signal_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "result_7d"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.result_7d",
+              "nativeQueryRef": "result_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "actual_change_7d"
+                }
+              },
+              "queryRef": "Sum(NASDAQ_vw_PowerBI_AI_Technical_Combos.actual_change_7d)",
+              "nativeQueryRef": "actual_change_7d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "ai_correct"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.ai_correct",
+              "nativeQueryRef": "ai_correct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "signal_strength"
+                }
+              },
+              "queryRef": "Sum(NASDAQ_vw_PowerBI_AI_Technical_Combos.signal_strength)",
+              "nativeQueryRef": "signal_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "bb_signal"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.bb_signal",
+              "nativeQueryRef": "bb_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "fib_signal"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.fib_signal",
+              "nativeQueryRef": "fib_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "macd_signal"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.macd_signal",
+              "nativeQueryRef": "macd_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "pattern_signal"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.pattern_signal",
+              "nativeQueryRef": "pattern_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "rsi_signal"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.rsi_signal",
+              "nativeQueryRef": "rsi_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "stoch_signal"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.stoch_signal",
+              "nativeQueryRef": "stoch_signal1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "technical_combo"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.technical_combo",
+              "nativeQueryRef": "technical_combo1"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "vw_PowerBI_AI_Technical_Combos"
+                      }
+                    },
+                    "Property": "ai_prediction_pct"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'BoldHeader'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2ec8f0258bd3797aad85",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "24ab09de7d5ee3ccf2ce",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "775eebcbae82cf0c9c44",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "trade_tier"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ad89ee8230ac72540d62",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "result_7d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b0eb8ee72c72badb785f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "ai_correct"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1b82f5bd88996fac24c7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "bb_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eac93b093e2c3e995d8e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "fib_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1b8defa52e522ae09a20",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "macd_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c26c0bdbff821d3349ce",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "pattern_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "da01ffafd1e2ddb3bdaf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "rsi_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "30de6fa79766b032cd9b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "stoch_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a634deff330b48caa35e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "technical_combo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e9aa6eac8fa5883691bf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d85d48f1b284875d7e41",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "ai_prediction_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "da744a3679422ea4e0c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6e77f9f1b553390dd21b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "actual_change_7d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f95e3d58fdacf25a2698",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "signal_strength"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

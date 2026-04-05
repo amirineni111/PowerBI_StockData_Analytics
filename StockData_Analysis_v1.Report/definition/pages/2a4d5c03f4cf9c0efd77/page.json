@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "2a4d5c03f4cf9c0efd77",
+  "displayName": "NSE Turnaround",
+  "displayOption": "FitToWidth",
+  "height": 1600,
+  "width": 2140,
+  "pageBinding": {
+    "name": "6401a6844265c086a671",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  }
+}

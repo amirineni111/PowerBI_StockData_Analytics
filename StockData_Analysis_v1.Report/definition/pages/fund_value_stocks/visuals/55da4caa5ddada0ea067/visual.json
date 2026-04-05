@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "55da4caa5ddada0ea067",
   "position": {
     "x": 992,
     "y": 176,
-    "z": 19,
+    "z": 13000,
     "height": 128,
     "width": 336,
-    "tabOrder": 19
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "nse_500_fundamentals"
+                      "Entity": "nse_500"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "nse_500_fundamentals.ticker",
-              "nativeQueryRef": "ticker",
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker1",
               "active": true
             }
           ]
@@ -136,23 +136,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c9437ffb4aa5958a823a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nse_500_fundamentals"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

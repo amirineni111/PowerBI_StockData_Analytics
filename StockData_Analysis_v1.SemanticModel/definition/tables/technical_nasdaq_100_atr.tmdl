@@ -1,0 +1,54 @@
+table technical_nasdaq_100_atr
+	lineageTag: 986ae2e0-595c-414f-831b-c6030e808464
+
+	column ticker
+		dataType: string
+		lineageTag: 249a8a40-c48c-4a57-a0cc-26387f0cc23b
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 52322241-f781-4d7f-a14d-f3e5b8598982
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column ATR_14
+		dataType: double
+		lineageTag: 12bbf7c5-8b28-4dc9-bc5e-2c209b109907
+		summarizeBy: sum
+		sourceColumn: ATR_14
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition technical_nasdaq_100_atr = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nasdaq_100_atr"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(dbo_nasdaq_100_atr,{{"trading_date", type datetime}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    ),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each true)
+				    
+				in
+				    #"Filtered Rows1"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

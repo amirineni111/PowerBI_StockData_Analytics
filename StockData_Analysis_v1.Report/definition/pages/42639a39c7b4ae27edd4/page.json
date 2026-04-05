@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "42639a39c7b4ae27edd4",
+  "displayName": "Str2-ai NSE",
+  "displayOption": "FitToWidth",
+  "height": 1500,
+  "width": 2000,
+  "pageBinding": {
+    "name": "084d4b9982de5663602c",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  }
+}

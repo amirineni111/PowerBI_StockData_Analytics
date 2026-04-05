@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "9e7355204a1b83052a21",
+  "displayName": "Str1- NSE ML Daily Signal Scanner",
+  "displayOption": "FitToWidth",
+  "height": 1500,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ef6713040470539343c5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "b9403e7394d6e27da360",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "f482f3a4d87ca4ed2000",
+        "boundFilter": "ef6713040470539343c5",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode"
+}

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_macd_sig",
   "position": {
     "x": 950,
     "y": 634,
-    "z": 36,
+    "z": 34000,
     "height": 90,
     "width": 295,
-    "tabOrder": 36
+    "tabOrder": 34000
   },
   "visual": {
     "visualType": "card",

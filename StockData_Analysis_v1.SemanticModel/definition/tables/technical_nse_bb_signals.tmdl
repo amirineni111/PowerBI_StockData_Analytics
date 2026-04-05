@@ -1,0 +1,92 @@
+table technical_nse_bb_signals
+	lineageTag: 0717f746-5d50-459d-a9fb-19e2382a714a
+
+	column ticker
+		dataType: string
+		lineageTag: 65ebd810-2da5-4104-8ffc-219faf629b1a
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 98dc77fd-4dfc-4e17-a535-eca514145044
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: 2c0cf50d-1586-4b52-9545-362c7ed7f25a
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SMA_20
+		dataType: double
+		lineageTag: 36ddc385-a324-4cfc-a190-e3c222faa689
+		summarizeBy: sum
+		sourceColumn: SMA_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Upper_Band
+		dataType: double
+		lineageTag: 275a5987-003e-41c1-bb8b-02078e81ce32
+		summarizeBy: sum
+		sourceColumn: Upper_Band
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Lower_Band
+		dataType: double
+		lineageTag: b5c50199-d904-4bbc-a7f1-250a42fa4e38
+		summarizeBy: sum
+		sourceColumn: Lower_Band
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bb_trade_signal
+		dataType: string
+		lineageTag: 88d58c72-9a92-4112-8588-acfd8a677612
+		summarizeBy: none
+		sourceColumn: bb_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition technical_nse_bb_signals = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nse_500_bb_signals"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

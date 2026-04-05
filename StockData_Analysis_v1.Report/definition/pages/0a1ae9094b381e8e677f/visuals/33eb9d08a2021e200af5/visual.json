@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "33eb9d08a2021e200af5",
+  "position": {
+    "x": 880,
+    "y": 32,
+    "z": 5000,
+    "height": 144,
+    "width": 336,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+                    }
+                  },
+                  "Property": "ai_prediction_pct"
+                }
+              },
+              "queryRef": "NASDAQ_vw_PowerBI_AI_Technical_Combos.ai_prediction_pct",
+              "nativeQueryRef": "ai_prediction_pct1",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Between'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "071876dbe90c498b6dae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "NASDAQ_vw_PowerBI_AI_Technical_Combos"
+              }
+            },
+            "Property": "ai_prediction_pct"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

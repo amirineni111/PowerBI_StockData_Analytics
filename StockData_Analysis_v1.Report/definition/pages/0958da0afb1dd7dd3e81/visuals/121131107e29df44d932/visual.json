@@ -1,0 +1,478 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "121131107e29df44d932",
+  "position": {
+    "x": 16,
+    "y": 784,
+    "z": 6000,
+    "height": 592,
+    "width": 1936,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_forex_support_resistance.trading_date",
+              "nativeQueryRef": "trading_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_forex_support_resistance.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "r1"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.r1)",
+              "nativeQueryRef": "r1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "r2"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.r2)",
+              "nativeQueryRef": "r2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "r3"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.r3)",
+              "nativeQueryRef": "r3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "s1"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.s1)",
+              "nativeQueryRef": "s1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "s2"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.s2)",
+              "nativeQueryRef": "s2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "s3"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.s3)",
+              "nativeQueryRef": "s3"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "pivot_point"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.pivot_point)",
+              "nativeQueryRef": "pivot_point"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "pivot_status"
+                }
+              },
+              "queryRef": "technical_forex_support_resistance.pivot_status",
+              "nativeQueryRef": "pivot_status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "sr_trade_signal"
+                }
+              },
+              "queryRef": "technical_forex_support_resistance.sr_trade_signal",
+              "nativeQueryRef": "sr_trade_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "swing_low_20d"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.swing_low_20d)",
+              "nativeQueryRef": "swing_low_20d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_support_resistance"
+                    }
+                  },
+                  "Property": "swing_high_20d"
+                }
+              },
+              "queryRef": "Sum(technical_forex_support_resistance.swing_high_20d)",
+              "nativeQueryRef": "swing_high_20d"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_forex_support_resistance"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Support and Resistance Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "03a29749a028ac06e702",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "44958962ed1e374e39da",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "pivot_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a0e284d0a27cf628ee67",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "sr_trade_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "680fe5cd1b5fb0b33ea7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "19a2acfe1cd2d18c005f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "76b87d3616cca153b825",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "r1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "92a15217d9c32163632f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "r2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ee38952d53c9a26fc135",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "r3"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6d27b153447b3f672a0c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "s1"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7d051feb89d2b149389f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "s2"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c1c5ad023290c14e4c67",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "s3"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "246b349fd105e3817786",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "pivot_point"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d5f0838a5949769cdfda",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "swing_low_20d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b2e32b92ab834f5c02bd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_support_resistance"
+              }
+            },
+            "Property": "swing_high_20d"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

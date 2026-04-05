@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "55e4ca5a152fee745b40",
   "position": {
     "x": 1680,
     "y": 672,
-    "z": 16,
+    "z": 10000,
     "height": 96,
     "width": 224,
-    "tabOrder": 16
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "765919fff05fd42d1e3d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Low Debt Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

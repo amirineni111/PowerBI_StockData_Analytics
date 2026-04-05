@@ -14,20 +14,11 @@ relationship AutoDetected_c5c190fc-e98f-4a09-963a-9dc521a5a406
 	fromColumn: ml_nse_technical_indicators.ticker
 	toColumn: nse_500.ticker
 
-relationship AutoDetected_c34b4768-5125-44c4-a356-3571dbd351fd
-	fromColumn: ai_prediction_history.ticker
-	toColumn: nse_500.ticker
-
-relationship AutoDetected_45095e0d-1651-462d-8eef-89aae49564a4
-	fromColumn: signal_tracking_history.ticker
-	toColumn: nse_500.ticker
-
 relationship AutoDetected_e5fe00a5-97f6-482c-8fb9-37cdae1c3bc3
 	fromColumn: nasdaq_100_hist_data.ticker
 	toColumn: nasdaq_top100.ticker
 
 relationship AutoDetected_bc29ae59-bfba-4fe7-aaf3-ee04f10b3d16
-	crossFilteringBehavior: bothDirections
 	fromColumn: nasdaq_100_fundamentals.ticker
 	toColumn: nasdaq_top100.ticker
 
@@ -39,27 +30,9 @@ relationship AutoDetected_532f5e09-31bd-4b20-8e6c-d84931ee1d9f
 	fromColumn: ml_technical_indicators.ticker
 	toColumn: nasdaq_top100.ticker
 
-relationship AutoDetected_01ef010d-fd6e-469d-bfff-3482af24285e
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
-	fromColumn: ml_technical_indicators.indicator_id
-	toColumn: ml_nse_technical_indicators.indicator_id
-
-relationship 557b4597-8ef5-6a95-082a-1d76474022f8
-	fromColumn: ai_prediction_history.ticker
-	toColumn: nasdaq_top100.ticker
-
-relationship e05ee2d8-d23b-383e-e77c-13f94c626278
-	fromColumn: ai_prediction_history.ticker
-	toColumn: forex_master.symbol
-
 relationship AutoDetected_d8c4594a-2f4e-40f7-b29b-2cd94d673859
 	fromColumn: vw_PowerBI_Opportunities_strategy1.ticker
 	toColumn: nasdaq_top100.ticker
-
-relationship AutoDetected_f46259e9-ee02-460b-85a2-d23638dbb428
-	fromColumn: vw_PowerBI_AI_Technical_Combos.signal_id
-	toColumn: signal_tracking_history.signal_id
 
 relationship 79062177-0574-9547-9880-1f354f69bed0
 	fromColumn: nse_500_fundamentals.fetch_date
@@ -80,4 +53,380 @@ relationship AutoDetected_22eaba9d-87d9-4033-a877-d7cf9aaa331d
 	fromCardinality: one
 	fromColumn: nse_fair_value.ticker
 	toColumn: nse_500.ticker
+
+relationship AutoDetected_001fa1eb-4237-453d-93a2-486804352a81
+	fromColumn: ai_NASDAQ_prediction_history.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_2753b7df-f4d3-4c62-9873-fdf9e8e01b60
+	fromColumn: ai_NSE_prediction_history.ticker
+	toColumn: nse_500.ticker
+
+relationship dbdb2cce-cf4c-40d5-ca16-071fc5833c3e
+	fromColumn: ai_Forex_prediction_history.ticker
+	toColumn: forex_master.symbol
+
+relationship 2c85e2e8-8a46-eacc-4c4d-bb79bb12fc14
+	fromColumn: forex_ml_predictions.currency_pair
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_6cff2e06-96e0-4cca-b14e-a919d40ea54a
+	fromColumn: forex_hist_data.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_9e7cc6f8-34e4-4a51-b98e-13ab7b935bfb
+	fromColumn: technical_nasdaq_100_atr.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_85701457-1009-47c6-b33a-b9aa0f1f40b1
+	fromColumn: technical_nasdaq_100_atr_spikes.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_9c1fd20b-a08c-4611-b571-a83197600ff9
+	fromColumn: technical_nasdaq_100_bb_signals.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_30821158-1909-42e5-89fc-797b60299ab4
+	fromColumn: technical_nasdaq_100_bollingerband.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_90323106-2510-4f0a-a420-9578f4df6069
+	fromColumn: technical_nasdaq_100_ema_sma_view.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_a82c3197-1592-4de1-aa45-e5df96418d63
+	fromColumn: technical_nasdaq_100_fibonacci.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_eddd4190-8b32-46d9-bff4-0ca41a8dce24
+	fromColumn: technical_nasdaq_100_macd.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_60c4a3e1-9a8e-4d61-a922-b6e5ddef6f54
+	fromColumn: technical_nasdaq_100_macd_signals.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_72b9acb9-b0bf-481f-914b-5889c28872c3
+	fromColumn: technical_nasdaq_100_patterns.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_4aa36ead-364e-4bd9-80a8-b203ab8bf07c
+	fromColumn: technical_nasdaq_100_RSI_calculation.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_821610cb-63cb-4103-9685-982fff43c57b
+	fromColumn: technical_nasdaq_100_rsi_signals.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_37e8f10d-b2f7-4b7f-91a2-2f0c19ea89be
+	fromColumn: technical_nasdaq_100_sma_signals.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_43ffbfe5-0326-409c-8176-88a0c66007a1
+	fromColumn: technical_nasdaq_100_stochastic.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_a4f9f643-8582-40e3-88b9-27d950538dc1
+	fromColumn: technical_nasdaq_100_support_resistance.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_3e40a264-b651-4bdc-b912-ecc58eea5e76
+	fromColumn: technical_nse_atr.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_bc5e3410-cef7-491e-959a-061dd74fcde2
+	fromColumn: technical_nse_atr_spikes.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_2d1734a1-5f8a-436f-9bca-f3a787f95de5
+	fromColumn: technical_nse_bb_signals.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_c57666a4-e143-4a80-9ee3-7ef9314581c0
+	fromColumn: technical_nse_bollingerband.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_ad1a3f1b-b8c7-44b5-b200-0f3795cd4fae
+	fromColumn: technical_nse_ema_sma_view.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_0473c0ae-9ee0-4a10-97a6-a049ac89bae6
+	fromColumn: technical_nse_fibonacci.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_2e38d1d3-ee06-4971-bef8-e00b1c8650b9
+	fromColumn: technical_nse_macd.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_33452ada-cd56-46ed-aa1f-64dddbd23bc2
+	fromColumn: technical_nse_macd_signals.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_3571a67c-8017-4ae9-959e-e0ce1d7e7fbb
+	fromColumn: technical_nse_patterns.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_a372b0f2-f419-49d2-b726-c70d39881b2d
+	fromColumn: technical_nse_RSI_calculation.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_b489d485-0871-4c54-a12d-4508333e923a
+	fromColumn: technical_nse_rsi_signals.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_087ee2dd-9fe9-4ce2-8d77-6f602a1f3f47
+	fromColumn: technical_nse_sma_signals.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_19eda306-58da-47ce-bd45-4b77cae2b189
+	fromColumn: technical_nse_stochastic.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_e9ed56e3-916c-4b3c-bbbd-b1fce1aaa17a
+	fromColumn: technical_nse_support_resistance.ticker
+	toColumn: nse_500.ticker
+
+relationship AutoDetected_8ba1cf22-530b-4bb2-a4a6-2bd93128f0a2
+	fromColumn: technical_forex_atr.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_b1669fd3-d499-4e5e-8804-d4ef9d9f309a
+	fromColumn: technical_forex_atr_spikes.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_034fdef1-aa1b-4e47-bfd0-821aebcdce8a
+	fromColumn: technical_forex_bb_signals.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_d7d98422-768a-42e6-a7fd-d0e8dfd3d382
+	fromColumn: technical_forex_bollingerband.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_1cabd6b2-23da-4788-ad5d-ed0c201b0157
+	fromColumn: technical_forex_ema_sma_view.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_04868e63-374a-4c94-90a4-130bbe1376d3
+	fromColumn: technical_forex_macd.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_7cf4e161-c202-4a1b-8012-9ab7a0ea9b0b
+	fromColumn: technical_forex_macd_signals.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_84699407-23cb-4e59-ad48-60c28a6a4474
+	fromColumn: technical_forex_RSI_calculation.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_ddfbc970-ba1c-4bd8-8ddc-28fbac64ccfd
+	fromColumn: technical_forex_rsi_signals.symbol
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_b11b705e-79ca-49e5-b919-f318b69748b6
+	fromColumn: technical_forex_sma_signals.symbol
+	toColumn: forex_master.symbol
+
+relationship b72bd645-77b9-4eee-5ee2-c0a0f39fbc4a
+	fromColumn: technical_nse_atr.trading_date
+	toColumn: Date_tbl.Date
+
+relationship b04b4570-ac4f-5e98-5002-bd8a0cc4fffd
+	fromColumn: technical_nse_atr_spikes.trading_date
+	toColumn: Date_tbl.Date
+
+relationship b3ccb519-b96f-8f54-fe60-127fa8a38309
+	fromColumn: technical_nse_bb_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 58f3d97f-5523-ac7f-f3e0-3b2f7af49cf3
+	fromColumn: technical_nse_bollingerband.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 98196790-4b4a-ecde-6912-e1ff1b773a73
+	fromColumn: technical_nse_ema_sma_view.trading_date
+	toColumn: Date_tbl.Date
+
+relationship e0970e5f-1ecc-e8d0-5a6b-b50591b99743
+	fromColumn: technical_nse_fibonacci.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 0ce9a666-1e4b-b903-0389-e22456dbbf82
+	fromColumn: technical_nse_macd.trading_date
+	toColumn: Date_tbl.Date
+
+relationship e829a8b9-9b95-0b84-eb5d-78201e17bb9f
+	fromColumn: technical_nse_macd_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 5799f7ca-9bdf-b195-e8fd-666de175ccfb
+	fromColumn: technical_nse_patterns.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 10059cdf-1d45-dfba-7024-4d65d1f0d754
+	fromColumn: technical_nse_RSI_calculation.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 0c860399-d4cd-fa16-4b0c-8a0b70dd5b18
+	fromColumn: technical_nse_rsi_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 5763d88d-120c-5484-c015-642034511aab
+	fromColumn: technical_nse_sma_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 19891b18-10a1-9ee2-041c-58c436374655
+	fromColumn: technical_nse_stochastic.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 21a20b16-5dbd-c417-d05d-069a234c1595
+	fromColumn: technical_nse_support_resistance.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 4d997891-f6e1-d89c-76fc-10724c6ba04a
+	fromColumn: technical_forex_fibonacci.ticker
+	toColumn: forex_master.symbol
+
+relationship 5685fef4-d14c-255f-89a5-6c0f840e4d81
+	fromColumn: technical_forex_patterns.ticker
+	toColumn: forex_master.symbol
+
+relationship 050ca935-26ae-6883-866d-68fd9434a1ee
+	fromColumn: technical_forex_atr.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 29055d33-685c-485a-04c2-64b70cbaacdc
+	fromColumn: technical_forex_atr_spikes.trading_date
+	toColumn: Date_tbl.Date
+
+relationship d9fab69a-72be-a80d-3ff5-2b0a4e4e04d2
+	fromColumn: technical_forex_bb_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 6aa9efcc-d0f2-1a52-2344-086663935981
+	fromColumn: technical_forex_bollingerband.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 2dcdd0d2-0cf5-7efd-e8e7-2d57c2fbdcba
+	fromColumn: technical_forex_ema_sma_view.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 088be842-b310-3c40-70ee-69b87c100bd6
+	fromColumn: technical_forex_fibonacci.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 672647a6-4151-f8a8-d765-a53baf43d7ad
+	fromColumn: technical_forex_macd.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 724ddef2-5ec1-20a1-7fa8-8443d28f556d
+	fromColumn: technical_forex_macd_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 8ca68039-bf17-b1b6-41b7-da2186ddfc6b
+	fromColumn: technical_forex_patterns.trading_date
+	toColumn: Date_tbl.Date
+
+relationship ee808ea3-5a5c-7cc2-2999-88d3054bbcbe
+	fromColumn: technical_forex_RSI_calculation.trading_date
+	toColumn: Date_tbl.Date
+
+relationship ea6064d6-e132-99d7-e5a3-51ed0ef34e4e
+	fromColumn: technical_forex_rsi_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship e2dbd907-5e3e-b50b-9e1f-0dbd4bc8c7bb
+	fromColumn: technical_forex_sma_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 99025594-45a7-3c61-6ba3-a204d02c9caf
+	fromColumn: technical_forex_stochastic.trading_date
+	toColumn: Date_tbl.Date
+
+relationship b930a506-4f65-bae4-101d-f159950ebb59
+	fromColumn: technical_forex_support_resistance.trading_date
+	toColumn: Date_tbl.Date
+
+relationship a835ad83-3a8c-1184-fa90-844f75b30eee
+	fromColumn: technical_nasdaq_100_atr.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 2c343cd3-e09f-2356-788f-2a5c908c9c14
+	fromColumn: technical_nasdaq_100_atr_spikes.trading_date
+	toColumn: Date_tbl.Date
+
+relationship de118d60-4727-ed31-e1de-5e32ec7f1ce1
+	fromColumn: technical_nasdaq_100_bb_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 3c3d1c25-a818-56bc-b270-bd65f16ceca5
+	fromColumn: technical_nasdaq_100_bollingerband.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 1f764402-6459-2ae4-2011-fcc993711068
+	fromColumn: technical_nasdaq_100_ema_sma_view.trading_date
+	toColumn: Date_tbl.Date
+
+relationship bff0d63a-46f2-4654-8af5-6dc805c021c2
+	fromColumn: technical_nasdaq_100_fibonacci.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 7347418a-55ee-e421-0a88-091330835ce6
+	fromColumn: technical_nasdaq_100_macd.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 52d8cc30-5e2c-04bb-9556-6b5c3f8b46d8
+	fromColumn: technical_nasdaq_100_macd_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 0b94a6a5-ae37-caa9-8a13-c0ccfb046c5c
+	fromColumn: technical_nasdaq_100_patterns.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 364a3f18-e74b-7e29-b145-6e3cc913b84b
+	fromColumn: technical_nasdaq_100_RSI_calculation.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 05f8c85c-b536-009f-caac-6d888bbb31b1
+	fromColumn: technical_nasdaq_100_rsi_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 3751f268-3d84-96ff-088c-b191a44a3bb8
+	fromColumn: technical_nasdaq_100_sma_signals.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 3e1f6d51-a809-49ea-8160-3932a7518b4e
+	fromColumn: technical_nasdaq_100_stochastic.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 7feda849-7efe-aa81-7cd1-84b52c12795b
+	fromColumn: technical_nasdaq_100_support_resistance.trading_date
+	toColumn: Date_tbl.Date
+
+relationship 40770711-da5f-d7cc-07c5-92fc66be4223
+	fromColumn: technical_forex_stochastic.ticker
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_430b3d97-5f79-4500-bb48-ec1deb46ee35
+	fromColumn: nasdaq_signal_tracking_history.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_c46c6503-2b38-4288-a234-6a0ed17b064f
+	fromColumn: nse_signal_tracking_history.ticker
+	toColumn: nse_500.ticker
+
+relationship e718be24-0f52-465a-ea89-317f86b805e8
+	fromColumn: forex_signal_tracking_history.ticker
+	toColumn: forex_master.symbol
+
+relationship AutoDetected_82a6f06f-bb79-4040-a847-6aa29a762a03
+	fromColumn: NASDAQ_vw_PowerBI_AI_Technical_Combos.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_c99190ff-419d-43fe-a492-381b1dd798ca
+	fromColumn: NSE_vw_PowerBI_AI_Technical_Combos.ticker
+	toColumn: nse_500.ticker
+
+relationship 88a7a50c-0761-da82-962f-da158f3ef3d6
+	fromColumn: Forex_vw_PowerBI_AI_Technical_Combos.ticker
+	toColumn: forex_master.symbol
 

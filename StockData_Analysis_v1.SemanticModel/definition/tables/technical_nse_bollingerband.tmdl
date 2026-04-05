@@ -1,0 +1,84 @@
+table technical_nse_bollingerband
+	lineageTag: f645e3d9-d2ee-4bbf-a6f5-13ba3ce98e23
+
+	column ticker
+		dataType: string
+		lineageTag: 3499e4c4-66fd-4075-9f15-895b19d34977
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: d618ac33-dd8e-40fd-9899-caff5e6de0da
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: f74ae78f-a2b1-45ab-b3cc-4e7b3af8a599
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SMA_20
+		dataType: double
+		lineageTag: 4289ac73-b488-491a-86ef-8832628e7fd7
+		summarizeBy: sum
+		sourceColumn: SMA_20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Upper_Band
+		dataType: double
+		lineageTag: a6d3cb78-8532-4d85-8d71-38d8f2e173ca
+		summarizeBy: sum
+		sourceColumn: Upper_Band
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Lower_Band
+		dataType: double
+		lineageTag: 7076d25e-7401-4abc-b109-7e2d593ed4a3
+		summarizeBy: sum
+		sourceColumn: Lower_Band
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition technical_nse_bollingerband = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nse_500_bollingerband"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

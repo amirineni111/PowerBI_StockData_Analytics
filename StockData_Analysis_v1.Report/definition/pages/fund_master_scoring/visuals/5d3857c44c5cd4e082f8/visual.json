@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "5d3857c44c5cd4e082f8",
   "position": {
     "x": 288,
     "y": 256,
-    "z": 14,
+    "z": 7000,
     "height": 112,
     "width": 224,
-    "tabOrder": 14
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "39c6464238f5432d3c96",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE A+ Stocks Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_ema20",
   "position": {
     "x": 20,
     "y": 764,
-    "z": 40,
+    "z": 38000,
     "height": 90,
     "width": 295,
-    "tabOrder": 40
+    "tabOrder": 38000
   },
   "visual": {
     "visualType": "card",

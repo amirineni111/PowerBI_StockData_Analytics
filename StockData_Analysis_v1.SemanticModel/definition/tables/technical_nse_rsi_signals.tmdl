@@ -1,0 +1,62 @@
+table technical_nse_rsi_signals
+	lineageTag: e6bb1447-b286-4c46-ab7b-f0c1dd0f618f
+
+	column ticker
+		dataType: string
+		lineageTag: 3e6fec08-b5d1-4744-9b9e-b50a3c925ead
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: cf80768b-0029-49bd-afb8-7007eac88034
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column RSI
+		dataType: double
+		lineageTag: 8938fa0e-c022-428a-867f-86703d092bb6
+		summarizeBy: sum
+		sourceColumn: RSI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rsi_trade_signal
+		dataType: string
+		lineageTag: 45d3e05e-b8fb-44ba-aa38-94369cd76cd0
+		summarizeBy: none
+		sourceColumn: rsi_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	partition technical_nse_rsi_signals = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="nse_500_rsi_signals"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

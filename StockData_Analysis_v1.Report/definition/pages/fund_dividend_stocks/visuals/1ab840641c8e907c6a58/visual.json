@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "1ab840641c8e907c6a58",
   "position": {
     "x": 1695.9999999999998,
     "y": 640,
-    "z": 16,
+    "z": 10000,
     "height": 96,
     "width": 192,
-    "tabOrder": 16
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "77f63de391c047bc04dd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Sustainable Dividend Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "forex_kpi_confidence",
   "position": {
-    "x": 400,
-    "y": 80,
-    "z": 3,
-    "height": 100,
-    "width": 180,
-    "tabOrder": 3
+    "x": 416,
+    "y": 128,
+    "z": 3000,
+    "height": 96,
+    "width": 176,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "card",
@@ -49,5 +49,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9d4d4368a0652304e9e0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Forex Avg Confidence"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

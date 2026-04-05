@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ml_kpi_nasdaq_conf",
   "position": {
-    "x": 970,
+    "x": 512,
     "y": 80,
-    "z": 6,
-    "height": 100,
-    "width": 180,
-    "tabOrder": 6
+    "z": 6000,
+    "height": 112.00000000000001,
+    "width": 224.00000000000003,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "card",
@@ -49,5 +49,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a961c3eaccc9048090b4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "ML NASDAQ Avg Confidence"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

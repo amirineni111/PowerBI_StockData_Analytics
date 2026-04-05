@@ -1,0 +1,338 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "d1b445afd98f39cdb0de",
+  "position": {
+    "x": 16,
+    "y": 432,
+    "z": 5000,
+    "height": 495.99999999999994,
+    "width": 1600,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_ema_sma_view.trading_date",
+              "nativeQueryRef": "trading_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nasdaq_100_ema_sma_view.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_ema_sma_view.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "SMA_20"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_ema_sma_view.SMA_20)",
+              "nativeQueryRef": "SMA_20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "SMA_50"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_ema_sma_view.SMA_50)",
+              "nativeQueryRef": "SMA_50"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "EMA_20"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_ema_sma_view.EMA_20)",
+              "nativeQueryRef": "EMA_20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "EMA_50"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_ema_sma_view.EMA_50)",
+              "nativeQueryRef": "EMA_50"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "EMA_100"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_ema_sma_view.EMA_100)",
+              "nativeQueryRef": "EMA_100"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nasdaq_100_ema_sma_view"
+                    }
+                  },
+                  "Property": "EMA_200"
+                }
+              },
+              "queryRef": "Sum(technical_nasdaq_100_ema_sma_view.EMA_200)",
+              "nativeQueryRef": "EMA_200"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nasdaq_100_ema_sma_view"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SMA_EMA Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4d060e09e7fee66609ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "049cc6fe9017c3e7b917",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "44c87780e332ca8b8cef",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b1045ef81cebc367df1b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "SMA_20"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f2b046727805431f9ede",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "SMA_50"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4cb6a386c59e45b1cc66",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "EMA_100"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ffd323d7ca9311f9397b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "EMA_200"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bcbfc9eb3ea4949e5d55",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "EMA_20"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1c71db624f2c0d02c283",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nasdaq_100_ema_sma_view"
+              }
+            },
+            "Property": "EMA_50"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "forex_kpi_sell",
   "position": {
-    "x": 210,
-    "y": 80,
-    "z": 2,
-    "height": 100,
-    "width": 180,
-    "tabOrder": 2
+    "x": 208,
+    "y": 128,
+    "z": 2000,
+    "height": 96,
+    "width": 176,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "card",
@@ -49,5 +49,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a30026939b95200d64d9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Forex Sell Signals"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

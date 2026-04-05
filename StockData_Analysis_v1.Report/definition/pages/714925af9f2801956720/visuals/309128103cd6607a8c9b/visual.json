@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "309128103cd6607a8c9b",
   "position": {
     "x": 32,
@@ -217,7 +217,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "4e833a0a011339396b8d",
+        "name": "e0eff3564d59809d8098",
         "field": {
           "Column": {
             "Expression": {
@@ -231,7 +231,7 @@
         "type": "Categorical"
       },
       {
-        "name": "17c03d4123db6c50fe19",
+        "name": "637a657f87b0b602da39",
         "field": {
           "Column": {
             "Expression": {
@@ -245,7 +245,7 @@
         "type": "Categorical"
       },
       {
-        "name": "fe64db9dd0379406eaed",
+        "name": "f57660dce40a207cd08b",
         "field": {
           "Column": {
             "Expression": {
@@ -259,7 +259,7 @@
         "type": "Categorical"
       },
       {
-        "name": "f48f90aaa8dd2473421d",
+        "name": "fec45a8c05299b3c1750",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -278,7 +278,7 @@
         "type": "Advanced"
       },
       {
-        "name": "51a05776d5761b0250fa",
+        "name": "e106b33e0b2bc11ac9c0",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -297,7 +297,7 @@
         "type": "Advanced"
       },
       {
-        "name": "0cea901fd9cfde125503",
+        "name": "d34a92899e06aa081e0b",
         "field": {
           "Column": {
             "Expression": {
@@ -311,7 +311,7 @@
         "type": "Categorical"
       },
       {
-        "name": "57e019d5bdcd90267a48",
+        "name": "b16fd2499aa24492577d",
         "field": {
           "Column": {
             "Expression": {
@@ -325,7 +325,7 @@
         "type": "Categorical"
       },
       {
-        "name": "cfe66388e59912651fa5",
+        "name": "9a495257220c5980e11d",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -344,7 +344,7 @@
         "type": "Advanced"
       },
       {
-        "name": "c8b9432747f1c99f37c0",
+        "name": "e6252068905957a4c10d",
         "field": {
           "Aggregation": {
             "Expression": {

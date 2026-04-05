@@ -1,0 +1,300 @@
+table technical_forex_fibonacci
+	lineageTag: 4e769fa1-d977-412a-90c7-e4d8531544b9
+
+	column ticker
+		dataType: string
+		lineageTag: b85b740d-1a4c-4e0f-b78d-1ad7c8c84db0
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: b41a7b1b-43a0-4552-9417-da751ec8540e
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: a86ecc01-b565-4585-b563-3d4b366a9e6c
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_high_20d
+		dataType: double
+		lineageTag: 17a719b2-b29f-428a-a9dd-55451465c191
+		summarizeBy: sum
+		sourceColumn: swing_high_20d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_low_20d
+		dataType: double
+		lineageTag: 9ea4db59-5c9c-4817-bbd6-561807532d4d
+		summarizeBy: sum
+		sourceColumn: swing_low_20d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_20d_0236
+		dataType: double
+		lineageTag: 7f159f62-a86b-422f-8fbf-6752479271e6
+		summarizeBy: sum
+		sourceColumn: fib_20d_0236
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_20d_0382
+		dataType: double
+		lineageTag: 133c0558-d9a1-43bc-bb79-902ebaa098fb
+		summarizeBy: sum
+		sourceColumn: fib_20d_0382
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_20d_0500
+		dataType: double
+		lineageTag: 4cfe69e4-cc86-4bf8-b937-2e2355d32e6c
+		summarizeBy: sum
+		sourceColumn: fib_20d_0500
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_20d_0618
+		dataType: double
+		lineageTag: ab2177ef-b025-41f4-af43-f6aba2360096
+		summarizeBy: sum
+		sourceColumn: fib_20d_0618
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_20d_0786
+		dataType: double
+		lineageTag: 31f532fa-1299-4e55-bc4a-082784f520cd
+		summarizeBy: sum
+		sourceColumn: fib_20d_0786
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_high_50d
+		dataType: double
+		lineageTag: 9efea437-2d75-4c50-a714-063b0e54ecac
+		summarizeBy: sum
+		sourceColumn: swing_high_50d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swing_low_50d
+		dataType: double
+		lineageTag: c4dfac83-7b6e-4162-8ac9-0cdcad321feb
+		summarizeBy: sum
+		sourceColumn: swing_low_50d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_50d_0236
+		dataType: double
+		lineageTag: a40abebf-6c06-453d-a03d-5d95c5434f2d
+		summarizeBy: sum
+		sourceColumn: fib_50d_0236
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_50d_0382
+		dataType: double
+		lineageTag: ea39fa35-3fa6-4594-bc32-c1a3b1e90153
+		summarizeBy: sum
+		sourceColumn: fib_50d_0382
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_50d_0500
+		dataType: double
+		lineageTag: 9275da94-39ac-45a5-b9c4-732c76559056
+		summarizeBy: sum
+		sourceColumn: fib_50d_0500
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_50d_0618
+		dataType: double
+		lineageTag: 8e3121ea-c961-41f3-86c6-07b29ee3a49d
+		summarizeBy: sum
+		sourceColumn: fib_50d_0618
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_50d_0786
+		dataType: double
+		lineageTag: 4c755337-0ae8-46cd-8242-e3ee5f54495c
+		summarizeBy: sum
+		sourceColumn: fib_50d_0786
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_100d_0236
+		dataType: double
+		lineageTag: ad29de9e-c1eb-4a27-89d4-be7d6ccde508
+		summarizeBy: sum
+		sourceColumn: fib_100d_0236
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_100d_0382
+		dataType: double
+		lineageTag: 0d98e2d5-4645-4dc8-b2d4-61f7c5f91b0a
+		summarizeBy: sum
+		sourceColumn: fib_100d_0382
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_100d_0500
+		dataType: double
+		lineageTag: f352f5ea-6afc-44af-9b91-15eb64228afa
+		summarizeBy: sum
+		sourceColumn: fib_100d_0500
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_100d_0618
+		dataType: double
+		lineageTag: 77b89334-59f6-4f4f-980b-3737701f0f84
+		summarizeBy: sum
+		sourceColumn: fib_100d_0618
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_100d_0786
+		dataType: double
+		lineageTag: 23146890-9b6e-4204-99dd-277494142315
+		summarizeBy: sum
+		sourceColumn: fib_100d_0786
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_20d_ext_1272
+		dataType: double
+		lineageTag: 1f68d21f-b62f-4486-8aaa-ae171c24adfd
+		summarizeBy: sum
+		sourceColumn: fib_20d_ext_1272
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_20d_ext_1618
+		dataType: double
+		lineageTag: eca9b9b7-ca24-4526-a3cd-dc04b0c488b0
+		summarizeBy: sum
+		sourceColumn: fib_20d_ext_1618
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_20d_ext_2000
+		dataType: double
+		lineageTag: e8552d97-620e-4126-be1a-fbfe32e89f1e
+		summarizeBy: sum
+		sourceColumn: fib_20d_ext_2000
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fib_position
+		dataType: string
+		lineageTag: d42e987f-0211-448b-b8d2-6fbd5a81c4f7
+		summarizeBy: none
+		sourceColumn: fib_position
+
+		annotation SummarizationSetBy = Automatic
+
+	column fib_trade_signal
+		dataType: string
+		lineageTag: 0b9c965d-79f2-4d9d-8256-792d986758b3
+		summarizeBy: none
+		sourceColumn: fib_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_to_nearest_fib_pct
+		dataType: double
+		lineageTag: 08791e30-a4cf-4ff9-ae95-13a5e2bbaf1a
+		summarizeBy: sum
+		sourceColumn: distance_to_nearest_fib_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition technical_forex_fibonacci = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="forex_fibonacci"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

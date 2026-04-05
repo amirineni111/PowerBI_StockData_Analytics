@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_hdr_tech_mom",
   "position": {
     "x": 20,
     "y": 732,
-    "z": 39,
+    "z": 37000,
     "height": 28,
     "width": 1880,
-    "tabOrder": 39
+    "tabOrder": 37000
   },
   "visual": {
     "visualType": "textbox",

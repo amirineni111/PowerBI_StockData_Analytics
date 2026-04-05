@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "stock_360_nse_hdr_history",
   "position": {
-    "x": 20,
-    "y": 862,
-    "z": 46,
-    "height": 28,
-    "width": 1880,
-    "tabOrder": 46
+    "x": 16,
+    "y": 864.00000000000011,
+    "z": 44000,
+    "height": 32,
+    "width": 304,
+    "tabOrder": 44000
   },
   "visual": {
     "visualType": "textbox",

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "6024ab85cb9af1feba81",
+  "displayName": "Str1- NASDAQ ML",
+  "displayOption": "FitToWidth",
+  "height": 1500,
+  "width": 2000,
+  "pageBinding": {
+    "name": "cabc456edd0f1d74583e",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  }
+}

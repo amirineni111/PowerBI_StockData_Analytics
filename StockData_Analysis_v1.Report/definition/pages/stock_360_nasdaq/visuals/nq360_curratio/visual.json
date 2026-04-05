@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "nq360_curratio",
   "position": {
     "x": 330,
     "y": 504,
-    "z": 25,
+    "z": 25000,
     "height": 90,
     "width": 295,
-    "tabOrder": 25
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "card",

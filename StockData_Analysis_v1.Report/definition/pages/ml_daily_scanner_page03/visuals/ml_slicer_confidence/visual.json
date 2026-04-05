@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ml_slicer_confidence",
   "position": {
-    "x": 1670,
-    "y": 620,
-    "z": 16,
-    "height": 170,
-    "width": 230,
-    "tabOrder": 16
+    "x": 1616,
+    "y": 16,
+    "z": 13000,
+    "height": 96,
+    "width": 239.99999999999997,
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "slicer",
@@ -34,6 +34,52 @@
         }
       }
     },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d26b835f8d008c2d6a86",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "high_confidence"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

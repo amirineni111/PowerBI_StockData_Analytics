@@ -1,0 +1,286 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "651c2b93f699243e779d",
+  "position": {
+    "x": 16,
+    "y": 336,
+    "z": 4000,
+    "height": 960,
+    "width": 1887.9999999999998,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_master"
+                    }
+                  },
+                  "Property": "symbol"
+                }
+              },
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prediction_date"
+                }
+              },
+              "queryRef": "forex_ml_predictions.prediction_date",
+              "nativeQueryRef": "prediction_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "predicted_signal"
+                }
+              },
+              "queryRef": "forex_ml_predictions.predicted_signal",
+              "nativeQueryRef": "predicted_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "signal_confidence"
+                }
+              },
+              "queryRef": "forex_ml_predictions.signal_confidence",
+              "nativeQueryRef": "signal_confidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prob_buy"
+                }
+              },
+              "queryRef": "forex_ml_predictions.prob_buy",
+              "nativeQueryRef": "prob_buy"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prob_sell"
+                }
+              },
+              "queryRef": "forex_ml_predictions.prob_sell",
+              "nativeQueryRef": "prob_sell"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prob_hold"
+                }
+              },
+              "queryRef": "Sum(forex_ml_predictions.prob_hold)",
+              "nativeQueryRef": "prob_hold"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "forex_ml_predictions.close_price",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "model_name"
+                }
+              },
+              "queryRef": "forex_ml_predictions.model_name",
+              "nativeQueryRef": "model_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "direction_correct_1d"
+                }
+              },
+              "queryRef": "forex_ml_predictions.direction_correct_1d",
+              "nativeQueryRef": "direction_correct_1d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "direction_correct_5d"
+                }
+              },
+              "queryRef": "forex_ml_predictions.direction_correct_5d",
+              "nativeQueryRef": "direction_correct_5d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "actual_return_1d"
+                }
+              },
+              "queryRef": "Sum(forex_ml_predictions.actual_return_1d)",
+              "nativeQueryRef": "actual_return_1d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "actual_return_5d"
+                }
+              },
+              "queryRef": "Sum(forex_ml_predictions.actual_return_5d)",
+              "nativeQueryRef": "actual_return_5d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "actual_return_10d"
+                }
+              },
+              "queryRef": "Sum(forex_ml_predictions.actual_return_10d)",
+              "nativeQueryRef": "actual_return_10d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "forex_ml_predictions"
+                    }
+                  },
+                  "Property": "prediction_accuracy"
+                }
+              },
+              "queryRef": "forex_ml_predictions.prediction_accuracy",
+              "nativeQueryRef": "prediction_accuracy"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "forex_ml_predictions"
+                  }
+                },
+                "Property": "prediction_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

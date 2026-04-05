@@ -1,0 +1,450 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "cd10b8c4050c38281e94",
+  "position": {
+    "x": 1184,
+    "y": 16,
+    "z": 4000,
+    "height": 384,
+    "width": 768,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_nse_stochastic.trading_date",
+              "nativeQueryRef": "trading_date1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_nse_stochastic.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_trade_signal"
+                }
+              },
+              "queryRef": "technical_nse_stochastic.stoch_trade_signal",
+              "nativeQueryRef": "stoch_trade_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_status"
+                }
+              },
+              "queryRef": "technical_nse_stochastic.stoch_status",
+              "nativeQueryRef": "stoch_status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_crossover"
+                }
+              },
+              "queryRef": "technical_nse_stochastic.stoch_crossover",
+              "nativeQueryRef": "stoch_crossover"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "momentum_strength"
+                }
+              },
+              "queryRef": "Sum(technical_nse_stochastic.momentum_strength)",
+              "nativeQueryRef": "momentum_strength"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "extreme_zone_distance"
+                }
+              },
+              "queryRef": "Sum(technical_nse_stochastic.extreme_zone_distance)",
+              "nativeQueryRef": "extreme_zone_distance"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_5d_d"
+                }
+              },
+              "queryRef": "Sum(technical_nse_stochastic.stoch_5d_d)",
+              "nativeQueryRef": "stoch_5d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_5d_k"
+                }
+              },
+              "queryRef": "Sum(technical_nse_stochastic.stoch_5d_k)",
+              "nativeQueryRef": "stoch_5d_k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_14d_d"
+                }
+              },
+              "queryRef": "Sum(technical_nse_stochastic.stoch_14d_d)",
+              "nativeQueryRef": "stoch_14d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_14d_k"
+                }
+              },
+              "queryRef": "Sum(technical_nse_stochastic.stoch_14d_k)",
+              "nativeQueryRef": "stoch_14d_k"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_21d_d"
+                }
+              },
+              "queryRef": "Sum(technical_nse_stochastic.stoch_21d_d)",
+              "nativeQueryRef": "stoch_21d_d"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_nse_stochastic"
+                    }
+                  },
+                  "Property": "stoch_21d_k"
+                }
+              },
+              "queryRef": "Sum(technical_nse_stochastic.stoch_21d_k)",
+              "nativeQueryRef": "stoch_21d_k"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_nse_stochastic"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stochastic Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "888ecf03f125e9a9ded8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "32998dc18686b4294842",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a2a2f63269563dc14cdc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_trade_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "db146c823663060fb4f0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8fd88addcabaf6b10123",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_crossover"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2815cba598458d4868f3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "momentum_strength"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "933c7d047fbf7ebd06c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "extreme_zone_distance"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "150091a342e85e5d2974",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_5d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "48eb46cf480d5b686622",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_5d_k"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e270caf8b5887caa8c99",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_14d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3d65c3bcb1402a48566d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_14d_k"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "be6e67b711a02cafc036",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_21d_d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "834bd4f070da4ed47885",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_nse_stochastic"
+              }
+            },
+            "Property": "stoch_21d_k"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

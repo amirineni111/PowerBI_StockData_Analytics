@@ -234,6 +234,7 @@ table forex_ml_predictions
 
 	partition forex_ml_predictions = m
 		mode: import
+		queryGroup: ml_tables
 		source =
 				let
 				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
@@ -242,4 +243,6 @@ table forex_ml_predictions
 				    dbo_forex_ml_predictions
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

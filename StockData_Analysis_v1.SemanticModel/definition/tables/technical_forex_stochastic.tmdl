@@ -1,0 +1,158 @@
+table technical_forex_stochastic
+	lineageTag: 211c6bae-51f2-49c0-9fe3-c867cd26eac6
+
+	column ticker
+		dataType: string
+		lineageTag: 00e4ddcf-97ac-4b22-8665-b8cfb106a985
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: f151d94e-93fd-47c6-b4e8-086081c856d9
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column close_price
+		dataType: double
+		lineageTag: 63b4ec19-5ba7-4ea9-9d42-99feb220685f
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_5d_k
+		dataType: double
+		lineageTag: 251ef0ba-862d-414c-a44e-619f479f5b28
+		summarizeBy: sum
+		sourceColumn: stoch_5d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_5d_d
+		dataType: double
+		lineageTag: 2ffa349f-7df9-4d95-a65d-93c7adf59b05
+		summarizeBy: sum
+		sourceColumn: stoch_5d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_14d_k
+		dataType: double
+		lineageTag: dc5b2463-6a70-4f9f-a956-d1e714d2f084
+		summarizeBy: sum
+		sourceColumn: stoch_14d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_14d_d
+		dataType: double
+		lineageTag: 242b833e-827d-4b1d-9aaf-f09623e87987
+		summarizeBy: sum
+		sourceColumn: stoch_14d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_21d_k
+		dataType: double
+		lineageTag: 8eb6aa03-c6a7-463e-943a-4845b3164305
+		summarizeBy: sum
+		sourceColumn: stoch_21d_k
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_21d_d
+		dataType: double
+		lineageTag: ef579a21-d5c0-476d-bb76-46a83d6350f2
+		summarizeBy: sum
+		sourceColumn: stoch_21d_d
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stoch_status
+		dataType: string
+		lineageTag: a47eed9e-c53a-4925-a738-0ff3edd75701
+		summarizeBy: none
+		sourceColumn: stoch_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column stoch_crossover
+		dataType: string
+		lineageTag: 53ac1a66-f226-4860-9afc-0a7bf145e626
+		summarizeBy: none
+		sourceColumn: stoch_crossover
+
+		annotation SummarizationSetBy = Automatic
+
+	column stoch_trade_signal
+		dataType: string
+		lineageTag: f948a975-e727-4b69-a8ee-fd0f23f06065
+		summarizeBy: none
+		sourceColumn: stoch_trade_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column extreme_zone_distance
+		dataType: double
+		lineageTag: 8f351a12-8344-4f15-8dd3-8e49e7312488
+		summarizeBy: sum
+		sourceColumn: extreme_zone_distance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column momentum_strength
+		dataType: double
+		lineageTag: 09b53f4e-0313-4034-9cd9-59cba05b25aa
+		summarizeBy: sum
+		sourceColumn: momentum_strength
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition technical_forex_stochastic = m
+		mode: import
+		queryGroup: technical_data_tables
+		source = ```
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="forex_stochastic"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
+				        Date.IsInPreviousNDays([trading_date], 30) or 
+				        Date.IsInCurrentDay([trading_date])
+				    )
+				
+				in
+				    #"Filtered Rows"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

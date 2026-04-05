@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "4427397c42b901968b76",
+  "displayName": "NSE-Master Scoring Trend",
+  "displayOption": "FitToWidth",
+  "height": 1300,
+  "width": 2000,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f4dba76eb55043ed7b87",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "55cb6d818d1a27adb7bd",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "0d7ff1a9bbe8dbaa0b98",
+        "boundFilter": "f4dba76eb55043ed7b87",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  },
+  "visibility": "HiddenInViewMode"
+}

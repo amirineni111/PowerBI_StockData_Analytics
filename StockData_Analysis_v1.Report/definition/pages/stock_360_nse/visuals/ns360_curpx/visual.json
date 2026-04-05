@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ns360_curpx",
   "position": {
     "x": 20,
     "y": 374,
-    "z": 17,
+    "z": 17000,
     "height": 90,
     "width": 295,
-    "tabOrder": 17
+    "tabOrder": 17000
   },
   "visual": {
     "visualType": "card",

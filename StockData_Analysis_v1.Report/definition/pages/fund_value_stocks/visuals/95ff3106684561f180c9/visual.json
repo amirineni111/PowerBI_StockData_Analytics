@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "95ff3106684561f180c9",
   "position": {
     "x": 1616,
     "y": 656,
-    "z": 16,
+    "z": 10000,
     "height": 96,
     "width": 192,
-    "tabOrder": 16
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b2cafd2ee45d114d8eb9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Avg ROE"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

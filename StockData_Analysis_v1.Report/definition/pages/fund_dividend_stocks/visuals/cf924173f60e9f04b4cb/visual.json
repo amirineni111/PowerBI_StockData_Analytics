@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "cf924173f60e9f04b4cb",
   "position": {
     "x": 1695.9999999999998,
     "y": 224,
-    "z": 13,
+    "z": 7000,
     "height": 96,
     "width": 192,
-    "tabOrder": 13
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "card",
@@ -67,23 +67,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4ff9e3698ed4e7073f47",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Excellent Dividend Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

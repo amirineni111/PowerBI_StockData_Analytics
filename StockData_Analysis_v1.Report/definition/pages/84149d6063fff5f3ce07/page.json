@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "84149d6063fff5f3ce07",
+  "displayName": "Str3-NASDAQ-Technical-Signal Validation & Back testing",
+  "displayOption": "FitToWidth",
+  "height": 1300,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0ee60dbae38cf451de42",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "41ab1d4c191a7cbc7bc5",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "88e757961ff57d679ce1",
+        "boundFilter": "0ee60dbae38cf451de42",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        }
+      }
+    ],
+    "referenceScope": "CrossReport",
+    "acceptsFilterContext": "None"
+  }
+}

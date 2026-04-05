@@ -130,23 +130,21 @@ table nse_500_fundamentals
 
 	column profit_margin
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 28b807be-c3d7-4c2e-afc4-96c536d9e23f
 		summarizeBy: sum
 		sourceColumn: profit_margin
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column operating_margin
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 145162fd-57fc-4803-b8b5-631b968930e5
 		summarizeBy: sum
 		sourceColumn: operating_margin
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column gross_margin
 		dataType: double
@@ -160,13 +158,12 @@ table nse_500_fundamentals
 
 	column return_on_equity
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 8bac46bf-5d56-42d7-99ef-6f848f1a3265
 		summarizeBy: sum
 		sourceColumn: return_on_equity
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column return_on_assets
 		dataType: double
@@ -199,23 +196,21 @@ table nse_500_fundamentals
 
 	column revenue_growth
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 6c8ff0ad-e82d-4f4c-bb0d-bc8f5ef8e2a1
 		summarizeBy: sum
 		sourceColumn: revenue_growth
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column earnings_growth
 		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 5fdc42ff-083d-49ac-9926-eeea41f99cdd
 		summarizeBy: sum
 		sourceColumn: earnings_growth
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column dividend_rate
 		dataType: double

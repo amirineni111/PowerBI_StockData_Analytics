@@ -1,0 +1,338 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "67b7132caa16c3f43832",
+  "position": {
+    "x": 16,
+    "y": 432,
+    "z": 5000,
+    "height": 495.99999999999994,
+    "width": 1600,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_forex_ema_sma_view.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "symbol"
+                }
+              },
+              "queryRef": "technical_forex_ema_sma_view.symbol",
+              "nativeQueryRef": "symbol"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_forex_ema_sma_view.close_price)",
+              "nativeQueryRef": "close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "SMA_20"
+                }
+              },
+              "queryRef": "Sum(technical_forex_ema_sma_view.SMA_20)",
+              "nativeQueryRef": "SMA_20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "SMA_50"
+                }
+              },
+              "queryRef": "Sum(technical_forex_ema_sma_view.SMA_50)",
+              "nativeQueryRef": "SMA_50"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "EMA_20"
+                }
+              },
+              "queryRef": "Sum(technical_forex_ema_sma_view.EMA_20)",
+              "nativeQueryRef": "EMA_20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "EMA_50"
+                }
+              },
+              "queryRef": "Sum(technical_forex_ema_sma_view.EMA_50)",
+              "nativeQueryRef": "EMA_50"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "EMA_100"
+                }
+              },
+              "queryRef": "Sum(technical_forex_ema_sma_view.EMA_100)",
+              "nativeQueryRef": "EMA_100"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_ema_sma_view"
+                    }
+                  },
+                  "Property": "EMA_200"
+                }
+              },
+              "queryRef": "Sum(technical_forex_ema_sma_view.EMA_200)",
+              "nativeQueryRef": "EMA_200"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_forex_ema_sma_view"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'SMA_EMA Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "513b0368203ee0244c4a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0b5da972eeef64f848d8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3b9451d47da498610f37",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "66990ca7c91ee2fb12e6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "SMA_20"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "62e258369b1e4525f16e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "SMA_50"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "99b5349b00cf9a7c6df1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "EMA_20"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "71ef68b4ddf3c2216983",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "EMA_50"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c982c0d9d793638a4fa4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "EMA_100"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ae9f739a3c2939eb7b54",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_ema_sma_view"
+              }
+            },
+            "Property": "EMA_200"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

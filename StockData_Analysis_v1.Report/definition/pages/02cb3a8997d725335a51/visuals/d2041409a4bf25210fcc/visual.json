@@ -1,0 +1,254 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "d2041409a4bf25210fcc",
+  "position": {
+    "x": 16,
+    "y": 944,
+    "z": 6000,
+    "height": 495.99999999999994,
+    "width": 720,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_fibonacci"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "technical_forex_fibonacci.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_fibonacci"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "technical_forex_fibonacci.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_fibonacci"
+                    }
+                  },
+                  "Property": "fib_trade_signal"
+                }
+              },
+              "queryRef": "technical_forex_fibonacci.fib_trade_signal",
+              "nativeQueryRef": "fib_trade_signal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_fibonacci"
+                    }
+                  },
+                  "Property": "fib_position"
+                }
+              },
+              "queryRef": "technical_forex_fibonacci.fib_position",
+              "nativeQueryRef": "fib_position"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_fibonacci"
+                    }
+                  },
+                  "Property": "distance_to_nearest_fib_pct"
+                }
+              },
+              "queryRef": "Sum(technical_forex_fibonacci.distance_to_nearest_fib_pct)",
+              "nativeQueryRef": "distance_to_nearest_fib_pct"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_fibonacci"
+                    }
+                  },
+                  "Property": "close_price"
+                }
+              },
+              "queryRef": "Sum(technical_forex_fibonacci.close_price)",
+              "nativeQueryRef": "close_price"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "technical_forex_fibonacci"
+                  }
+                },
+                "Property": "trading_date"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fibonacci Data'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0.6
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ef42400476ecb5daba9d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_fibonacci"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a229c76f5bf237ca0974",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_fibonacci"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ae359b9e58b286ead272",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_fibonacci"
+              }
+            },
+            "Property": "fib_trade_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "98cec61c98bca7304f1c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_fibonacci"
+              }
+            },
+            "Property": "fib_position"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "38de4238a3e316610544",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_fibonacci"
+              }
+            },
+            "Property": "distance_to_nearest_fib_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a95dbea299132473e9b3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "technical_forex_fibonacci"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

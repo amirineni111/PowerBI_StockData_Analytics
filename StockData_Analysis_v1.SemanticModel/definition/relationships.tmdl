@@ -430,3 +430,7 @@ relationship 88a7a50c-0761-da82-962f-da158f3ef3d6
 	fromColumn: Forex_vw_PowerBI_AI_Technical_Combos.ticker
 	toColumn: forex_master.symbol
 
+relationship a7389882-dfbb-2025-643f-b495a07b0ddd
+	fromColumn: technical_forex_support_resistance.ticker
+	toColumn: forex_master.symbol
+

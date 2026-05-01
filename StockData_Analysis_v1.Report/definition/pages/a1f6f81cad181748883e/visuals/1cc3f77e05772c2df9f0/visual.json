@@ -3,10 +3,10 @@
   "name": "1cc3f77e05772c2df9f0",
   "position": {
     "x": 16,
-    "y": 492,
+    "y": 412.00000000000006,
     "z": 4000,
-    "height": 1008,
-    "width": 1888,
+    "height": 1088,
+    "width": 1888.0000000000002,
     "tabOrder": 4000
   },
   "visual": {
@@ -286,5 +286,247 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "063778dc140d100440e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b20069a509165a35e589",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "company"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c82674ca0427d86ae0b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7b5e343edb103632559d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "predicted_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8c0d00ee83c2d2264ab4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "confidence_percentage"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "35ae8a3c4b0687cc915b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "buy_probability"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1517278d6092e72a6b60",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "sell_probability"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c5fe80bda8d38273d707",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "24944dbd522b7562d2b8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "rsi"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "66008f45b7a784887122",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "rsi_category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2f875526665811e90487",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "direction_correct_1d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "312e1ef3c89c3b04b22a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "direction_correct_5d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9b78bb3905804060e08b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "actual_return_1d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ace8ef74593850ad9d20",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "actual_return_5d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5eda2cc4d5d50d98caed",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "actual_return_10d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "63d8ef10534131617481",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7e85ffae4acd433b4690",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "signal_strength"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

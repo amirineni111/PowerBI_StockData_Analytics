@@ -1,9 +1,9 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "075de51b4e0dce91e757",
   "position": {
-    "x": 932.74939172749373,
-    "y": 1.5571776155717725,
+    "x": 16,
+    "y": 224,
     "z": 14000,
     "height": 128,
     "width": 384,
@@ -136,5 +136,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4c78ba01bd505aac0357",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

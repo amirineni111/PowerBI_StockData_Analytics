@@ -1,7 +1,7 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "highlows_nasdaq",
-  "displayName": "52W & Lifetime HighLow - NASDAQ",
+  "displayName": "NASDAQ-52W & Lifetime HighLow",
   "displayOption": "FitToWidth",
   "height": 1600,
   "width": 2000

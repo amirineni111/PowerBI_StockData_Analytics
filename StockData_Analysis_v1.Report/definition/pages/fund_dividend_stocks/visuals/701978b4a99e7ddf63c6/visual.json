@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "701978b4a99e7ddf63c6",
   "position": {
-    "x": 915.62043795620389,
-    "y": 153.34306569343059,
+    "x": 608,
+    "y": 256,
     "z": 13000,
-    "height": 128,
+    "height": 96,
     "width": 384,
     "tabOrder": 13000
   },
@@ -136,5 +136,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0b8d5b260ba9c070c37c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "d2041409a4bf25210fcc",
   "position": {
     "x": 16,
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "technical_forex_fibonacci"
+                      "Entity": "forex_master"
                     }
                   },
-                  "Property": "ticker"
+                  "Property": "symbol"
                 }
               },
-              "queryRef": "technical_forex_fibonacci.ticker",
-              "nativeQueryRef": "ticker"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol"
             },
             {
               "field": {
@@ -180,20 +180,6 @@
         "type": "Categorical"
       },
       {
-        "name": "a229c76f5bf237ca0974",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "technical_forex_fibonacci"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "ae359b9e58b286ead272",
         "field": {
           "Column": {
@@ -248,6 +234,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "f04248e0b562cba54217",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

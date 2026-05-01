@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "663ce0d22c7dddf571a0",
   "position": {
-    "x": 1120,
-    "y": 128,
+    "x": 800,
+    "y": 32,
     "z": 12000,
     "height": 144,
     "width": 160,
@@ -50,5 +50,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "110b193440e76cab6053",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "rsi_category"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

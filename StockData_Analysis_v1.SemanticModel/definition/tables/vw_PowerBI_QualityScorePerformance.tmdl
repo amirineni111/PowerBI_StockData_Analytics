@@ -1,0 +1,87 @@
+table vw_PowerBI_QualityScorePerformance
+	lineageTag: d4bd77ad-347d-40ad-a1be-acbdcd662a9c
+
+	column market
+		dataType: string
+		summarizeBy: none
+		sourceColumn: market
+
+	column score_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: score_type
+
+	column snapshot_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+	column score_rank
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: score_rank
+
+	column ticker
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ticker
+
+	column company_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: company_name
+
+	column score
+		dataType: int64
+		formatString: 0
+		summarizeBy: none
+		sourceColumn: score
+
+	column selected_trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		summarizeBy: none
+		sourceColumn: selected_trading_date
+
+	column selected_close_price
+		dataType: double
+		formatString: #,##0.00
+		summarizeBy: none
+		sourceColumn: selected_close_price
+
+	column current_trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		summarizeBy: none
+		sourceColumn: current_trading_date
+
+	column current_close_price
+		dataType: double
+		formatString: #,##0.00
+		summarizeBy: none
+		sourceColumn: current_close_price
+
+	column price_change
+		dataType: double
+		formatString: #,##0.00
+		summarizeBy: none
+		sourceColumn: price_change
+
+	column return_pct
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		summarizeBy: none
+		sourceColumn: return_pct
+
+	partition vw_PowerBI_QualityScorePerformance = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="SELECT market, score_type, snapshot_date, score_rank, ticker, company_name, score, selected_trading_date, selected_close_price, current_trading_date, current_close_price, price_change, return_pct FROM dbo.vw_PowerBI_FundamentalScorePerformance WHERE score_type = 'Quality'"])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

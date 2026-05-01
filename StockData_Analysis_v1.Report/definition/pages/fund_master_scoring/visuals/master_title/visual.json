@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "master_title",
   "position": {
     "x": 16,
     "y": 16,
     "z": 0,
-    "height": 112,
+    "height": 96,
     "width": 1888,
     "tabOrder": 0
   },

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "8bf4c6349b6ed402299d",
   "position": {
     "x": 1184,
@@ -34,28 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "technical_forex_bb_signals"
+                      "Entity": "forex_master"
                     }
                   },
                   "Property": "symbol"
                 }
               },
-              "queryRef": "technical_forex_bb_signals.symbol",
-              "nativeQueryRef": "symbol"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "technical_forex_bb_signals"
-                    }
-                  },
-                  "Property": "SMA_20"
-                }
-              },
-              "queryRef": "Sum(technical_forex_bb_signals.SMA_20)",
-              "nativeQueryRef": "SMA_20"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol1"
             },
             {
               "field": {
@@ -70,6 +56,20 @@
               },
               "queryRef": "Sum(technical_forex_bb_signals.Lower_Band)",
               "nativeQueryRef": "Lower_Band"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "technical_forex_bb_signals"
+                    }
+                  },
+                  "Property": "SMA_20"
+                }
+              },
+              "queryRef": "Sum(technical_forex_bb_signals.SMA_20)",
+              "nativeQueryRef": "SMA_20"
             },
             {
               "field": {
@@ -194,20 +194,6 @@
         "type": "Categorical"
       },
       {
-        "name": "626cee2016c73a5942e4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "technical_forex_bb_signals"
-              }
-            },
-            "Property": "symbol"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "e6960272e4d99fc8b1e9",
         "field": {
           "Column": {
@@ -264,7 +250,7 @@
         "type": "Advanced"
       },
       {
-        "name": "25fe15bcccaa485bd89a",
+        "name": "d6c346c8e654b6d8e1ec",
         "field": {
           "Column": {
             "Expression": {
@@ -276,6 +262,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "37eda81ae0d3b3bb9212",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

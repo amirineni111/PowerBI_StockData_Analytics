@@ -57,11 +57,36 @@
                   "Value": "true"
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "28aa456e938e94ee0cea",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_nse_trading_predictions"
+              }
+            },
+            "Property": "confidence_percentage"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

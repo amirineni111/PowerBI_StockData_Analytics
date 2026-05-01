@@ -337,6 +337,34 @@ table nasdaq_fair_value
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column return_on_assets
+		dataType: double
+		lineageTag: 3f657cd7-4c53-4692-9e17-027d62166bdc
+		summarizeBy: sum
+		sourceColumn: return_on_assets
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column free_cashflow
+		dataType: int64
+		formatString: 0
+		lineageTag: 444b77f4-8e44-4b8e-bb9e-85beb4804044
+		summarizeBy: sum
+		sourceColumn: free_cashflow
+
+		annotation SummarizationSetBy = Automatic
+
+	column operating_cashflow
+		dataType: int64
+		formatString: 0
+		lineageTag: e9580961-64f8-43a2-a70b-a7ae4b6408d9
+		summarizeBy: sum
+		sourceColumn: operating_cashflow
+
+		annotation SummarizationSetBy = Automatic
+
 	partition nasdaq_fair_value = m
 		mode: import
 		source =

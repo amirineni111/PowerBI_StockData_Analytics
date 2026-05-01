@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "121131107e29df44d932",
   "position": {
     "x": 16,
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "technical_forex_support_resistance"
+                      "Entity": "forex_master"
                     }
                   },
-                  "Property": "ticker"
+                  "Property": "symbol"
                 }
               },
-              "queryRef": "technical_forex_support_resistance.ticker",
-              "nativeQueryRef": "ticker1"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol"
             },
             {
               "field": {
@@ -320,20 +320,6 @@
         "type": "Categorical"
       },
       {
-        "name": "680fe5cd1b5fb0b33ea7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "technical_forex_support_resistance"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "19a2acfe1cd2d18c005f",
         "field": {
           "Column": {
@@ -472,6 +458,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "53237590058030d87562",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

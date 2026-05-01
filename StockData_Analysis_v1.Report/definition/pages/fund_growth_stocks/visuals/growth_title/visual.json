@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "growth_title",
   "position": {
     "x": 16,
     "y": 16,
     "z": 0,
-    "height": 96,
+    "height": 128,
     "width": 864,
     "tabOrder": 0
   },
@@ -23,7 +23,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "24px"
+                      "fontSize": "16pt"
                     }
                   }
                 ]
@@ -35,7 +35,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px"
+                      "fontSize": "16pt"
                     }
                   }
                 ]
@@ -46,7 +46,7 @@
                     "value": "• Revenue Growth > 15% YoY  • Earnings Growth > 15% YoY  • PEG Ratio < 1.5 (growth at reasonable price)  • ROE > 15% (profitable growth)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px"
+                      "fontSize": "16pt"
                     }
                   }
                 ]

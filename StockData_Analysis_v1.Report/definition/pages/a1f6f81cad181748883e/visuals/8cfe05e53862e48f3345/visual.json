@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "8cfe05e53862e48f3345",
   "position": {
-    "x": 210,
-    "y": 80,
+    "x": 207.99999999999997,
+    "y": 144,
     "z": 2000,
-    "height": 100,
-    "width": 180,
+    "height": 96,
+    "width": 176,
     "tabOrder": 2000
   },
   "visual": {
@@ -49,5 +49,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "35e3407e1e01a0ec3cde",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "ML NSE Sell Signals"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

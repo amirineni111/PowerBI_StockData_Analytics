@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "67b7132caa16c3f43832",
   "position": {
     "x": 16,
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "technical_forex_ema_sma_view"
+                      "Entity": "forex_master"
                     }
                   },
                   "Property": "symbol"
                 }
               },
-              "queryRef": "technical_forex_ema_sma_view.symbol",
-              "nativeQueryRef": "symbol"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol1"
             },
             {
               "field": {
@@ -208,20 +208,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "513b0368203ee0244c4a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "technical_forex_ema_sma_view"
-              }
-            },
-            "Property": "symbol"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "0b5da972eeef64f848d8",
         "field": {
           "Column": {
@@ -332,6 +318,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "c4f75fcacd81c1615928",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

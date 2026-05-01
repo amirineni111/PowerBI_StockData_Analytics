@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "48b68e5329f0519cb69e",
   "position": {
     "x": 752,
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "technical_forex_atr_spikes"
+                      "Entity": "forex_master"
                     }
                   },
                   "Property": "symbol"
                 }
               },
-              "queryRef": "technical_forex_atr_spikes.symbol",
-              "nativeQueryRef": "symbol"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol1"
             },
             {
               "field": {
@@ -152,20 +152,6 @@
         "type": "Categorical"
       },
       {
-        "name": "f5b572d4db81cb90a20d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "technical_forex_atr_spikes"
-              }
-            },
-            "Property": "symbol"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "ad8638c1723948676532",
         "field": {
           "Column": {
@@ -192,6 +178,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "08cf8b13eb559b9454a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

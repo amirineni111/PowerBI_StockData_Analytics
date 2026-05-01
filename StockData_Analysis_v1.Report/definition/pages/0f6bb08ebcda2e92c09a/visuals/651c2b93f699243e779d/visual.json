@@ -282,5 +282,219 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "00f35dc009250a2a36dc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4383de54e2662674c79a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8118835d5259e49461a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "predicted_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3cf80e5e80c2a185d649",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "signal_confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1f31715eb9dd5b618a22",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prob_buy"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b67c1904071756a33691",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prob_sell"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "57c13a72acd27bb1a00d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prob_hold"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a431a2f027ae2ed69207",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4faeaa20c9517bc26100",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "model_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c29cc05aa9c70806eec8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "direction_correct_1d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "55df813f79e1138a7db9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "direction_correct_5d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9d4a000173c8233617d8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "actual_return_1d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9331c29aebb3936e6039",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "actual_return_5d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6b428f43ea9a5588c9bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "actual_return_10d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "69754386a933240b0e02",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_ml_predictions"
+              }
+            },
+            "Property": "prediction_accuracy"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

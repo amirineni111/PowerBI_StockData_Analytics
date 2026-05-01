@@ -229,6 +229,34 @@
         }
       }
     },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "stylePreset": [
         {
@@ -245,5 +273,219 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b8c044e09c90c067abb8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3fc40f0604ab9e10aec0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "days_ahead"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bf16e508bbb62c480149",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "current_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "00e9c28012a09a6e17b2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "predicted_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4a84d6e3bccbb00b7801",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "actual_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "b5e5e6f550a2692e820d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d78760055c3e8068b2d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "target_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "617e47e0341b69b08656",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "created_at"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a6d2c985a19706172160",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "direction_correct"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "798167e30bc101c00d20",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "model_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "387265de89a256789158",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "model_confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "180af89f80401091c285",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "percentage_error"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "09a9f5a963cb474766c5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "predicted_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6c2bc79277be700520b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "actual_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ab19a940a5819c1acd8d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NASDAQ_prediction_history"
+              }
+            },
+            "Property": "absolute_error"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "6951bce108b7e60592b7",
   "position": {
     "x": 752,
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "technical_forex_rsi_signals"
+                      "Entity": "forex_master"
                     }
                   },
                   "Property": "symbol"
                 }
               },
-              "queryRef": "technical_forex_rsi_signals.symbol",
-              "nativeQueryRef": "symbol"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol1"
             },
             {
               "field": {
@@ -152,20 +152,6 @@
         "type": "Categorical"
       },
       {
-        "name": "13b69f3d7bc0dcc867b5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "technical_forex_rsi_signals"
-              }
-            },
-            "Property": "symbol"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "139dee041e3b65fd2782",
         "field": {
           "Column": {
@@ -192,6 +178,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "64676fce1d419076b255",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "1fecb778d398f497f513",
   "position": {
     "x": 448,
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Forex_vw_PowerBI_AI_Technical_Combos"
+                      "Entity": "forex_master"
                     }
                   },
-                  "Property": "ticker"
+                  "Property": "symbol"
                 }
               },
-              "queryRef": "Forex_vw_PowerBI_AI_Technical_Combos.ticker",
-              "nativeQueryRef": "ticker"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol"
             },
             {
               "field": {
@@ -291,20 +291,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d006eea1fde067f8bddd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Forex_vw_PowerBI_AI_Technical_Combos"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "78babb716d234bd88873",
         "field": {
           "Column": {
@@ -513,6 +499,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "b43040684bb60d04bdd9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

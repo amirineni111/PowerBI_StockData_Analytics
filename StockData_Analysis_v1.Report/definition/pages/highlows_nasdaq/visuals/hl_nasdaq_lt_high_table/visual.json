@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "nasdaq_100_hist_data"
+                      "Entity": "nasdaq_top100"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "nasdaq_100_hist_data.ticker",
-              "nativeQueryRef": "Ticker"
+              "queryRef": "nasdaq_top100.ticker",
+              "nativeQueryRef": "ticker"
             },
             {
               "field": {
@@ -204,20 +204,6 @@
         "howCreated": "User"
       },
       {
-        "name": "f9a0b9c9d9e9f9099990",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nasdaq_100_hist_data"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "236fcf6a32228e248187",
         "field": {
           "Column": {
@@ -272,6 +258,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "4e70691f42f8aa18035d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

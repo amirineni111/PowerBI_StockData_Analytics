@@ -13,6 +13,10 @@
     "fund_value_stocks",
     "fund_quality_stocks",
     "fund_growth_stocks",
+    "score_value_performance",
+    "score_quality_performance",
+    "score_growth_performance",
+    "score_master_performance",
     "fund_dividend_stocks",
     "fund_garp_strategy",
     "turnaround_nasdaq",
@@ -47,5 +51,5 @@
     "highlows_nse",
     "highlows_nasdaq"
   ],
-  "activePageName": "turnaround_nse"
+  "activePageName": "1ad57ad4f444cf8c7924"
 }

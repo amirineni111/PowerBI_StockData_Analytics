@@ -264,7 +264,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "12D"
                 }
               }
             }
@@ -277,7 +277,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "12D"
                 }
               }
             }
@@ -286,5 +286,247 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "016ac5afc0212039c9d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7b5a218e0a1c48dc0020",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "company"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "449f146a681a13040856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f834fcc54b887ac1e839",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "predicted_signal"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5f268d5f0c0536b4093e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "confidence_percentage"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "822eb941298c467760be",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "buy_probability"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "73cd7454298a51eb64b0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "sell_probability"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e69e5e78d5404cc80d3e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4f0b75aa7b8a06071988",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "RSI"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d84004d0b38de23ce096",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "rsi_category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "852c73a0a107acb1b0c9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "direction_correct_1d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b844d18f34dbb8a42c75",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "direction_correct_5d"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9d952d1102096d0c0687",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "actual_return_1d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dd334067269ae02b37d9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "actual_return_5d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1259ca90043c0679863b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "actual_return_10d"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fb2a670a100345708081",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "45a986b5090683054ba0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ml_trading_predictions"
+              }
+            },
+            "Property": "signal_strength"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

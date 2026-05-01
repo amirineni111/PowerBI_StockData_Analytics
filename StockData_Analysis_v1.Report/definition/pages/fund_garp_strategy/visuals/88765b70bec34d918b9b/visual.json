@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "88765b70bec34d918b9b",
   "position": {
-    "x": 1344,
-    "y": 0,
+    "x": 416,
+    "y": 128,
     "z": 11000,
-    "height": 192,
+    "height": 288,
     "width": 256,
     "tabOrder": 11000
   },
@@ -112,7 +112,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "datetime'2026-02-14T00:00:00'"
+                                "Value": "datetime'2026-03-29T00:00:00'"
                               }
                             }
                           ]
@@ -189,5 +189,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9a09bf0b25425aea6cb4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_100_fundamentals"
+              }
+            },
+            "Property": "fetch_date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

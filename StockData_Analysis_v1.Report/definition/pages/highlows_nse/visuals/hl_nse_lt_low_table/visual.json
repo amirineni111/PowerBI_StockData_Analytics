@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "nse_500_hist_data"
+                      "Entity": "nse_500"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "nse_500_hist_data.ticker",
-              "nativeQueryRef": "Ticker"
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker"
             },
             {
               "field": {
@@ -204,20 +204,6 @@
         "howCreated": "User"
       },
       {
-        "name": "f5a0b5c5d5e5f5065556",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "nse_500_hist_data"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "73a95742c5503b9a3a00",
         "field": {
           "Column": {
@@ -272,6 +258,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "27132d8ff98d619f006e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

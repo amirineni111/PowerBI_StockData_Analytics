@@ -3,10 +3,10 @@
   "name": "a71034366d293f83f570",
   "position": {
     "x": 400,
-    "y": 80,
+    "y": 144,
     "z": 3000,
-    "height": 100,
-    "width": 180,
+    "height": 96,
+    "width": 176,
     "tabOrder": 3000
   },
   "visual": {
@@ -49,5 +49,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cae5b6f828e3c4ac1206",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "ML NSE Avg Confidence"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

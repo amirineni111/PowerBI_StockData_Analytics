@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "845b93f80b8ad2f255a9",
   "position": {
     "x": 1184,
@@ -34,14 +34,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "technical_forex_stochastic"
+                      "Entity": "forex_master"
                     }
                   },
-                  "Property": "ticker"
+                  "Property": "symbol"
                 }
               },
-              "queryRef": "technical_forex_stochastic.ticker",
-              "nativeQueryRef": "ticker1"
+              "queryRef": "forex_master.symbol",
+              "nativeQueryRef": "symbol"
             },
             {
               "field": {
@@ -306,20 +306,6 @@
         "type": "Categorical"
       },
       {
-        "name": "03cc4561116c725b1e2a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "technical_forex_stochastic"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "96c83baffdbb059faf68",
         "field": {
           "Column": {
@@ -486,6 +472,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "5408d45fa2e67d95383a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "forex_master"
+              }
+            },
+            "Property": "symbol"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

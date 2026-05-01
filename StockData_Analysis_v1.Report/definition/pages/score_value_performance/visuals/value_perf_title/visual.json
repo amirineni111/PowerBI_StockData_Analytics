@@ -1,0 +1,21 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "value_perf_title",
+  "position": { "x": 16, "y": 16, "z": 0, "height": 80, "width": 1888, "tabOrder": 0 },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              { "textRuns": [ { "value": "Value Score Performance", "textStyle": { "fontWeight": "bold", "fontFamily": "Segoe UI Semibold", "fontSize": "18pt" } } ] },
+              { "textRuns": [ { "value": "Top 10 NSE and NASDAQ stocks on the selected score date, with price change through the latest available close.", "textStyle": { "fontFamily": "Segoe UI", "fontSize": "11pt" } } ] }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

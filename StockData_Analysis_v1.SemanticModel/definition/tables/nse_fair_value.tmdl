@@ -337,6 +337,34 @@ table nse_fair_value
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column return_on_assets
+		dataType: double
+		lineageTag: 88ae803c-2d10-4554-baff-ba0d5a7399c9
+		summarizeBy: sum
+		sourceColumn: return_on_assets
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column free_cashflow
+		dataType: int64
+		formatString: 0
+		lineageTag: e0bae952-d64f-414b-8e61-7da4459c9a03
+		summarizeBy: sum
+		sourceColumn: free_cashflow
+
+		annotation SummarizationSetBy = Automatic
+
+	column operating_cashflow
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c6d94f8-cc69-4f35-bd0a-059f3acf84c9
+		summarizeBy: sum
+		sourceColumn: operating_cashflow
+
+		annotation SummarizationSetBy = Automatic
+
 	partition nse_fair_value = m
 		mode: import
 		source =

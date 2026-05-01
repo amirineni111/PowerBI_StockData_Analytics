@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "value_title",
   "position": {
     "x": 16,
     "y": 16,
     "z": 0,
-    "height": 96,
-    "width": 943.99999999999989,
+    "height": 144,
+    "width": 944,
     "tabOrder": 0
   },
   "visual": {
@@ -23,7 +23,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "24px"
+                      "fontSize": "16pt"
                     }
                   }
                 ]
@@ -35,7 +35,7 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "12px"
+                      "fontSize": "16pt"
                     }
                   }
                 ]
@@ -46,7 +46,7 @@
                     "value": "• P/E Ratio < 15 (undervalued)  • Price-to-Book < 1.5 (trading below book value)  • Price-to-Sales < 2 (revenue multiple)  • PEG Ratio < 1 (growth adjusted value)  • ROE > 15% (quality filter)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "11px"
+                      "fontSize": "16pt"
                     }
                   }
                 ]

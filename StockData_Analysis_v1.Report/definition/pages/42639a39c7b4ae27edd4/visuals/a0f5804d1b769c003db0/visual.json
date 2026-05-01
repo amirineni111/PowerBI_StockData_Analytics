@@ -229,6 +229,34 @@
         }
       }
     },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "stylePreset": [
         {
@@ -245,5 +273,219 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d14dd870923012109424",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b03b190360a8da175300",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "days_ahead"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5aa0355e13e139dc4870",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "current_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "39e8906f1d9d5b16a7d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "predicted_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "51dd92d405bdac807581",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "actual_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "03979619b8d886e40235",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "prediction_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8deb4a89c30aad1ec209",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "target_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "beae31e3e4074e4cee6d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "created_at"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9af4fb9d9826300e1523",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "direction_correct"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "66127d601c43dc4d7c40",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "model_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0a5e0bfec82c0d770389",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "model_confidence"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8a0f55dd93095563c877",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "percentage_error"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2e0c68de80d3a05861ad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "predicted_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fda4a782905b30eb8b29",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "actual_change_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f14720ff35d98777000d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ai_NSE_prediction_history"
+              }
+            },
+            "Property": "absolute_error"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

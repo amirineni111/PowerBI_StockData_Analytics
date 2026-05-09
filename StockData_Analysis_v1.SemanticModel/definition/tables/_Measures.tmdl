@@ -817,7 +817,7 @@ table _Measures
 		lineageTag: fa064-nse-avg-peg
 
 	measure 'NASDAQ Margin Improvement' =
-			VAR LatestDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
@@ -827,7 +827,7 @@ table _Measures
 		lineageTag: ta001-nasdaq-margin-improvement
 
 	measure 'NASDAQ Earnings Recovery' =
-			VAR LatestDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[earnings_growth]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[earnings_growth]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
@@ -837,7 +837,7 @@ table _Measures
 		lineageTag: ta002-nasdaq-earnings-recovery
 
 	measure 'NASDAQ Revenue Recovery' =
-			VAR LatestDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[revenue_growth]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[revenue_growth]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
@@ -847,7 +847,7 @@ table _Measures
 		lineageTag: ta003-nasdaq-revenue-recovery
 
 	measure 'NASDAQ ROE Recovery' =
-			VAR LatestDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[return_on_equity]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[return_on_equity]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
@@ -857,7 +857,7 @@ table _Measures
 		lineageTag: ta004-nasdaq-roe-recovery
 
 	measure 'NASDAQ Debt Improvement' =
-			VAR LatestDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[debt_to_equity]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[debt_to_equity]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
@@ -867,7 +867,7 @@ table _Measures
 		lineageTag: ta005-nasdaq-debt-improvement
 
 	measure 'NASDAQ FCF Turnaround' =
-			VAR LatestDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[free_cashflow]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[free_cashflow]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
@@ -877,7 +877,7 @@ table _Measures
 		lineageTag: ta006-nasdaq-fcf-turnaround
 
 	measure 'NASDAQ-Fwd vs Trailing PE Spread' =
-			VAR LatestDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
 			VAR FwdPE = CALCULATE(MAX(nasdaq_100_fundamentals[forward_pe]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			VAR TrailPE = CALCULATE(MAX(nasdaq_100_fundamentals[trailing_pe]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			RETURN IF(ISBLANK(FwdPE) || ISBLANK(TrailPE) || FwdPE <= 0 || TrailPE <= 0, BLANK(), (TrailPE - FwdPE) / TrailPE)
@@ -886,7 +886,7 @@ table _Measures
 		lineageTag: ta007-nasdaq-pe-rerating
 
 	measure 'NASDAQ Turnaround Score' =
-			VAR LatestDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
 			VAR CurrMargin = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
 			VAR PrevMargin = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
@@ -943,7 +943,7 @@ table _Measures
 		lineageTag: ta011-nasdaq-strong-turnaround-count
 
 	measure 'NSE Margin Improvement' =
-			VAR LatestDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[profit_margin]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[profit_margin]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
@@ -953,7 +953,7 @@ table _Measures
 		lineageTag: ta001-nse-margin-improvement
 
 	measure 'NSE Earnings Recovery' =
-			VAR LatestDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[earnings_growth]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[earnings_growth]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
@@ -963,7 +963,7 @@ table _Measures
 		lineageTag: ta002-nse-earnings-recovery
 
 	measure 'NSE Revenue Recovery' =
-			VAR LatestDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[revenue_growth]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[revenue_growth]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
@@ -973,7 +973,7 @@ table _Measures
 		lineageTag: ta003-nse-revenue-recovery
 
 	measure 'NSE ROE Recovery' =
-			VAR LatestDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[return_on_equity]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[return_on_equity]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
@@ -983,7 +983,7 @@ table _Measures
 		lineageTag: ta004-nse-roe-recovery
 
 	measure 'NSE Debt Improvement' =
-			VAR LatestDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[debt_to_equity]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[debt_to_equity]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
@@ -993,7 +993,7 @@ table _Measures
 		lineageTag: ta005-nse-debt-improvement
 
 	measure 'NSE FCF Turnaround' =
-			VAR LatestDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
 			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[free_cashflow]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[free_cashflow]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
@@ -1003,7 +1003,7 @@ table _Measures
 		lineageTag: ta006-nse-fcf-turnaround
 
 	measure 'NSE-Fwd vs Trailing PE Spread' =
-			VAR LatestDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
 			VAR FwdPE = CALCULATE(MAX(nse_500_fundamentals[forward_pe]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			VAR TrailPE = CALCULATE(MAX(nse_500_fundamentals[trailing_pe]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			RETURN IF(ISBLANK(FwdPE) || ISBLANK(TrailPE) || FwdPE <= 0 || TrailPE <= 0, BLANK(), (TrailPE - FwdPE) / TrailPE)
@@ -1012,7 +1012,7 @@ table _Measures
 		lineageTag: ta007-nse-pe-rerating
 
 	measure 'NSE Turnaround Score' =
-			VAR LatestDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
+			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
 			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
 			VAR CurrMargin = CALCULATE(MAX(nse_500_fundamentals[profit_margin]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
 			VAR PrevMargin = CALCULATE(MAX(nse_500_fundamentals[profit_margin]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
@@ -1413,6 +1413,209 @@ table _Measures
 		displayFolder: 52W Lifetime HighLow
 		lineageTag: hl016-nasdaq-is-lt-low
 
+	measure 'Price Move Start Date' =
+			VAR _ticker = SELECTEDVALUE(Price_Movement[ticker])
+			VAR _market = SELECTEDVALUE(Price_Movement[market])
+			RETURN
+			MINX(
+				FILTER(
+					ALLSELECTED(Price_Movement),
+					Price_Movement[ticker] = _ticker &&
+					Price_Movement[market] = _market &&
+					NOT ISBLANK(Price_Movement[close_price])
+				),
+				Price_Movement[trading_date]
+			)
+		formatString: mm/dd/yyyy
+		displayFolder: Price Movement
+		lineageTag: pm001-start-date
+
+	measure 'Price Move End Date' =
+			VAR _ticker = SELECTEDVALUE(Price_Movement[ticker])
+			VAR _market = SELECTEDVALUE(Price_Movement[market])
+			RETURN
+			MAXX(
+				FILTER(
+					ALLSELECTED(Price_Movement),
+					Price_Movement[ticker] = _ticker &&
+					Price_Movement[market] = _market &&
+					NOT ISBLANK(Price_Movement[close_price])
+				),
+				Price_Movement[trading_date]
+			)
+		formatString: mm/dd/yyyy
+		displayFolder: Price Movement
+		lineageTag: pm002-end-date
+
+	measure 'Price Move Start Price' =
+			VAR _ticker = SELECTEDVALUE(Price_Movement[ticker])
+			VAR _market = SELECTEDVALUE(Price_Movement[market])
+			RETURN
+			MAXX(
+				TOPN(
+					1,
+					FILTER(
+						ALLSELECTED(Price_Movement),
+						Price_Movement[ticker] = _ticker &&
+						Price_Movement[market] = _market &&
+						NOT ISBLANK(Price_Movement[close_price])
+					),
+					Price_Movement[trading_date], ASC
+				),
+				Price_Movement[close_price]
+			)
+		formatString: #,##0.00
+		displayFolder: Price Movement
+		lineageTag: pm003-start-price
+
+	measure 'Price Move End Price' =
+			VAR _ticker = SELECTEDVALUE(Price_Movement[ticker])
+			VAR _market = SELECTEDVALUE(Price_Movement[market])
+			RETURN
+			MAXX(
+				TOPN(
+					1,
+					FILTER(
+						ALLSELECTED(Price_Movement),
+						Price_Movement[ticker] = _ticker &&
+						Price_Movement[market] = _market &&
+						NOT ISBLANK(Price_Movement[close_price])
+					),
+					Price_Movement[trading_date], DESC
+				),
+				Price_Movement[close_price]
+			)
+		formatString: #,##0.00
+		displayFolder: Price Movement
+		lineageTag: pm004-end-price
+
+	measure 'Price Move Change' =
+			[Price Move End Price] - [Price Move Start Price]
+		formatString: #,##0.00
+		displayFolder: Price Movement
+		lineageTag: pm005-change
+
+	measure 'Price Move Growth %' =
+			DIVIDE([Price Move End Price] - [Price Move Start Price], [Price Move Start Price])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Price Movement
+		lineageTag: pm006-growth-pct
+
+	measure 'Price Move Direction' =
+			VAR _growth = [Price Move Growth %]
+			RETURN IF(ISBLANK(_growth), BLANK(), IF(_growth > 0, "Growth", IF(_growth < 0, "Down", "Flat")))
+		displayFolder: Price Movement
+		lineageTag: pm007-direction
+
+	measure 'Price Move Meets Growth Filter' =
+			VAR _threshold = SELECTEDVALUE(Price_Movement_Growth_Filter[growth_threshold_pct], 0)
+			VAR _growth = [Price Move Growth %]
+			RETURN
+			IF(
+				ISBLANK(_growth),
+				BLANK(),
+				IF(
+					_threshold > 0,
+					IF(_growth >= _threshold, 1, BLANK()),
+					IF(_threshold < 0, IF(_growth <= _threshold, 1, BLANK()), 1)
+				)
+			)
+		formatString: 0
+		displayFolder: Price Movement
+		lineageTag: pm008-growth-filter
+
+	measure 'NSE Turnaround Added Price' =
+			VAR _ticker = MAX(nse_500_fundamentals[ticker])
+			VAR _fetchDate = MAX(nse_500_fundamentals[fetch_date])
+			RETURN
+			MAXX(
+				TOPN(
+					1,
+					FILTER(
+						ALL(nse_500_hist_data),
+						nse_500_hist_data[ticker] = _ticker &&
+						nse_500_hist_data[trading_date] >= _fetchDate &&
+						NOT ISBLANK(nse_500_hist_data[close_price])
+					),
+					nse_500_hist_data[trading_date], ASC
+				),
+				nse_500_hist_data[close_price]
+			)
+		formatString: #,##0.00
+		displayFolder: Turnaround Analysis - NSE
+		lineageTag: ta013-nse-added-price
+
+	measure 'NSE Current Price' =
+			VAR _ticker = MAX(nse_500_fundamentals[ticker])
+			RETURN
+			MAXX(
+				TOPN(
+					1,
+					FILTER(
+						ALL(nse_500_hist_data),
+						nse_500_hist_data[ticker] = _ticker &&
+						NOT ISBLANK(nse_500_hist_data[close_price])
+					),
+					nse_500_hist_data[trading_date], DESC
+				),
+				nse_500_hist_data[close_price]
+			)
+		formatString: #,##0.00
+		displayFolder: Turnaround Analysis - NSE
+		lineageTag: ta014-nse-current-price
+
+	measure 'NSE Turnaround Price Growth %' =
+			DIVIDE([NSE Current Price] - [NSE Turnaround Added Price], [NSE Turnaround Added Price])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Turnaround Analysis - NSE
+		lineageTag: ta015-nse-price-growth
+
+	measure 'NASDAQ Turnaround Added Price' =
+			VAR _ticker = MAX(nasdaq_100_fundamentals[ticker])
+			VAR _fetchDate = MAX(nasdaq_100_fundamentals[fetch_date])
+			RETURN
+			MAXX(
+				TOPN(
+					1,
+					FILTER(
+						ALL(nasdaq_100_hist_data),
+						nasdaq_100_hist_data[ticker] = _ticker &&
+						nasdaq_100_hist_data[trading_date] >= _fetchDate &&
+						NOT ISBLANK(nasdaq_100_hist_data[close_price])
+					),
+					nasdaq_100_hist_data[trading_date], ASC
+				),
+				nasdaq_100_hist_data[close_price]
+			)
+		formatString: #,##0.00
+		displayFolder: Turnaround Analysis - NASDAQ
+		lineageTag: ta013-nasdaq-added-price
+
+	measure 'NASDAQ Current Price' =
+			VAR _ticker = MAX(nasdaq_100_fundamentals[ticker])
+			RETURN
+			MAXX(
+				TOPN(
+					1,
+					FILTER(
+						ALL(nasdaq_100_hist_data),
+						nasdaq_100_hist_data[ticker] = _ticker &&
+						NOT ISBLANK(nasdaq_100_hist_data[close_price])
+					),
+					nasdaq_100_hist_data[trading_date], DESC
+				),
+				nasdaq_100_hist_data[close_price]
+			)
+		formatString: #,##0.00
+		displayFolder: Turnaround Analysis - NASDAQ
+		lineageTag: ta014-nasdaq-current-price
+
+	measure 'NASDAQ Turnaround Price Growth %' =
+			DIVIDE([NASDAQ Current Price] - [NASDAQ Turnaround Added Price], [NASDAQ Turnaround Added Price])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Turnaround Analysis - NASDAQ
+		lineageTag: ta015-nasdaq-price-growth
+
 	partition _Measures = m
 		mode: import
 		source =
@@ -1423,4 +1626,5 @@ table _Measures
 				    #"Removed Columns"
 
 	annotation PBI_ResultType = Table
+
 

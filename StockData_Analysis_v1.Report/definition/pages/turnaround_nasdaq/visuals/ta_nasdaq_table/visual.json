@@ -182,6 +182,48 @@
               },
               "queryRef": "_Measures.NASDAQ PE Rerating",
               "nativeQueryRef": "PE Rerating"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NASDAQ Turnaround Added Price"
+                }
+              },
+              "queryRef": "_Measures.NASDAQ Turnaround Added Price",
+              "nativeQueryRef": "Price at Fetch Date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NASDAQ Current Price"
+                }
+              },
+              "queryRef": "_Measures.NASDAQ Current Price",
+              "nativeQueryRef": "Current Price"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NASDAQ Turnaround Price Growth %"
+                }
+              },
+              "queryRef": "_Measures.NASDAQ Turnaround Price Growth %",
+              "nativeQueryRef": "Price Growth %"
             }
           ]
         }
@@ -438,6 +480,48 @@
         "type": "Advanced"
       },
       {
+        "name": "ta_nasdaq_added_price_filter",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NASDAQ Turnaround Added Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ta_nasdaq_current_price_filter",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NASDAQ Current Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ta_nasdaq_price_growth_filter",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NASDAQ Turnaround Price Growth %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
         "name": "3f163c5c2b5acbb0e78e",
         "field": {
           "Measure": {
@@ -472,55 +556,6 @@
                         }
                       },
                       "Property": "NASDAQ_Show Selected Ticker"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "1L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "ta_nasdaq_latest_date_filter",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NASDAQ Is Latest Fund Date"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "_",
-              "Entity": "_Measures",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 0,
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "_"
-                        }
-                      },
-                      "Property": "NASDAQ Is Latest Fund Date"
                     }
                   },
                   "Right": {

@@ -1,0 +1,23 @@
+table Price_Movement_Growth_Filter
+	lineageTag: b882661c-49d8-487d-9c1a-a9200ef9f13b
+
+	column growth_threshold_pct
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: 3079a210-f311-4730-b149-24ea3aa83f34
+		summarizeBy: none
+		sourceColumn: growth_threshold_pct
+
+		annotation SummarizationSetBy = User
+
+	partition Price_Movement_Growth_Filter = m
+		mode: import
+		source =
+				let
+				    Source = List.Numbers(-100, 201, 1),
+				    TableFromList = Table.FromList(Source, Splitter.SplitByNothing(), {"growth_threshold_pct"}),
+				    AsPercent = Table.TransformColumns(TableFromList, {{"growth_threshold_pct", each _ / 100, type number}})
+				in
+				    AsPercent
+
+	annotation PBI_ResultType = Table

@@ -182,6 +182,48 @@
               },
               "queryRef": "_Measures.NSE PE Rerating",
               "nativeQueryRef": "PE Rerating"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NSE Turnaround Added Price"
+                }
+              },
+              "queryRef": "_Measures.NSE Turnaround Added Price",
+              "nativeQueryRef": "Price at Fetch Date"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NSE Current Price"
+                }
+              },
+              "queryRef": "_Measures.NSE Current Price",
+              "nativeQueryRef": "Current Price"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "NSE Turnaround Price Growth %"
+                }
+              },
+              "queryRef": "_Measures.NSE Turnaround Price Growth %",
+              "nativeQueryRef": "Price Growth %"
             }
           ]
         }
@@ -438,6 +480,48 @@
         "type": "Advanced"
       },
       {
+        "name": "ta_nse_added_price_filter",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NSE Turnaround Added Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ta_nse_current_price_filter",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NSE Current Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ta_nse_price_growth_filter",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NSE Turnaround Price Growth %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
         "name": "86e3a434c500275523c8",
         "field": {
           "Measure": {
@@ -472,55 +556,6 @@
                         }
                       },
                       "Property": "NSE_Show Selected Ticker"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "1L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "ta_nse_latest_date_filter",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NSE Is Latest Fund Date"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "_",
-              "Entity": "_Measures",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 0,
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "_"
-                        }
-                      },
-                      "Property": "NSE Is Latest Fund Date"
                     }
                   },
                   "Right": {

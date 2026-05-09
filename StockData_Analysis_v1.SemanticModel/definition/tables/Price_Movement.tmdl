@@ -1,0 +1,67 @@
+table Price_Movement
+	lineageTag: 35e25a8b-3e47-4926-a4f5-1b39562b5bd1
+
+	column market
+		dataType: string
+		lineageTag: 33bf3c95-df5b-4981-9935-85cae4793a52
+		summarizeBy: none
+		sourceColumn: market
+
+		annotation SummarizationSetBy = Automatic
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: eef3a2d2-7628-4c96-94e0-557cd4bde32d
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column ticker
+		dataType: string
+		lineageTag: 8c41205d-886c-4985-9f02-85b95a768a4b
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company
+		dataType: string
+		lineageTag: 676c1fe0-bd33-4ce6-a7a0-ffdb3377a44a
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column close_price
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 902a947c-1484-458a-b015-78e680c4ff91
+		summarizeBy: none
+		sourceColumn: close_price
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	partition Price_Movement = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    NSE = Table.SelectColumns(Source{[Schema="dbo",Item="nse_500_hist_data"]}[Data], {"trading_date", "ticker", "company", "close_price"}),
+				    NSEWithMarket = Table.AddColumn(NSE, "market", each "NSE", type text),
+				    NASDAQ = Table.SelectColumns(Source{[Schema="dbo",Item="nasdaq_100_hist_data"]}[Data], {"trading_date", "ticker", "company", "close_price"}),
+				    NASDAQWithMarket = Table.AddColumn(NASDAQ, "market", each "NASDAQ", type text),
+				    Combined = Table.Combine({NSEWithMarket, NASDAQWithMarket}),
+				    Reordered = Table.ReorderColumns(Combined, {"market", "trading_date", "ticker", "company", "close_price"})
+				in
+				    Reordered
+
+	annotation PBI_ResultType = Table
+

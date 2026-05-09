@@ -3,77 +3,102 @@ table vw_PowerBI_QualityScorePerformance
 
 	column market
 		dataType: string
+		lineageTag: 9fa11682-0e97-43db-98cd-01cb983b8d04
 		summarizeBy: none
 		sourceColumn: market
 
 	column score_type
 		dataType: string
+		lineageTag: 39310fc8-0367-4878-98fd-e4b386f86484
 		summarizeBy: none
 		sourceColumn: score_type
 
 	column snapshot_date
 		dataType: dateTime
 		formatString: mm/dd/yyyy
+		lineageTag: c15fed12-ccfe-4441-a214-fd05ac113312
 		summarizeBy: none
 		sourceColumn: snapshot_date
 
 	column score_rank
 		dataType: int64
 		formatString: 0
-		summarizeBy: none
+		lineageTag: 86974c50-532d-484e-9654-211def461045
+		summarizeBy: sum
 		sourceColumn: score_rank
+
+		annotation SummarizationSetBy = Automatic
 
 	column ticker
 		dataType: string
+		lineageTag: a96d7f3f-efd5-4760-8c4d-c0906a27b245
 		summarizeBy: none
 		sourceColumn: ticker
 
 	column company_name
 		dataType: string
+		lineageTag: ef871d6b-dfc1-4eff-a354-41694b93581d
 		summarizeBy: none
 		sourceColumn: company_name
 
 	column score
 		dataType: int64
 		formatString: 0
-		summarizeBy: none
+		lineageTag: 4df01295-ea8f-4bce-8195-a277027f4da6
+		summarizeBy: sum
 		sourceColumn: score
+
+		annotation SummarizationSetBy = Automatic
 
 	column selected_trading_date
 		dataType: dateTime
 		formatString: mm/dd/yyyy
+		lineageTag: 8defa5aa-68a6-493f-afe0-8c55c3de20be
 		summarizeBy: none
 		sourceColumn: selected_trading_date
 
 	column selected_close_price
 		dataType: double
 		formatString: #,##0.00
-		summarizeBy: none
+		lineageTag: 8ddfb16a-0dca-47a6-935d-519b16fcf0bb
+		summarizeBy: sum
 		sourceColumn: selected_close_price
+
+		annotation SummarizationSetBy = Automatic
 
 	column current_trading_date
 		dataType: dateTime
 		formatString: mm/dd/yyyy
+		lineageTag: 1977da26-1f36-40ff-afba-5e81cb74bbd0
 		summarizeBy: none
 		sourceColumn: current_trading_date
 
 	column current_close_price
 		dataType: double
 		formatString: #,##0.00
-		summarizeBy: none
+		lineageTag: 1a75ad7c-9254-45e8-b17c-9f0c0a6fc339
+		summarizeBy: sum
 		sourceColumn: current_close_price
+
+		annotation SummarizationSetBy = Automatic
 
 	column price_change
 		dataType: double
 		formatString: #,##0.00
-		summarizeBy: none
+		lineageTag: 071626d7-1b8a-4ef7-837b-be70c019ddc8
+		summarizeBy: sum
 		sourceColumn: price_change
+
+		annotation SummarizationSetBy = Automatic
 
 	column return_pct
 		dataType: double
 		formatString: 0.00%;-0.00%;0.00%
-		summarizeBy: none
+		lineageTag: 929b62eb-b776-41d2-b039-5f6d99666e3b
+		summarizeBy: sum
 		sourceColumn: return_pct
+
+		annotation SummarizationSetBy = Automatic
 
 	partition vw_PowerBI_QualityScorePerformance = m
 		mode: import

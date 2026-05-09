@@ -434,3 +434,35 @@ relationship a7389882-dfbb-2025-643f-b495a07b0ddd
 	fromColumn: technical_forex_support_resistance.ticker
 	toColumn: forex_master.symbol
 
+relationship e65a93e4-751c-4631-b377-d2637a715c55
+	fromColumn: vw_PowerBI_GrowthScorePerformance.ticker
+	toColumn: nse_500.ticker
+
+relationship 111c5ddb-7880-157c-6fc6-e561f9e9e0a3
+	fromColumn: vw_PowerBI_GrowthScorePerformance.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship f133fac7-6e1c-ceb1-8190-bed3e256e501
+	fromColumn: vw_PowerBI_QualityScorePerformance.ticker
+	toColumn: nse_500.ticker
+
+relationship 58e4b15a-ab86-6162-0bd7-8f42c342d454
+	fromColumn: vw_PowerBI_QualityScorePerformance.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship c5b2d99b-19b3-5eb3-9d8d-c70a1cfec3eb
+	fromColumn: vw_PowerBI_ValueScorePerformance.ticker
+	toColumn: nse_500.ticker
+
+relationship 17fa8feb-03f1-c6fa-c030-c6cab4909685
+	fromColumn: vw_PowerBI_ValueScorePerformance.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship 33eb4761-9d54-2332-500c-7dd6ef5b81c9
+	fromColumn: vw_PowerBI_MasterScorePerformance.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship b52013c8-6970-317d-b6f8-65fcbb08fff8
+	fromColumn: vw_PowerBI_MasterScorePerformance.ticker
+	toColumn: nse_500.ticker
+

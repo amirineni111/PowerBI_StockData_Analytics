@@ -10,15 +10,16 @@
     "43f9e73006b0d903a94a",
     "4427397c42b901968b76",
     "fund_master_scoring",
-    "fund_value_stocks",
-    "fund_quality_stocks",
-    "fund_growth_stocks",
-    "score_value_performance",
-    "score_quality_performance",
-    "score_growth_performance",
     "score_master_performance",
+    "fund_value_stocks",
+    "score_value_performance",
+    "fund_quality_stocks",
+    "score_quality_performance",
+    "fund_growth_stocks",
+    "score_growth_performance",
     "fund_dividend_stocks",
     "fund_garp_strategy",
+    "price_movement_analysis",
     "turnaround_nasdaq",
     "turnaround_nse",
     "ml_forex_console_page04",
@@ -51,5 +52,5 @@
     "highlows_nse",
     "highlows_nasdaq"
   ],
-  "activePageName": "1ad57ad4f444cf8c7924"
+  "activePageName": "score_master_performance"
 }

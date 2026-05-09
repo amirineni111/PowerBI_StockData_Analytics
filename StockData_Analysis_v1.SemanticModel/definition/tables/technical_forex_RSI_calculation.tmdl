@@ -18,8 +18,6 @@ table technical_forex_RSI_calculation
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column RSI
@@ -37,15 +35,15 @@ table technical_forex_RSI_calculation
 		queryGroup: technical_data_tables
 		source = ```
 				let
-				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
-				    dbo_nasdaq_100_atr = Source{[Schema="dbo",Item="forex_RSI_calculation"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(#"dbo_nasdaq_100_atr", each 
-				        Date.IsInPreviousNDays([trading_date], 30) or 
-				        Date.IsInCurrentDay([trading_date])
-				    )
-				
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="
+				        SELECT * 
+				        FROM forex_RSI_calculation
+				        WHERE trading_date >= DATEADD(day, -30, CAST(GETDATE() AS DATE)) 
+				          AND trading_date <= GETDATE()+1
+				    "]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"trading_date", type datetime}})
 				in
-				    #"Filtered Rows"
+				    #"Changed Type"
 				```
 
 	annotation PBI_NavigationStepName = Navigation

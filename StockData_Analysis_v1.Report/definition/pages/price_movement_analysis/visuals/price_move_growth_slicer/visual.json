@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "price_move_growth_slicer",
+  "position": {
+    "x": 880,
+    "y": 136,
+    "z": 2002,
+    "height": 112,
+    "width": 360,
+    "tabOrder": 2002
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Price_Movement_Growth_Filter"
+                    }
+                  },
+                  "Property": "growth_threshold_pct"
+                }
+              },
+              "queryRef": "Price_Movement_Growth_Filter.growth_threshold_pct",
+              "nativeQueryRef": "Growth Threshold %",
+              "active": true
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Price_Movement_Growth_Filter"
+                  }
+                },
+                "Property": "growth_threshold_pct"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "pm_growth_filter",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Price_Movement_Growth_Filter"
+              }
+            },
+            "Property": "growth_threshold_pct"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

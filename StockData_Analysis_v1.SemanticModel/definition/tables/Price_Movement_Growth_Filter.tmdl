@@ -21,3 +21,4 @@ table Price_Movement_Growth_Filter
 				    AsPercent
 
 	annotation PBI_ResultType = Table
+

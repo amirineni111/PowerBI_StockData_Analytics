@@ -1,0 +1,137 @@
+table vw_PowerBI_MasterScoreTrendWoW
+	lineageTag: 0f7f8cc4-f1b1-4d9f-a8a7-2d5be53a6e4d
+
+	column market
+		dataType: string
+		lineageTag: 412a6866-71c8-4cc9-afb8-356fedf17b02
+		summarizeBy: none
+		sourceColumn: market
+
+	column ticker
+		dataType: string
+		lineageTag: 576b9e78-cd61-4610-99db-3f23f872837d
+		summarizeBy: none
+		sourceColumn: ticker
+
+	column company_name
+		dataType: string
+		lineageTag: afc9bfb2-8918-4672-9b07-dc55fdce088d
+		summarizeBy: none
+		sourceColumn: company_name
+
+	column previous_fetch_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 223cefe1-d80d-4e6b-a3ef-5ba8d284adab
+		summarizeBy: none
+		sourceColumn: previous_fetch_date
+
+	column current_fetch_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: a22f1f14-47f9-4141-83e8-2a7295102d52
+		summarizeBy: none
+		sourceColumn: current_fetch_date
+
+	column previous_master_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f8da868-6af9-499f-ae87-8526061b35ea
+		summarizeBy: sum
+		sourceColumn: previous_master_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_master_score
+		dataType: int64
+		formatString: 0
+		lineageTag: a4c2f781-14a5-473e-919b-01972049eee4
+		summarizeBy: sum
+		sourceColumn: current_master_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_delta
+		dataType: int64
+		formatString: +0;-0;0
+		lineageTag: e13021f9-f4a6-46e5-8eed-2bdbaae48cb0
+		summarizeBy: sum
+		sourceColumn: score_delta
+
+		annotation SummarizationSetBy = Automatic
+
+	column abs_score_delta
+		dataType: int64
+		formatString: 0
+		lineageTag: 5315b68f-ebc0-4d13-8bbb-cd1826d08d46
+		summarizeBy: sum
+		sourceColumn: abs_score_delta
+
+		annotation SummarizationSetBy = Automatic
+
+	column trend_direction
+		dataType: string
+		lineageTag: 9d799759-06a0-46b8-a26a-c6b57cf877d9
+		summarizeBy: none
+		sourceColumn: trend_direction
+
+	column trend_price_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 264fcbcf-fab7-4d68-82a2-068d34f4a027
+		summarizeBy: none
+		sourceColumn: trend_price_date
+
+	column trend_close_price
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: e48fe62f-a463-4388-a661-e49a63e82aba
+		summarizeBy: sum
+		sourceColumn: trend_close_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: af0b6509-3c12-497f-b623-9e79f385cced
+		summarizeBy: none
+		sourceColumn: current_trading_date
+
+	column current_close_price
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: d46214d9-303a-4105-807f-4cc0adf9cdf8
+		summarizeBy: sum
+		sourceColumn: current_close_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_change_since_trend
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: c3d0824a-9146-4ef3-b0d6-672f92497126
+		summarizeBy: sum
+		sourceColumn: price_change_since_trend
+
+		annotation SummarizationSetBy = Automatic
+
+	column return_pct_since_trend
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4a0c53a6-582e-4aa4-9d8b-67300b478fd1
+		summarizeBy: sum
+		sourceColumn: return_pct_since_trend
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_PowerBI_MasterScoreTrendWoW = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="SELECT market, ticker, company_name, previous_fetch_date, current_fetch_date, previous_master_score, current_master_score, score_delta, abs_score_delta, trend_direction, trend_price_date, trend_close_price, current_trading_date, current_close_price, price_change_since_trend, return_pct_since_trend FROM dbo.vw_PowerBI_MasterScoreTrendWoW"])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

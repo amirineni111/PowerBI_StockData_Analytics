@@ -1489,14 +1489,12 @@ table _Measures
 		displayFolder: Price Movement
 		lineageTag: pm004-end-price
 
-	measure 'Price Move Change' =
-			[Price Move End Price] - [Price Move Start Price]
+	measure 'Price Move Change' = [Price Move End Price] - [Price Move Start Price]
 		formatString: #,##0.00
 		displayFolder: Price Movement
 		lineageTag: pm005-change
 
-	measure 'Price Move Growth %' =
-			DIVIDE([Price Move End Price] - [Price Move Start Price], [Price Move Start Price])
+	measure 'Price Move Growth %' = DIVIDE([Price Move End Price] - [Price Move Start Price], [Price Move Start Price])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Price Movement
 		lineageTag: pm006-growth-pct
@@ -1564,8 +1562,7 @@ table _Measures
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta014-nse-current-price
 
-	measure 'NSE Turnaround Price Growth %' =
-			DIVIDE([NSE Current Price] - [NSE Turnaround Added Price], [NSE Turnaround Added Price])
+	measure 'NSE Turnaround Price Growth %' = DIVIDE([NSE Current Price] - [NSE Turnaround Added Price], [NSE Turnaround Added Price])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta015-nse-price-growth
@@ -1610,11 +1607,38 @@ table _Measures
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta014-nasdaq-current-price
 
-	measure 'NASDAQ Turnaround Price Growth %' =
-			DIVIDE([NASDAQ Current Price] - [NASDAQ Turnaround Added Price], [NASDAQ Turnaround Added Price])
+	measure 'NASDAQ Turnaround Price Growth %' = DIVIDE([NASDAQ Current Price] - [NASDAQ Turnaround Added Price], [NASDAQ Turnaround Added Price])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta015-nasdaq-price-growth
+
+	measure 'Master Trend Movers Count' = COUNTROWS(vw_PowerBI_MasterScoreTrendWoW)
+		formatString: #,##0
+		displayFolder: Master Score Trend WoW
+		lineageTag: mstwow-001-movers-count
+
+	measure 'Master Trend Up Movers Count' =
+			CALCULATE(
+				COUNTROWS(vw_PowerBI_MasterScoreTrendWoW),
+				vw_PowerBI_MasterScoreTrendWoW[trend_direction] = "Up"
+			)
+		formatString: #,##0
+		displayFolder: Master Score Trend WoW
+		lineageTag: mstwow-002-up-movers-count
+
+	measure 'Master Trend Down Movers Count' =
+			CALCULATE(
+				COUNTROWS(vw_PowerBI_MasterScoreTrendWoW),
+				vw_PowerBI_MasterScoreTrendWoW[trend_direction] = "Down"
+			)
+		formatString: #,##0
+		displayFolder: Master Score Trend WoW
+		lineageTag: mstwow-003-down-movers-count
+
+	measure 'Master Trend Avg Abs Score Delta' = AVERAGE(vw_PowerBI_MasterScoreTrendWoW[abs_score_delta])
+		formatString: 0.0
+		displayFolder: Master Score Trend WoW
+		lineageTag: mstwow-004-avg-abs-delta
 
 	partition _Measures = m
 		mode: import
@@ -1626,5 +1650,4 @@ table _Measures
 				    #"Removed Columns"
 
 	annotation PBI_ResultType = Table
-
 

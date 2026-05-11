@@ -1,0 +1,507 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "trend_table",
+  "position": {
+    "x": 16,
+    "y": 336,
+    "z": 3000,
+    "height": 720,
+    "width": 1968,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.market",
+              "nativeQueryRef": "Market"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.ticker",
+              "nativeQueryRef": "Ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.company_name",
+              "nativeQueryRef": "Company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "previous_fetch_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.previous_fetch_date",
+              "nativeQueryRef": "Previous Fetch"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "current_fetch_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.current_fetch_date",
+              "nativeQueryRef": "Current Fetch"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "previous_master_score"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.previous_master_score",
+              "nativeQueryRef": "Previous Score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "current_master_score"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.current_master_score",
+              "nativeQueryRef": "Current Score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "score_delta"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.score_delta",
+              "nativeQueryRef": "Score Delta"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "trend_direction"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.trend_direction",
+              "nativeQueryRef": "Trend"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "trend_price_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.trend_price_date",
+              "nativeQueryRef": "Trend Price Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "trend_close_price"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.trend_close_price",
+              "nativeQueryRef": "Trend Price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "current_trading_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.current_trading_date",
+              "nativeQueryRef": "Current Price Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "current_close_price"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.current_close_price",
+              "nativeQueryRef": "Current Price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    }
+                  },
+                  "Property": "return_pct_since_trend"
+                }
+              },
+              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.return_pct_since_trend",
+              "nativeQueryRef": "Return Since Trend"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                  }
+                },
+                "Property": "abs_score_delta"
+              }
+            },
+            "direction": "Descending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                  }
+                },
+                "Property": "market"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stocks with Master Score Movement >= 25 Points'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "trend_table_market",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "trend_table_direction",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "trend_direction"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "trend_table_current_fetch",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "current_fetch_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "133905b576fbee2ee523",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fc8c5fe927923ee3ec4c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fd269c77f7c8691d2e3c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "previous_fetch_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7756d9b1d720fc69e056",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "previous_master_score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "33ee3d5d7dbd35507f45",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "current_master_score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c1f3ce21e74f3893284d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "score_delta"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "033def89c1fcf7d1f56e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "trend_price_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6d3c3b44e7f2e6c07aa6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "trend_close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "987db83b62d4ae858471",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "current_trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a0d693c7e3395e47582a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "current_close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "82f5306a615a19e59a82",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+              }
+            },
+            "Property": "return_pct_since_trend"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

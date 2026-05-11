@@ -10,6 +10,7 @@
     "43f9e73006b0d903a94a",
     "4427397c42b901968b76",
     "fund_master_scoring",
+    "master_score_trend_wow",
     "score_master_performance",
     "fund_value_stocks",
     "score_value_performance",
@@ -50,7 +51,11 @@
     "1ad57ad4f444cf8c7924",
     "714925af9f2801956720",
     "highlows_nse",
-    "highlows_nasdaq"
+    "highlows_nasdaq",
+    "73e1429c85bc9746f6c5",
+    "1c10792b8400d40664af",
+    "4aaca300acfa2f55b6d6",
+    "4fbce60229eedbeefc12"
   ],
-  "activePageName": "score_master_performance"
+  "activePageName": "master_score_trend_wow"
 }

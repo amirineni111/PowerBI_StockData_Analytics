@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "price_move_table",
   "position": {
     "x": 16,
@@ -293,6 +293,118 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "2e59e2a3341355f49712",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Price_Movement"
+              }
+            },
+            "Property": "company"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f225e043b6a8b13c5661",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Price Move Start Date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9317145f3761e6cc187a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Price Move Start Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6c43a2b62f1505ec37aa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Price Move End Date"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ffd627ce85a4cc821ca0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Price Move End Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "58c5a5c7d681c80b3e03",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Price Move Change"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5eb122f6f7846f9f14f3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Price Move Growth %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a7e2d827ba70a4c1904a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Price Move Direction"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

@@ -1,0 +1,507 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "4df399fe2f26d09833c7",
+  "position": {
+    "x": 16,
+    "y": 208,
+    "z": 2000,
+    "height": 832,
+    "width": 1967.9999999999998,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "snapshot_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.snapshot_date",
+              "nativeQueryRef": "Score Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.market",
+              "nativeQueryRef": "Market"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "score_rank"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.score_rank",
+              "nativeQueryRef": "Rank"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.ticker",
+              "nativeQueryRef": "Ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "company_name"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.company_name",
+              "nativeQueryRef": "Company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "score"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.score",
+              "nativeQueryRef": "Score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "selected_trading_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.selected_trading_date",
+              "nativeQueryRef": "Then Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "selected_close_price"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.selected_close_price",
+              "nativeQueryRef": "Then Price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "current_trading_date"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.current_trading_date",
+              "nativeQueryRef": "Current Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "current_close_price"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.current_close_price",
+              "nativeQueryRef": "Current Price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "price_change"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.price_change",
+              "nativeQueryRef": "Change"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_QualityScorePerformance"
+                    }
+                  },
+                  "Property": "return_pct"
+                }
+              },
+              "queryRef": "vw_PowerBI_QualityScorePerformance.return_pct",
+              "nativeQueryRef": "Growth %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nse_500"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_top100"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nasdaq_top100.ticker",
+              "nativeQueryRef": "ticker1"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_QualityScorePerformance"
+                  }
+                },
+                "Property": "market"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_PowerBI_QualityScorePerformance"
+                  }
+                },
+                "Property": "score_rank"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 Quality Score Performance by Market'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e68692c240af04bce8e9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "snapshot_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "315fd88b2c4d17c561a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "market"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f34f29bc0034c91ff5bc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "score_rank"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "547ac95f0e42c57443e6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6d3e669b8f5fd65b0edf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "company_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ba1c73af2fe96a135c98",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "61200a4091f6cb6540a9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "selected_trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d1a92d36aa1e9f7acc26",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "selected_close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "38002e31ab0cd2f1fa67",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "current_trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "21e72864369b5fe67c17",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "current_close_price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "25dfd501f4a259dc8a19",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "price_change"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "398453065c6e7ab66cfb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_QualityScorePerformance"
+              }
+            },
+            "Property": "return_pct"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "881f8bf5be0a57b5575f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "31e6deb2baf8850eab46",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

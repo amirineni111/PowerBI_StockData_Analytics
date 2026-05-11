@@ -1,0 +1,14 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "4aaca300acfa2f55b6d6",
+  "displayName": "Quality Score Performance",
+  "displayOption": "FitToWidth",
+  "height": 1100,
+  "width": 2000,
+  "pageBinding": {
+    "name": "ed9b6bc0608d4854423a",
+    "type": "Default",
+    "parameters": [],
+    "acceptsFilterContext": "None"
+  }
+}

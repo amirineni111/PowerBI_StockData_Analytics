@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "score_growth_performance",
-  "displayName": "Growth Score Performance",
+  "displayName": "Growth Score Performance-Drill through",
   "displayOption": "FitToWidth",
   "height": 1100,
   "width": 2000,
@@ -78,5 +78,6 @@
     ],
     "referenceScope": "CrossReport",
     "acceptsFilterContext": "None"
-  }
+  },
+  "visibility": "HiddenInViewMode"
 }

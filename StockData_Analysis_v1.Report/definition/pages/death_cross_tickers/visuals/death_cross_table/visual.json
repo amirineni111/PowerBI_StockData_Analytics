@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "trend_table",
+  "name": "death_cross_table",
   "position": {
     "x": 16,
-    "y": 336,
-    "z": 3000,
-    "height": 944,
+    "y": 224,
+    "z": 2000,
+    "height": 1000,
     "width": 2128,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,13 +20,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                      "Entity": "vw_PowerBI_SMACrossSignals"
                     }
                   },
                   "Property": "market"
                 }
               },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.market",
+              "queryRef": "vw_PowerBI_SMACrossSignals.market",
               "nativeQueryRef": "Market"
             },
             {
@@ -34,27 +34,41 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                      "Entity": "nasdaq_top100"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.ticker",
-              "nativeQueryRef": "Ticker"
+              "queryRef": "nasdaq_top100.ticker",
+              "nativeQueryRef": "ticker"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                      "Entity": "nse_500"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_SMACrossSignals"
                     }
                   },
                   "Property": "company_name"
                 }
               },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.company_name",
+              "queryRef": "vw_PowerBI_SMACrossSignals.company_name",
               "nativeQueryRef": "Company"
             },
             {
@@ -62,125 +76,41 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                      "Entity": "vw_PowerBI_SMACrossSignals"
                     }
                   },
-                  "Property": "previous_fetch_date"
+                  "Property": "cross_date"
                 }
               },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.previous_fetch_date",
-              "nativeQueryRef": "Previous Fetch"
+              "queryRef": "vw_PowerBI_SMACrossSignals.cross_date",
+              "nativeQueryRef": "Death Cross Date"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                      "Entity": "vw_PowerBI_SMACrossSignals"
                     }
                   },
-                  "Property": "current_fetch_date"
+                  "Property": "cross_close_price"
                 }
               },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.current_fetch_date",
-              "nativeQueryRef": "Current Fetch"
+              "queryRef": "vw_PowerBI_SMACrossSignals.cross_close_price",
+              "nativeQueryRef": "Cross Price"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-                    }
-                  },
-                  "Property": "previous_master_score"
-                }
-              },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.previous_master_score",
-              "nativeQueryRef": "Previous Score"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-                    }
-                  },
-                  "Property": "current_master_score"
-                }
-              },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.current_master_score",
-              "nativeQueryRef": "Current Score"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-                    }
-                  },
-                  "Property": "score_delta"
-                }
-              },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.score_delta",
-              "nativeQueryRef": "Score Delta"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-                    }
-                  },
-                  "Property": "trend_direction"
-                }
-              },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.trend_direction",
-              "nativeQueryRef": "Trend"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-                    }
-                  },
-                  "Property": "trend_price_date"
-                }
-              },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.trend_price_date",
-              "nativeQueryRef": "Trend Price Date"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-                    }
-                  },
-                  "Property": "trend_close_price"
-                }
-              },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.trend_close_price",
-              "nativeQueryRef": "Trend Price"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                      "Entity": "vw_PowerBI_SMACrossSignals"
                     }
                   },
                   "Property": "current_trading_date"
                 }
               },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.current_trading_date",
+              "queryRef": "vw_PowerBI_SMACrossSignals.current_trading_date",
               "nativeQueryRef": "Current Price Date"
             },
             {
@@ -188,13 +118,13 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                      "Entity": "vw_PowerBI_SMACrossSignals"
                     }
                   },
                   "Property": "current_close_price"
                 }
               },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.current_close_price",
+              "queryRef": "vw_PowerBI_SMACrossSignals.current_close_price",
               "nativeQueryRef": "Current Price"
             },
             {
@@ -202,14 +132,70 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                      "Entity": "vw_PowerBI_SMACrossSignals"
                     }
                   },
-                  "Property": "return_pct_since_trend"
+                  "Property": "price_change_since_cross"
                 }
               },
-              "queryRef": "vw_PowerBI_MasterScoreTrendWoW.return_pct_since_trend",
-              "nativeQueryRef": "Return Since Trend"
+              "queryRef": "vw_PowerBI_SMACrossSignals.price_change_since_cross",
+              "nativeQueryRef": "Up/Down"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_SMACrossSignals"
+                    }
+                  },
+                  "Property": "return_pct_since_cross"
+                }
+              },
+              "queryRef": "vw_PowerBI_SMACrossSignals.return_pct_since_cross",
+              "nativeQueryRef": "Up/Down %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_SMACrossSignals"
+                    }
+                  },
+                  "Property": "sma_20"
+                }
+              },
+              "queryRef": "vw_PowerBI_SMACrossSignals.sma_20",
+              "nativeQueryRef": "SMA 20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_SMACrossSignals"
+                    }
+                  },
+                  "Property": "sma_50"
+                }
+              },
+              "queryRef": "vw_PowerBI_SMACrossSignals.sma_50",
+              "nativeQueryRef": "SMA 50"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_PowerBI_SMACrossSignals"
+                    }
+                  },
+                  "Property": "trend_status"
+                }
+              },
+              "queryRef": "vw_PowerBI_SMACrossSignals.trend_status",
+              "nativeQueryRef": "Trend"
             }
           ]
         }
@@ -221,10 +207,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    "Entity": "vw_PowerBI_SMACrossSignals"
                   }
                 },
-                "Property": "abs_score_delta"
+                "Property": "cross_date"
               }
             },
             "direction": "Descending"
@@ -234,10 +220,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                    "Entity": "vw_PowerBI_SMACrossSignals"
                   }
                 },
-                "Property": "market"
+                "Property": "return_pct_since_cross"
               }
             },
             "direction": "Ascending"
@@ -294,7 +280,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Stocks with Master Score Movement >= 25 Points'"
+                  "Value": "'Death Cross Events - NSE and NASDAQ'"
                 }
               }
             }
@@ -307,12 +293,12 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "trend_table_market",
+        "name": "death_cross_table_market",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
             "Property": "market"
@@ -321,54 +307,41 @@
         "type": "Categorical"
       },
       {
-        "name": "trend_table_direction",
+        "name": "death_cross_table_trading_date",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
-            "Property": "trend_direction"
+            "Property": "trading_date"
           }
         },
-        "type": "Categorical"
+        "type": "Categorical",
+        "howCreated": "User"
       },
       {
-        "name": "trend_table_current_fetch",
+        "name": "death_cross_table_return_pct",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
-            "Property": "current_fetch_date"
+            "Property": "return_pct_since_cross"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced"
       },
       {
-        "name": "133905b576fbee2ee523",
+        "name": "6b49f819a9430a7741d4",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "fc8c5fe927923ee3ec4c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
             "Property": "company_name"
@@ -377,96 +350,40 @@
         "type": "Categorical"
       },
       {
-        "name": "fd269c77f7c8691d2e3c",
+        "name": "c7759f0d1a85bba513a4",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
-            "Property": "previous_fetch_date"
+            "Property": "cross_date"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "7756d9b1d720fc69e056",
+        "name": "8ff173284f427f5f8658",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
-            "Property": "previous_master_score"
+            "Property": "cross_close_price"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "33ee3d5d7dbd35507f45",
+        "name": "12fb11701a5bdd73c547",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-              }
-            },
-            "Property": "current_master_score"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c1f3ce21e74f3893284d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-              }
-            },
-            "Property": "score_delta"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "033def89c1fcf7d1f56e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-              }
-            },
-            "Property": "trend_price_date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6d3c3b44e7f2e6c07aa6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
-              }
-            },
-            "Property": "trend_close_price"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "987db83b62d4ae858471",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
             "Property": "current_trading_date"
@@ -475,32 +392,102 @@
         "type": "Categorical"
       },
       {
-        "name": "a0d693c7e3395e47582a",
+        "name": "104c5145b0acda9d9235",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
             "Property": "current_close_price"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       },
       {
-        "name": "82f5306a615a19e59a82",
+        "name": "7f5456baad37d5e2e6ec",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "vw_PowerBI_MasterScoreTrendWoW"
+                "Entity": "vw_PowerBI_SMACrossSignals"
               }
             },
-            "Property": "return_pct_since_trend"
+            "Property": "price_change_since_cross"
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "18fde5906be86668676a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_SMACrossSignals"
+              }
+            },
+            "Property": "sma_20"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a555ae7e3a063477810d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_SMACrossSignals"
+              }
+            },
+            "Property": "sma_50"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "17bcdf64fce57d79b6f2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_PowerBI_SMACrossSignals"
+              }
+            },
+            "Property": "trend_status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3e977cfdfae01857cd9a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "53b5d6db61372ca3f03f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

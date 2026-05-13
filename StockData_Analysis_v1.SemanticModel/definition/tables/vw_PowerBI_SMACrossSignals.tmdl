@@ -1,0 +1,132 @@
+table vw_PowerBI_SMACrossSignals
+	lineageTag: c0b8472d-9f45-4c03-994f-7a818de2ad55
+
+	column market
+		dataType: string
+		lineageTag: 5e0d74a5-fd59-4111-b61f-84c85ad7f41e
+		summarizeBy: none
+		sourceColumn: market
+
+	column ticker
+		dataType: string
+		lineageTag: 1d4fa3d3-443a-40d8-970f-c030e0d0c913
+		summarizeBy: none
+		sourceColumn: ticker
+
+	column company_name
+		dataType: string
+		lineageTag: 68a8f251-0b78-44a0-9955-3c39fa80185c
+		summarizeBy: none
+		sourceColumn: company_name
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 3a0be73f-0a12-4ef8-aa9b-72f9f175ef9a
+		summarizeBy: none
+		sourceColumn: trading_date
+
+	column cross_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: b8a88cb0-bfb3-4d75-b98e-f0bb932228f3
+		summarizeBy: none
+		sourceColumn: cross_date
+
+	column cross_type
+		dataType: string
+		lineageTag: f548b9a9-95cc-422b-ad7d-45bd00541791
+		summarizeBy: none
+		sourceColumn: cross_type
+
+	column cross_close_price
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 3eb1e21d-f1fa-49d4-bf82-f0076b41fd66
+		summarizeBy: sum
+		sourceColumn: cross_close_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 33dfd3d5-4587-4627-ad38-ac0ca83626c6
+		summarizeBy: none
+		sourceColumn: current_trading_date
+
+	column current_close_price
+		dataType: string
+		lineageTag: 82642ce5-a529-4142-a52f-401f3f97dcfc
+		summarizeBy: none
+		sourceColumn: current_close_price
+
+		annotation SummarizationSetBy = Automatic
+
+	column price_change_since_cross
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 38f7f41e-33d6-49f4-8c3b-1d7a72234358
+		summarizeBy: sum
+		sourceColumn: price_change_since_cross
+
+		annotation SummarizationSetBy = Automatic
+
+	column return_pct_since_cross
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4f68dfb4-0450-4025-91fb-0a93de63efb6
+		summarizeBy: sum
+		sourceColumn: return_pct_since_cross
+
+		annotation SummarizationSetBy = Automatic
+
+	column sma_20
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: e2ed8804-2e76-4ec9-b807-93b17d5ab89b
+		summarizeBy: sum
+		sourceColumn: sma_20
+
+		annotation SummarizationSetBy = Automatic
+
+	column sma_50
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 0ff103f8-229c-47d0-a659-c0244a7c737ad
+		summarizeBy: sum
+		sourceColumn: sma_50
+
+		annotation SummarizationSetBy = Automatic
+
+	column sma_spread
+		dataType: double
+		formatString: #,##0.00
+		lineageTag: 84d284dc-95fa-4496-bdc6-ea8cb9ae4c1a
+		summarizeBy: sum
+		sourceColumn: sma_spread
+
+		annotation SummarizationSetBy = Automatic
+
+	column trend_status
+		dataType: string
+		lineageTag: 0f1db13e-ef93-4981-bfce-cf9af063e378
+		summarizeBy: none
+		sourceColumn: trend_status
+
+	column cross_status
+		dataType: string
+		lineageTag: 95804c9d-20df-4566-a176-7cd328b5779c
+		summarizeBy: none
+		sourceColumn: cross_status
+
+	partition vw_PowerBI_SMACrossSignals = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="SELECT market, ticker, company_name, trading_date, cross_date, cross_type, cross_close_price, current_trading_date, current_close_price, price_change_since_cross, return_pct_since_cross, sma_20, sma_50, sma_spread, trend_status, cross_status FROM dbo.vw_PowerBI_SMACrossSignals"])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

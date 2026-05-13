@@ -34,14 +34,28 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Price_Movement"
+                      "Entity": "nse_500"
                     }
                   },
                   "Property": "ticker"
                 }
               },
-              "queryRef": "Price_Movement.ticker",
-              "nativeQueryRef": "Ticker"
+              "queryRef": "nse_500.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "nasdaq_top100"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "nasdaq_top100.ticker",
+              "nativeQueryRef": "ticker1"
             },
             {
               "field": {
@@ -232,20 +246,6 @@
         "type": "Categorical"
       },
       {
-        "name": "pm_table_ticker_filter",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Price_Movement"
-              }
-            },
-            "Property": "ticker"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "pm_table_growth_measure_filter",
         "field": {
           "Measure": {
@@ -405,6 +405,34 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "d70d94488237cbaf8716",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nse_500"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3b9e45c7892ead106c6d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "nasdaq_top100"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

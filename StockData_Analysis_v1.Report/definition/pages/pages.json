@@ -21,6 +21,8 @@
     "fund_dividend_stocks",
     "fund_garp_strategy",
     "price_movement_analysis",
+    "golden_cross_tickers",
+    "death_cross_tickers",
     "turnaround_nasdaq",
     "turnaround_nse",
     "ml_forex_console_page04",
@@ -57,5 +59,5 @@
     "4aaca300acfa2f55b6d6",
     "4fbce60229eedbeefc12"
   ],
-  "activePageName": "master_score_trend_wow"
+  "activePageName": "golden_cross_tickers"
 }

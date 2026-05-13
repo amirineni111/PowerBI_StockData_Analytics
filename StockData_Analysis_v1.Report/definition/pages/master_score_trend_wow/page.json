@@ -3,6 +3,6 @@
   "name": "master_score_trend_wow",
   "displayName": "Master score trend week over week",
   "displayOption": "FitToWidth",
-  "height": 1100,
-  "width": 2000
+  "height": 1300,
+  "width": 2200
 }

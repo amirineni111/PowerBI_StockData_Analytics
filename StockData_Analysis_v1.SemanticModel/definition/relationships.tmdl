@@ -466,3 +466,19 @@ relationship b52013c8-6970-317d-b6f8-65fcbb08fff8
 	fromColumn: vw_PowerBI_MasterScorePerformance.ticker
 	toColumn: nse_500.ticker
 
+relationship 4894c057-d254-8173-834b-28a3d4e49930
+	fromColumn: vw_PowerBI_SMACrossSignals.ticker
+	toColumn: nse_500.ticker
+
+relationship ac6976a8-3e50-90df-1cea-566642adafa6
+	fromColumn: vw_PowerBI_SMACrossSignals.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship 075c7600-88e5-0ac3-662d-19e7aa4163c2
+	fromColumn: Price_Movement.ticker
+	toColumn: nse_500.ticker
+
+relationship 1c05b0a7-bae7-27c8-7e6e-b4cf7a4c911a
+	fromColumn: Price_Movement.ticker
+	toColumn: nasdaq_top100.ticker
+

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "21f310f8c99671d20e8d",
+  "position": {
+    "x": 1699.1596638655462,
+    "y": 6.7226890756302522,
+    "z": 2,
+    "height": 667.22689075630251,
+    "width": 280.672268907563,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "theme"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.theme",
+              "nativeQueryRef": "theme",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8f436151b781453a07f3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "theme"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -816,254 +816,110 @@ table _Measures
 		displayFolder: Summary KPIs - NSE
 		lineageTag: fa064-nse-avg-peg
 
-	measure 'NASDAQ Margin Improvement' =
-			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NASDAQ Margin Improvement' = MAX(vw_PowerBI_NASDAQ_Turnaround[margin_improvement])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta001-nasdaq-margin-improvement
 
-	measure 'NASDAQ Earnings Recovery' =
-			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[earnings_growth]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[earnings_growth]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NASDAQ Earnings Recovery' = MAX(vw_PowerBI_NASDAQ_Turnaround[earnings_recovery])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta002-nasdaq-earnings-recovery
 
-	measure 'NASDAQ Revenue Recovery' =
-			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[revenue_growth]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[revenue_growth]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NASDAQ Revenue Recovery' = MAX(vw_PowerBI_NASDAQ_Turnaround[revenue_recovery])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta003-nasdaq-revenue-recovery
 
-	measure 'NASDAQ ROE Recovery' =
-			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[return_on_equity]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[return_on_equity]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NASDAQ ROE Recovery' = MAX(vw_PowerBI_NASDAQ_Turnaround[roe_recovery])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta004-nasdaq-roe-recovery
 
-	measure 'NASDAQ Debt Improvement' =
-			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[debt_to_equity]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[debt_to_equity]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), PrevVal - CurrVal)
+	measure 'NASDAQ Debt Improvement' = MAX(vw_PowerBI_NASDAQ_Turnaround[debt_improvement])
 		formatString: 0.00
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta005-nasdaq-debt-improvement
 
-	measure 'NASDAQ FCF Turnaround' =
-			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nasdaq_100_fundamentals[free_cashflow]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nasdaq_100_fundamentals[free_cashflow]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NASDAQ FCF Turnaround' = MAX(vw_PowerBI_NASDAQ_Turnaround[fcf_turnaround])
 		formatString: #,##0
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta006-nasdaq-fcf-turnaround
 
-	measure 'NASDAQ-Fwd vs Trailing PE Spread' =
-			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			VAR FwdPE = CALCULATE(MAX(nasdaq_100_fundamentals[forward_pe]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR TrailPE = CALCULATE(MAX(nasdaq_100_fundamentals[trailing_pe]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(FwdPE) || ISBLANK(TrailPE) || FwdPE <= 0 || TrailPE <= 0, BLANK(), (TrailPE - FwdPE) / TrailPE)
+	measure 'NASDAQ-Fwd vs Trailing PE Spread' = MAX(vw_PowerBI_NASDAQ_Turnaround[fwd_vs_trailing_pe_spread])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta007-nasdaq-pe-rerating
 
-	measure 'NASDAQ Turnaround Score' =
-			VAR LatestDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]), nasdaq_100_fundamentals[fetch_date] < LatestDate)
-			VAR CurrMargin = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevMargin = CALCULATE(MAX(nasdaq_100_fundamentals[profit_margin]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR CurrEarnG = CALCULATE(MAX(nasdaq_100_fundamentals[earnings_growth]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevEarnG = CALCULATE(MAX(nasdaq_100_fundamentals[earnings_growth]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR CurrRevG = CALCULATE(MAX(nasdaq_100_fundamentals[revenue_growth]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevRevG = CALCULATE(MAX(nasdaq_100_fundamentals[revenue_growth]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR CurrROE = CALCULATE(MAX(nasdaq_100_fundamentals[return_on_equity]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevROE = CALCULATE(MAX(nasdaq_100_fundamentals[return_on_equity]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR CurrDebt = CALCULATE(MAX(nasdaq_100_fundamentals[debt_to_equity]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevDebt = CALCULATE(MAX(nasdaq_100_fundamentals[debt_to_equity]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR CurrFCF = CALCULATE(MAX(nasdaq_100_fundamentals[free_cashflow]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR PrevFCF = CALCULATE(MAX(nasdaq_100_fundamentals[free_cashflow]), nasdaq_100_fundamentals[fetch_date] = PrevDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR CurrFwdPE = CALCULATE(MAX(nasdaq_100_fundamentals[forward_pe]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR CurrTrailPE = CALCULATE(MAX(nasdaq_100_fundamentals[trailing_pe]), nasdaq_100_fundamentals[fetch_date] = LatestDate, ALL(nasdaq_100_fundamentals[fetch_date]))
-			VAR MarginScore = IF(ISBLANK(PrevMargin) || ISBLANK(CurrMargin), 0, IF(PrevMargin < 0 && CurrMargin > 0, 15, IF(CurrMargin > PrevMargin && CurrMargin - PrevMargin > 0.05, 12, IF(CurrMargin > PrevMargin, 6, 0))))
-			VAR EarnScore = IF(ISBLANK(PrevEarnG) || ISBLANK(CurrEarnG), 0, IF(PrevEarnG < 0 && CurrEarnG > 0, 15, IF(CurrEarnG > PrevEarnG && CurrEarnG - PrevEarnG > 0.10, 12, IF(CurrEarnG > PrevEarnG, 6, 0))))
-			VAR RevScore = IF(ISBLANK(PrevRevG) || ISBLANK(CurrRevG), 0, IF(PrevRevG < 0 && CurrRevG > 0, 15, IF(CurrRevG > PrevRevG && CurrRevG - PrevRevG > 0.10, 12, IF(CurrRevG > PrevRevG, 6, 0))))
-			VAR ROEScore = IF(ISBLANK(PrevROE) || ISBLANK(CurrROE), 0, IF(PrevROE < 0 && CurrROE > 0, 15, IF(CurrROE > PrevROE && CurrROE - PrevROE > 0.05, 12, IF(CurrROE > PrevROE, 6, 0))))
-			VAR DebtScore = IF(ISBLANK(PrevDebt) || ISBLANK(CurrDebt), 0, IF(CurrDebt < PrevDebt && PrevDebt - CurrDebt > 0.3, 15, IF(CurrDebt < PrevDebt, 8, 0)))
-			VAR FCFScore = IF(ISBLANK(PrevFCF) || ISBLANK(CurrFCF), 0, IF(PrevFCF <= 0 && CurrFCF > 0, 15, IF(CurrFCF > PrevFCF, 8, 0)))
-			VAR PEScore = IF(ISBLANK(CurrFwdPE) || ISBLANK(CurrTrailPE) || CurrFwdPE <= 0 || CurrTrailPE <= 0, 0, IF(CurrFwdPE < CurrTrailPE * 0.8, 10, IF(CurrFwdPE < CurrTrailPE, 5, 0)))
-			RETURN MarginScore + EarnScore + RevScore + ROEScore + DebtScore + FCFScore + PEScore
+	measure 'NASDAQ Turnaround Score' = MAX(vw_PowerBI_NASDAQ_Turnaround[turnaround_score])
 		formatString: 0
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta008-nasdaq-turnaround-score
 
-	measure 'NASDAQ Turnaround Signal' =
-			VAR Score = [NASDAQ Turnaround Score]
-			RETURN IF(Score >= 70, "Strong Turnaround", IF(Score >= 45, "Early Turnaround", IF(Score >= 25, "Stabilizing", "No Turnaround")))
+	measure 'NASDAQ Turnaround Signal' = MAX(vw_PowerBI_NASDAQ_Turnaround[turnaround_signal])
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta009-nasdaq-turnaround-signal
 
-	measure 'NASDAQ Turnaround Count' =
-			COUNTROWS(
-				FILTER(
-					VALUES(nasdaq_100_fundamentals[ticker]),
-					CALCULATE([NASDAQ Turnaround Score]) >= 45
-				)
-			)
+	measure 'NASDAQ Turnaround Count' = MAX(vw_PowerBI_NASDAQ_Turnaround[turnaround_count])
 		formatString: 0
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta010-nasdaq-turnaround-count
 
-	measure 'NASDAQ Strong Turnaround Count' =
-			COUNTROWS(
-				FILTER(
-					VALUES(nasdaq_100_fundamentals[ticker]),
-					CALCULATE([NASDAQ Turnaround Score]) >= 70
-				)
-			)
+	measure 'NASDAQ Strong Turnaround Count' = MAX(vw_PowerBI_NASDAQ_Turnaround[strong_turnaround_count])
 		formatString: 0
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta011-nasdaq-strong-turnaround-count
 
-	measure 'NSE Margin Improvement' =
-			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[profit_margin]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[profit_margin]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NSE Margin Improvement' = MAX(vw_PowerBI_NSE_Turnaround[margin_improvement])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta001-nse-margin-improvement
 
-	measure 'NSE Earnings Recovery' =
-			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[earnings_growth]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[earnings_growth]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NSE Earnings Recovery' = MAX(vw_PowerBI_NSE_Turnaround[earnings_recovery])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta002-nse-earnings-recovery
 
-	measure 'NSE Revenue Recovery' =
-			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[revenue_growth]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[revenue_growth]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NSE Revenue Recovery' = MAX(vw_PowerBI_NSE_Turnaround[revenue_recovery])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta003-nse-revenue-recovery
 
-	measure 'NSE ROE Recovery' =
-			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[return_on_equity]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[return_on_equity]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NSE ROE Recovery' = MAX(vw_PowerBI_NSE_Turnaround[roe_recovery])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta004-nse-roe-recovery
 
-	measure 'NSE Debt Improvement' =
-			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[debt_to_equity]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[debt_to_equity]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), PrevVal - CurrVal)
+	measure 'NSE Debt Improvement' = MAX(vw_PowerBI_NSE_Turnaround[debt_improvement])
 		formatString: 0.00
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta005-nse-debt-improvement
 
-	measure 'NSE FCF Turnaround' =
-			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
-			VAR CurrVal = CALCULATE(MAX(nse_500_fundamentals[free_cashflow]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevVal = CALCULATE(MAX(nse_500_fundamentals[free_cashflow]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(PrevVal) || ISBLANK(CurrVal), BLANK(), CurrVal - PrevVal)
+	measure 'NSE FCF Turnaround' = MAX(vw_PowerBI_NSE_Turnaround[fcf_turnaround])
 		formatString: #,##0
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta006-nse-fcf-turnaround
 
-	measure 'NSE-Fwd vs Trailing PE Spread' =
-			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
-			VAR FwdPE = CALCULATE(MAX(nse_500_fundamentals[forward_pe]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR TrailPE = CALCULATE(MAX(nse_500_fundamentals[trailing_pe]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			RETURN IF(ISBLANK(FwdPE) || ISBLANK(TrailPE) || FwdPE <= 0 || TrailPE <= 0, BLANK(), (TrailPE - FwdPE) / TrailPE)
+	measure 'NSE-Fwd vs Trailing PE Spread' = MAX(vw_PowerBI_NSE_Turnaround[fwd_vs_trailing_pe_spread])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta007-nse-pe-rerating
 
-	measure 'NSE Turnaround Score' =
-			VAR LatestDate = MAX(nse_500_fundamentals[fetch_date])
-			VAR PrevDate = CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]), nse_500_fundamentals[fetch_date] < LatestDate)
-			VAR CurrMargin = CALCULATE(MAX(nse_500_fundamentals[profit_margin]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevMargin = CALCULATE(MAX(nse_500_fundamentals[profit_margin]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR CurrEarnG = CALCULATE(MAX(nse_500_fundamentals[earnings_growth]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevEarnG = CALCULATE(MAX(nse_500_fundamentals[earnings_growth]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR CurrRevG = CALCULATE(MAX(nse_500_fundamentals[revenue_growth]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevRevG = CALCULATE(MAX(nse_500_fundamentals[revenue_growth]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR CurrROE = CALCULATE(MAX(nse_500_fundamentals[return_on_equity]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevROE = CALCULATE(MAX(nse_500_fundamentals[return_on_equity]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR CurrDebt = CALCULATE(MAX(nse_500_fundamentals[debt_to_equity]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevDebt = CALCULATE(MAX(nse_500_fundamentals[debt_to_equity]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR CurrFCF = CALCULATE(MAX(nse_500_fundamentals[free_cashflow]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR PrevFCF = CALCULATE(MAX(nse_500_fundamentals[free_cashflow]), nse_500_fundamentals[fetch_date] = PrevDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR CurrFwdPE = CALCULATE(MAX(nse_500_fundamentals[forward_pe]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR CurrTrailPE = CALCULATE(MAX(nse_500_fundamentals[trailing_pe]), nse_500_fundamentals[fetch_date] = LatestDate, ALL(nse_500_fundamentals[fetch_date]))
-			VAR MarginScore = IF(ISBLANK(PrevMargin) || ISBLANK(CurrMargin), 0, IF(PrevMargin < 0 && CurrMargin > 0, 15, IF(CurrMargin > PrevMargin && CurrMargin - PrevMargin > 0.05, 12, IF(CurrMargin > PrevMargin, 6, 0))))
-			VAR EarnScore = IF(ISBLANK(PrevEarnG) || ISBLANK(CurrEarnG), 0, IF(PrevEarnG < 0 && CurrEarnG > 0, 15, IF(CurrEarnG > PrevEarnG && CurrEarnG - PrevEarnG > 0.10, 12, IF(CurrEarnG > PrevEarnG, 6, 0))))
-			VAR RevScore = IF(ISBLANK(PrevRevG) || ISBLANK(CurrRevG), 0, IF(PrevRevG < 0 && CurrRevG > 0, 15, IF(CurrRevG > PrevRevG && CurrRevG - PrevRevG > 0.10, 12, IF(CurrRevG > PrevRevG, 6, 0))))
-			VAR ROEScore = IF(ISBLANK(PrevROE) || ISBLANK(CurrROE), 0, IF(PrevROE < 0 && CurrROE > 0, 15, IF(CurrROE > PrevROE && CurrROE - PrevROE > 0.05, 12, IF(CurrROE > PrevROE, 6, 0))))
-			VAR DebtScore = IF(ISBLANK(PrevDebt) || ISBLANK(CurrDebt), 0, IF(CurrDebt < PrevDebt && PrevDebt - CurrDebt > 0.3, 15, IF(CurrDebt < PrevDebt, 8, 0)))
-			VAR FCFScore = IF(ISBLANK(PrevFCF) || ISBLANK(CurrFCF), 0, IF(PrevFCF <= 0 && CurrFCF > 0, 15, IF(CurrFCF > PrevFCF, 8, 0)))
-			VAR PEScore = IF(ISBLANK(CurrFwdPE) || ISBLANK(CurrTrailPE) || CurrFwdPE <= 0 || CurrTrailPE <= 0, 0, IF(CurrFwdPE < CurrTrailPE * 0.8, 10, IF(CurrFwdPE < CurrTrailPE, 5, 0)))
-			RETURN MarginScore + EarnScore + RevScore + ROEScore + DebtScore + FCFScore + PEScore
+	measure 'NSE Turnaround Score' = MAX(vw_PowerBI_NSE_Turnaround[turnaround_score])
 		formatString: 0
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta008-nse-turnaround-score
 
-	measure 'NSE Turnaround Signal' =
-			VAR Score = [NSE Turnaround Score]
-			RETURN IF(Score >= 70, "Strong Turnaround", IF(Score >= 45, "Early Turnaround", IF(Score >= 25, "Stabilizing", "No Turnaround")))
+	measure 'NSE Turnaround Signal' = MAX(vw_PowerBI_NSE_Turnaround[turnaround_signal])
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta009-nse-turnaround-signal
 
-	measure 'NSE Turnaround Count' =
-			COUNTROWS(
-				FILTER(
-					VALUES(nse_500_fundamentals[ticker]),
-					CALCULATE([NSE Turnaround Score]) >= 45
-				)
-			)
+	measure 'NSE Turnaround Count' = MAX(vw_PowerBI_NSE_Turnaround[turnaround_count])
 		formatString: 0
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta010-nse-turnaround-count
 
-	measure 'NSE Strong Turnaround Count' =
-			COUNTROWS(
-				FILTER(
-					VALUES(nse_500_fundamentals[ticker]),
-					CALCULATE([NSE Turnaround Score]) >= 70
-				)
-			)
+	measure 'NSE Strong Turnaround Count' = MAX(vw_PowerBI_NSE_Turnaround[strong_turnaround_count])
 		formatString: 0
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta011-nse-strong-turnaround-count
@@ -1072,7 +928,7 @@ table _Measures
 			
 			VAR _ticker = SELECTEDVALUE(nasdaq_top100[ticker])
 			RETURN
-			IF(MAX(nasdaq_100_fundamentals[ticker]) = _ticker,1,0)
+			IF(ISBLANK(_ticker) || MAX(nasdaq_100_fundamentals[ticker]) = _ticker, 1, 0)
 		formatString: 0
 		displayFolder: Fundamental Categories - NASDAQ
 		lineageTag: 77bea8b8-b6e2-4e87-9947-ee84ef6a5548
@@ -1085,74 +941,11 @@ table _Measures
 		displayFolder: Fundamental Categories - NSE
 		lineageTag: 88cea9c9-c7f3-5f98-a058-ff95fg7b6659
 
-	measure 'NASDAQ PE Rerating %' =
-			
-			VAR LatestDate =
-			    CALCULATE(MAX(nasdaq_100_fundamentals[fetch_date]), ALL(nasdaq_100_fundamentals[fetch_date]))
-			
-			VAR PrevDate =
-			    CALCULATE(
-			        MAX(nasdaq_100_fundamentals[fetch_date]),
-			        FILTER(
-			            ALL(nasdaq_100_fundamentals),
-			            nasdaq_100_fundamentals[fetch_date] < LatestDate
-			        )
-			    )
-			
-			VAR CurrentPE =
-			    CALCULATE(
-			        MAX(nasdaq_100_fundamentals[trailing_pe]),
-			        nasdaq_100_fundamentals[fetch_date] = LatestDate
-			    )
-			
-			VAR PreviousPE =
-			    CALCULATE(
-			        MAX(nasdaq_100_fundamentals[trailing_pe]),
-			        nasdaq_100_fundamentals[fetch_date] = PrevDate
-			    )
-			
-			RETURN
-			IF(
-			    ISBLANK(CurrentPE) || ISBLANK(PreviousPE) || PreviousPE <= 0,
-			    BLANK(),
-			    (CurrentPE - PreviousPE) / PreviousPE
-			)
-		formatString: 0.00%;-0.00%;0.00%
+	measure 'NASDAQ PE Rerating %' = MAX(vw_PowerBI_NASDAQ_Turnaround[pe_rerating_pct])
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: f266f308-27fb-4b3f-b8a0-c5c9d037adbf
 
-	measure 'NSE PE Rerating %' =
-			
-			VAR LatestDate =
-			    CALCULATE(MAX(nse_500_fundamentals[fetch_date]), ALL(nse_500_fundamentals[fetch_date]))
-			
-			VAR PrevDate =
-			    CALCULATE(
-			        MAX(nse_500_fundamentals[fetch_date]),
-			        FILTER(
-			            ALL(nse_500_fundamentals),
-			            nse_500_fundamentals[fetch_date] < LatestDate
-			        )
-			    )
-			
-			VAR CurrentPE =
-			    CALCULATE(
-			        MAX(nse_500_fundamentals[trailing_pe]),
-			        nse_500_fundamentals[fetch_date] = LatestDate
-			    )
-			
-			VAR PreviousPE =
-			    CALCULATE(
-			        MAX(nse_500_fundamentals[trailing_pe]),
-			        nse_500_fundamentals[fetch_date] = PrevDate
-			    )
-			
-			RETURN
-			IF(
-			    ISBLANK(CurrentPE) || ISBLANK(PreviousPE) || PreviousPE <= 0,
-			    BLANK(),
-			    (CurrentPE - PreviousPE) / PreviousPE
-			)
+	measure 'NSE PE Rerating %' = MAX(vw_PowerBI_NSE_Turnaround[pe_rerating_pct])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: 5faa0d42-dd50-4ec4-a47a-8a083dce44c2
@@ -1522,92 +1315,32 @@ table _Measures
 		displayFolder: Price Movement
 		lineageTag: pm008-growth-filter
 
-	measure 'NSE Turnaround Added Price' =
-			VAR _ticker = MAX(nse_500_fundamentals[ticker])
-			VAR _fetchDate = MAX(nse_500_fundamentals[fetch_date])
-			RETURN
-			MAXX(
-				TOPN(
-					1,
-					FILTER(
-						ALL(nse_500_hist_data),
-						nse_500_hist_data[ticker] = _ticker &&
-						nse_500_hist_data[trading_date] >= _fetchDate &&
-						NOT ISBLANK(nse_500_hist_data[close_price])
-					),
-					nse_500_hist_data[trading_date], ASC
-				),
-				nse_500_hist_data[close_price]
-			)
+	measure 'NSE Turnaround Added Price' = MAX(vw_PowerBI_NSE_Turnaround[turnaround_added_price])
 		formatString: #,##0.00
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta013-nse-added-price
 
-	measure 'NSE Current Price' =
-			VAR _ticker = MAX(nse_500_fundamentals[ticker])
-			RETURN
-			MAXX(
-				TOPN(
-					1,
-					FILTER(
-						ALL(nse_500_hist_data),
-						nse_500_hist_data[ticker] = _ticker &&
-						NOT ISBLANK(nse_500_hist_data[close_price])
-					),
-					nse_500_hist_data[trading_date], DESC
-				),
-				nse_500_hist_data[close_price]
-			)
+	measure 'NSE Current Price' = MAX(vw_PowerBI_NSE_Turnaround[current_price])
 		formatString: #,##0.00
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta014-nse-current-price
 
-	measure 'NSE Turnaround Price Growth %' = DIVIDE([NSE Current Price] - [NSE Turnaround Added Price], [NSE Turnaround Added Price])
+	measure 'NSE Turnaround Price Growth %' = MAX(vw_PowerBI_NSE_Turnaround[price_growth_pct])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NSE
 		lineageTag: ta015-nse-price-growth
 
-	measure 'NASDAQ Turnaround Added Price' =
-			VAR _ticker = MAX(nasdaq_100_fundamentals[ticker])
-			VAR _fetchDate = MAX(nasdaq_100_fundamentals[fetch_date])
-			RETURN
-			MAXX(
-				TOPN(
-					1,
-					FILTER(
-						ALL(nasdaq_100_hist_data),
-						nasdaq_100_hist_data[ticker] = _ticker &&
-						nasdaq_100_hist_data[trading_date] >= _fetchDate &&
-						NOT ISBLANK(nasdaq_100_hist_data[close_price])
-					),
-					nasdaq_100_hist_data[trading_date], ASC
-				),
-				nasdaq_100_hist_data[close_price]
-			)
+	measure 'NASDAQ Turnaround Added Price' = MAX(vw_PowerBI_NASDAQ_Turnaround[turnaround_added_price])
 		formatString: #,##0.00
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta013-nasdaq-added-price
 
-	measure 'NASDAQ Current Price' =
-			VAR _ticker = MAX(nasdaq_100_fundamentals[ticker])
-			RETURN
-			MAXX(
-				TOPN(
-					1,
-					FILTER(
-						ALL(nasdaq_100_hist_data),
-						nasdaq_100_hist_data[ticker] = _ticker &&
-						NOT ISBLANK(nasdaq_100_hist_data[close_price])
-					),
-					nasdaq_100_hist_data[trading_date], DESC
-				),
-				nasdaq_100_hist_data[close_price]
-			)
+	measure 'NASDAQ Current Price' = MAX(vw_PowerBI_NASDAQ_Turnaround[current_price])
 		formatString: #,##0.00
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta014-nasdaq-current-price
 
-	measure 'NASDAQ Turnaround Price Growth %' = DIVIDE([NASDAQ Current Price] - [NASDAQ Turnaround Added Price], [NASDAQ Turnaround Added Price])
+	measure 'NASDAQ Turnaround Price Growth %' = MAX(vw_PowerBI_NASDAQ_Turnaround[price_growth_pct])
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Turnaround Analysis - NASDAQ
 		lineageTag: ta015-nasdaq-price-growth
@@ -1639,6 +1372,10 @@ table _Measures
 		formatString: 0.0
 		displayFolder: Master Score Trend WoW
 		lineageTag: mstwow-004-avg-abs-delta
+
+	measure 'Latest Score Date' = MAX(nasdaq_theme_heat_scores[score_date])
+		formatString: General Date
+		lineageTag: 505000a0-9e08-4a28-84f1-aed4c58dac29
 
 	partition _Measures = m
 		mode: import

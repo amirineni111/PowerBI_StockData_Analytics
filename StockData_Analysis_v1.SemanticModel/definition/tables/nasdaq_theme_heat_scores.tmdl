@@ -1,0 +1,188 @@
+table nasdaq_theme_heat_scores
+	lineageTag: 622161e2-b18a-4f19-870d-e0606a18ca88
+
+	column score_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c2387364-93a0-41c1-ac01-860cc544b3be
+		summarizeBy: none
+		sourceColumn: score_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column score_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4d14f701-28a2-419b-98d2-bb1ee526e1d8
+		summarizeBy: none
+		sourceColumn: score_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column theme
+		dataType: string
+		lineageTag: 0afdb1d7-a387-49d7-8655-161b52682f96
+		summarizeBy: none
+		sourceColumn: theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 245edd14-aa25-456c-99d0-7b3e9b1485ce
+		summarizeBy: none
+		sourceColumn: ticker_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_signal_score
+		dataType: double
+		lineageTag: 335bd600-906a-43df-be06-4c47c7db2d0d
+		summarizeBy: none
+		sourceColumn: ml_signal_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fundamental_score
+		dataType: double
+		lineageTag: 15086395-bda1-483e-b327-852fbbd19135
+		summarizeBy: none
+		sourceColumn: fundamental_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column momentum_score
+		dataType: double
+		lineageTag: 9076c374-6160-4d73-a3b5-3fd5bff37ca4
+		summarizeBy: none
+		sourceColumn: momentum_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column breadth_score
+		dataType: double
+		lineageTag: 6f19d259-0513-47a6-af6e-c6b2f8de80e4
+		summarizeBy: none
+		sourceColumn: breadth_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column composite_heat_score
+		dataType: double
+		lineageTag: 1bbc9afc-1b46-44eb-b410-18063e4c4dbd
+		summarizeBy: none
+		sourceColumn: composite_heat_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column heat_label
+		dataType: string
+		lineageTag: e1752a34-1447-4d8a-99a6-219a3488d4b8
+		summarizeBy: none
+		sourceColumn: heat_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column buy_signal_pct
+		dataType: double
+		lineageTag: 9cf1e8f3-5b73-4a2b-ab6e-333d90c9e70c
+		summarizeBy: none
+		sourceColumn: buy_signal_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_buy_confidence
+		dataType: double
+		lineageTag: 583c8ab3-4816-425a-ad42-7e97b780e191
+		summarizeBy: none
+		sourceColumn: avg_buy_confidence
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_fundamental_improvement
+		dataType: double
+		lineageTag: 242ddd41-f64b-4503-aae1-d346482ef1ed
+		summarizeBy: none
+		sourceColumn: avg_fundamental_improvement
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_1w_return_pct
+		dataType: double
+		lineageTag: c14ad64c-3555-48e3-8048-c38e35344bc2
+		summarizeBy: none
+		sourceColumn: avg_1w_return_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_4w_return_pct
+		dataType: double
+		lineageTag: 36437ee4-6a0a-41bf-9dae-bca90c7b60ff
+		summarizeBy: none
+		sourceColumn: avg_4w_return_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column pct_above_ma20
+		dataType: double
+		lineageTag: eeebe81c-34b3-47ba-979d-7999e6e20e73
+		summarizeBy: none
+		sourceColumn: pct_above_ma20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column score_type
+		dataType: string
+		lineageTag: f1dd2a6f-969d-45ac-ae5d-f3f1c32bef15
+		summarizeBy: none
+		sourceColumn: score_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d333e2fd-69a0-4077-81d1-7048160fcb96
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition nasdaq_theme_heat_scores = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500 = Source{[Schema="dbo",Item="nasdaq_theme_heat_scores"]}[Data]
+				in
+				    dbo_nse_500
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

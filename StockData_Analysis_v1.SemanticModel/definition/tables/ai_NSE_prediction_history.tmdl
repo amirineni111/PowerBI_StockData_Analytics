@@ -194,6 +194,14 @@ table ai_NSE_prediction_history
 
 		annotation SummarizationSetBy = Automatic
 
+	column predicted_direction
+		dataType: string
+		lineageTag: 6a8eeff1-efe6-4dde-993b-4396f5d70aa3
+		summarizeBy: none
+		sourceColumn: predicted_direction
+
+		annotation SummarizationSetBy = Automatic
+
 	partition ai_NSE_prediction_history = m
 		mode: import
 		source =

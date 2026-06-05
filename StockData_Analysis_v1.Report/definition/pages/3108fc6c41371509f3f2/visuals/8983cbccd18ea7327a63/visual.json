@@ -1,0 +1,546 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "8983cbccd18ea7327a63",
+  "position": {
+    "x": 21.84873949579832,
+    "y": 218.48739495798321,
+    "z": 1,
+    "height": 1063.8655462184875,
+    "width": 1636.9747899159665,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "ticker"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.ticker",
+              "nativeQueryRef": "ticker"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "company"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.company",
+              "nativeQueryRef": "company"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "trading_date"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.trading_date",
+              "nativeQueryRef": "trading_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "theme"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.theme",
+              "nativeQueryRef": "theme"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_theme_stock_signals"
+                        }
+                      },
+                      "Property": "theme_buy_pct"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_theme_stock_signals.theme_buy_pct)",
+              "nativeQueryRef": "Sum of theme_buy_pct"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_theme_stock_signals"
+                        }
+                      },
+                      "Property": "theme_heat_score"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_theme_stock_signals.theme_heat_score)",
+              "nativeQueryRef": "Sum of theme_heat_score"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_theme_stock_signals"
+                        }
+                      },
+                      "Property": "theme_ml_score"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_theme_stock_signals.theme_ml_score)",
+              "nativeQueryRef": "Sum of theme_ml_score"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_theme_stock_signals"
+                        }
+                      },
+                      "Property": "theme_wk_change"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_theme_stock_signals.theme_wk_change)",
+              "nativeQueryRef": "Sum of theme_wk_change"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_theme_stock_signals"
+                        }
+                      },
+                      "Property": "theme_1w_return"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_theme_stock_signals.theme_1w_return)",
+              "nativeQueryRef": "Sum of theme_1w_return"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "signal_strength"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.signal_strength",
+              "nativeQueryRef": "signal_strength"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_theme_stock_signals"
+                        }
+                      },
+                      "Property": "buy_prob_pct"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_theme_stock_signals.buy_prob_pct)",
+              "nativeQueryRef": "Sum of buy_prob_pct"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "vw_theme_stock_signals"
+                        }
+                      },
+                      "Property": "close_price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(vw_theme_stock_signals.close_price)",
+              "nativeQueryRef": "Sum of close_price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "heat_label"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.heat_label",
+              "nativeQueryRef": "heat_label"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "is_primary_theme"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.is_primary_theme",
+              "nativeQueryRef": "is_primary_theme"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "label_changed"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.label_changed",
+              "nativeQueryRef": "label_changed"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "sub_industry"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.sub_industry",
+              "nativeQueryRef": "sub_industry"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6120815a1616b19d973a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "ticker"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "dfe01852ec29c458b244",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "trading_date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a207e57bd3c7fa283c12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "theme"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "126b845ab65ac1e1f94a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_theme_stock_signals"
+                  }
+                },
+                "Property": "theme_buy_pct"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "049202e550e7346f36c1",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_theme_stock_signals"
+                  }
+                },
+                "Property": "theme_heat_score"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bf142e8b5bb3999e9f1d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_theme_stock_signals"
+                  }
+                },
+                "Property": "theme_ml_score"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bb551603f379e9a9fe3f",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_theme_stock_signals"
+                  }
+                },
+                "Property": "theme_wk_change"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3b533c92d35077956c40",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_theme_stock_signals"
+                  }
+                },
+                "Property": "theme_1w_return"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9cdcc5efd1b0a0a726bd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "signal_strength"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bd8980eae4c9f5744a4e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_theme_stock_signals"
+                  }
+                },
+                "Property": "buy_prob_pct"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "afe4dc9668e0e781a608",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "vw_theme_stock_signals"
+                  }
+                },
+                "Property": "close_price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dc21a57f3386276e4c66",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "company"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "722bc89a6a57ff144ffe",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "heat_label"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d0cfccd5f43de6583e52",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "is_primary_theme"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b23ac9a777cb33fd9637",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "label_changed"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bf0e34373e821f13fe64",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "sub_industry"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

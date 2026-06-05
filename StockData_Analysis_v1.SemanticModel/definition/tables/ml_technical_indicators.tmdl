@@ -28,8 +28,6 @@ table ml_technical_indicators
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column ticker
 		dataType: string
 		lineageTag: 590eed33-2200-40e0-8859-5225f3c4e2ca
@@ -316,12 +314,18 @@ table ml_technical_indicators
 	partition ml_technical_indicators = m
 		mode: import
 		queryGroup: ml_tables
-		source =
+		source = ```
 				let
-				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
-				    dbo_ml_technical_indicators = Source{[Schema="dbo",Item="ml_technical_indicators"]}[Data]
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="
+				        SELECT * 
+				        FROM dbo.ml_technical_indicators 
+				        WHERE trading_date >= DATEADD(day, -30, CAST(GETDATE() AS DATE)) 
+				          AND trading_date <= GETDATE()+1
+				    "]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"trading_date", type datetime}})
 				in
-				    dbo_ml_technical_indicators
+				    #"Changed Type"
+				```
 
 	annotation PBI_ResultType = Table
 

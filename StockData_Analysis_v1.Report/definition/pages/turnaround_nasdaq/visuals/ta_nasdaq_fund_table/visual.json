@@ -176,16 +176,16 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "nasdaq_top100"
                   }
                 },
-                "Property": "NASDAQ Turnaround Score"
+                "Property": "ticker"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }

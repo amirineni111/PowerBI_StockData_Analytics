@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c222cc10dacef547d3fd",
+  "position": {
+    "x": 1400,
+    "y": 6.7226890756302522,
+    "z": 0,
+    "height": 141.1764705882353,
+    "width": 280.672268907563,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "vw_theme_stock_signals"
+                    }
+                  },
+                  "Property": "Conviction Level"
+                }
+              },
+              "queryRef": "vw_theme_stock_signals.Conviction Level",
+              "nativeQueryRef": "Conviction Level",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d9e0194a88eef7b9c591",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "vw_theme_stock_signals"
+              }
+            },
+            "Property": "Conviction Level"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

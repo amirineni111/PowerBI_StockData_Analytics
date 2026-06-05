@@ -45,7 +45,7 @@ table vw_PowerBI_GrowthScorePerformance
 		dataType: int64
 		formatString: 0
 		lineageTag: 79b73b03-caab-49a4-adfc-d076b77cb853
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: score
 
 		annotation SummarizationSetBy = Automatic

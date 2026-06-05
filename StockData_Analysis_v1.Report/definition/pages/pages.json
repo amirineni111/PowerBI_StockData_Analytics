@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.1.0/schema.json",
   "pageOrder": [
     "7856b37ed48db2e039a0",
     "aa8483b744b99ed21b5e",
@@ -57,7 +57,8 @@
     "73e1429c85bc9746f6c5",
     "1c10792b8400d40664af",
     "4aaca300acfa2f55b6d6",
-    "4fbce60229eedbeefc12"
+    "4fbce60229eedbeefc12",
+    "3108fc6c41371509f3f2"
   ],
-  "activePageName": "golden_cross_tickers"
+  "activePageName": "turnaround_nasdaq"
 }

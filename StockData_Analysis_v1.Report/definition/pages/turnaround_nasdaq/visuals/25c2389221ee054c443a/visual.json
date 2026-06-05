@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "25c2389221ee054c443a",
   "position": {
     "x": 1392,
@@ -46,10 +46,9 @@
                 "Property": "fetch_date"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
@@ -63,10 +62,17 @@
                 }
               }
             },
+            "endDate": {
+              "expr": {
+                "Literal": {
+                  "Value": "datetime'2026-05-10T00:00:00'"
+                }
+              }
+            },
             "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "'Between'"
+                  "Value": "'Dropdown'"
                 }
               }
             }
@@ -89,23 +95,28 @@
                 "Where": [
                   {
                     "Condition": {
-                      "Comparison": {
-                        "ComparisonKind": 2,
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "n"
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "n"
+                                }
+                              },
+                              "Property": "fetch_date"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "datetime'2026-05-31T00:00:00'"
                               }
-                            },
-                            "Property": "fetch_date"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "datetime'2026-05-03T00:00:00'"
-                          }
-                        }
+                            }
+                          ]
+                        ]
                       }
                     }
                   }

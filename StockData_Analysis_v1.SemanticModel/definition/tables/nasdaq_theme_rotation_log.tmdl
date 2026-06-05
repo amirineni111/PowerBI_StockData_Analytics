@@ -1,0 +1,125 @@
+table nasdaq_theme_rotation_log
+	lineageTag: 26b34f22-26c9-488f-a2a1-a78cf5ee3b59
+
+	column log_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ebe08ff-311f-4b72-99f6-565b64b81dae
+		summarizeBy: sum
+		sourceColumn: log_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column log_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c179208e-54ba-4db8-878b-3af659a0bf78
+		summarizeBy: none
+		sourceColumn: log_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column theme
+		dataType: string
+		lineageTag: 7c517a0a-be08-4a1a-93d5-34a6f2a7c403
+		summarizeBy: none
+		sourceColumn: theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_score
+		dataType: double
+		lineageTag: e8d51ed2-1ad3-4d8d-a1e0-fbbce9b6f876
+		summarizeBy: sum
+		sourceColumn: current_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prior_score
+		dataType: double
+		lineageTag: 2b9daf77-a10d-4154-b26d-448394d05f0d
+		summarizeBy: sum
+		sourceColumn: prior_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column score_change
+		dataType: double
+		lineageTag: c2c417ba-0170-4f21-9ba3-ce84b0596339
+		summarizeBy: sum
+		sourceColumn: score_change
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_label
+		dataType: string
+		lineageTag: 078b7d09-3580-46b3-a129-67f95fdfaafe
+		summarizeBy: none
+		sourceColumn: current_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column prior_label
+		dataType: string
+		lineageTag: 2a9401c9-8b8c-45d2-bd5d-a2372a352694
+		summarizeBy: none
+		sourceColumn: prior_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column label_changed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 61c9d6e7-7d84-4fa6-9eb4-5c510276b08f
+		summarizeBy: none
+		sourceColumn: label_changed
+
+		annotation SummarizationSetBy = Automatic
+
+	column rotation_signal
+		dataType: string
+		lineageTag: 1aaad58f-4cf5-4301-92c6-6cdd8fb8be3d
+		summarizeBy: none
+		sourceColumn: rotation_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column alert_required
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8a1c948b-2590-4d05-bca4-8cbe733a76e6
+		summarizeBy: none
+		sourceColumn: alert_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ae00327b-cc98-44e4-bf0e-5722362bd5fb
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation SummarizationSetBy = Automatic
+
+	partition nasdaq_theme_rotation_log = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500 = Source{[Schema="dbo",Item="nasdaq_theme_rotation_log"]}[Data]
+				in
+				    dbo_nse_500
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

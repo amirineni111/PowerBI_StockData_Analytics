@@ -28,8 +28,6 @@ table ml_nse_predict_summary
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column total_predictions
 		dataType: int64
 		formatString: 0
@@ -362,12 +360,20 @@ table ml_nse_predict_summary
 	partition ml_nse_predict_summary = m
 		mode: import
 		queryGroup: ml_tables
-		source =
+		source = ```
 				let
-				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
-				    dbo_ml_nse_predict_summary = Source{[Schema="dbo",Item="ml_nse_predict_summary"]}[Data]
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="
+				        SELECT * 
+				        FROM dbo.ml_nse_predict_summary
+				        WHERE analysis_date >= DATEADD(day, -30, CAST(GETDATE() AS DATE)) 
+				          AND analysis_date <= GETDATE()+1
+				    "]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"analysis_date", type datetime}})
 				in
-				    dbo_ml_nse_predict_summary
+				    #"Changed Type"
+				```
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

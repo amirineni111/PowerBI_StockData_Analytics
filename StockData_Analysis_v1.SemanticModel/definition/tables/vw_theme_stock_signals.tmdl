@@ -1,0 +1,291 @@
+table vw_theme_stock_signals
+	lineageTag: 04c4eb8e-90ce-453f-be59-33ee9607c2d9
+
+	column ticker
+		dataType: string
+		lineageTag: b7c4a62b-0e61-427e-b152-05f8e1c343ae
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company
+		dataType: string
+		lineageTag: 19e3c426-790c-4bbd-9297-dfc1e31103af
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column sector
+		dataType: string
+		lineageTag: 70d0443b-bfe7-44c4-9e2e-a600eaf48d21
+		summarizeBy: none
+		sourceColumn: sector
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: f8ec1e9e-0c71-45f4-ad0b-1951a417b11b
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_industry
+		dataType: string
+		lineageTag: 2ef9fd90-cc3a-457b-ad82-e1971f7aceb2
+		summarizeBy: none
+		sourceColumn: sub_industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column theme
+		dataType: string
+		lineageTag: d080083d-6159-47c8-8fed-0135a332f559
+		summarizeBy: none
+		sourceColumn: theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_cap_tier
+		dataType: string
+		lineageTag: 0db257c3-e193-4570-a7e1-77a65951dae2
+		summarizeBy: none
+		sourceColumn: market_cap_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column beta_bucket
+		dataType: string
+		lineageTag: eed8a825-b864-4fbe-b151-188c0ca4a660
+		summarizeBy: none
+		sourceColumn: beta_bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_primary_theme
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 77c1cb1b-ac8a-4c8f-a1e9-6fa089542392
+		summarizeBy: none
+		sourceColumn: is_primary_theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column heat_label
+		dataType: string
+		lineageTag: e9607524-22dc-4a71-a480-36f3e175aad5
+		summarizeBy: none
+		sourceColumn: heat_label
+
+		annotation SummarizationSetBy = Automatic
+
+	column theme_heat_score
+		dataType: double
+		lineageTag: fa9ded77-4791-47f9-9199-cd822b3bd433
+		summarizeBy: sum
+		sourceColumn: theme_heat_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column theme_ml_score
+		dataType: double
+		lineageTag: f1b18a22-ac05-4a74-b21a-201d18fc4e7f
+		summarizeBy: sum
+		sourceColumn: theme_ml_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column theme_buy_pct
+		dataType: double
+		lineageTag: 6531ed9b-66f8-48e8-b872-9540f53619b3
+		summarizeBy: sum
+		sourceColumn: theme_buy_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column theme_1w_return
+		dataType: double
+		lineageTag: 1c0e392d-2fc6-4b96-81ac-dd906325394f
+		summarizeBy: sum
+		sourceColumn: theme_1w_return
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rotation_signal
+		dataType: string
+		lineageTag: 421e78f5-38ba-49fe-95f5-3507d528ad3e
+		summarizeBy: none
+		sourceColumn: rotation_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column theme_wk_change
+		dataType: double
+		lineageTag: 8160642a-cb77-4878-89d9-cd276ea9c467
+		summarizeBy: sum
+		sourceColumn: theme_wk_change
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column label_changed
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 725f5ea4-13e1-483f-b0ba-ab1f5e229e76
+		summarizeBy: none
+		sourceColumn: label_changed
+
+		annotation SummarizationSetBy = Automatic
+
+	column predicted_signal
+		dataType: string
+		lineageTag: 0dce0ec1-4a24-42d4-a624-97f6c8206593
+		summarizeBy: none
+		sourceColumn: predicted_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column signal_strength
+		dataType: string
+		lineageTag: db777d5c-2b33-4b88-8d0d-67392a4f020a
+		summarizeBy: none
+		sourceColumn: signal_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column confidence_pct
+		dataType: double
+		lineageTag: 2361e4b8-53f8-4768-9c88-2d2cb59a0ba0
+		summarizeBy: sum
+		sourceColumn: confidence_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column buy_prob_pct
+		dataType: double
+		lineageTag: 29dff7ad-0f23-4a2c-a32c-aa57cd9fa6ed
+		summarizeBy: sum
+		sourceColumn: buy_prob_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sell_prob_pct
+		dataType: double
+		lineageTag: c0d6b21f-be3c-4a2d-9194-c158f1865e69
+		summarizeBy: sum
+		sourceColumn: sell_prob_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RSI
+		dataType: double
+		lineageTag: 23db28bf-27cd-4879-835e-99f569fc36f5
+		summarizeBy: sum
+		sourceColumn: RSI
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rsi_category
+		dataType: string
+		lineageTag: 6d1c4b63-b928-4cdb-b206-61499f8b0fd4
+		summarizeBy: none
+		sourceColumn: rsi_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column close_price
+		dataType: double
+		lineageTag: 74b91fb6-6c58-4310-b293-167ec0932343
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trading_date
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		lineageTag: 57a73ceb-7e0f-43b3-af7c-d59c6caa4ab4
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column conviction_action
+		dataType: string
+		lineageTag: 2941bab8-0446-4de6-8190-e2d0caf3835c
+		summarizeBy: none
+		sourceColumn: conviction_action
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Conviction Level' =
+			
+			SWITCH(
+			    SELECTEDVALUE(vw_theme_stock_signals[heat_label]),
+			    "Hot",      "Full size",
+			    "Rising",   "Standard",
+			    "Emerging", "Half size",
+			    "Steady",   "Watch only",
+			    "Caution",  "Skip",
+			    "Hold"
+			)
+		lineageTag: 6a96630c-6367-4c65-8328-389cf9452ff3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Conviction Color' =
+			
+			SWITCH(
+			    SELECTEDVALUE(vw_theme_stock_signals[heat_label]),
+			    "Hot",      "#1D9E75",
+			    "Rising",   "#5DCAA5",
+			    "Emerging", "#EF9F27",
+			    "Steady",   "#888780",
+			    "Caution",  "#D85A30",
+			                "#888780"
+			)
+		lineageTag: cd6f2f47-4396-4efe-b29f-cdd55d4108bb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_theme_stock_signals = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500 = Source{[Schema="dbo",Item="vw_theme_stock_signals"]}[Data]
+				in
+				    dbo_nse_500
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

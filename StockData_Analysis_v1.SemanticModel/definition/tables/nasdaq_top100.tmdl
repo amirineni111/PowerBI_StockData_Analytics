@@ -92,6 +92,26 @@ table nasdaq_top100
 
 		annotation SummarizationSetBy = Automatic
 
+	column upper_threshold
+		dataType: double
+		lineageTag: dd27823e-31ef-4a6f-b7dd-66f49ed76db1
+		summarizeBy: sum
+		sourceColumn: upper_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lower_threshold
+		dataType: double
+		lineageTag: ca865c33-bfb3-441a-be41-aa032e855686
+		summarizeBy: sum
+		sourceColumn: lower_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition nasdaq_top100 = m
 		mode: import
 		source =

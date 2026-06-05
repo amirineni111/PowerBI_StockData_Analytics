@@ -28,8 +28,6 @@ table ml_nse_technical_indicators
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column ticker
 		dataType: string
 		lineageTag: 9282eb7e-5ba2-420a-99e4-91b0a37274c4
@@ -454,12 +452,20 @@ table ml_nse_technical_indicators
 	partition ml_nse_technical_indicators = m
 		mode: import
 		queryGroup: ml_tables
-		source =
+		source = ```
 				let
-				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
-				    dbo_ml_nse_technical_indicators = Source{[Schema="dbo",Item="ml_nse_technical_indicators"]}[Data]
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="
+				        SELECT * 
+				        FROM dbo.ml_nse_technical_indicators 
+				        WHERE trading_date >= DATEADD(day, -30, CAST(GETDATE() AS DATE)) 
+				          AND trading_date <= GETDATE()+1
+				    "]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"trading_date", type datetime}})
 				in
-				    dbo_ml_nse_technical_indicators
+				    #"Changed Type"
+				```
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

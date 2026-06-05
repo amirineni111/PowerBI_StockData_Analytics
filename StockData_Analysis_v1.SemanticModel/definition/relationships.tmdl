@@ -44,7 +44,6 @@ relationship 8fd12337-7cac-c29e-66bf-03c156782654
 
 relationship AutoDetected_5268b165-276a-469e-b065-d1fc3f259f99
 	crossFilteringBehavior: bothDirections
-	fromCardinality: one
 	fromColumn: nasdaq_fair_value.ticker
 	toColumn: nasdaq_top100.ticker
 
@@ -481,4 +480,28 @@ relationship 075c7600-88e5-0ac3-662d-19e7aa4163c2
 relationship 1c05b0a7-bae7-27c8-7e6e-b4cf7a4c911a
 	fromColumn: Price_Movement.ticker
 	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_cb6a8c3f-d0c5-48c5-a922-3ce869684a0f
+	fromColumn: nasdaq_theme_mapping.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_c9446d33-ec9e-4bf9-8478-5e5828d652f9
+	fromColumn: vw_PowerBI_GrowthScorePerformance.score
+	toColumn: nasdaq_theme_heat_scores.score_id
+
+relationship AutoDetected_7af7acfe-8bfb-44ec-a01b-7a3f20192f62
+	fromColumn: vw_theme_stock_signals.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_38f23e7a-1433-4aea-b162-084dc78e22eb
+	fromColumn: vw_theme_stock_signals.theme
+	toColumn: vw_theme_heat_composite.theme
+
+relationship AutoDetected_374baa79-5aad-4233-b051-1515543f2591
+	fromColumn: vw_powerbi_nasdaq_turnaround.ticker
+	toColumn: nasdaq_top100.ticker
+
+relationship AutoDetected_a28c4f06-0b77-40c3-8031-903510a119c9
+	fromColumn: vw_powerbi_nse_turnaround.ticker
+	toColumn: nse_500.ticker
 

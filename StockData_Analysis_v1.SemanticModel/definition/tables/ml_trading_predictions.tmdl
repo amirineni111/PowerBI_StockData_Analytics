@@ -28,8 +28,6 @@ table ml_trading_predictions
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column ticker
@@ -220,12 +218,20 @@ table ml_trading_predictions
 	partition ml_trading_predictions = m
 		mode: import
 		queryGroup: ml_tables
-		source =
+		source = ```
 				let
-				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
-				    dbo_ml_trading_predictions = Source{[Schema="dbo",Item="ml_trading_predictions"]}[Data]
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="
+				        SELECT * 
+				        FROM dbo.ml_trading_predictions 
+				        WHERE trading_date >= DATEADD(day, -30, CAST(GETDATE() AS DATE)) 
+				          AND trading_date <= GETDATE()+1
+				    "]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"trading_date", type datetime}})
 				in
-				    dbo_ml_trading_predictions
+				    #"Changed Type"
+				```
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

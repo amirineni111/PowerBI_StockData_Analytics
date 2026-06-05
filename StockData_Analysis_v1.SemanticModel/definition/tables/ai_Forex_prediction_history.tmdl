@@ -192,6 +192,14 @@ table ai_Forex_prediction_history
 
 		annotation SummarizationSetBy = Automatic
 
+	column predicted_direction
+		dataType: string
+		lineageTag: 048df26c-c4a6-4269-993e-abda62417937
+		summarizeBy: none
+		sourceColumn: predicted_direction
+
+		annotation SummarizationSetBy = Automatic
+
 	partition ai_Forex_prediction_history = m
 		mode: import
 		source =

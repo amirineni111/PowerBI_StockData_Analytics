@@ -1,0 +1,188 @@
+table vw_powerbi_nse_turnaround
+	lineageTag: b6e18d6b-bf40-444d-9222-2ac2048bc677
+
+	column fetch_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b406a94b-c9b9-4dc5-9b7d-32e90db7dfab
+		summarizeBy: none
+		sourceColumn: fetch_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ticker
+		dataType: string
+		lineageTag: 400ad05c-b011-4a29-b5bf-7f8fcc342a3a
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column company_name
+		dataType: string
+		lineageTag: cdab4d9e-57e0-4043-9b95-50541b768536
+		summarizeBy: none
+		sourceColumn: company_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column turnaround_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f2c1802-da82-42e8-9164-ff395c23a62d
+		summarizeBy: sum
+		sourceColumn: turnaround_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column turnaround_signal
+		dataType: string
+		lineageTag: 1fdf5019-f7c9-446b-91d8-2813b557d2a8
+		summarizeBy: none
+		sourceColumn: turnaround_signal
+
+		annotation SummarizationSetBy = Automatic
+
+	column margin_improvement
+		dataType: double
+		lineageTag: 422491a9-e40d-4187-b405-987602cf7e05
+		summarizeBy: sum
+		sourceColumn: margin_improvement
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column earnings_recovery
+		dataType: double
+		lineageTag: f4bd03fd-9d16-4324-9d41-cfda07700ab2
+		summarizeBy: sum
+		sourceColumn: earnings_recovery
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column revenue_recovery
+		dataType: double
+		lineageTag: 1730ac32-6164-4359-92f7-b5ede5a31ebb
+		summarizeBy: sum
+		sourceColumn: revenue_recovery
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column roe_recovery
+		dataType: double
+		lineageTag: 55062fee-82f8-4605-8af8-9137bb1f3e20
+		summarizeBy: sum
+		sourceColumn: roe_recovery
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column debt_improvement
+		dataType: double
+		lineageTag: f614b2f2-a1ea-4b3d-9cd9-0e5894630d29
+		summarizeBy: sum
+		sourceColumn: debt_improvement
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fcf_turnaround
+		dataType: int64
+		formatString: 0
+		lineageTag: 1208b9af-166c-425a-a28c-465c3ce8ea53
+		summarizeBy: sum
+		sourceColumn: fcf_turnaround
+
+		annotation SummarizationSetBy = Automatic
+
+	column fwd_vs_trailing_pe_spread
+		dataType: double
+		lineageTag: 75817b19-4248-4706-a6c4-99a170f93d3a
+		summarizeBy: sum
+		sourceColumn: fwd_vs_trailing_pe_spread
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column turnaround_added_price
+		dataType: double
+		lineageTag: 6af54ee3-08ca-454a-8012-ec890fd49390
+		summarizeBy: sum
+		sourceColumn: turnaround_added_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_price
+		dataType: double
+		lineageTag: de274307-0af2-4ba3-a359-9757b27c7986
+		summarizeBy: sum
+		sourceColumn: current_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column price_growth_pct
+		dataType: double
+		lineageTag: 72d3aa4a-6701-4b8b-962d-801ba5ddab66
+		summarizeBy: sum
+		sourceColumn: price_growth_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column turnaround_count
+		dataType: int64
+		formatString: 0
+		lineageTag: b6304d1f-01d0-4724-a720-49bfd97bc672
+		summarizeBy: sum
+		sourceColumn: turnaround_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column strong_turnaround_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d61b95c-a6fd-4fa7-830f-1eb0e67fa426
+		summarizeBy: sum
+		sourceColumn: strong_turnaround_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column pe_rerating_pct
+		dataType: double
+		lineageTag: 384b641d-a8fe-4ef8-9825-d8e69414d83d
+		summarizeBy: sum
+		sourceColumn: pe_rerating_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_powerbi_nse_turnaround = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500 = Source{[Schema="dbo",Item="vw_PowerBI_NSE_Turnaround"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_nse_500, each true)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

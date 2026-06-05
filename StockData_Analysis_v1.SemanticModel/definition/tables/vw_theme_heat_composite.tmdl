@@ -1,0 +1,180 @@
+table vw_theme_heat_composite
+	lineageTag: 939433c9-0581-46ab-970b-65ea202c38f9
+
+	column theme
+		dataType: string
+		lineageTag: 06f855c9-4078-41b9-b139-95c44c9da998
+		summarizeBy: none
+		sourceColumn: theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_ticker_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 07ab55bd-c1fa-4273-bb6a-2ad0d2f35f40
+		summarizeBy: none
+		sourceColumn: ml_ticker_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column fund_ticker_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 87152777-0bf3-4230-b2a3-352c5dfb8e6e
+		summarizeBy: none
+		sourceColumn: fund_ticker_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_signal_score
+		dataType: double
+		lineageTag: 0626702f-4e4f-4afa-ad22-7db1be9b6f28
+		summarizeBy: none
+		sourceColumn: ml_signal_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fundamental_score
+		dataType: double
+		lineageTag: 27cc9347-b5f1-4ba1-98bf-7319cd0955ce
+		summarizeBy: none
+		sourceColumn: fundamental_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column momentum_score
+		dataType: double
+		lineageTag: 9f6c83d2-a944-4c81-a802-555cd9012f30
+		summarizeBy: none
+		sourceColumn: momentum_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column breadth_score
+		dataType: double
+		lineageTag: 7c1ca028-06c8-40b6-b17f-a9b46adf8dce
+		summarizeBy: none
+		sourceColumn: breadth_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column composite_heat_score
+		dataType: double
+		lineageTag: 8f488d7f-7660-430c-87e6-fe611bee93c2
+		summarizeBy: none
+		sourceColumn: composite_heat_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column buy_signal_pct
+		dataType: double
+		lineageTag: dcbff162-281c-4711-ae48-47a9f2ea6669
+		summarizeBy: none
+		sourceColumn: buy_signal_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_buy_conf_pct
+		dataType: double
+		lineageTag: e82afb0b-adf8-4723-94a7-a253ea35737e
+		summarizeBy: none
+		sourceColumn: avg_buy_conf_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_improvement_score
+		dataType: double
+		lineageTag: a8a3dfb7-a6dd-4c5c-ae32-21d066df3577
+		summarizeBy: none
+		sourceColumn: avg_improvement_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column score5_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 9a9c8cd7-0db8-49f9-8b28-e47d310a6197
+		summarizeBy: none
+		sourceColumn: score5_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column score4_plus_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 9db11087-02ad-47af-a55e-21f064fd277d
+		summarizeBy: none
+		sourceColumn: score4_plus_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_1w_return_pct
+		dataType: double
+		lineageTag: 978047f5-4b71-41b5-b079-2cf23e05ddc2
+		summarizeBy: none
+		sourceColumn: avg_1w_return_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_2w_return_pct
+		dataType: double
+		lineageTag: 841e92b6-aa2d-4241-9e9c-88a2084d5cca
+		summarizeBy: none
+		sourceColumn: avg_2w_return_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_4w_return_pct
+		dataType: double
+		lineageTag: 55f8db73-8773-400c-933f-14690d690705
+		summarizeBy: none
+		sourceColumn: avg_4w_return_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column breadth_pct_above_ma20
+		dataType: double
+		lineageTag: d5e9fd94-2402-4cb2-8601-82866a1d5ef6
+		summarizeBy: none
+		sourceColumn: breadth_pct_above_ma20
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_theme_heat_composite = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500 = Source{[Schema="dbo",Item="vw_theme_heat_composite"]}[Data]
+				in
+				    dbo_nse_500
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

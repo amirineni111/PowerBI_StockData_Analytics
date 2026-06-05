@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "ta_nse_table",
   "position": {
     "x": 16,
@@ -232,16 +232,16 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "nse_500_fundamentals"
+                    "Entity": "_Measures"
                   }
                 },
-                "Property": "fetch_date"
+                "Property": "NSE Turnaround Signal"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -403,8 +403,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
+        }
       },
       {
         "name": "0628081480773b19008b",

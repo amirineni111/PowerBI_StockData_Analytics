@@ -10,5 +10,20 @@
     "type": "Default",
     "parameters": [],
     "acceptsFilterContext": "None"
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "241L"
+              }
+            }
+          }
+        }
+      }
+    ]
   }
 }

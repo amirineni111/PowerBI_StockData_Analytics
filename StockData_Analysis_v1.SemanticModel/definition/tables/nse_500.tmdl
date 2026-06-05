@@ -92,6 +92,26 @@ table nse_500
 
 		annotation SummarizationSetBy = Automatic
 
+	column upper_threshold
+		dataType: double
+		lineageTag: b58350c0-2105-410a-8882-aa5c6357ebb6
+		summarizeBy: sum
+		sourceColumn: upper_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lower_threshold
+		dataType: double
+		lineageTag: 262641b6-7bad-427d-94f6-ae414a6cb36c
+		summarizeBy: sum
+		sourceColumn: lower_threshold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition nse_500 = m
 		mode: import
 		source =

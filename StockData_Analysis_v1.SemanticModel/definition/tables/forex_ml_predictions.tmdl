@@ -235,12 +235,18 @@ table forex_ml_predictions
 	partition forex_ml_predictions = m
 		mode: import
 		queryGroup: ml_tables
-		source =
+		source = ```
 				let
-				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
-				    dbo_forex_ml_predictions = Source{[Schema="dbo",Item="forex_ml_predictions"]}[Data]
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db", [Query="
+				        SELECT * 
+				        FROM dbo.forex_ml_predictions 
+				        WHERE prediction_date >= DATEADD(day, -30, CAST(GETDATE() AS DATE)) 
+				          AND prediction_date <= GETDATE()+1
+				    "]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"prediction_date", type datetime}})
 				in
-				    dbo_forex_ml_predictions
+				    #"Changed Type"
+				```
 
 	annotation PBI_ResultType = Table
 

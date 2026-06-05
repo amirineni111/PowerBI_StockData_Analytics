@@ -1,0 +1,83 @@
+table vw_theme_momentum_score
+	lineageTag: 67aae9cc-a32a-4f6b-aa15-fa662ae032af
+
+	column theme
+		dataType: string
+		lineageTag: 4c89d4c4-5255-4f7d-98e5-5996c16d1639
+		summarizeBy: none
+		sourceColumn: theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 971e1594-f109-49b9-a39e-3cf9192164b1
+		summarizeBy: sum
+		sourceColumn: ticker_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_1w_return_pct
+		dataType: double
+		lineageTag: f35dd17f-7d16-4d1f-b7ea-671df864c448
+		summarizeBy: sum
+		sourceColumn: avg_1w_return_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_2w_return_pct
+		dataType: double
+		lineageTag: 6f07eff0-73f6-4645-a7d7-52ba1bfdc6f2
+		summarizeBy: sum
+		sourceColumn: avg_2w_return_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_4w_return_pct
+		dataType: double
+		lineageTag: 56e416d7-bce3-4b5b-8964-a255015e09c7
+		summarizeBy: sum
+		sourceColumn: avg_4w_return_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column breadth_score
+		dataType: double
+		lineageTag: 10ddc2b8-7008-4684-9f2d-507c2a035385
+		summarizeBy: sum
+		sourceColumn: breadth_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column momentum_score
+		dataType: double
+		lineageTag: 99c695aa-ad62-4618-bd7f-641f003a649d
+		summarizeBy: sum
+		sourceColumn: momentum_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition vw_theme_momentum_score = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500 = Source{[Schema="dbo",Item="vw_theme_momentum_score"]}[Data]
+				in
+				    dbo_nse_500
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

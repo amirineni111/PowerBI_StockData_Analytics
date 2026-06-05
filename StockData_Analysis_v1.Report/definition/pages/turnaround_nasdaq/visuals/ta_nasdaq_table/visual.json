@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "ta_nasdaq_table",
   "position": {
     "x": 16,
@@ -232,13 +232,13 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "nasdaq_100_fundamentals"
                   }
                 },
-                "Property": "NASDAQ Turnaround Score"
+                "Property": "fetch_date"
               }
             },
             "direction": "Descending"
@@ -275,7 +275,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'NASDAQ Turnaround Scorecard - Sorted by Score (Highest First)'"
+                  "Value": "'NASDAQ Turnaround Scorecard'"
                 }
               }
             },
@@ -352,59 +352,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "d7d968ce837c63d32d02",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "NASDAQ Turnaround Score"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "_",
-              "Entity": "_Measures",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "Comparison": {
-                      "ComparisonKind": 0,
-                      "Left": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Source": "_"
-                            }
-                          },
-                          "Property": "NASDAQ Turnaround Score"
-                        }
-                      },
-                      "Right": {
-                        "Literal": {
-                          "Value": "0L"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
       },
       {
         "name": "f779474037dda00d0833",
@@ -561,7 +508,59 @@
         "type": "Advanced"
       },
       {
-        "name": "3f163c5c2b5acbb0e78e",
+        "name": "10b917f04d0dc00854e8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "NASDAQ Turnaround Score"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "_",
+              "Entity": "_Measures",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "_"
+                            }
+                          },
+                          "Property": "NASDAQ Turnaround Score"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "0L"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "821e670e37358d896005",
         "field": {
           "Measure": {
             "Expression": {

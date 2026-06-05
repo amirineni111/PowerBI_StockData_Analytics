@@ -1,0 +1,102 @@
+table nasdaq_theme_mapping
+	lineageTag: 4e81b1fc-e531-46ec-b902-3f560a1337cc
+
+	column mapping_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 524c1a43-8aa0-40a0-8f89-ca71f42c47d3
+		summarizeBy: sum
+		sourceColumn: mapping_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column ticker
+		dataType: string
+		lineageTag: f056e398-1ce8-4205-bdf3-9647fba283ff
+		summarizeBy: none
+		sourceColumn: ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column theme
+		dataType: string
+		lineageTag: 4110a886-aa52-48c1-9dd1-76525e21f89f
+		summarizeBy: none
+		sourceColumn: theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_theme
+		dataType: string
+		lineageTag: dfb81017-0f0a-4301-b16d-7a819253f7cd
+		summarizeBy: none
+		sourceColumn: sub_theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_cap_tier
+		dataType: string
+		lineageTag: 927c0e9c-b951-4bec-a396-07a50a96afc2
+		summarizeBy: none
+		sourceColumn: market_cap_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column beta_bucket
+		dataType: string
+		lineageTag: 2cbcf23d-7ca8-4860-bb47-f5163038fdc3
+		summarizeBy: none
+		sourceColumn: beta_bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_primary_theme
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c38d93b4-502b-4f47-95a2-3b2af8639d40
+		summarizeBy: none
+		sourceColumn: is_primary_theme
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4be0078c-704f-429e-97c4-59f90915f755
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column added_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 568e183d-d46a-4b65-9b28-2e9446de3039
+		summarizeBy: none
+		sourceColumn: added_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column notes
+		dataType: string
+		lineageTag: f7726e37-f8f2-49aa-b7ff-8880167a8a86
+		summarizeBy: none
+		sourceColumn: notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition nasdaq_theme_mapping = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost\mssqlserver01", "stockdata_db"),
+				    dbo_nse_500 = Source{[Schema="dbo",Item="nasdaq_theme_mapping"]}[Data]
+				in
+				    dbo_nse_500
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
